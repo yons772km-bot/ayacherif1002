@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les états physiques de la matière</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #222;
+            line-height: 1.7;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0f4c81, #1abc9c);
+            color: white;
+            padding: 45px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 17px;
+        }
+
+        nav {
+            background-color: #083b66;
+            padding: 12px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #1abc9c;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        h2 {
+            color: #0f4c81;
+            margin: 30px 0 15px;
+            border-left: 5px solid #1abc9c;
+            padding-left: 10px;
+            font-size: 26px;
+        }
+
+        h3 {
+            color: #0f4c81;
+            margin-bottom: 10px;
+        }
+
+        .box {
+            background-color: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+        }
+
+        .definition {
+            background-color: #e8f6f3;
+            border-left: 5px solid #1abc9c;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .important {
+            background-color: #fff7e6;
+            border-left: 5px solid #f39c12;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .resume {
+            background-color: #eef4ff;
+            border-left: 5px solid #0f4c81;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .pdf-box {
+            background-color: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+        }
+
+        .pdf-viewer {
+            width: 100%;
+            height: 750px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        ul, ol {
+            margin-left: 25px;
+            margin-top: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background-color: white;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #0f4c81;
+            color: white;
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 10px 10px 0 0;
+            background-color: #1abc9c;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #14977d;
+        }
+
+        footer {
+            background-color: #083b66;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Les états physiques de la matière</h1>
+        <p>1ère année collège - Semestre 1 | Cours, PDF, résumé et exercices</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="1ac.html">Cours 1AC</a>
+        <a href="#presentation">Présentation</a>
+        <a href="#pdf">PDF du cours</a>
+        <a href="#lecon">Leçon</a>
+        <a href="#resume">Résumé</a>
+        <a href="#exercices">Exercices</a>
+    </nav>
+
+    <div class="container">
+
+        <section id="presentation">
+            <h2>Présentation du cours</h2>
+
+            <div class="box">
+                <p>
+                    Ce cours explique les différents états physiques de la matière :
+                    l’état solide, l’état liquide et l’état gazeux. Il présente aussi
+                    les propriétés physiques des solides, des liquides et des gaz.
+                </p>
+
+                <div class="definition">
+                    <strong>Objectif du cours :</strong>
+                    reconnaître les trois états physiques de la matière et comparer
+                    leurs propriétés : forme propre, forme du récipient, surface libre,
+                    compressibilité et capacité à occuper l’espace.
+                </div>
+            </div>
+        </section>
+
+        <section id="pdf">
+            <h2>Document PDF du cours</h2>
+
+            <div class="pdf-box">
+                <p>
+                    Vous pouvez consulter le PDF directement sur cette page,
+                    l’ouvrir dans un nouvel onglet ou le télécharger.
+                </p>
+
+                <a href="1ac-s1-etats-physiques.pdf" target="_blank" class="btn">Ouvrir le PDF</a>
+                <a href="1ac-s1-etats-physiques.pdf" download class="btn">Télécharger le PDF</a>
+
+                <iframe src="1ac-s1-etats-physiques.pdf" class="pdf-viewer"></iframe>
+            </div>
+        </section>
+
+        <section id="lecon">
+            <h2>1. La matière</h2>
+
+            <div class="box">
+                <p>
+                    La matière désigne l’ensemble des composants et des objets,
+                    naturels ou synthétiques, qui composent notre environnement.
+                </p>
+
+                <div class="definition">
+                    <strong>Définition :</strong>
+                    La matière est tout ce qui possède une masse et occupe un espace.
+                </div>
+
+                <p>
+                    Dans la nature, la matière existe sous trois états physiques :
+                </p>
+
+                <ul>
+                    <li><strong>État solide :</strong> bois, fer, sable, glace, crayon.</li>
+                    <li><strong>État liquide :</strong> eau, lait, huile, alcool.</li>
+                    <li><strong>État gazeux :</strong> air, dioxygène, dioxyde de carbone, vapeur d’eau.</li>
+                </ul>
+            </div>
+
+            <h2>2. Propriétés physiques des solides</h2>
+
+            <div class="box">
+                <p>
+                    Les solides peuvent être classés en deux types :
+                    les solides compacts et les solides divisés.
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Type de solide</th>
+                        <th>Propriétés</th>
+                        <th>Exemples</th>
+                    </tr>
+                    <tr>
+                        <td>Solides compacts</td>
+                        <td>
+                            Ils sont faits d’un seul bloc, ont une forme propre,
+                            un volume constant et peuvent être saisis avec les doigts.
+                        </td>
+                        <td>Bol, cahier, crayon, morceau de glace</td>
+                    </tr>
+                    <tr>
+                        <td>Solides divisés</td>
+                        <td>
+                            Ils sont formés de grains ou de petits fragments.
+                            Ils n’ont pas de forme propre et prennent la forme
+                            du récipient qui les contient.
+                        </td>
+                        <td>Sable, farine, sel, café moulu</td>
+                    </tr>
+                </table>
+
+                <div class="important">
+                    <strong>À retenir :</strong>
+                    Un solide compact conserve sa forme, tandis qu’un solide divisé
+                    prend la forme du récipient qui le contient.
+                </div>
+            </div>
+
+            <h2>3. Propriétés physiques des liquides</h2>
+
+            <div class="box">
+                <p>
+                    Un liquide n’a pas de forme propre. Il prend la forme du récipient
+                    qui le contient.
+                </p>
+
+                <ul>
+                    <li>Un liquide ne peut pas être saisi entre les doigts.</li>
+                    <li>Un liquide prend la forme du récipient qui le contient.</li>
+                    <li>La surface libre d’un liquide au repos est plane et horizontale.</li>
+                    <li>Un liquide s’écoule : c’est un fluide.</li>
+                </ul>
+
+                <div class="definition">
+                    <strong>Surface libre :</strong>
+                    c’est la surface du liquide en contact avec l’air.
+                </div>
+            </div>
+
+            <h2>4. Propriétés physiques des gaz</h2>
+
+            <div class="box">
+                <p>
+                    Un gaz n’a pas de forme propre. Il prend la forme du récipient
+                    qui le contient et occupe tout l’espace disponible.
+                </p>
+
+                <ul>
+                    <li>Un gaz ne peut pas être saisi avec les doigts.</li>
+                    <li>Un gaz prend la forme du récipient qui le contient.</li>
+                    <li>Un gaz occupe tout l’espace qui lui est offert.</li>
+                    <li>On peut augmenter le volume d’un gaz : il est expansible.</li>
+                    <li>On peut diminuer le volume d’un gaz : il est compressible.</li>
+                </ul>
+
+                <div class="important">
+                    <strong>À retenir :</strong>
+                    Les gaz sont compressibles et expansibles, contrairement aux solides
+                    et aux liquides.
+                </div>
+            </div>
+
+            <h2>5. Comparaison des trois états physiques</h2>
+
+            <div class="box">
+                <table>
+                    <tr>
+                        <th>Propriété</th>
+                        <th>Solide compact</th>
+                        <th>Solide divisé</th>
+                        <th>Liquide</th>
+                        <th>Gaz</th>
+                    </tr>
+                    <tr>
+                        <td>Il a une forme propre</td>
+                        <td>Oui</td>
+                        <td>Non</td>
+                        <td>Non</td>
+                        <td>Non</td>
+                    </tr>
+                    <tr>
+                        <td>Il prend la forme du récipient</td>
+                        <td>Non</td>
+                        <td>Oui</td>
+                        <td>Oui</td>
+                        <td>Oui</td>
+                    </tr>
+                    <tr>
+                        <td>Il occupe tout l’espace disponible</td>
+                        <td>Non</td>
+                        <td>Non</td>
+                        <td>Non</td>
+                        <td>Oui</td>
+                    </tr>
+                    <tr>
+                        <td>Sa surface libre est plane et horizontale</td>
+                        <td>Non</td>
+                        <td>Non</td>
+                        <td>Oui</td>
+                        <td>Non</td>
+                    </tr>
+                    <tr>
+                        <td>Il est compressible et expansible</td>
+                        <td>Non</td>
+                        <td>Non</td>
+                        <td>Non</td>
+                        <td>Oui</td>
+                    </tr>
+                    <tr>
+                        <td>On peut le saisir avec la main</td>
+                        <td>Oui</td>
+                        <td>Partiellement</td>
+                        <td>Non</td>
+                        <td>Non</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <section id="resume">
+            <h2>Résumé du cours</h2>
+
+            <div class="resume">
+                <ul>
+                    <li>La matière constitue les objets et les composants de notre environnement.</li>
+                    <li>La matière existe sous trois états physiques : solide, liquide et gazeux.</li>
+                    <li>Un solide compact a une forme propre et un volume constant.</li>
+                    <li>Un solide divisé n’a pas de forme propre et prend la forme du récipient.</li>
+                    <li>Un liquide n’a pas de forme propre.</li>
+                    <li>La surface libre d’un liquide au repos est plane et horizontale.</li>
+                    <li>Un liquide s’écoule : c’est un fluide.</li>
+                    <li>Un gaz prend la forme du récipient et occupe tout l’espace disponible.</li>
+                    <li>Un gaz est compressible et expansible.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="exercices">
+            <h2>Exercices d’application</h2>
+
+            <div class="box">
+                <h3>Exercice 1 : Compléter les phrases</h3>
+                <p>
+                    Complète avec les mots suivants :
+                    <strong>propre - doigts - prend - contient - libre - horizontale - diminuer - compressible</strong>.
+                </p>
+
+                <ol>
+                    <li>Un solide a une forme __________ et on peut le saisir avec les __________.</li>
+                    <li>Un liquide n’a pas de forme propre, il __________ la forme du récipient qui le __________.</li>
+                    <li>La surface __________ d’un liquide est plane et __________.</li>
+                    <li>On peut __________ le volume d’un gaz, on dit qu’il est __________.</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 2 : Classer les substances</h3>
+                <p>
+                    Classe les substances suivantes en solides compacts, solides divisés,
+                    liquides et gaz :
+                </p>
+
+                <p>
+                    bois, essence, sel fin, air, eau, huile, eau sucrée, ciment,
+                    dioxygène, fer, riz, crayon, vapeur d’eau, dioxyde de carbone, casserole.
+                </p>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 3 : Répondre aux questions</h3>
+
+                <ol>
+                    <li>Quels sont les trois états physiques de la matière ?</li>
+                    <li>Quelle est la différence entre un solide compact et un solide divisé ?</li>
+                    <li>Pourquoi dit-on qu’un liquide n’a pas de forme propre ?</li>
+                    <li>Pourquoi dit-on qu’un gaz est compressible ?</li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="corrige">
+            <h2>Corrigé indicatif</h2>
+
+            <div class="box">
+                <h3>Correction de l’exercice 1</h3>
+                <ol>
+                    <li>propre - doigts</li>
+                    <li>prend - contient</li>
+                    <li>libre - horizontale</li>
+                    <li>diminuer - compressible</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Correction de l’exercice 3</h3>
+                <ol>
+                    <li>Les trois états sont : solide, liquide et gazeux.</li>
+                    <li>Un solide compact a une forme propre, alors qu’un solide divisé prend la forme du récipient.</li>
+                    <li>Un liquide prend la forme du récipient qui le contient.</li>
+                    <li>Un gaz est compressible parce qu’on peut diminuer son volume.</li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="navigation">
+            <h2>Navigation</h2>
+
+            <div class="box">
+                <a href="1ac-s1-eau-environnement.html" class="btn">Cours précédent</a>
+                <a href="1ac.html" class="btn">Retour aux cours de 1ère année</a>
+                <a href="index.html" class="btn">Retour à l’accueil</a>
+                <a href="1ac-s1-mesure-volume.html" class="btn">Cours suivant</a>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>© 2026 - Physique-Chimie Collège | Les états physiques de la matière</p>
+    </footer>
+
+</body>
+</html>
