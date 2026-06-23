@@ -106,6 +106,22 @@
             margin: 15px 0;
         }
 
+        .pdf-box {
+            background-color: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+        }
+
+        .pdf-viewer {
+            width: 100%;
+            height: 750px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
         ul, ol {
             margin-left: 25px;
             margin-top: 10px;
@@ -129,17 +145,9 @@
             color: white;
         }
 
-        .exercise {
-            background-color: white;
-            padding: 22px;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            margin-bottom: 20px;
-        }
-
         .btn {
             display: inline-block;
-            margin: 20px 10px 0 0;
+            margin: 10px 10px 0 0;
             background-color: #1abc9c;
             color: white;
             padding: 10px 16px;
@@ -166,12 +174,14 @@
 
     <header>
         <h1>L’eau dans notre environnement</h1>
-        <p>1ère année collège - Semestre 1 | Cours, résumé et exercices</p>
+        <p>1ère année collège - Semestre 1 | Cours, PDF, résumé et exercices</p>
     </header>
 
     <nav>
         <a href="index.html">Accueil</a>
         <a href="1ac.html">Cours 1AC</a>
+        <a href="#presentation">Présentation</a>
+        <a href="#pdf">PDF du cours</a>
         <a href="#lecon">Leçon</a>
         <a href="#resume">Résumé</a>
         <a href="#exercices">Exercices</a>
@@ -179,16 +189,38 @@
 
     <div class="container">
 
-        <section id="introduction">
-            <h2>Introduction</h2>
+        <section id="presentation">
+            <h2>Présentation du cours</h2>
 
             <div class="box">
                 <p>
-                    L’eau est une substance essentielle dans notre environnement.
-                    Elle existe dans les mers, les océans, les rivières, les lacs,
-                    les glaciers, l’atmosphère, les êtres vivants et les aliments.
-                    Elle est indispensable à la vie des humains, des animaux et des plantes.
+                    Ce cours présente l’importance de l’eau dans notre environnement,
+                    sa répartition sur la Terre, ses différents états physiques,
+                    son cycle naturel ainsi que le test permettant de reconnaître
+                    la présence d’eau dans une substance.
                 </p>
+
+                <div class="definition">
+                    <strong>Objectif du cours :</strong>
+                    comprendre le rôle de l’eau dans la nature et savoir identifier
+                    sa présence à l’aide du sulfate de cuivre anhydre.
+                </div>
+            </div>
+        </section>
+
+        <section id="pdf">
+            <h2>Document PDF du cours</h2>
+
+            <div class="pdf-box">
+                <p>
+                    Vous pouvez consulter le PDF directement sur cette page,
+                    l’ouvrir dans un nouvel onglet ou le télécharger.
+                </p>
+
+                <a href="./1ac-s1-eau-environnement.pdf" target="_blank" class="btn">Ouvrir le PDF</a>
+                <a href="./1ac-s1-eau-environnement.pdf" download class="btn">Télécharger le PDF</a>
+
+                <iframe src="./1ac-s1-eau-environnement.pdf" class="pdf-viewer"></iframe>
             </div>
         </section>
 
@@ -197,20 +229,24 @@
 
             <div class="box">
                 <p>
-                    Une grande partie de la surface de la Terre est recouverte par l’eau,
-                    surtout sous forme de mers et d’océans. L’ensemble des réserves d’eau
-                    présentes sur la Terre forme ce qu’on appelle <strong>l’hydrosphère</strong>.
+                    L’eau est une substance essentielle dans notre environnement.
+                    Elle existe dans les mers, les océans, les rivières, les lacs,
+                    les glaciers, l’atmosphère, les êtres vivants et les aliments.
+                    Elle est indispensable à la vie des êtres humains, des animaux
+                    et des plantes.
                 </p>
 
                 <div class="definition">
-                    <strong>Définition :</strong> L’hydrosphère désigne l’ensemble de l’eau
-                    présente sur la Terre : océans, mers, glaciers, eaux souterraines,
-                    rivières, lacs et vapeur d’eau dans l’atmosphère.
+                    <strong>Définition :</strong>
+                    L’hydrosphère désigne l’ensemble de l’eau présente sur la Terre :
+                    océans, mers, glaciers, eaux souterraines, rivières, lacs
+                    et vapeur d’eau dans l’atmosphère.
                 </div>
 
                 <div class="important">
-                    <strong>À retenir :</strong> L’eau est indispensable à la vie.
-                    Sans eau, les êtres vivants ne peuvent pas survivre.
+                    <strong>À retenir :</strong>
+                    L’eau est indispensable à la vie. Sans eau, les êtres vivants
+                    ne peuvent pas survivre.
                 </div>
             </div>
 
@@ -280,8 +316,9 @@
                 </table>
 
                 <div class="important">
-                    <strong>Remarque :</strong> La vapeur d’eau est invisible.
-                    Les nuages, le brouillard et la buée sont formés de petites gouttelettes d’eau liquide.
+                    <strong>Remarque :</strong>
+                    La vapeur d’eau est invisible. Les nuages, le brouillard et la buée
+                    sont formés de petites gouttelettes d’eau liquide.
                 </div>
             </div>
 
@@ -305,8 +342,9 @@
                 </ul>
 
                 <div class="definition">
-                    <strong>Conclusion :</strong> Le cycle de l’eau est un échange continu
-                    entre les océans, l’atmosphère, le sol et les êtres vivants.
+                    <strong>Conclusion :</strong>
+                    Le cycle de l’eau est un échange continu entre les océans,
+                    l’atmosphère, le sol et les êtres vivants.
                 </div>
             </div>
 
@@ -319,11 +357,13 @@
                 </p>
 
                 <div class="definition">
-                    <strong>Définition :</strong> Le sulfate de cuivre anhydre est une poudre blanche
-                    qui devient bleue en présence d’eau.
+                    <strong>Définition :</strong>
+                    Le sulfate de cuivre anhydre est une poudre blanche qui devient bleue
+                    en présence d’eau.
                 </div>
 
                 <h3>Expérience</h3>
+
                 <ol>
                     <li>On prend une petite quantité de sulfate de cuivre anhydre.</li>
                     <li>On ajoute quelques gouttes de la substance à tester.</li>
@@ -331,6 +371,7 @@
                 </ol>
 
                 <h3>Résultat</h3>
+
                 <ul>
                     <li>Si le sulfate de cuivre anhydre devient bleu, la substance contient de l’eau.</li>
                     <li>S’il reste blanc, la substance ne contient pas d’eau ou en contient très peu.</li>
@@ -339,7 +380,7 @@
                 <table>
                     <tr>
                         <th>Substance testée</th>
-                        <th>Couleur observée</th>
+                        <th>Couleur du sulfate de cuivre</th>
                         <th>Présence d’eau</th>
                     </tr>
                     <tr>
@@ -390,8 +431,9 @@
                 </table>
 
                 <div class="important">
-                    <strong>Conclusion :</strong> La plupart des aliments et toutes les boissons
-                    contiennent de l’eau. Le corps humain contient aussi une grande quantité d’eau.
+                    <strong>Conclusion :</strong>
+                    La plupart des aliments et toutes les boissons contiennent de l’eau.
+                    Le corps humain contient aussi une grande quantité d’eau.
                 </div>
             </div>
         </section>
@@ -413,11 +455,10 @@
         </section>
 
         <section id="exercices">
-            <h2>Exercices</h2>
+            <h2>Exercices d’application</h2>
 
-            <div class="exercise">
+            <div class="box">
                 <h3>Exercice 1 : Vrai ou faux</h3>
-                <p>Réponds par vrai ou faux :</p>
 
                 <ol>
                     <li>L’eau est indispensable à la vie.</li>
@@ -429,10 +470,13 @@
                 </ol>
             </div>
 
-            <div class="exercise">
+            <div class="box">
                 <h3>Exercice 2 : Compléter les phrases</h3>
-                <p>Complète les phrases avec les mots suivants :</p>
-                <p><strong>hydrosphère - solide - liquide - gazeux - bleu - anhydre - eau - indispensable</strong></p>
+
+                <p>
+                    Complète avec les mots suivants :
+                    <strong>hydrosphère - solide - liquide - gazeux - bleu - anhydre - eau - indispensable</strong>.
+                </p>
 
                 <ol>
                     <li>L’ensemble des réserves d’eau sur la Terre est appelé __________.</li>
@@ -443,8 +487,9 @@
                 </ol>
             </div>
 
-            <div class="exercise">
+            <div class="box">
                 <h3>Exercice 3 : Test de reconnaissance de l’eau</h3>
+
                 <p>
                     On veut vérifier si une pomme, du pain, du lait et de l’huile contiennent de l’eau.
                 </p>
@@ -462,6 +507,7 @@
 
             <div class="box">
                 <h3>Correction de l’exercice 1</h3>
+
                 <ol>
                     <li>Vrai</li>
                     <li>Faux : c’est l’hydrosphère.</li>
@@ -474,6 +520,7 @@
 
             <div class="box">
                 <h3>Correction de l’exercice 2</h3>
+
                 <ol>
                     <li>hydrosphère</li>
                     <li>solide, liquide et gazeux</li>
@@ -484,8 +531,15 @@
             </div>
         </section>
 
-        <a href="1ac.html" class="btn">Retour aux cours de 1ère année</a>
-        <a href="index.html" class="btn">Retour à l’accueil</a>
+        <section id="navigation">
+            <h2>Navigation</h2>
+
+            <div class="box">
+                <a href="1ac.html" class="btn">Retour aux cours de 1ère année</a>
+                <a href="index.html" class="btn">Retour à l’accueil</a>
+                <a href="1ac-s1-etats-physiques.html" class="btn">Cours suivant</a>
+            </div>
+        </section>
 
     </div>
 
