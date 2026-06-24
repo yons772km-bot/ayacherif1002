@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quelques propriétés de l’air et ses constituants</title>
+    <title>Quelques propriétés de l’air et ses constituants - 2AC</title>
+
+    <link rel="icon" type="image/png" href="logo.png">
 
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -24,6 +30,17 @@
             color: white;
             padding: 45px 20px;
             text-align: center;
+        }
+
+        .site-logo {
+            width: 95px;
+            height: 95px;
+            object-fit: contain;
+            margin-bottom: 15px;
+            border-radius: 50%;
+            background-color: white;
+            padding: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.20);
         }
 
         header h1 {
@@ -146,17 +163,6 @@
             color: white;
         }
 
-        .formula {
-            text-align: center;
-            font-size: 22px;
-            color: #083b66;
-            font-weight: bold;
-            margin: 20px 0;
-            background-color: #eef4ff;
-            padding: 15px;
-            border-radius: 10px;
-        }
-
         .btn {
             display: inline-block;
             margin: 10px 10px 0 0;
@@ -179,14 +185,36 @@
             padding: 25px;
             margin-top: 40px;
         }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 28px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 6px;
+                font-size: 14px;
+            }
+
+            .pdf-viewer {
+                height: 520px;
+            }
+
+            .container {
+                padding: 30px 15px;
+            }
+        }
     </style>
 </head>
 
 <body>
 
     <header>
+        <img src="logo.png" alt="Logo Physique-Chimie Collège" class="site-logo" onerror="this.style.display='none'">
+
         <h1>Quelques propriétés de l’air et ses constituants</h1>
-        <p>2ème année collège - Semestre 1 | Cours, PDF, résumé et exercices</p>
+        <p>2ème année collège - Semestre 1 | Cours, PDF, résumé, exercices et corrigés</p>
     </header>
 
     <nav>
@@ -197,6 +225,7 @@
         <a href="#lecon">Leçon</a>
         <a href="#resume">Résumé</a>
         <a href="#exercices">Exercices</a>
+        <a href="#corrige">Corrigés</a>
     </nav>
 
     <div class="container">
@@ -206,16 +235,16 @@
 
             <div class="box">
                 <p>
-                    Ce cours présente la composition de l’air, quelques propriétés physiques
-                    de l’air, la relation entre son volume et sa pression, ainsi que la masse
-                    de l’air. Il s’appuie sur des expériences simples comme la combustion
-                    d’une bougie, la seringue reliée à un manomètre et la pesée d’un ballon.
+                    Ce cours présente quelques propriétés importantes de l’air.
+                    Il explique que l’air est une matière, qu’il occupe un volume,
+                    qu’il possède une masse, qu’il est compressible et expansible.
+                    Il présente aussi les principaux constituants de l’air.
                 </p>
 
                 <div class="definition">
                     <strong>Objectif du cours :</strong>
-                    connaître les principaux constituants de l’air, comprendre que l’air est
-                    compressible, expansible, qu’il exerce une pression et qu’il possède une masse.
+                    reconnaître les propriétés physiques de l’air, comprendre que l’air
+                    est un mélange de gaz et connaître ses principaux constituants.
                 </div>
             </div>
         </section>
@@ -225,7 +254,7 @@
 
             <div class="pdf-box">
                 <p>
-                    Vous pouvez consulter le PDF directement sur cette page,
+                    Vous pouvez consulter le document PDF directement sur cette page,
                     l’ouvrir dans un nouvel onglet ou le télécharger.
                 </p>
 
@@ -237,177 +266,204 @@
         </section>
 
         <section id="lecon">
-            <h2>1. Introduction</h2>
+            <h2>1. L’air est une matière</h2>
 
             <div class="box">
                 <p>
-                    L’air qui nous entoure est un mélange de plusieurs gaz. Il est invisible,
-                    mais il occupe un espace, exerce une pression et possède une masse.
+                    Même si l’air est invisible, il existe réellement. On peut mettre en évidence
+                    sa présence grâce à ses effets : il gonfle un ballon, il déplace les objets
+                    légers et il occupe l’espace disponible.
                 </p>
 
                 <div class="definition">
-                    <strong>Problématique :</strong>
-                    De quoi l’air est-il constitué ? Quelles sont ses principales propriétés ?
+                    <strong>Conclusion :</strong>
+                    l’air est une matière car il occupe un volume et possède une masse.
+                </div>
+
+                <div class="important">
+                    <strong>À retenir :</strong>
+                    l’air n’est pas du vide. C’est un mélange de gaz présent autour de nous.
                 </div>
             </div>
 
-            <h2>2. Composition de l’air</h2>
+            <h2>2. L’air occupe un volume</h2>
 
             <div class="box">
-                <h3>Expérience</h3>
-
                 <p>
-                    On place une bougie allumée dans un récipient contenant de l’eau colorée,
-                    puis on recouvre la bougie avec une éprouvette graduée.
-                </p>
-
-                <h3>Observation</h3>
-
-                <ul>
-                    <li>L’eau monte dans l’éprouvette d’environ un cinquième.</li>
-                    <li>La bougie s’éteint après un certain temps.</li>
-                    <li>Le gaz consommé par la combustion est le dioxygène.</li>
-                </ul>
-
-                <h3>Conclusion</h3>
-
-                <p>
-                    L’air est un mélange homogène de plusieurs gaz.
-                    Ses principaux constituants sont le diazote, le dioxygène et d’autres gaz.
+                    Lorsqu’on gonfle un ballon, son volume augmente. Cela signifie que l’air
+                    introduit dans le ballon occupe un espace.
                 </p>
 
                 <table>
                     <tr>
-                        <th>Constituant de l’air</th>
+                        <th>Situation</th>
+                        <th>Observation</th>
+                        <th>Conclusion</th>
+                    </tr>
+                    <tr>
+                        <td>Ballon vide</td>
+                        <td>Le ballon est petit.</td>
+                        <td>Il contient peu d’air.</td>
+                    </tr>
+                    <tr>
+                        <td>Ballon gonflé</td>
+                        <td>Le ballon devient plus grand.</td>
+                        <td>L’air occupe un volume.</td>
+                    </tr>
+                </table>
+
+                <div class="important">
+                    <strong>Conclusion :</strong>
+                    l’air occupe un volume, même s’il est invisible.
+                </div>
+            </div>
+
+            <h2>3. L’air possède une masse</h2>
+
+            <div class="box">
+                <p>
+                    Pour montrer que l’air possède une masse, on peut comparer la masse
+                    d’un ballon dégonflé et celle du même ballon gonflé.
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Ballon</th>
+                        <th>Observation</th>
+                    </tr>
+                    <tr>
+                        <td>Ballon dégonflé</td>
+                        <td>Sa masse est plus petite.</td>
+                    </tr>
+                    <tr>
+                        <td>Ballon gonflé</td>
+                        <td>Sa masse est plus grande.</td>
+                    </tr>
+                </table>
+
+                <div class="definition">
+                    <strong>Conclusion :</strong>
+                    l’air possède une masse.
+                </div>
+            </div>
+
+            <h2>4. L’air est compressible</h2>
+
+            <div class="box">
+                <p>
+                    On dit que l’air est compressible lorsqu’on peut diminuer son volume.
+                    Par exemple, si on pousse le piston d’une seringue fermée,
+                    le volume de l’air diminue.
+                </p>
+
+                <div class="definition">
+                    <strong>Définition :</strong>
+                    un gaz est compressible si son volume peut diminuer sous l’action
+                    d’une pression.
+                </div>
+
+                <div class="important">
+                    <strong>Exemple :</strong>
+                    l’air contenu dans une seringue peut être comprimé.
+                </div>
+            </div>
+
+            <h2>5. L’air est expansible</h2>
+
+            <div class="box">
+                <p>
+                    On dit que l’air est expansible lorsqu’il peut augmenter de volume
+                    et occuper plus d’espace. Si on relâche le piston d’une seringue,
+                    l’air peut reprendre un volume plus grand.
+                </p>
+
+                <div class="definition">
+                    <strong>Définition :</strong>
+                    un gaz est expansible s’il peut augmenter de volume et occuper
+                    tout l’espace disponible.
+                </div>
+
+                <div class="important">
+                    <strong>À retenir :</strong>
+                    l’air est à la fois compressible et expansible, comme les gaz.
+                </div>
+            </div>
+
+            <h2>6. L’air exerce une pression</h2>
+
+            <div class="box">
+                <p>
+                    L’air appuie sur les objets et sur les parois des récipients.
+                    Cette action de l’air est appelée pression de l’air.
+                </p>
+
+                <div class="definition">
+                    <strong>Définition :</strong>
+                    la pression de l’air est l’action exercée par l’air sur une surface.
+                </div>
+
+                <p>
+                    La pression de l’air est présente autour de nous. Elle peut être mise
+                    en évidence par des expériences simples, comme une ventouse qui reste
+                    fixée sur une surface lisse.
+                </p>
+            </div>
+
+            <h2>7. Les constituants de l’air</h2>
+
+            <div class="box">
+                <p>
+                    L’air n’est pas un corps pur. C’est un mélange de plusieurs gaz.
+                    Ses deux principaux constituants sont le diazote et le dioxygène.
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Constituant</th>
                         <th>Pourcentage approximatif</th>
-                        <th>Rôle ou remarque</th>
+                        <th>Rôle</th>
                     </tr>
                     <tr>
                         <td>Diazote</td>
-                        <td>78 %</td>
-                        <td>Gaz majoritaire dans l’air.</td>
+                        <td>Environ 78 %</td>
+                        <td>Gaz le plus abondant de l’air.</td>
                     </tr>
                     <tr>
                         <td>Dioxygène</td>
-                        <td>21 %</td>
-                        <td>Gaz nécessaire à la respiration et à certaines combustions.</td>
+                        <td>Environ 21 %</td>
+                        <td>Gaz nécessaire à la respiration et aux combustions.</td>
                     </tr>
                     <tr>
                         <td>Autres gaz</td>
-                        <td>1 %</td>
-                        <td>Dioxyde de carbone, vapeur d’eau, gaz rares, etc.</td>
+                        <td>Environ 1 %</td>
+                        <td>Dioxyde de carbone, vapeur d’eau, gaz rares...</td>
                     </tr>
                 </table>
 
                 <div class="important">
                     <strong>À retenir :</strong>
-                    l’air contient environ 80 % de diazote et 20 % de dioxygène.
+                    l’air contient principalement du diazote et du dioxygène.
                 </div>
             </div>
 
-            <h2>3. Volume et pression de l’air</h2>
-
-            <div class="box">
-                <h3>Expérience</h3>
-
-                <p>
-                    On prend une seringue reliée à un manomètre. On pousse le piston
-                    pour comprimer l’air, puis on tire le piston pour augmenter son volume.
-                </p>
-
-                <h3>Observations</h3>
-
-                <ul>
-                    <li>Lorsqu’on pousse le piston, le volume de l’air diminue et sa pression augmente.</li>
-                    <li>Lorsqu’on tire le piston, le volume de l’air augmente et sa pression diminue.</li>
-                </ul>
-
-                <div class="definition">
-                    <strong>Pression :</strong>
-                    la pression d’un gaz est liée aux chocs des particules du gaz contre les parois
-                    du récipient qui le contient. Elle se mesure avec un manomètre.
-                </div>
-
-                <div class="important">
-                    <strong>Conclusion :</strong>
-                    comme tous les gaz, l’air est compressible et expansible. Il n’a pas de volume propre.
-                </div>
-            </div>
-
-            <h2>4. Explication par le modèle particulaire</h2>
+            <h2>8. Rôle du dioxygène</h2>
 
             <div class="box">
                 <p>
-                    On peut représenter l’air comme un ensemble de particules très petites,
-                    invisibles à l’œil nu.
+                    Le dioxygène est un gaz très important. Il est nécessaire à la respiration
+                    des êtres vivants et il permet certaines combustions.
                 </p>
 
                 <ul>
-                    <li>Le nombre de particules ne change pas.</li>
-                    <li>La taille et la forme des particules ne changent pas.</li>
-                    <li>Quand l’air est comprimé, les particules deviennent moins espacées.</li>
-                    <li>Quand l’air se détend, les particules deviennent plus espacées.</li>
+                    <li>Il permet la respiration des êtres vivants.</li>
+                    <li>Il intervient dans les combustions.</li>
+                    <li>Il représente environ 21 % du volume de l’air.</li>
                 </ul>
-
-                <div class="important">
-                    <strong>Interprétation :</strong>
-                    lorsque l’air est comprimé, il occupe un volume plus petit.
-                    Les particules sont plus rapprochées, donc la pression augmente.
-                </div>
-
-                <p>
-                    C’est pour cette raison qu’une petite bouteille de plongée peut contenir
-                    une grande quantité d’air comprimé.
-                </p>
-            </div>
-
-            <h2>5. Masse de l’air</h2>
-
-            <div class="box">
-                <h3>Expérience</h3>
-
-                <p>
-                    On pose un ballon bien gonflé sur le plateau d’une balance et on mesure sa masse.
-                    Ensuite, on retire une quantité d’air du ballon, puis on mesure de nouveau sa masse.
-                </p>
-
-                <h3>Observation</h3>
-
-                <p>
-                    Après avoir retiré 2 litres d’air du ballon, la masse du ballon diminue.
-                    Cela montre que l’air retiré possédait une masse.
-                </p>
-
-                <div class="formula">
-                    m = m<sub>2</sub> - m<sub>1</sub> = 2,6 g pour 2 L d’air
-                </div>
-
-                <h3>Conclusion</h3>
 
                 <div class="definition">
                     <strong>Conclusion :</strong>
-                    l’air a une masse. Dans les conditions habituelles,
-                    la masse d’un litre d’air est environ <strong>1,3 g</strong>.
+                    le dioxygène est l’un des constituants essentiels de l’air.
                 </div>
-
-                <table>
-                    <tr>
-                        <th>Volume d’air</th>
-                        <th>Masse approximative</th>
-                    </tr>
-                    <tr>
-                        <td>1 L</td>
-                        <td>1,3 g</td>
-                    </tr>
-                    <tr>
-                        <td>2 L</td>
-                        <td>2,6 g</td>
-                    </tr>
-                    <tr>
-                        <td>10 L</td>
-                        <td>13 g</td>
-                    </tr>
-                </table>
             </div>
         </section>
 
@@ -416,15 +472,15 @@
 
             <div class="resume">
                 <ul>
-                    <li>L’air est un mélange homogène de plusieurs gaz.</li>
-                    <li>Les principaux constituants de l’air sont le diazote, le dioxygène et d’autres gaz.</li>
-                    <li>L’air contient environ 78 % de diazote et 21 % de dioxygène.</li>
-                    <li>Le dioxygène est nécessaire à la respiration et à certaines combustions.</li>
+                    <li>L’air est une matière invisible qui nous entoure.</li>
+                    <li>L’air occupe un volume.</li>
+                    <li>L’air possède une masse.</li>
                     <li>L’air est compressible : son volume peut diminuer.</li>
                     <li>L’air est expansible : son volume peut augmenter.</li>
-                    <li>Quand le volume de l’air diminue, sa pression augmente.</li>
-                    <li>Quand le volume de l’air augmente, sa pression diminue.</li>
-                    <li>L’air possède une masse : 1 L d’air a une masse d’environ 1,3 g.</li>
+                    <li>L’air exerce une pression sur les surfaces.</li>
+                    <li>L’air est un mélange de gaz.</li>
+                    <li>L’air contient environ 78 % de diazote et 21 % de dioxygène.</li>
+                    <li>Le dioxygène est nécessaire à la respiration et aux combustions.</li>
                 </ul>
             </div>
         </section>
@@ -433,60 +489,49 @@
             <h2>Exercices d’application</h2>
 
             <div class="box">
-                <h3>Exercice 1 : Compléter les phrases</h3>
+                <h3>Exercice 1 : Vrai ou faux</h3>
+                <ol>
+                    <li>L’air est une matière.</li>
+                    <li>L’air n’occupe pas de volume.</li>
+                    <li>L’air possède une masse.</li>
+                    <li>L’air est compressible.</li>
+                    <li>L’air est un corps pur.</li>
+                    <li>Le dioxygène est nécessaire à la respiration.</li>
+                </ol>
+            </div>
 
+            <div class="box">
+                <h3>Exercice 2 : Compléter les phrases</h3>
                 <p>
                     Complète avec les mots suivants :
-                    <strong>diazote - gaz - dioxygène - 1,3 g - manomètre - pascal - mélange</strong>.
+                    <strong>volume - masse - compressible - expansible - diazote - dioxygène</strong>.
                 </p>
 
                 <ol>
-                    <li>L’air est un __________ constitué principalement de deux __________.</li>
-                    <li>L’air contient environ 80 % de __________ et 20 % de __________.</li>
-                    <li>Le gaz indispensable à la vie est le __________.</li>
-                    <li>Dans les conditions normales, la masse d’un litre d’air est de __________.</li>
-                    <li>La pression d’un gaz se mesure avec un __________. L’unité de pression est le __________.</li>
+                    <li>L’air occupe un __________.</li>
+                    <li>L’air possède une __________.</li>
+                    <li>L’air peut diminuer de volume, il est donc __________.</li>
+                    <li>L’air peut augmenter de volume, il est donc __________.</li>
+                    <li>Le gaz le plus abondant dans l’air est le __________.</li>
+                    <li>Le gaz nécessaire à la respiration est le __________.</li>
                 </ol>
             </div>
 
             <div class="box">
-                <h3>Exercice 2 : Compression et détente</h3>
-
+                <h3>Exercice 3 : Composition de l’air</h3>
                 <ol>
-                    <li>Que se passe-t-il lorsque l’on pousse le piston d’une seringue contenant de l’air ?</li>
-                    <li>Que se passe-t-il lorsque l’on tire le piston ?</li>
-                    <li>Comment évolue la pression de l’air dans chaque cas ?</li>
-                    <li>Pourquoi dit-on que l’air est compressible et expansible ?</li>
+                    <li>L’air est-il un corps pur ou un mélange ?</li>
+                    <li>Citer les deux principaux gaz de l’air.</li>
+                    <li>Donner le pourcentage approximatif du diazote.</li>
+                    <li>Donner le pourcentage approximatif du dioxygène.</li>
                 </ol>
             </div>
 
             <div class="box">
-                <h3>Exercice 3 : Masse de l’air</h3>
-
+                <h3>Exercice 4 : Propriétés de l’air</h3>
                 <p>
-                    Un ballon a une masse de 451 g. Après avoir ajouté de l’air,
-                    sa masse devient 457,9 g.
+                    Explique pourquoi on dit que l’air est compressible et expansible.
                 </p>
-
-                <ol>
-                    <li>Quelle est la masse d’air ajoutée dans le ballon ?</li>
-                    <li>Sachant que la masse de 1 L d’air est 1,3 g, calculer le volume d’air ajouté.</li>
-                </ol>
-            </div>
-
-            <div class="box">
-                <h3>Exercice 4 : Gaz butane</h3>
-
-                <p>
-                    Un briquet contient du butane. Sa masse avant extraction est 19,55 g.
-                    Sa masse après extraction est 15,50 g. Le volume du butane extrait est 1,5 L.
-                </p>
-
-                <ol>
-                    <li>Quelle est la masse du butane extrait ?</li>
-                    <li>Calculer la masse volumique du butane.</li>
-                    <li>Comparer cette masse volumique avec celle de l’air.</li>
-                </ol>
             </div>
         </section>
 
@@ -495,68 +540,43 @@
 
             <div class="box">
                 <h3>Correction de l’exercice 1</h3>
-
                 <ol>
-                    <li>mélange - gaz</li>
-                    <li>diazote - dioxygène</li>
-                    <li>dioxygène</li>
-                    <li>1,3 g</li>
-                    <li>manomètre - pascal</li>
+                    <li>Vrai</li>
+                    <li>Faux : l’air occupe un volume.</li>
+                    <li>Vrai</li>
+                    <li>Vrai</li>
+                    <li>Faux : l’air est un mélange de gaz.</li>
+                    <li>Vrai</li>
                 </ol>
             </div>
 
             <div class="box">
                 <h3>Correction de l’exercice 2</h3>
-
                 <ol>
-                    <li>Quand on pousse le piston, le volume de l’air diminue.</li>
-                    <li>Quand on tire le piston, le volume de l’air augmente.</li>
-                    <li>Si le volume diminue, la pression augmente. Si le volume augmente, la pression diminue.</li>
-                    <li>L’air est compressible car on peut diminuer son volume, et expansible car on peut l’augmenter.</li>
+                    <li>volume</li>
+                    <li>masse</li>
+                    <li>compressible</li>
+                    <li>expansible</li>
+                    <li>diazote</li>
+                    <li>dioxygène</li>
                 </ol>
             </div>
 
             <div class="box">
                 <h3>Correction de l’exercice 3</h3>
-
                 <p>
-                    Masse d’air ajoutée :
+                    L’air est un mélange de gaz. Ses deux principaux gaz sont le diazote
+                    et le dioxygène. Le diazote représente environ 78 % de l’air,
+                    tandis que le dioxygène représente environ 21 %.
                 </p>
-
-                <div class="formula">
-                    m = 457,9 g - 451 g = 6,9 g
-                </div>
-
-                <p>
-                    Volume d’air ajouté :
-                </p>
-
-                <div class="formula">
-                    V = 6,9 ÷ 1,3 ≈ 5,3 L
-                </div>
             </div>
 
             <div class="box">
                 <h3>Correction de l’exercice 4</h3>
-
                 <p>
-                    Masse du butane extrait :
-                </p>
-
-                <div class="formula">
-                    m = 19,55 g - 15,50 g = 4,05 g
-                </div>
-
-                <p>
-                    Masse volumique du butane :
-                </p>
-
-                <div class="formula">
-                    ρ = 4,05 ÷ 1,5 = 2,7 g/L
-                </div>
-
-                <p>
-                    Comme 2,7 g/L est supérieur à 1,3 g/L, le butane est plus dense que l’air.
+                    L’air est compressible car son volume peut diminuer lorsqu’on exerce
+                    une pression sur lui. Il est expansible car il peut augmenter de volume
+                    et occuper tout l’espace disponible.
                 </p>
             </div>
         </section>
@@ -575,7 +595,7 @@
     </div>
 
     <footer>
-        <p>© 2026 - Physique-Chimie Collège | Propriétés de l’air</p>
+        <p>© 2026 - Physique-Chimie Collège | Quelques propriétés de l’air et ses constituants</p>
     </footer>
 
 </body>
