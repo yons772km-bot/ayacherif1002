@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Les atomes et les ions</title>
+    <title>Les atomes et les ions - 3AC</title>
+
+    <link rel="icon" type="image/png" href="logo.png">
 
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -24,6 +30,17 @@
             color: white;
             padding: 45px 20px;
             text-align: center;
+        }
+
+        .site-logo {
+            width: 95px;
+            height: 95px;
+            object-fit: contain;
+            margin-bottom: 15px;
+            border-radius: 50%;
+            background-color: white;
+            padding: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.20);
         }
 
         header h1 {
@@ -179,14 +196,36 @@
             padding: 25px;
             margin-top: 40px;
         }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 28px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 6px;
+                font-size: 14px;
+            }
+
+            .pdf-viewer {
+                height: 520px;
+            }
+
+            .container {
+                padding: 30px 15px;
+            }
+        }
     </style>
 </head>
 
 <body>
 
     <header>
+        <img src="logo.png" alt="Logo Physique-Chimie Collège" class="site-logo" onerror="this.style.display='none'">
+
         <h1>Les atomes et les ions</h1>
-        <p>3ème année collège - Semestre 1 | Cours, PDF, résumé et exercices</p>
+        <p>3ème année collège - Semestre 1 | Cours, PDF, résumé, exercices et corrigés</p>
     </header>
 
     <nav>
@@ -197,6 +236,7 @@
         <a href="#lecon">Leçon</a>
         <a href="#resume">Résumé</a>
         <a href="#exercices">Exercices</a>
+        <a href="#corrige">Corrigés</a>
     </nav>
 
     <div class="container">
@@ -206,10 +246,10 @@
 
             <div class="box">
                 <p>
-                    Ce cours présente la structure de l’atome, le rôle du noyau
-                    et des électrons, la neutralité électrique de l’atome, ainsi que
-                    la formation des ions. Il explique aussi la différence entre un cation,
-                    un anion, un ion monoatomique et un ion polyatomique.
+                    Ce cours présente la structure de l’atome, le rôle du noyau et des électrons,
+                    la neutralité électrique de l’atome, ainsi que la formation des ions.
+                    Il permet aussi de distinguer un cation, un anion, un ion monoatomique
+                    et un ion polyatomique.
                 </p>
 
                 <div class="definition">
@@ -225,7 +265,7 @@
 
             <div class="pdf-box">
                 <p>
-                    Vous pouvez consulter le PDF directement sur cette page,
+                    Vous pouvez consulter le document PDF directement sur cette page,
                     l’ouvrir dans un nouvel onglet ou le télécharger.
                 </p>
 
@@ -241,14 +281,14 @@
 
             <div class="box">
                 <p>
-                    La notion d’atome est ancienne. Elle est apparue dès l’Antiquité
-                    avec Démocrite, puis elle a été développée par plusieurs scientifiques
-                    comme Dalton, Thomson, Rutherford et Bohr.
+                    La notion d’atome est très ancienne. Elle a été proposée par Démocrite,
+                    puis développée par plusieurs scientifiques comme Dalton, Thomson,
+                    Rutherford et Bohr.
                 </p>
 
                 <p>
-                    Aujourd’hui, on considère qu’un atome possède une structure organisée :
-                    un noyau central et des électrons qui l’entourent.
+                    Aujourd’hui, on considère qu’un atome est constitué d’un noyau central
+                    et d’électrons qui tournent autour de ce noyau.
                 </p>
 
                 <div class="definition">
@@ -261,11 +301,13 @@
             <h2>2. Constituants de l’atome</h2>
 
             <div class="box">
-                <p>Un atome est constitué de deux parties principales :</p>
+                <p>
+                    Un atome est constitué de deux parties principales :
+                </p>
 
                 <ul>
                     <li>un <strong>noyau</strong> placé au centre de l’atome ;</li>
-                    <li>des <strong>électrons</strong> qui se déplacent autour du noyau et forment le nuage électronique.</li>
+                    <li>des <strong>électrons</strong> qui se déplacent autour du noyau.</li>
                 </ul>
 
                 <table>
@@ -288,12 +330,11 @@
 
                 <div class="important">
                     <strong>À retenir :</strong>
-                    le noyau est positif, les électrons sont négatifs. Le numéro atomique Z
-                    correspond au nombre de charges positives du noyau.
+                    le noyau est chargé positivement, alors que les électrons sont chargés négativement.
                 </div>
             </div>
 
-            <h2>3. Le noyau</h2>
+            <h2>3. Le noyau de l’atome</h2>
 
             <div class="box">
                 <p>
@@ -302,7 +343,7 @@
                 </p>
 
                 <ul>
-                    <li>Il possède une forme sphérique.</li>
+                    <li>Le noyau a une forme sphérique.</li>
                     <li>Il est environ 100 000 fois plus petit que l’atome.</li>
                     <li>Le nombre de charges positives du noyau est noté <strong>Z</strong>.</li>
                     <li>Z est appelé <strong>numéro atomique</strong>.</li>
@@ -310,6 +351,11 @@
 
                 <div class="formula">
                     Charge du noyau = + Z e
+                </div>
+
+                <div class="definition">
+                    <strong>Numéro atomique Z :</strong>
+                    il représente le nombre de charges positives du noyau.
                 </div>
             </div>
 
@@ -323,10 +369,10 @@
 
                 <ul>
                     <li>Chaque électron porte une charge négative.</li>
-                    <li>La charge d’un électron est : q = -e.</li>
+                    <li>La charge d’un électron est notée -e.</li>
                     <li>e = 1,6 × 10<sup>-19</sup> C.</li>
                     <li>Les électrons sont tous identiques.</li>
-                    <li>Leur masse est très faible par rapport à celle du noyau.</li>
+                    <li>La masse des électrons est très faible par rapport à celle du noyau.</li>
                 </ul>
 
                 <div class="formula">
@@ -339,13 +385,13 @@
             <div class="box">
                 <p>
                     Un atome est électriquement neutre. Cela signifie que sa charge totale
-                    est nulle.
+                    est égale à zéro.
                 </p>
 
                 <div class="definition">
                     <strong>Principe :</strong>
-                    dans un atome neutre, le nombre de charges positives du noyau est égal
-                    au nombre d’électrons.
+                    dans un atome neutre, le nombre de charges positives du noyau
+                    est égal au nombre d’électrons.
                 </div>
 
                 <div class="formula">
@@ -353,8 +399,8 @@
                 </div>
 
                 <p>
-                    Donc, si on connaît le numéro atomique Z, on connaît aussi le nombre
-                    d’électrons de l’atome.
+                    Si on connaît le numéro atomique Z, on connaît donc le nombre d’électrons
+                    de l’atome.
                 </p>
 
                 <div class="important">
@@ -401,7 +447,8 @@
 
                 <div class="important">
                     <strong>Règle importante :</strong>
-                    perdre des électrons donne un ion positif. Gagner des électrons donne un ion négatif.
+                    lorsqu’un atome perd des électrons, il devient positif.
+                    Lorsqu’un atome gagne des électrons, il devient négatif.
                 </div>
             </div>
 
@@ -416,8 +463,8 @@
 
                 <div class="definition">
                     <strong>Exemple :</strong>
-                    un atome de fer Fe perd deux électrons et devient un ion fer II noté
-                    Fe<sup>2+</sup>.
+                    un atome de fer Fe perd deux électrons et devient un ion fer II,
+                    noté Fe<sup>2+</sup>.
                 </div>
 
                 <h3>Les anions</h3>
@@ -428,8 +475,8 @@
 
                 <div class="definition">
                     <strong>Exemple :</strong>
-                    un atome de chlore Cl gagne un électron et devient un ion chlorure noté
-                    Cl<sup>-</sup>.
+                    un atome de chlore Cl gagne un électron et devient un ion chlorure,
+                    noté Cl<sup>-</sup>.
                 </div>
             </div>
 
@@ -449,7 +496,7 @@
                     <tr>
                         <td>Ion monoatomique</td>
                         <td>Ion formé à partir d’un seul atome.</td>
-                        <td>Na<sup>+</sup>, Cl<sup>-</sup>, Fe<sup>2+</sup></td>
+                        <td>Na<sup>+</sup>, Cl<sup>-</sup>, Fe<sup>2+</sup>, Al<sup>3+</sup></td>
                     </tr>
                     <tr>
                         <td>Ion polyatomique</td>
@@ -478,7 +525,8 @@
                     <li>Un ion se forme lorsqu’un atome ou un groupe d’atomes perd ou gagne des électrons.</li>
                     <li>Un cation est un ion positif formé par perte d’électrons.</li>
                     <li>Un anion est un ion négatif formé par gain d’électrons.</li>
-                    <li>Un ion polyatomique est un groupe d’atomes portant une charge électrique globale.</li>
+                    <li>Un ion monoatomique est formé d’un seul atome.</li>
+                    <li>Un ion polyatomique est formé d’un groupe d’atomes.</li>
                 </ul>
             </div>
         </section>
@@ -502,8 +550,9 @@
                 <h3>Exercice 2 : Compléter les phrases</h3>
                 <p>
                     Complète avec les mots suivants :
-                    <strong>noyau - électrons - positif - négative - neutre - numéro atomique - nuage électronique</strong>.
+                    <strong>noyau - électrons - positive - négative - neutre - numéro atomique - nuage électronique</strong>.
                 </p>
+
                 <ol>
                     <li>L’atome est constitué d’un __________ et d’__________ qui tournent autour de lui.</li>
                     <li>Les électrons forment un __________.</li>
@@ -516,6 +565,7 @@
             <div class="box">
                 <h3>Exercice 3 : Atome d’aluminium</h3>
                 <p>Le numéro atomique de l’aluminium Al est Z = 13.</p>
+
                 <ol>
                     <li>Déterminer le nombre d’électrons de l’atome d’aluminium.</li>
                     <li>Calculer la charge totale des électrons en fonction de e.</li>
@@ -527,7 +577,10 @@
 
             <div class="box">
                 <h3>Exercice 4 : Sodium et chlore</h3>
-                <p>Le sodium Na perd un électron et le chlore Cl gagne un électron.</p>
+                <p>
+                    Le sodium Na perd un électron et le chlore Cl gagne un électron.
+                </p>
+
                 <ol>
                     <li>Donner la formule de l’ion sodium.</li>
                     <li>Donner la formule de l’ion chlorure.</li>
@@ -544,10 +597,10 @@
                 <h3>Correction de l’exercice 1</h3>
                 <ol>
                     <li>Vrai</li>
-                    <li>Faux</li>
+                    <li>Faux : le noyau porte une charge positive.</li>
                     <li>Vrai</li>
                     <li>Vrai</li>
-                    <li>Faux</li>
+                    <li>Faux : un anion se forme par gain d’électrons.</li>
                     <li>Vrai</li>
                 </ol>
             </div>
@@ -568,17 +621,18 @@
                 <p>
                     L’atome d’aluminium possède 13 électrons. La charge totale des électrons
                     est -13e et la charge du noyau est +13e. En perdant 3 électrons,
-                    il devient l’ion Al<sup>3+</sup>, qui est un cation. L’ion Al<sup>3+</sup>
-                    possède 10 électrons.
+                    il devient l’ion Al<sup>3+</sup>, qui est un cation.
+                    L’ion Al<sup>3+</sup> possède 10 électrons.
                 </p>
             </div>
 
             <div class="box">
                 <h3>Correction de l’exercice 4</h3>
                 <p>
-                    L’ion sodium est Na<sup>+</sup>, c’est un cation. L’ion chlorure est
-                    Cl<sup>-</sup>, c’est un anion. NaCl est formé d’ions car il résulte
-                    d’un transfert d’électron entre le sodium et le chlore.
+                    L’ion sodium est Na<sup>+</sup>, c’est un cation.
+                    L’ion chlorure est Cl<sup>-</sup>, c’est un anion.
+                    Le chlorure de sodium NaCl est formé d’ions car il résulte d’un transfert
+                    d’électron entre le sodium et le chlore.
                 </p>
             </div>
         </section>
