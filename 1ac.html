@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cours 1ère année collège</title>
+    <title>1ère année collège - Physique Chimie</title>
+
+    <link rel="icon" type="image/png" href="logo.png">
 
     <style>
         * {
@@ -16,7 +18,7 @@
             font-family: Arial, sans-serif;
             background-color: #f4f7fb;
             color: #222;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         header {
@@ -24,6 +26,17 @@
             color: white;
             padding: 45px 20px;
             text-align: center;
+        }
+
+        .site-logo {
+            width: 95px;
+            height: 95px;
+            object-fit: contain;
+            margin-bottom: 15px;
+            border-radius: 50%;
+            background-color: white;
+            padding: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.20);
         }
 
         header h1 {
@@ -55,18 +68,18 @@
             color: #1abc9c;
         }
 
-        section {
+        .container {
             max-width: 1100px;
             margin: auto;
-            padding: 45px 20px;
+            padding: 40px 20px;
         }
 
         h2 {
             color: #0f4c81;
-            margin-bottom: 20px;
+            margin: 30px 0 15px;
             border-left: 5px solid #1abc9c;
             padding-left: 10px;
-            font-size: 28px;
+            font-size: 26px;
         }
 
         .intro {
@@ -74,16 +87,27 @@
             padding: 22px;
             border-radius: 12px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
-        .cours-grid {
+        .semester {
+            background-color: #e8f6f3;
+            border-left: 5px solid #1abc9c;
+            padding: 16px;
+            border-radius: 10px;
+            margin: 25px 0 20px;
+            color: #0f4c81;
+            font-weight: bold;
+            font-size: 22px;
+        }
+
+        .courses {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 20px;
         }
 
-        .cours-card {
+        .course-card {
             background-color: white;
             padding: 22px;
             border-radius: 12px;
@@ -91,19 +115,19 @@
             transition: 0.3s;
         }
 
-        .cours-card:hover {
+        .course-card:hover {
             transform: translateY(-5px);
         }
 
-        .cours-card h3 {
+        .course-card h3 {
             color: #0f4c81;
             margin-bottom: 10px;
-            font-size: 20px;
+            font-size: 19px;
         }
 
-        .cours-card p {
-            font-size: 15px;
+        .course-card p {
             color: #444;
+            font-size: 15px;
         }
 
         .btn {
@@ -134,167 +158,175 @@
 <body>
 
     <header>
-        <h1>Cours de 1ère année collège</h1>
-        <p>Physique-Chimie | Cours, résumés, exercices et corrigés</p>
+        <img src="logo.png" alt="Logo Physique-Chimie Collège" class="site-logo" onerror="this.style.display='none'">
+
+        <h1>1ère année collège</h1>
+        <p>Cours de physique-chimie | Semestre 1 et Semestre 2</p>
     </header>
 
     <nav>
         <a href="index.html">Accueil</a>
         <a href="#semestre1">Semestre 1</a>
         <a href="#semestre2">Semestre 2</a>
+        <a href="2ac.html">2AC</a>
+        <a href="3ac.html">3AC</a>
     </nav>
 
-    <section id="semestre1">
-        <h2>Semestre 1</h2>
+    <div class="container">
 
-        <div class="intro">
-            <p>
-                Cette section regroupe les cours du semestre 1 de la 1ère année collège.
-                Chaque cours possède sa propre page contenant la leçon, le résumé,
-                les exercices, les corrigés et les ressources pédagogiques.
-            </p>
-        </div>
+        <section>
+            <h2>Présentation</h2>
 
-        <div class="cours-grid">
-
-            <div class="cours-card">
-                <h3>L’eau dans notre environnement</h3>
-                <p>Étude de la présence de l’eau dans la nature et de son importance.</p>
-                <a href="1ac-s1-eau-environnement.html" class="btn">Ouvrir le cours</a>
+            <div class="intro">
+                <p>
+                    Cette page regroupe les cours de physique-chimie de la 1ère année collège.
+                    Les cours sont organisés selon les deux semestres afin de faciliter
+                    l’apprentissage, la révision et l’accès aux exercices et corrigés.
+                </p>
             </div>
+        </section>
 
-            <div class="cours-card">
-                <h3>Les états physiques de la matière</h3>
-                <p>Découvrir les états solide, liquide et gazeux de la matière.</p>
-                <a href="1ac-s1-etats-physiques.html" class="btn">Ouvrir le cours</a>
+        <section id="semestre1">
+            <h2>Semestre 1</h2>
+
+            <div class="semester">Matière, eau, mesures et mélanges</div>
+
+            <div class="courses">
+
+                <div class="course-card">
+                    <h3>1. L’eau dans notre environnement</h3>
+                    <p>Importance de l’eau, hydrosphère, états physiques, cycle de l’eau et test de reconnaissance.</p>
+                    <a href="1ac-s1-eau-environnement.html" class="btn">Ouvrir le cours</a>
+                </div>
+
+                <div class="course-card">
+                    <h3>2. Les états physiques de la matière</h3>
+                    <p>Solide, liquide, gaz, propriétés des états physiques et exemples.</p>
+                    <a href="1ac-s1-etats-physiques.html" class="btn">Ouvrir le cours</a>
+                </div>
+
+                <div class="course-card">
+                    <h3>3. Mesure du volume des solides et des liquides</h3>
+                    <p>Unités de volume, éprouvette graduée et méthode de mesure.</p>
+                    <a href="1ac-s1-mesure-volume.html" class="btn">Ouvrir le cours</a>
+                </div>
+
+                <div class="course-card">
+                    <h3>4. Mesure de la masse des solides et des liquides</h3>
+                    <p>Utilisation de la balance, unités de masse et méthode de la tare.</p>
+                    <a href="1ac-s1-mesure-masse.html" class="btn">Ouvrir le cours</a>
+                </div>
+
+                <div class="course-card">
+                    <h3>5. La masse volumique</h3>
+                    <p>Relation entre masse, volume et masse volumique.</p>
+                    <a href="1ac-s1-masse-volumique.html" class="btn">Ouvrir le cours</a>
+                </div>
+
+                <div class="course-card">
+                    <h3>6. La pression et la pression atmosphérique</h3>
+                    <p>Notion de pression, pression de l’air et pression atmosphérique.</p>
+                    <a href="1ac-s1-pression.html" class="btn">Ouvrir le cours</a>
+                </div>
+
+                <div class="course-card">
+                    <h3>7. Le modèle particulaire de la matière</h3>
+                    <p>Interprétation des états physiques à l’aide du modèle particulaire.</p>
+                    <a href="1ac-s1-modele-particulaire.html" class="btn">Ouvrir le cours</a>
+                </div>
+
+                <div class="course-card">
+                    <h3>8. La chaleur et les changements d’état physique de la matière</h3>
+                    <p>Fusion, solidification, vaporisation et condensation.</p>
+                    <a href="1ac-s1-chaleur-changements-etat.html" class="btn">Ouvrir le cours</a>
+                </div>
+
+                <div class="course-card">
+                    <h3>9. Les mélanges</h3>
+                    <p>Mélanges homogènes, mélanges hétérogènes et exemples.</p>
+                    <a href="1ac-s1-melanges.html" class="btn">Ouvrir le cours</a>
+                </div>
+
+                <div class="course-card">
+                    <h3>10. La dissolution dans l’eau</h3>
+                    <p>Solvant, soluté, solution aqueuse et saturation.</p>
+                    <a href="1ac-s1-dissolution-eau.html" class="btn">Ouvrir le cours</a>
+                </div>
+
+                <div class="course-card">
+                    <h3>11. La séparation des constituants d’un mélange</h3>
+                    <p>Décantation, filtration, évaporation et séparation des mélanges.</p>
+                    <a href="1ac-s1-separation-melange.html" class="btn">Ouvrir le cours</a>
+                </div>
+
+                <div class="course-card">
+                    <h3>12. Le corps pur et ses caractéristiques</h3>
+                    <p>Corps pur, mélange et caractéristiques physiques.</p>
+                    <a href="1ac-s1-corps-pur.html" class="btn">Ouvrir le cours</a>
+                </div>
+
             </div>
+        </section>
 
-            <div class="cours-card">
-                <h3>Mesure du volume des solides et des liquides</h3>
-                <p>Apprendre à mesurer le volume à l’aide d’instruments adaptés.</p>
-                <a href="1ac-s1-mesure-volume.html" class="btn">Ouvrir le cours</a>
+        <section id="semestre2">
+            <h2>Semestre 2</h2>
+
+            <div class="semester">Électricité</div>
+
+            <div class="courses">
+
+                <div class="course-card">
+                    <h3>1. L’électricité qui nous entoure</h3>
+                    <p>Appareils électriques, générateurs, récepteurs et importance de l’électricité.</p>
+                    <a href="1ac-s2-electricite-entoure.html" class="btn">Ouvrir le cours</a>
+                </div>
+
+                <div class="course-card">
+                    <h3>2. Le circuit électrique simple</h3>
+                    <p>Constitution d’un circuit simple : pile, lampe, interrupteur et fils.</p>
+                    <a href="1ac-s2-circuit-electrique-simple.html" class="btn">Ouvrir le cours</a>
+                </div>
+
+                <div class="course-card">
+                    <h3>3. Les conducteurs et les isolants</h3>
+                    <p>Différence entre conducteurs et isolants électriques.</p>
+                    <a href="1ac-s2-conducteurs-isolants.html" class="btn">Ouvrir le cours</a>
+                </div>
+
+                <div class="course-card">
+                    <h3>4. Montage en série et montage en parallèle</h3>
+                    <p>Différence entre les montages en série et en parallèle.</p>
+                    <a href="1ac-s2-serie-parallele.html" class="btn">Ouvrir le cours</a>
+                </div>
+
+                <div class="course-card">
+                    <h3>5. Le courant électrique continu</h3>
+                    <p>Sens du courant, circuit fermé, circuit ouvert et rôle du générateur.</p>
+                    <a href="1ac-s2-courant-continu.html" class="btn">Ouvrir le cours</a>
+                </div>
+
+                <div class="course-card">
+                    <h3>6. La loi des nœuds - La loi d’additivité des tensions</h3>
+                    <p>Lois électriques simples dans les circuits.</p>
+                    <a href="1ac-s2-lois-noeuds-tensions.html" class="btn">Ouvrir le cours</a>
+                </div>
+
+                <div class="course-card">
+                    <h3>7. La résistance électrique</h3>
+                    <p>Résistance, symbole, unité et rôle dans un circuit électrique.</p>
+                    <a href="1ac-s2-resistance-electrique.html" class="btn">Ouvrir le cours</a>
+                </div>
+
+                <div class="course-card">
+                    <h3>8. Prévention des dangers du courant électrique</h3>
+                    <p>Dangers de l’électricité et règles de sécurité.</p>
+                    <a href="1ac-s2-dangers-courant.html" class="btn">Ouvrir le cours</a>
+                </div>
+
             </div>
+        </section>
 
-            <div class="cours-card">
-                <h3>Mesure de la masse des solides et des liquides</h3>
-                <p>Utiliser une balance pour mesurer la masse d’un solide ou d’un liquide.</p>
-                <a href="1ac-s1-mesure-masse.html" class="btn">Ouvrir le cours</a>
-            </div>
-
-            <div class="cours-card">
-                <h3>La masse volumique</h3>
-                <p>Comprendre la relation entre la masse, le volume et la masse volumique.</p>
-                <a href="1ac-s1-masse-volumique.html" class="btn">Ouvrir le cours</a>
-            </div>
-
-            <div class="cours-card">
-                <h3>La pression et la pression atmosphérique</h3>
-                <p>Découvrir la notion de pression et le rôle de la pression atmosphérique.</p>
-                <a href="1ac-s1-pression.html" class="btn">Ouvrir le cours</a>
-            </div>
-
-            <div class="cours-card">
-                <h3>Le modèle particulaire de la matière</h3>
-                <p>Comprendre que la matière est constituée de particules.</p>
-                <a href="1ac-s1-modele-particulaire.html" class="btn">Ouvrir le cours</a>
-            </div>
-
-            <div class="cours-card">
-                <h3>La chaleur et les changements d’état physique de la matière</h3>
-                <p>Étudier l’effet de la chaleur sur les changements d’état physique.</p>
-                <a href="1ac-s1-chaleur-changements-etat.html" class="btn">Ouvrir le cours</a>
-            </div>
-
-            <div class="cours-card">
-                <h3>Les mélanges</h3>
-                <p>Distinguer les mélanges homogènes et les mélanges hétérogènes.</p>
-                <a href="1ac-s1-melanges.html" class="btn">Ouvrir le cours</a>
-            </div>
-
-            <div class="cours-card">
-                <h3>La dissolution dans l’eau</h3>
-                <p>Comprendre la dissolution d’un corps dans l’eau.</p>
-                <a href="1ac-s1-dissolution-eau.html" class="btn">Ouvrir le cours</a>
-            </div>
-
-            <div class="cours-card">
-                <h3>La séparation des constituants d’un mélange</h3>
-                <p>Découvrir quelques techniques de séparation des mélanges.</p>
-                <a href="1ac-s1-separation-melange.html" class="btn">Ouvrir le cours</a>
-            </div>
-
-            <div class="cours-card">
-                <h3>Le corps pur et ses caractéristiques</h3>
-                <p>Identifier un corps pur à partir de ses caractéristiques physiques.</p>
-                <a href="1ac-s1-corps-pur.html" class="btn">Ouvrir le cours</a>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="semestre2">
-        <h2>Semestre 2</h2>
-
-        <div class="intro">
-            <p>
-                Cette section regroupe les cours du semestre 2 de la 1ère année collège.
-                Elle est consacrée principalement à l’électricité, aux circuits électriques,
-                aux lois électriques et à la prévention des dangers du courant électrique.
-            </p>
-        </div>
-
-        <div class="cours-grid">
-
-            <div class="cours-card">
-                <h3>L’électricité qui nous entoure</h3>
-                <p>Découvrir la présence de l’électricité dans la vie quotidienne.</p>
-                <a href="1ac-s2-electricite-entoure.html" class="btn">Ouvrir le cours</a>
-            </div>
-
-            <div class="cours-card">
-                <h3>Le circuit électrique simple</h3>
-                <p>Identifier les éléments d’un circuit électrique simple et leur rôle.</p>
-                <a href="1ac-s2-circuit-electrique-simple.html" class="btn">Ouvrir le cours</a>
-            </div>
-
-            <div class="cours-card">
-                <h3>Les conducteurs et les isolants</h3>
-                <p>Distinguer les matériaux conducteurs et les matériaux isolants.</p>
-                <a href="1ac-s2-conducteurs-isolants.html" class="btn">Ouvrir le cours</a>
-            </div>
-
-            <div class="cours-card">
-                <h3>Montage en série et montage en parallèle</h3>
-                <p>Comparer les caractéristiques des montages en série et en parallèle.</p>
-                <a href="1ac-s2-serie-parallele.html" class="btn">Ouvrir le cours</a>
-            </div>
-
-            <div class="cours-card">
-                <h3>Le courant électrique continu</h3>
-                <p>Comprendre le sens du courant électrique continu et ses effets.</p>
-                <a href="1ac-s2-courant-continu.html" class="btn">Ouvrir le cours</a>
-            </div>
-
-            <div class="cours-card">
-                <h3>La loi des nœuds - La loi d’additivité des tensions</h3>
-                <p>Étudier les lois électriques dans les circuits en dérivation et en série.</p>
-                <a href="1ac-s2-lois-noeuds-tensions.html" class="btn">Ouvrir le cours</a>
-            </div>
-
-            <div class="cours-card">
-                <h3>La résistance électrique</h3>
-                <p>Découvrir la notion de résistance électrique et son influence dans un circuit.</p>
-                <a href="1ac-s2-resistance-electrique.html" class="btn">Ouvrir le cours</a>
-            </div>
-
-            <div class="cours-card">
-                <h3>Prévention des dangers du courant électrique</h3>
-                <p>Connaître les règles de sécurité pour éviter les dangers électriques.</p>
-                <a href="1ac-s2-dangers-courant.html" class="btn">Ouvrir le cours</a>
-            </div>
-
-        </div>
-    </section>
+    </div>
 
     <footer>
         <p>© 2026 - Physique-Chimie Collège | 1ère année collège</p>
