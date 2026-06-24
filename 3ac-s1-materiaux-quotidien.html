@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quelques matériaux au quotidien</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #222;
+            line-height: 1.7;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0f4c81, #1abc9c);
+            color: white;
+            padding: 45px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 17px;
+        }
+
+        nav {
+            background-color: #083b66;
+            padding: 12px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #1abc9c;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        h2 {
+            color: #0f4c81;
+            margin: 30px 0 15px;
+            border-left: 5px solid #1abc9c;
+            padding-left: 10px;
+            font-size: 26px;
+        }
+
+        h3 {
+            color: #0f4c81;
+            margin-bottom: 10px;
+        }
+
+        .box {
+            background-color: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+        }
+
+        .definition {
+            background-color: #e8f6f3;
+            border-left: 5px solid #1abc9c;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .important {
+            background-color: #fff7e6;
+            border-left: 5px solid #f39c12;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .resume {
+            background-color: #eef4ff;
+            border-left: 5px solid #0f4c81;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .pdf-box {
+            background-color: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+        }
+
+        .pdf-viewer {
+            width: 100%;
+            height: 750px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        ul, ol {
+            margin-left: 25px;
+            margin-top: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background-color: white;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #0f4c81;
+            color: white;
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 10px 10px 0 0;
+            background-color: #1abc9c;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #14977d;
+        }
+
+        footer {
+            background-color: #083b66;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Quelques matériaux au quotidien</h1>
+        <p>3ème année collège - Semestre 1 | Cours, PDF, résumé et exercices</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="3ac.html">Cours 3AC</a>
+        <a href="#presentation">Présentation</a>
+        <a href="#pdf">PDF du cours</a>
+        <a href="#lecon">Leçon</a>
+        <a href="#resume">Résumé</a>
+        <a href="#exercices">Exercices</a>
+    </nav>
+
+    <div class="container">
+
+        <section id="presentation">
+            <h2>Présentation du cours</h2>
+
+            <div class="box">
+                <p>
+                    Ce cours présente la différence entre objets et matériaux,
+                    les grandes familles de matériaux, ainsi que des tests simples
+                    permettant de reconnaître certaines propriétés des métaux,
+                    des verres, des plastiques et des matériaux organiques.
+                </p>
+
+                <div class="definition">
+                    <strong>Objectif du cours :</strong>
+                    savoir distinguer un objet d’un matériau, classer les matériaux,
+                    identifier quelques propriétés physiques et reconnaître certains métaux
+                    et plastiques par des tests simples.
+                </div>
+            </div>
+        </section>
+
+        <section id="pdf">
+            <h2>Document PDF du cours</h2>
+
+            <div class="pdf-box">
+                <p>
+                    Vous pouvez consulter le PDF directement sur cette page,
+                    l’ouvrir dans un nouvel onglet ou le télécharger.
+                </p>
+
+                <a href="./3ac-s1-materiaux-quotidien.pdf" target="_blank" class="btn">Ouvrir le PDF</a>
+                <a href="./3ac-s1-materiaux-quotidien.pdf" download class="btn">Télécharger le PDF</a>
+
+                <iframe src="./3ac-s1-materiaux-quotidien.pdf" class="pdf-viewer"></iframe>
+            </div>
+        </section>
+
+        <section id="lecon">
+            <h2>1. Distinction entre objets et matériaux</h2>
+
+            <div class="box">
+                <p>
+                    Dans la vie quotidienne, les objets sont fabriqués pour remplir
+                    une fonction précise. Ils peuvent être constitués d’un ou plusieurs matériaux.
+                </p>
+
+                <div class="definition">
+                    <strong>Définition :</strong>
+                    un objet est un corps fabriqué pour une fonction précise, comme une chaise,
+                    une bouteille ou une fenêtre. Un matériau est une matière utilisée pour
+                    fabriquer des objets.
+                </div>
+
+                <table>
+                    <tr>
+                        <th>Objet</th>
+                        <th>Matériaux possibles</th>
+                    </tr>
+                    <tr>
+                        <td>Chaise</td>
+                        <td>Bois, fer, plastique</td>
+                    </tr>
+                    <tr>
+                        <td>Fenêtre</td>
+                        <td>Verre, aluminium, bois</td>
+                    </tr>
+                    <tr>
+                        <td>Bouteille</td>
+                        <td>Verre ou plastique</td>
+                    </tr>
+                    <tr>
+                        <td>Fils de connexion</td>
+                        <td>Cuivre et plastique</td>
+                    </tr>
+                </table>
+
+                <div class="important">
+                    <strong>À retenir :</strong>
+                    un même objet peut être fabriqué avec plusieurs matériaux,
+                    et un même matériau peut servir à fabriquer plusieurs objets différents.
+                </div>
+            </div>
+
+            <h2>2. Classification des matériaux</h2>
+
+            <div class="box">
+                <p>
+                    Une famille de matériaux regroupe des matériaux qui possèdent
+                    des propriétés semblables.
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Famille</th>
+                        <th>Exemples</th>
+                        <th>Propriétés principales</th>
+                    </tr>
+                    <tr>
+                        <td>Matériaux organiques</td>
+                        <td>Bois, papier, laine, cuir</td>
+                        <td>Ils peuvent être d’origine végétale ou animale.</td>
+                    </tr>
+                    <tr>
+                        <td>Métaux</td>
+                        <td>Fer, cuivre, aluminium, zinc</td>
+                        <td>Bons conducteurs de l’électricité et de la chaleur, résistants et recyclables.</td>
+                    </tr>
+                    <tr>
+                        <td>Verres</td>
+                        <td>Verre, céramique</td>
+                        <td>Isolants électriques, mauvais conducteurs thermiques, fragiles et imperméables.</td>
+                    </tr>
+                    <tr>
+                        <td>Plastiques</td>
+                        <td>PE, PP, PS, PVC, PET</td>
+                        <td>Légers, imperméables, isolants électriques et thermiques.</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h2>3. Caractériser les matériaux selon leurs propriétés</h2>
+
+            <div class="box">
+                <h3>3.1. Test de conductivité électrique</h3>
+
+                <p>
+                    Pour savoir si un matériau est conducteur d’électricité,
+                    on l’insère dans un circuit électrique simple avec une pile et une lampe.
+                </p>
+
+                <ul>
+                    <li>Si la lampe brille, le courant circule : le matériau est conducteur.</li>
+                    <li>Si la lampe reste éteinte, le courant ne circule pas : le matériau est isolant.</li>
+                </ul>
+
+                <table>
+                    <tr>
+                        <th>Matériaux testés</th>
+                        <th>Résultat</th>
+                    </tr>
+                    <tr>
+                        <td>Fer, zinc, aluminium, cuivre</td>
+                        <td>Conducteurs électriques</td>
+                    </tr>
+                    <tr>
+                        <td>Sulfate de cuivre en poudre, sel en poudre, bois, plastique</td>
+                        <td>Isolants électriques</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="box">
+                <h3>3.2. Test de conductivité thermique</h3>
+
+                <p>
+                    Pour tester la conductivité thermique, on chauffe l’extrémité
+                    d’une tige en fer, en bois ou en verre et on observe si la cire
+                    placée à l’autre extrémité fond.
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Matériau</th>
+                        <th>Observation</th>
+                        <th>Conclusion</th>
+                    </tr>
+                    <tr>
+                        <td>Fer</td>
+                        <td>La cire fond après quelques secondes.</td>
+                        <td>Bon conducteur thermique</td>
+                    </tr>
+                    <tr>
+                        <td>Bois</td>
+                        <td>La cire ne fond pas rapidement.</td>
+                        <td>Mauvais conducteur thermique</td>
+                    </tr>
+                    <tr>
+                        <td>Verre</td>
+                        <td>La cire ne fond pas rapidement.</td>
+                        <td>Mauvais conducteur thermique</td>
+                    </tr>
+                </table>
+
+                <div class="important">
+                    <strong>À retenir :</strong>
+                    les métaux sont généralement de bons conducteurs de la chaleur
+                    et de l’électricité, contrairement au bois, au verre et aux plastiques.
+                </div>
+            </div>
+
+            <h2>4. Test de reconnaissance des métaux</h2>
+
+            <div class="box">
+                <p>
+                    Les métaux les plus utilisés dans la vie quotidienne sont le fer,
+                    l’aluminium, le cuivre et le zinc. On peut les reconnaître par des tests simples.
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Test</th>
+                        <th>Principe</th>
+                        <th>Exemple</th>
+                    </tr>
+                    <tr>
+                        <td>Couleur</td>
+                        <td>Observer la couleur du métal.</td>
+                        <td>Le cuivre est rouge-brique ; l’or est jaune.</td>
+                    </tr>
+                    <tr>
+                        <td>Aimant</td>
+                        <td>Approcher un aimant du métal.</td>
+                        <td>Le fer est attiré par un aimant.</td>
+                    </tr>
+                    <tr>
+                        <td>Masse volumique</td>
+                        <td>Comparer la masse volumique.</td>
+                        <td>Chaque métal possède une masse volumique caractéristique.</td>
+                    </tr>
+                </table>
+
+                <div class="definition">
+                    <strong>Masse volumique :</strong>
+                    grandeur qui relie la masse d’un corps à son volume.
+                    Elle permet de caractériser un matériau.
+                </div>
+            </div>
+
+            <h2>5. Test de reconnaissance des plastiques</h2>
+
+            <div class="box">
+                <p>
+                    Les plastiques les plus courants sont le polyéthylène (PE),
+                    le polystyrène (PS), le polypropylène (PP), le polychlorure de vinyle (PVC)
+                    et le polyéthylène téréphtalate (PET).
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Plastique</th>
+                        <th>Abréviation</th>
+                        <th>Code courant</th>
+                    </tr>
+                    <tr>
+                        <td>Polyéthylène</td>
+                        <td>PE</td>
+                        <td>PE-HD</td>
+                    </tr>
+                    <tr>
+                        <td>Polystyrène</td>
+                        <td>PS</td>
+                        <td>PS</td>
+                    </tr>
+                    <tr>
+                        <td>Polychlorure de vinyle</td>
+                        <td>PVC</td>
+                        <td>PVC</td>
+                    </tr>
+                    <tr>
+                        <td>Polypropylène</td>
+                        <td>PP</td>
+                        <td>PP</td>
+                    </tr>
+                    <tr>
+                        <td>Polyéthylène téréphtalate</td>
+                        <td>PET</td>
+                        <td>PET</td>
+                    </tr>
+                </table>
+
+                <h3>5.1. Test de flottabilité</h3>
+
+                <table>
+                    <tr>
+                        <th>Milieu</th>
+                        <th>Plastiques qui flottent</th>
+                        <th>Plastiques qui coulent</th>
+                    </tr>
+                    <tr>
+                        <td>Eau douce</td>
+                        <td>PE, PP</td>
+                        <td>PS, PVC</td>
+                    </tr>
+                    <tr>
+                        <td>Eau salée</td>
+                        <td>PS</td>
+                        <td>PVC</td>
+                    </tr>
+                </table>
+
+                <h3>5.2. Test de la couleur de la flamme</h3>
+
+                <p>
+                    Le PVC donne une flamme verte. Le PS, le PE et le PET donnent
+                    une flamme de couleur normale jaune.
+                </p>
+
+                <h3>5.3. Test de dissolution dans l’acétone</h3>
+
+                <p>
+                    Le polystyrène (PS) se dissout dans l’acétone,
+                    ce qui permet de le reconnaître.
+                </p>
+
+                <div class="important">
+                    <strong>Attention :</strong>
+                    les tests de flamme et d’acétone doivent être réalisés uniquement
+                    dans un cadre sécurisé, sous la surveillance d’un enseignant.
+                </div>
+            </div>
+        </section>
+
+        <section id="resume">
+            <h2>Résumé du cours</h2>
+
+            <div class="resume">
+                <ul>
+                    <li>Un objet est fabriqué pour une fonction précise.</li>
+                    <li>Un matériau est une matière utilisée pour fabriquer des objets.</li>
+                    <li>Les principales familles de matériaux sont : organiques, métaux, verres et plastiques.</li>
+                    <li>Les métaux sont généralement de bons conducteurs de l’électricité et de la chaleur.</li>
+                    <li>Le verre, le bois et les plastiques sont souvent des isolants électriques.</li>
+                    <li>Le fer est attiré par un aimant et le cuivre a une couleur rouge-brique.</li>
+                    <li>Les plastiques peuvent être reconnus par la flottabilité, la couleur de la flamme ou la dissolution dans l’acétone.</li>
+                    <li>Les matériaux doivent être choisis selon leurs propriétés et leur impact sur la santé et l’environnement.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="exercices">
+            <h2>Exercices d’application</h2>
+
+            <div class="box">
+                <h3>Exercice 1 : Vrai ou faux</h3>
+                <ol>
+                    <li>Les matériaux interviennent dans la composition des objets.</li>
+                    <li>L’ordinateur est constitué de matériaux différents.</li>
+                    <li>Les métaux sont des matériaux recyclables.</li>
+                    <li>La matière plastique est toujours non recyclable.</li>
+                    <li>Les objets interviennent dans la composition des matériaux.</li>
+                    <li>L’aluminium est attiré par l’aimant.</li>
+                    <li>Le PVC change la couleur de la flamme.</li>
+                    <li>Le PP flotte sur l’eau douce.</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 2 : Compléter</h3>
+                <p>Complète avec les mots suivants : <strong>objet(s) - matériau(x)</strong>.</p>
+                <ol>
+                    <li>Un __________ peut être fabriqué à partir de différents __________.</li>
+                    <li>Les trois classes principales des __________ utilisés au quotidien sont les verres, les plastiques et les métaux.</li>
+                    <li>Une bouteille est un __________ qui peut être fabriqué à partir d’un __________ tel que le verre.</li>
+                    <li>Une boîte d’emballage est un __________ qui peut être fabriqué à partir de plusieurs __________.</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 3 : Objets ou matériaux</h3>
+                <p>
+                    Classer les éléments suivants : un verre - règle - le verre - robinet - laine - polyéthylène - voiture - fourchette - fenêtre - PVC - cuivre - plastique.
+                </p>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 4 : Reconnaissance des plastiques</h3>
+                <p>
+                    On met trois plastiques PVC, PS et PE dans deux béchers :
+                    le premier contient de l’eau douce et le deuxième contient de l’eau salée.
+                </p>
+                <ol>
+                    <li>Quel plastique flotte dans l’eau douce ?</li>
+                    <li>Quel plastique coule dans l’eau douce mais flotte dans l’eau salée ?</li>
+                    <li>Quel plastique donne une flamme verte ?</li>
+                    <li>Citer deux propriétés communes des plastiques.</li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="corrige">
+            <h2>Corrigé indicatif</h2>
+
+            <div class="box">
+                <h3>Correction de l’exercice 1</h3>
+                <ol>
+                    <li>Vrai</li>
+                    <li>Vrai</li>
+                    <li>Vrai</li>
+                    <li>Faux</li>
+                    <li>Faux</li>
+                    <li>Faux</li>
+                    <li>Vrai</li>
+                    <li>Vrai</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Correction de l’exercice 2</h3>
+                <ol>
+                    <li>objet - matériaux</li>
+                    <li>matériaux</li>
+                    <li>objet - matériau</li>
+                    <li>objet - matériaux</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Correction de l’exercice 3</h3>
+                <p>
+                    <strong>Objets :</strong> un verre, règle, robinet, voiture, fourchette, fenêtre.<br>
+                    <strong>Matériaux :</strong> le verre, laine, polyéthylène, PVC, cuivre, plastique.
+                </p>
+            </div>
+
+            <div class="box">
+                <h3>Correction de l’exercice 4</h3>
+                <p>
+                    PE flotte dans l’eau douce. PS coule dans l’eau douce mais flotte dans l’eau salée.
+                    PVC donne une flamme verte. Les plastiques sont souvent isolants et imperméables.
+                </p>
+            </div>
+        </section>
+
+        <section id="navigation">
+            <h2>Navigation</h2>
+
+            <div class="box">
+                <a href="3ac.html" class="btn">Retour aux cours de 3ème année</a>
+                <a href="index.html" class="btn">Retour à l’accueil</a>
+                <a href="3ac-s1-atomes-ions.html" class="btn">Cours suivant</a>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>© 2026 - Physique-Chimie Collège | Quelques matériaux au quotidien</p>
+    </footer>
+
+</body>
+</html>
