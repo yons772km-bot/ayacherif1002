@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>L’air qui nous entoure</title>
+    <title>L’air qui nous entoure - 2AC</title>
+
+    <link rel="icon" type="image/png" href="logo.png">
 
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -24,6 +30,17 @@
             color: white;
             padding: 45px 20px;
             text-align: center;
+        }
+
+        .site-logo {
+            width: 95px;
+            height: 95px;
+            object-fit: contain;
+            margin-bottom: 15px;
+            border-radius: 50%;
+            background-color: white;
+            padding: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.20);
         }
 
         header h1 {
@@ -146,38 +163,6 @@
             color: white;
         }
 
-        .schema {
-            background-color: #f8fbff;
-            border: 1px dashed #9ab6d6;
-            border-radius: 12px;
-            padding: 20px;
-            margin: 15px 0;
-            text-align: center;
-        }
-
-        .schema-row {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 15px;
-        }
-
-        .schema-card {
-            background-color: white;
-            border-radius: 10px;
-            padding: 15px;
-            min-width: 210px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        }
-
-        .arrow {
-            font-size: 28px;
-            font-weight: bold;
-            color: #0f4c81;
-        }
-
         .btn {
             display: inline-block;
             margin: 10px 10px 0 0;
@@ -200,14 +185,36 @@
             padding: 25px;
             margin-top: 40px;
         }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 28px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 6px;
+                font-size: 14px;
+            }
+
+            .pdf-viewer {
+                height: 520px;
+            }
+
+            .container {
+                padding: 30px 15px;
+            }
+        }
     </style>
 </head>
 
 <body>
 
     <header>
+        <img src="logo.png" alt="Logo Physique-Chimie Collège" class="site-logo" onerror="this.style.display='none'">
+
         <h1>L’air qui nous entoure</h1>
-        <p>2ème année collège - Semestre 1 | Cours, PDF, résumé et exercices</p>
+        <p>2ème année collège - Semestre 1 | Cours, PDF, résumé, exercices et corrigés</p>
     </header>
 
     <nav>
@@ -218,6 +225,7 @@
         <a href="#lecon">Leçon</a>
         <a href="#resume">Résumé</a>
         <a href="#exercices">Exercices</a>
+        <a href="#corrige">Corrigés</a>
     </nav>
 
     <div class="container">
@@ -227,16 +235,16 @@
 
             <div class="box">
                 <p>
-                    Ce cours présente l’atmosphère, ses couches principales,
-                    leurs caractéristiques et leurs rôles. Il explique aussi comment
-                    les mouvements de l’air donnent naissance au vent.
+                    Ce cours présente l’air qui nous entoure, l’atmosphère terrestre,
+                    la composition de l’air, son importance pour la vie et quelques
+                    phénomènes naturels liés au déplacement de l’air comme le vent.
                 </p>
 
                 <div class="definition">
                     <strong>Objectif du cours :</strong>
-                    comprendre le rôle de l’atmosphère dans la vie sur Terre,
-                    reconnaître ses couches et expliquer la formation du vent à partir
-                    des différences de température et de pression.
+                    comprendre que l’air est une matière invisible qui occupe l’espace,
+                    connaître sa composition principale et expliquer son importance
+                    pour les êtres vivants.
                 </div>
             </div>
         </section>
@@ -246,7 +254,7 @@
 
             <div class="pdf-box">
                 <p>
-                    Vous pouvez consulter le PDF directement sur cette page,
+                    Vous pouvez consulter le document PDF directement sur cette page,
                     l’ouvrir dans un nouvel onglet ou le télécharger.
                 </p>
 
@@ -258,181 +266,201 @@
         </section>
 
         <section id="lecon">
-            <h2>1. Introduction</h2>
+            <h2>1. L’air autour de nous</h2>
 
             <div class="box">
                 <p>
-                    L’atmosphère est l’enveloppe gazeuse qui entoure notre planète.
-                    Elle s’étend sur plusieurs centaines de kilomètres d’épaisseur.
+                    L’air est présent partout autour de nous, même si on ne le voit pas.
+                    Il remplit l’espace autour des objets et des êtres vivants.
+                    On peut mettre en évidence sa présence à travers ses effets :
+                    le vent, le gonflement d’un ballon ou le déplacement d’une feuille.
                 </p>
 
                 <div class="definition">
                     <strong>Définition :</strong>
-                    l’atmosphère est la couche d’air qui entoure la Terre.
+                    l’air est un mélange de gaz qui entoure la Terre et qui constitue
+                    une partie de l’atmosphère.
                 </div>
 
-                <p>L’atmosphère est indispensable à la vie car :</p>
-
-                <ul>
-                    <li>elle apporte le dioxygène nécessaire à la respiration des êtres vivants ;</li>
-                    <li>elle maintient une température favorable au développement de la vie ;</li>
-                    <li>la couche d’ozone absorbe une partie des rayons solaires dangereux, surtout les rayons ultraviolets.</li>
-                </ul>
+                <div class="important">
+                    <strong>À retenir :</strong>
+                    l’air est invisible, mais il existe réellement. Il occupe un volume
+                    et peut se déplacer.
+                </div>
             </div>
 
-            <h2>2. Les couches de l’atmosphère</h2>
+            <h2>2. L’atmosphère terrestre</h2>
 
             <div class="box">
                 <p>
-                    On distingue dans l’atmosphère plusieurs couches successives.
-                    Les principales couches étudiées sont :
+                    La Terre est entourée d’une couche gazeuse appelée atmosphère.
+                    Cette couche est indispensable à la vie, car elle contient les gaz
+                    nécessaires à la respiration et protège la Terre contre certains rayonnements.
                 </p>
 
+                <div class="definition">
+                    <strong>Définition :</strong>
+                    l’atmosphère est l’enveloppe gazeuse qui entoure la Terre.
+                </div>
+
                 <ul>
-                    <li>la troposphère ;</li>
-                    <li>la stratosphère ;</li>
-                    <li>la mésosphère ;</li>
-                    <li>la thermosphère et l’exosphère.</li>
+                    <li>Elle contient l’air que nous respirons.</li>
+                    <li>Elle protège la Terre contre certains rayonnements solaires.</li>
+                    <li>Elle participe aux phénomènes météorologiques.</li>
+                    <li>Elle permet la vie sur Terre.</li>
                 </ul>
+            </div>
+
+            <h2>3. Composition de l’air</h2>
+
+            <div class="box">
+                <p>
+                    L’air n’est pas un corps pur. C’est un mélange de plusieurs gaz.
+                    Les deux principaux gaz de l’air sont le diazote et le dioxygène.
+                </p>
 
                 <table>
                     <tr>
-                        <th>Couche</th>
-                        <th>Caractéristiques</th>
+                        <th>Constituant de l’air</th>
+                        <th>Pourcentage approximatif</th>
                         <th>Rôle</th>
                     </tr>
                     <tr>
-                        <td>Troposphère</td>
-                        <td>
-                            C’est la couche où nous vivons. Son épaisseur est d’environ
-                            15 km. La température diminue quand on s’éloigne du sol.
-                        </td>
-                        <td>
-                            Elle contient environ 90 % de l’air de l’atmosphère et presque
-                            toute la vapeur d’eau. Elle est le siège des phénomènes
-                            météorologiques : vent, nuages, pluie, tonnerre et éclairs.
-                        </td>
+                        <td>Diazote</td>
+                        <td>Environ 78 %</td>
+                        <td>Gaz le plus abondant dans l’air.</td>
                     </tr>
                     <tr>
-                        <td>Stratosphère</td>
-                        <td>
-                            Elle a une épaisseur d’environ 40 km. La température y augmente
-                            progressivement.
-                        </td>
-                        <td>
-                            Elle contient la couche d’ozone qui absorbe une partie des rayons
-                            ultraviolets dangereux.
-                        </td>
+                        <td>Dioxygène</td>
+                        <td>Environ 21 %</td>
+                        <td>Gaz nécessaire à la respiration et à certaines combustions.</td>
                     </tr>
                     <tr>
-                        <td>Mésosphère</td>
-                        <td>
-                            Elle a une épaisseur d’environ 35 km. C’est la couche la plus froide
-                            de l’atmosphère.
-                        </td>
-                        <td>
-                            Elle protège la Terre de la chute de nombreux météorites venant
-                            de l’espace.
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Thermosphère et exosphère</td>
-                        <td>
-                            Les températures y sont très élevées et peuvent dépasser 500 °C.
-                        </td>
-                        <td>
-                            Elles réfléchissent certaines ondes radio et accueillent certains
-                            satellites d’observation.
-                        </td>
+                        <td>Autres gaz</td>
+                        <td>Environ 1 %</td>
+                        <td>Dioxyde de carbone, vapeur d’eau, gaz rares...</td>
                     </tr>
                 </table>
 
                 <div class="important">
                     <strong>À retenir :</strong>
-                    la troposphère est la couche la plus proche de la Terre et celle où
-                    se produisent la plupart des phénomènes météorologiques.
+                    l’air contient surtout du diazote et du dioxygène.
+                    Le dioxygène est indispensable à la respiration.
                 </div>
             </div>
 
-            <h2>3. Mouvement de l’air dans l’atmosphère</h2>
+            <h2>4. Importance de l’air pour les êtres vivants</h2>
 
             <div class="box">
                 <p>
-                    L’air peut se déplacer verticalement ou horizontalement. Ces mouvements
-                    sont liés aux différences de température et de pression.
+                    Les êtres vivants ont besoin d’air pour vivre. Les humains et les animaux
+                    utilisent le dioxygène de l’air pour respirer. Les plantes aussi échangent
+                    des gaz avec l’air.
                 </p>
 
-                <h3>Expérience 1 : air chaud</h3>
-                <p>
-                    Lorsqu’on allume des bougies sous un carillon, l’air se réchauffe.
-                    L’air chaud devient plus léger et monte vers le haut. Ce mouvement
-                    d’air crée un courant qui fait tourner le carillon.
-                </p>
+                <ul>
+                    <li>L’air permet la respiration des êtres vivants.</li>
+                    <li>Le dioxygène est nécessaire au fonctionnement du corps.</li>
+                    <li>L’air intervient aussi dans les combustions.</li>
+                    <li>Les plantes utilisent le dioxyde de carbone dans la photosynthèse.</li>
+                </ul>
 
                 <div class="definition">
                     <strong>Conclusion :</strong>
-                    l’air chaud monte parce qu’il devient moins dense que l’air froid.
-                </div>
-
-                <h3>Expérience 2 : air en mouvement horizontal</h3>
-                <p>
-                    Lorsqu’on souffle entre deux boîtes légères, elles se rapprochent.
-                    Le souffle crée une zone de basse pression entre les deux boîtes,
-                    ce qui provoque leur rapprochement.
-                </p>
-
-                <div class="definition">
-                    <strong>Conclusion :</strong>
-                    le mouvement horizontal de l’air peut être provoqué par une différence
-                    de pression.
+                    l’air est indispensable à la vie sur Terre.
                 </div>
             </div>
 
-            <h2>4. Naissance du vent</h2>
+            <h2>5. L’air occupe un volume</h2>
 
             <div class="box">
                 <p>
-                    Quand la température augmente dans une zone, l’air s’échauffe,
-                    devient moins dense et monte. La pression diminue au niveau du sol :
-                    cette zone est appelée <strong>dépression</strong>.
+                    Même si l’air est invisible, il occupe un espace. Lorsqu’on gonfle
+                    un ballon, l’air entre à l’intérieur et le ballon prend du volume.
                 </p>
 
-                <p>
-                    Quand la température diminue, l’air se refroidit, devient plus dense
-                    et descend. La pression augmente au niveau du sol : cette zone est
-                    appelée <strong>anticyclone</strong>.
-                </p>
-
-                <div class="schema">
-                    <h3>Schéma simplifié de la naissance du vent</h3>
-
-                    <div class="schema-row">
-                        <div class="schema-card">
-                            <strong>Anticyclone (A)</strong><br>
-                            Air froid descend<br>
-                            Haute pression
-                        </div>
-
-                        <div class="arrow">→ vent →</div>
-
-                        <div class="schema-card">
-                            <strong>Dépression (D)</strong><br>
-                            Air chaud monte<br>
-                            Basse pression
-                        </div>
-                    </div>
+                <div class="important">
+                    <strong>Exemple :</strong>
+                    un ballon vide est petit, mais lorsqu’on y introduit de l’air,
+                    il gonfle. Cela montre que l’air occupe un volume.
                 </div>
+
+                <table>
+                    <tr>
+                        <th>Situation</th>
+                        <th>Observation</th>
+                        <th>Conclusion</th>
+                    </tr>
+                    <tr>
+                        <td>Ballon vide</td>
+                        <td>Il est petit.</td>
+                        <td>Il contient peu d’air.</td>
+                    </tr>
+                    <tr>
+                        <td>Ballon gonflé</td>
+                        <td>Il devient plus grand.</td>
+                        <td>L’air occupe un volume.</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h2>6. Le vent</h2>
+
+            <div class="box">
+                <p>
+                    Le vent est un déplacement de l’air. Il peut être faible ou fort.
+                    On peut l’observer par ses effets sur les arbres, les drapeaux,
+                    les feuilles ou les nuages.
+                </p>
 
                 <div class="definition">
                     <strong>Définition :</strong>
-                    le vent est un mouvement horizontal de l’air d’une zone de haute pression
-                    vers une zone de basse pression.
+                    le vent est de l’air en mouvement.
                 </div>
+
+                <p>
+                    Le vent se forme généralement à cause des différences de température
+                    et de pression entre deux zones de l’atmosphère.
+                </p>
 
                 <div class="important">
                     <strong>À retenir :</strong>
-                    le vent diverge à partir du centre d’un anticyclone et converge vers
-                    le centre d’une dépression.
+                    lorsque l’air se déplace, on parle de vent.
+                </div>
+            </div>
+
+            <h2>7. Air pur et air pollué</h2>
+
+            <div class="box">
+                <p>
+                    L’air peut être propre ou pollué. La pollution de l’air est causée
+                    par les fumées, les gaz toxiques, les poussières et les rejets industriels
+                    ou automobiles.
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Air pur</th>
+                        <th>Air pollué</th>
+                    </tr>
+                    <tr>
+                        <td>Permet une respiration saine.</td>
+                        <td>Peut provoquer des maladies respiratoires.</td>
+                    </tr>
+                    <tr>
+                        <td>Contient peu de substances nocives.</td>
+                        <td>Contient des fumées, poussières ou gaz toxiques.</td>
+                    </tr>
+                    <tr>
+                        <td>Protège la santé et l’environnement.</td>
+                        <td>Dégrade la santé et l’environnement.</td>
+                    </tr>
+                </table>
+
+                <div class="important">
+                    <strong>Protection de l’air :</strong>
+                    il faut réduire la pollution, limiter les fumées et protéger
+                    les espaces naturels.
                 </div>
             </div>
         </section>
@@ -442,14 +470,15 @@
 
             <div class="resume">
                 <ul>
+                    <li>L’air est un mélange de gaz invisible qui nous entoure.</li>
                     <li>L’atmosphère est l’enveloppe gazeuse qui entoure la Terre.</li>
-                    <li>Elle est indispensable à la vie car elle contient le dioxygène et protège la Terre.</li>
-                    <li>Les principales couches sont : troposphère, stratosphère, mésosphère, thermosphère et exosphère.</li>
-                    <li>La troposphère est la couche où nous vivons.</li>
-                    <li>La stratosphère contient la couche d’ozone.</li>
-                    <li>L’air chaud monte parce qu’il devient moins dense.</li>
-                    <li>L’air froid descend parce qu’il est plus dense.</li>
-                    <li>Le vent est un déplacement horizontal de l’air d’une zone de haute pression vers une zone de basse pression.</li>
+                    <li>L’air est composé principalement de diazote et de dioxygène.</li>
+                    <li>Le diazote représente environ 78 % de l’air.</li>
+                    <li>Le dioxygène représente environ 21 % de l’air.</li>
+                    <li>Le dioxygène est nécessaire à la respiration des êtres vivants.</li>
+                    <li>L’air occupe un volume.</li>
+                    <li>Le vent est de l’air en mouvement.</li>
+                    <li>Il faut préserver la qualité de l’air pour protéger la santé et l’environnement.</li>
                 </ul>
             </div>
         </section>
@@ -458,12 +487,14 @@
             <h2>Exercices d’application</h2>
 
             <div class="box">
-                <h3>Exercice 1 : Questions de cours</h3>
+                <h3>Exercice 1 : Vrai ou faux</h3>
                 <ol>
-                    <li>Donner les noms des couches principales de l’atmosphère.</li>
-                    <li>Dans quelle couche de l’atmosphère vivons-nous ?</li>
-                    <li>Quel est le rôle de l’atmosphère ?</li>
-                    <li>Comment le vent naît-il ?</li>
+                    <li>L’air est visible à l’œil nu.</li>
+                    <li>L’air est un mélange de gaz.</li>
+                    <li>Le dioxygène est nécessaire à la respiration.</li>
+                    <li>Le diazote représente environ 78 % de l’air.</li>
+                    <li>Le vent est de l’air en mouvement.</li>
+                    <li>L’air n’occupe pas de volume.</li>
                 </ol>
             </div>
 
@@ -471,35 +502,35 @@
                 <h3>Exercice 2 : Compléter les phrases</h3>
                 <p>
                     Complète avec les mots suivants :
-                    <strong>basse pression - chaud - plus dense - vent - haute pression - descend - moins dense</strong>.
+                    <strong>air - atmosphère - dioxygène - diazote - vent - volume</strong>.
                 </p>
+
                 <ol>
-                    <li>L’air froid est __________ que l’air chaud.</li>
-                    <li>L’air chaud est __________ et monte vers le haut.</li>
-                    <li>L’air froid __________ et crée une zone de __________.</li>
-                    <li>Le déplacement horizontal de l’air est appelé __________.</li>
+                    <li>L’__________ est un mélange de gaz qui nous entoure.</li>
+                    <li>L’__________ est l’enveloppe gazeuse qui entoure la Terre.</li>
+                    <li>Le gaz nécessaire à la respiration est le __________.</li>
+                    <li>Le gaz le plus abondant dans l’air est le __________.</li>
+                    <li>Le __________ est de l’air en mouvement.</li>
+                    <li>L’air occupe un __________.</li>
                 </ol>
             </div>
 
             <div class="box">
-                <h3>Exercice 3 : Vrai ou faux</h3>
+                <h3>Exercice 3 : Composition de l’air</h3>
                 <ol>
-                    <li>Les mouvements des masses d’air sont à l’origine des vents.</li>
-                    <li>L’air chaud descend vers le sol.</li>
-                    <li>Le vent est le déplacement horizontal des masses d’air.</li>
-                    <li>Une zone de haute pression est appelée anticyclone.</li>
-                    <li>Une zone de basse pression est appelée dépression.</li>
+                    <li>Citer les deux principaux gaz de l’air.</li>
+                    <li>Donner le pourcentage approximatif du diazote.</li>
+                    <li>Donner le pourcentage approximatif du dioxygène.</li>
+                    <li>Quel gaz est indispensable à la respiration ?</li>
                 </ol>
             </div>
 
             <div class="box">
-                <h3>Exercice 4 : Situation</h3>
+                <h3>Exercice 4 : Importance de l’air</h3>
                 <p>
-                    Une montgolfière contient de l’air chauffé par un brûleur.
+                    Explique en quelques lignes pourquoi l’air est indispensable
+                    à la vie sur Terre.
                 </p>
-                <ol>
-                    <li>Pourquoi la montgolfière s’envole-t-elle lorsque l’air est chauffé ?</li>
-                </ol>
             </div>
         </section>
 
@@ -509,39 +540,44 @@
             <div class="box">
                 <h3>Correction de l’exercice 1</h3>
                 <ol>
-                    <li>Troposphère, stratosphère, mésosphère, thermosphère et exosphère.</li>
-                    <li>Nous vivons dans la troposphère.</li>
-                    <li>L’atmosphère apporte le dioxygène, maintient une température favorable et protège contre certains rayons solaires dangereux.</li>
-                    <li>Le vent naît à cause d’une différence de pression entre deux zones.</li>
+                    <li>Faux : l’air est invisible.</li>
+                    <li>Vrai</li>
+                    <li>Vrai</li>
+                    <li>Vrai</li>
+                    <li>Vrai</li>
+                    <li>Faux : l’air occupe un volume.</li>
                 </ol>
             </div>
 
             <div class="box">
                 <h3>Correction de l’exercice 2</h3>
                 <ol>
-                    <li>plus dense</li>
-                    <li>moins dense</li>
-                    <li>descend - haute pression</li>
+                    <li>air</li>
+                    <li>atmosphère</li>
+                    <li>dioxygène</li>
+                    <li>diazote</li>
                     <li>vent</li>
+                    <li>volume</li>
                 </ol>
             </div>
 
             <div class="box">
                 <h3>Correction de l’exercice 3</h3>
-                <ol>
-                    <li>Vrai</li>
-                    <li>Faux</li>
-                    <li>Vrai</li>
-                    <li>Vrai</li>
-                    <li>Vrai</li>
-                </ol>
+                <p>
+                    Les deux principaux gaz de l’air sont le diazote et le dioxygène.
+                    Le diazote représente environ 78 % de l’air. Le dioxygène représente
+                    environ 21 % de l’air. Le gaz indispensable à la respiration est
+                    le dioxygène.
+                </p>
             </div>
 
             <div class="box">
                 <h3>Correction de l’exercice 4</h3>
                 <p>
-                    La montgolfière s’envole parce que l’air chauffé devient plus léger,
-                    donc moins dense, et monte vers le haut.
+                    L’air est indispensable à la vie car il contient du dioxygène,
+                    nécessaire à la respiration des êtres humains et des animaux.
+                    Il fait aussi partie de l’atmosphère qui protège la Terre et permet
+                    les conditions favorables à la vie.
                 </p>
             </div>
         </section>
