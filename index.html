@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Physique-Chimie Collège</title>
 
+    <!-- Logo dans l’onglet du navigateur -->
+    <link rel="icon" type="image/png" href="logo.png">
+
     <style>
         * {
             margin: 0;
@@ -24,6 +27,17 @@
             color: white;
             padding: 50px 20px;
             text-align: center;
+        }
+
+        .site-logo {
+            width: 95px;
+            height: 95px;
+            object-fit: contain;
+            margin-bottom: 15px;
+            border-radius: 50%;
+            background-color: white;
+            padding: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.20);
         }
 
         header h1 {
@@ -102,6 +116,10 @@
             margin-bottom: 10px;
         }
 
+        .card p {
+            color: #444;
+        }
+
         .btn {
             display: inline-block;
             margin-top: 15px;
@@ -130,7 +148,10 @@
 <body>
 
     <header>
+        <img src="logo.png" alt="Logo Physique-Chimie Collège" class="site-logo">
+
         <h1>Physique-Chimie Collège</h1>
+
         <p>
             Plateforme pédagogique destinée aux élèves du collège pour apprendre,
             réviser et s’entraîner en physique-chimie à travers des cours,
@@ -148,15 +169,18 @@
 
     <section id="accueil">
         <h2>Accueil</h2>
+
         <div class="intro">
             <p>
                 Ce site web a été conçu comme un espace d’apprentissage simple,
                 organisé et accessible. Il vise à accompagner les élèves du collège
                 dans la compréhension des notions essentielles en physique-chimie.
             </p>
+
             <p>
-                Le projet s’inscrit également dans une démarche de développement
-                des compétences numériques et pédagogiques de l’enseignant.
+                Les élèves peuvent y trouver des cours structurés, des résumés,
+                des exercices d’application, des corrigés et des documents PDF
+                pour faciliter la révision et l’apprentissage autonome.
             </p>
         </div>
     </section>
@@ -165,11 +189,12 @@
         <h2>Cours de physique-chimie</h2>
 
         <div class="cards">
+
             <div class="card">
                 <h3>1ère année collège</h3>
                 <p>
                     Cours simples et progressifs pour découvrir les bases de la matière,
-                    de l’air, de l’eau et de l’électricité.
+                    de l’eau, de l’air, des mesures et de l’électricité.
                 </p>
                 <a href="1ac.html" class="btn">Voir les cours</a>
             </div>
@@ -177,8 +202,8 @@
             <div class="card">
                 <h3>2ème année collège</h3>
                 <p>
-                    Notions de lumière, mélanges, transformations physiques
-                    et phénomènes électriques.
+                    Cours sur l’air, les atomes, les molécules, les réactions chimiques,
+                    la lumière, l’optique et l’électricité.
                 </p>
                 <a href="2ac.html" class="btn">Voir les cours</a>
             </div>
@@ -186,11 +211,12 @@
             <div class="card">
                 <h3>3ème année collège</h3>
                 <p>
-                    Actions mécaniques, forces, équilibre, réactions chimiques
-                    et applications pratiques.
+                    Cours sur les matériaux, les ions, les réactions chimiques,
+                    la mécanique, les forces, l’électricité et les examens.
                 </p>
                 <a href="3ac.html" class="btn">Voir les cours</a>
             </div>
+
         </div>
     </section>
 
@@ -198,20 +224,31 @@
         <h2>Exercices</h2>
 
         <div class="cards">
+
             <div class="card">
                 <h3>Exercices d’application</h3>
-                <p>Des exercices courts pour vérifier la compréhension immédiate du cours.</p>
+                <p>
+                    Des exercices courts pour vérifier la compréhension immédiate
+                    de chaque leçon.
+                </p>
             </div>
 
             <div class="card">
                 <h3>Exercices de synthèse</h3>
-                <p>Des activités plus complètes pour relier plusieurs notions du programme.</p>
+                <p>
+                    Des activités plus complètes pour relier plusieurs notions
+                    du programme.
+                </p>
             </div>
 
             <div class="card">
                 <h3>Préparation aux contrôles</h3>
-                <p>Des sujets d’entraînement pour préparer les devoirs surveillés.</p>
+                <p>
+                    Des sujets d’entraînement pour préparer les devoirs surveillés
+                    et les examens.
+                </p>
             </div>
+
         </div>
     </section>
 
@@ -223,8 +260,10 @@
                 Les corrigés permettent aux élèves de comparer leurs réponses,
                 d’identifier leurs erreurs et de progresser de manière autonome.
             </p>
+
             <p>
-                Chaque corrigé sera accompagné d’une explication claire et progressive.
+                Chaque corrigé est présenté de façon claire pour aider l’élève
+                à comprendre la méthode de résolution.
             </p>
         </div>
     </section>
@@ -233,20 +272,31 @@
         <h2>Ressources pédagogiques</h2>
 
         <div class="cards">
+
             <div class="card">
                 <h3>Fiches de résumé</h3>
-                <p>Fiches claires pour retenir les notions essentielles.</p>
+                <p>
+                    Des fiches claires pour retenir les notions essentielles
+                    de chaque cours.
+                </p>
             </div>
 
             <div class="card">
-                <h3>Vidéos explicatives</h3>
-                <p>Capsules vidéo pour faciliter la compréhension des phénomènes scientifiques.</p>
+                <h3>Documents PDF</h3>
+                <p>
+                    Des documents téléchargeables pour consulter les cours
+                    hors connexion.
+                </p>
             </div>
 
             <div class="card">
-                <h3>Simulations numériques</h3>
-                <p>Activités interactives pour observer et manipuler virtuellement.</p>
+                <h3>Simulations et vidéos</h3>
+                <p>
+                    Des ressources numériques pour observer, manipuler virtuellement
+                    et mieux comprendre les phénomènes scientifiques.
+                </p>
             </div>
+
         </div>
     </section>
 
