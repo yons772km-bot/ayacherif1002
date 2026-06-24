@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Les molécules et les atomes</title>
+    <title>Les molécules et les atomes - 2AC</title>
+
+    <link rel="icon" type="image/png" href="logo.png">
 
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -24,6 +30,17 @@
             color: white;
             padding: 45px 20px;
             text-align: center;
+        }
+
+        .site-logo {
+            width: 95px;
+            height: 95px;
+            object-fit: contain;
+            margin-bottom: 15px;
+            border-radius: 50%;
+            background-color: white;
+            padding: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.20);
         }
 
         header h1 {
@@ -179,14 +196,36 @@
             padding: 25px;
             margin-top: 40px;
         }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 28px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 6px;
+                font-size: 14px;
+            }
+
+            .pdf-viewer {
+                height: 520px;
+            }
+
+            .container {
+                padding: 30px 15px;
+            }
+        }
     </style>
 </head>
 
 <body>
 
     <header>
+        <img src="logo.png" alt="Logo Physique-Chimie Collège" class="site-logo" onerror="this.style.display='none'">
+
         <h1>Les molécules et les atomes</h1>
-        <p>2ème année collège - Semestre 1 | Cours, PDF, résumé et exercices</p>
+        <p>2ème année collège - Semestre 1 | Cours, PDF, résumé, exercices et corrigés</p>
     </header>
 
     <nav>
@@ -197,6 +236,7 @@
         <a href="#lecon">Leçon</a>
         <a href="#resume">Résumé</a>
         <a href="#exercices">Exercices</a>
+        <a href="#corrige">Corrigés</a>
     </nav>
 
     <div class="container">
@@ -206,17 +246,18 @@
 
             <div class="box">
                 <p>
-                    Ce cours présente la notion d’atome, la notion de molécule,
-                    les symboles chimiques, les formules chimiques, ainsi que la différence
-                    entre un corps pur simple et un corps pur composé. Il explique aussi
-                    le modèle moléculaire de l’air.
+                    Ce cours présente la structure microscopique de la matière.
+                    Il explique que la matière est constituée de particules très petites
+                    appelées atomes et molécules. Il permet aussi de comprendre les symboles
+                    chimiques, les formules chimiques et la différence entre un atome
+                    et une molécule.
                 </p>
 
                 <div class="definition">
                     <strong>Objectif du cours :</strong>
-                    comprendre que la matière est constituée d’atomes et de molécules,
-                    savoir lire une formule chimique simple et distinguer un corps pur simple
-                    d’un corps pur composé.
+                    savoir distinguer un atome d’une molécule, connaître quelques symboles
+                    chimiques, lire une formule chimique simple et comprendre que les molécules
+                    sont formées par l’association d’atomes.
                 </div>
             </div>
         </section>
@@ -226,7 +267,7 @@
 
             <div class="pdf-box">
                 <p>
-                    Vous pouvez consulter le PDF directement sur cette page,
+                    Vous pouvez consulter le document PDF directement sur cette page,
                     l’ouvrir dans un nouvel onglet ou le télécharger.
                 </p>
 
@@ -238,114 +279,88 @@
         </section>
 
         <section id="lecon">
-            <h2>1. Introduction</h2>
+            <h2>1. La matière est constituée de particules</h2>
 
             <div class="box">
                 <p>
-                    Lorsque l’on coupe la matière en morceaux de plus en plus petits,
-                    on finit par atteindre une très petite particule qui constitue la matière.
-                    Cette particule est appelée <strong>atome</strong>.
+                    Tous les corps qui nous entourent sont constitués de matière.
+                    Cette matière est formée de particules extrêmement petites qu’on ne peut
+                    pas voir à l’œil nu. Ces particules peuvent être des atomes ou des molécules.
                 </p>
 
                 <div class="important">
-                    <strong>Question de départ :</strong>
-                    comment s’appelle la plus petite unité qui constitue toute la matière ?
+                    <strong>À retenir :</strong>
+                    la matière n’est pas continue. Elle est formée de très petites particules.
                 </div>
             </div>
 
-            <h2>2. L’atome</h2>
+            <h2>2. Notion d’atome</h2>
 
             <div class="box">
-                <h3>2.1. Notion d’atome</h3>
-
                 <p>
-                    Un atome est une très petite particule qui constitue la matière.
-                    Toute la matière qui nous entoure est formée d’atomes.
+                    L’atome est une particule très petite qui entre dans la constitution
+                    de la matière. Il existe plusieurs types d’atomes. Chaque type d’atome
+                    est représenté par un symbole chimique.
                 </p>
 
                 <div class="definition">
                     <strong>Définition :</strong>
-                    un atome est la plus petite particule de matière qui entre dans
-                    la constitution des corps.
+                    un atome est une très petite particule de matière représentée
+                    par un symbole chimique.
                 </div>
-
-                <ul>
-                    <li>Les atomes sont extrêmement petits.</li>
-                    <li>Ils ne sont pas visibles à l’œil nu.</li>
-                    <li>Ils ne peuvent pas être observés avec un microscope ordinaire.</li>
-                    <li>La taille d’un atome est de l’ordre de 10<sup>-10</sup> m.</li>
-                    <li>La masse d’un atome est de l’ordre de 10<sup>-26</sup> kg.</li>
-                </ul>
-            </div>
-
-            <h2>3. Symboles et représentations des atomes</h2>
-
-            <div class="box">
-                <p>
-                    Chaque atome est représenté par un symbole chimique.
-                    Le symbole est souvent la première lettre du nom de l’atome en majuscule.
-                    Parfois, on ajoute une deuxième lettre en minuscule pour éviter la confusion.
-                </p>
 
                 <table>
                     <tr>
-                        <th>Atome</th>
-                        <th>Symbole</th>
-                        <th>Représentation simplifiée</th>
+                        <th>Nom de l’atome</th>
+                        <th>Symbole chimique</th>
                     </tr>
                     <tr>
                         <td>Hydrogène</td>
                         <td>H</td>
-                        <td>Boule blanche</td>
                     </tr>
                     <tr>
                         <td>Oxygène</td>
                         <td>O</td>
-                        <td>Boule rouge</td>
-                    </tr>
-                    <tr>
-                        <td>Azote</td>
-                        <td>N</td>
-                        <td>Boule bleue</td>
                     </tr>
                     <tr>
                         <td>Carbone</td>
                         <td>C</td>
-                        <td>Boule noire</td>
                     </tr>
                     <tr>
-                        <td>Chlore</td>
-                        <td>Cl</td>
-                        <td>Boule verte</td>
+                        <td>Azote</td>
+                        <td>N</td>
+                    </tr>
+                    <tr>
+                        <td>Fer</td>
+                        <td>Fe</td>
+                    </tr>
+                    <tr>
+                        <td>Cuivre</td>
+                        <td>Cu</td>
                     </tr>
                 </table>
 
                 <div class="important">
-                    <strong>À retenir :</strong>
-                    le symbole chimique commence toujours par une lettre majuscule.
-                    S’il contient deux lettres, la deuxième est écrite en minuscule.
+                    <strong>Attention :</strong>
+                    un symbole chimique commence toujours par une majuscule.
+                    S’il contient deux lettres, la deuxième est une minuscule.
+                    Exemple : Fe, Cu, Al.
                 </div>
             </div>
 
-            <h2>4. La molécule</h2>
+            <h2>3. Notion de molécule</h2>
 
             <div class="box">
                 <p>
                     Une molécule est formée par l’association de plusieurs atomes.
-                    Ces atomes peuvent être identiques ou différents.
+                    Les atomes peuvent être identiques ou différents.
                 </p>
 
                 <div class="definition">
                     <strong>Définition :</strong>
-                    une molécule est un regroupement de plusieurs atomes identiques
-                    ou différents liés entre eux.
+                    une molécule est une particule formée par l’association
+                    de deux ou plusieurs atomes.
                 </div>
-
-                <p>
-                    Chaque molécule est représentée par une formule chimique.
-                    Cette formule indique les symboles des atomes présents dans la molécule
-                    ainsi que leur nombre.
-                </p>
 
                 <table>
                     <tr>
@@ -357,11 +372,6 @@
                         <td>Dioxygène</td>
                         <td>O<sub>2</sub></td>
                         <td>2 atomes d’oxygène</td>
-                    </tr>
-                    <tr>
-                        <td>Dihydrogène</td>
-                        <td>H<sub>2</sub></td>
-                        <td>2 atomes d’hydrogène</td>
                     </tr>
                     <tr>
                         <td>Diazote</td>
@@ -384,98 +394,133 @@
                         <td>1 atome de carbone et 4 atomes d’hydrogène</td>
                     </tr>
                 </table>
-
-                <div class="important">
-                    <strong>Remarque :</strong>
-                    le petit chiffre placé en bas à droite du symbole s’appelle un indice.
-                    Il indique le nombre d’atomes de cette sorte dans la molécule.
-                </div>
             </div>
 
-            <h2>5. Corps pur simple et corps pur composé</h2>
-
-            <div class="box">
-                <h3>5.1. Corps pur simple</h3>
-
-                <p>
-                    Un corps pur simple est constitué de molécules formées d’une seule sorte d’atomes.
-                </p>
-
-                <div class="definition">
-                    <strong>Définition :</strong>
-                    un corps pur simple est un corps pur dont les molécules sont constituées
-                    d’une seule sorte d’atomes.
-                </div>
-
-                <p>Exemples :</p>
-
-                <ul>
-                    <li>Dioxygène : O<sub>2</sub></li>
-                    <li>Dihydrogène : H<sub>2</sub></li>
-                    <li>Diazote : N<sub>2</sub></li>
-                    <li>Chlore : Cl<sub>2</sub></li>
-                    <li>Ozone : O<sub>3</sub></li>
-                </ul>
-
-                <h3>5.2. Corps pur composé</h3>
-
-                <p>
-                    Un corps pur composé est constitué de molécules formées de plusieurs
-                    sortes d’atomes.
-                </p>
-
-                <div class="definition">
-                    <strong>Définition :</strong>
-                    un corps pur composé est un corps pur dont les molécules sont constituées
-                    de deux ou plusieurs sortes d’atomes.
-                </div>
-
-                <p>Exemples :</p>
-
-                <ul>
-                    <li>Eau : H<sub>2</sub>O</li>
-                    <li>Dioxyde de carbone : CO<sub>2</sub></li>
-                    <li>Méthane : CH<sub>4</sub></li>
-                    <li>Monoxyde de carbone : CO</li>
-                    <li>Butane : C<sub>4</sub>H<sub>10</sub></li>
-                </ul>
-            </div>
-
-            <h2>6. Le modèle moléculaire de l’air</h2>
+            <h2>4. Différence entre atome et molécule</h2>
 
             <div class="box">
                 <p>
-                    L’air est un mélange de plusieurs gaz. Il est constitué principalement
-                    de diazote et de dioxygène.
+                    L’atome est une particule simple représentée par un symbole.
+                    La molécule est une particule plus complexe formée par plusieurs atomes
+                    et représentée par une formule chimique.
                 </p>
 
                 <table>
                     <tr>
-                        <th>Gaz</th>
-                        <th>Formule</th>
-                        <th>Pourcentage approximatif</th>
+                        <th>Atome</th>
+                        <th>Molécule</th>
                     </tr>
                     <tr>
-                        <td>Diazote</td>
-                        <td>N<sub>2</sub></td>
-                        <td>78 %</td>
+                        <td>Particule très petite de matière.</td>
+                        <td>Association de plusieurs atomes.</td>
                     </tr>
                     <tr>
-                        <td>Dioxygène</td>
-                        <td>O<sub>2</sub></td>
-                        <td>21 %</td>
+                        <td>Représenté par un symbole chimique.</td>
+                        <td>Représentée par une formule chimique.</td>
                     </tr>
                     <tr>
-                        <td>Autres gaz</td>
-                        <td>CO<sub>2</sub>, vapeur d’eau, ozone, méthane...</td>
-                        <td>1 %</td>
+                        <td>Exemples : H, O, C, N.</td>
+                        <td>Exemples : H<sub>2</sub>O, O<sub>2</sub>, CO<sub>2</sub>.</td>
                     </tr>
                 </table>
 
                 <div class="important">
                     <strong>À retenir :</strong>
-                    dans l’air, il y a environ quatre fois plus de molécules de diazote
-                    que de molécules de dioxygène.
+                    les molécules sont constituées d’atomes.
+                </div>
+            </div>
+
+            <h2>5. Formule chimique d’une molécule</h2>
+
+            <div class="box">
+                <p>
+                    La formule chimique indique la nature et le nombre des atomes
+                    qui constituent une molécule.
+                </p>
+
+                <div class="definition">
+                    <strong>Définition :</strong>
+                    une formule chimique est une écriture qui indique les symboles
+                    des atomes présents dans une molécule et leur nombre.
+                </div>
+
+                <div class="formula">
+                    H<sub>2</sub>O = 2 atomes d’hydrogène + 1 atome d’oxygène
+                </div>
+
+                <div class="formula">
+                    CO<sub>2</sub> = 1 atome de carbone + 2 atomes d’oxygène
+                </div>
+
+                <div class="important">
+                    <strong>Remarque :</strong>
+                    lorsqu’il n’y a pas de chiffre après un symbole, cela signifie qu’il y a
+                    un seul atome de cet élément.
+                </div>
+            </div>
+
+            <h2>6. Corps simple et corps composé</h2>
+
+            <div class="box">
+                <p>
+                    Une molécule peut être formée d’atomes identiques ou d’atomes différents.
+                    Cela permet de distinguer un corps simple d’un corps composé.
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Type de corps</th>
+                        <th>Définition</th>
+                        <th>Exemples</th>
+                    </tr>
+                    <tr>
+                        <td>Corps simple</td>
+                        <td>Formé d’un seul type d’atomes.</td>
+                        <td>O<sub>2</sub>, N<sub>2</sub>, H<sub>2</sub></td>
+                    </tr>
+                    <tr>
+                        <td>Corps composé</td>
+                        <td>Formé de plusieurs types d’atomes.</td>
+                        <td>H<sub>2</sub>O, CO<sub>2</sub>, CH<sub>4</sub></td>
+                    </tr>
+                </table>
+            </div>
+
+            <h2>7. Modèle moléculaire</h2>
+
+            <div class="box">
+                <p>
+                    Pour représenter les molécules, on utilise parfois des modèles.
+                    Dans ces modèles, chaque atome est représenté par une boule colorée.
+                    Les boules reliées entre elles montrent l’association des atomes.
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Atome</th>
+                        <th>Représentation courante</th>
+                    </tr>
+                    <tr>
+                        <td>Hydrogène</td>
+                        <td>Petite boule blanche</td>
+                    </tr>
+                    <tr>
+                        <td>Oxygène</td>
+                        <td>Boule rouge</td>
+                    </tr>
+                    <tr>
+                        <td>Carbone</td>
+                        <td>Boule noire</td>
+                    </tr>
+                    <tr>
+                        <td>Azote</td>
+                        <td>Boule bleue</td>
+                    </tr>
+                </table>
+
+                <div class="important">
+                    <strong>À retenir :</strong>
+                    le modèle moléculaire permet de visualiser la composition d’une molécule.
                 </div>
             </div>
         </section>
@@ -485,14 +530,15 @@
 
             <div class="resume">
                 <ul>
-                    <li>Toute la matière est constituée d’atomes.</li>
-                    <li>Un atome est une très petite particule de matière.</li>
-                    <li>Chaque atome possède un symbole chimique.</li>
-                    <li>Une molécule est un regroupement de plusieurs atomes liés entre eux.</li>
-                    <li>Une formule chimique indique la nature et le nombre des atomes d’une molécule.</li>
-                    <li>Un corps pur simple contient une seule sorte d’atomes.</li>
-                    <li>Un corps pur composé contient plusieurs sortes d’atomes.</li>
-                    <li>L’air est un mélange de molécules de diazote, de dioxygène et d’autres gaz.</li>
+                    <li>La matière est constituée de particules très petites.</li>
+                    <li>Un atome est une particule représentée par un symbole chimique.</li>
+                    <li>Une molécule est une association de plusieurs atomes.</li>
+                    <li>Une formule chimique indique la nature et le nombre des atomes dans une molécule.</li>
+                    <li>H<sub>2</sub>O est la formule chimique de l’eau.</li>
+                    <li>CO<sub>2</sub> est la formule chimique du dioxyde de carbone.</li>
+                    <li>Un corps simple est formé d’un seul type d’atomes.</li>
+                    <li>Un corps composé est formé de plusieurs types d’atomes.</li>
+                    <li>Les modèles moléculaires permettent de représenter les molécules.</li>
                 </ul>
             </div>
         </section>
@@ -501,59 +547,51 @@
             <h2>Exercices d’application</h2>
 
             <div class="box">
-                <h3>Exercice 1 : Compléter les phrases</h3>
+                <h3>Exercice 1 : Vrai ou faux</h3>
+                <ol>
+                    <li>Une molécule est formée d’atomes.</li>
+                    <li>Un atome est représenté par une formule chimique.</li>
+                    <li>La formule de l’eau est H<sub>2</sub>O.</li>
+                    <li>CO<sub>2</sub> contient deux atomes de carbone.</li>
+                    <li>O<sub>2</sub> est un corps simple.</li>
+                    <li>CH<sub>4</sub> est un corps composé.</li>
+                </ol>
+            </div>
 
+            <div class="box">
+                <h3>Exercice 2 : Compléter les phrases</h3>
                 <p>
                     Complète avec les mots suivants :
-                    <strong>atomes - molécules - symbole atomique - simple - composé - sphères - majuscule</strong>.
+                    <strong>atomes - molécule - formule chimique - symbole chimique - corps simple - corps composé</strong>.
                 </p>
 
                 <ol>
-                    <li>Chaque type d’atome est représenté par un __________ : en général, la première lettre du nom en __________.</li>
-                    <li>Une molécule est constituée par au moins deux __________ liés entre eux.</li>
-                    <li>Les atomes et les __________ sont modélisés par des __________ de taille et de couleur différentes.</li>
-                    <li>Un corps pur __________ est un corps pur dont les molécules sont composées d’atomes identiques.</li>
-                    <li>Un corps pur __________ est un corps pur dont les molécules sont composées d’atomes différents.</li>
+                    <li>Une __________ est formée par l’association de plusieurs atomes.</li>
+                    <li>Un atome est représenté par un __________.</li>
+                    <li>Une molécule est représentée par une __________.</li>
+                    <li>O<sub>2</sub> est un __________ car il contient un seul type d’atomes.</li>
+                    <li>H<sub>2</sub>O est un __________ car il contient plusieurs types d’atomes.</li>
+                    <li>Les molécules sont constituées d’__________.</li>
                 </ol>
             </div>
 
             <div class="box">
-                <h3>Exercice 2 : Classer les molécules</h3>
+                <h3>Exercice 3 : Lire les formules chimiques</h3>
+                <p>Indiquer la composition des molécules suivantes :</p>
+                <ol>
+                    <li>H<sub>2</sub>O</li>
+                    <li>CO<sub>2</sub></li>
+                    <li>O<sub>2</sub></li>
+                    <li>CH<sub>4</sub></li>
+                </ol>
+            </div>
 
+            <div class="box">
+                <h3>Exercice 4 : Corps simple ou composé</h3>
                 <p>
-                    Classe les molécules suivantes en corps purs simples et corps purs composés :
+                    Classer les corps suivants en corps simples ou corps composés :
+                    O<sub>2</sub>, H<sub>2</sub>O, N<sub>2</sub>, CO<sub>2</sub>, CH<sub>4</sub>, H<sub>2</sub>.
                 </p>
-
-                <p>
-                    <strong>Cl<sub>2</sub>, CO<sub>2</sub>, CH<sub>4</sub>, O<sub>3</sub>, NH<sub>3</sub>, N<sub>2</sub>H<sub>4</sub></strong>
-                </p>
-
-                <ul>
-                    <li>Corps purs simples : ........................................................</li>
-                    <li>Corps purs composés : .......................................................</li>
-                </ul>
-            </div>
-
-            <div class="box">
-                <h3>Exercice 3 : Lire une formule chimique</h3>
-
-                <ol>
-                    <li>Donner la composition de la molécule H<sub>2</sub>O.</li>
-                    <li>Donner la composition de la molécule CO<sub>2</sub>.</li>
-                    <li>Donner la composition de la molécule CH<sub>4</sub>.</li>
-                    <li>Dire si ces molécules sont des corps purs simples ou composés.</li>
-                </ol>
-            </div>
-
-            <div class="box">
-                <h3>Exercice 4 : Modèle moléculaire de l’air</h3>
-
-                <ol>
-                    <li>Quels sont les deux principaux gaz de l’air ?</li>
-                    <li>Quelle est la formule chimique du dioxygène ?</li>
-                    <li>Quelle est la formule chimique du diazote ?</li>
-                    <li>Pourquoi dit-on que l’air est un mélange ?</li>
-                </ol>
             </div>
         </section>
 
@@ -562,45 +600,44 @@
 
             <div class="box">
                 <h3>Correction de l’exercice 1</h3>
-
                 <ol>
-                    <li>symbole atomique - majuscule</li>
-                    <li>atomes</li>
-                    <li>molécules - sphères</li>
-                    <li>simple</li>
-                    <li>composé</li>
+                    <li>Vrai</li>
+                    <li>Faux : un atome est représenté par un symbole chimique.</li>
+                    <li>Vrai</li>
+                    <li>Faux : CO<sub>2</sub> contient un atome de carbone et deux atomes d’oxygène.</li>
+                    <li>Vrai</li>
+                    <li>Vrai</li>
                 </ol>
             </div>
 
             <div class="box">
                 <h3>Correction de l’exercice 2</h3>
-
-                <ul>
-                    <li><strong>Corps purs simples :</strong> Cl<sub>2</sub>, O<sub>3</sub></li>
-                    <li><strong>Corps purs composés :</strong> CO<sub>2</sub>, CH<sub>4</sub>, NH<sub>3</sub>, N<sub>2</sub>H<sub>4</sub></li>
-                </ul>
+                <ol>
+                    <li>molécule</li>
+                    <li>symbole chimique</li>
+                    <li>formule chimique</li>
+                    <li>corps simple</li>
+                    <li>corps composé</li>
+                    <li>atomes</li>
+                </ol>
             </div>
 
             <div class="box">
                 <h3>Correction de l’exercice 3</h3>
-
-                <ol>
-                    <li>H<sub>2</sub>O contient 2 atomes d’hydrogène et 1 atome d’oxygène.</li>
-                    <li>CO<sub>2</sub> contient 1 atome de carbone et 2 atomes d’oxygène.</li>
-                    <li>CH<sub>4</sub> contient 1 atome de carbone et 4 atomes d’hydrogène.</li>
-                    <li>Ces molécules sont des corps purs composés.</li>
-                </ol>
+                <p>
+                    <strong>H<sub>2</sub>O :</strong> 2 atomes d’hydrogène et 1 atome d’oxygène.<br>
+                    <strong>CO<sub>2</sub> :</strong> 1 atome de carbone et 2 atomes d’oxygène.<br>
+                    <strong>O<sub>2</sub> :</strong> 2 atomes d’oxygène.<br>
+                    <strong>CH<sub>4</sub> :</strong> 1 atome de carbone et 4 atomes d’hydrogène.
+                </p>
             </div>
 
             <div class="box">
                 <h3>Correction de l’exercice 4</h3>
-
-                <ol>
-                    <li>Les deux principaux gaz de l’air sont le diazote et le dioxygène.</li>
-                    <li>La formule du dioxygène est O<sub>2</sub>.</li>
-                    <li>La formule du diazote est N<sub>2</sub>.</li>
-                    <li>L’air est un mélange car il contient plusieurs gaz différents.</li>
-                </ol>
+                <p>
+                    <strong>Corps simples :</strong> O<sub>2</sub>, N<sub>2</sub>, H<sub>2</sub>.<br>
+                    <strong>Corps composés :</strong> H<sub>2</sub>O, CO<sub>2</sub>, CH<sub>4</sub>.
+                </p>
             </div>
         </section>
 
