@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>L’eau dans notre environnement</title>
+    <title>L’eau dans notre environnement - 1AC</title>
+
+    <link rel="icon" type="image/png" href="logo.png">
 
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -24,6 +30,17 @@
             color: white;
             padding: 45px 20px;
             text-align: center;
+        }
+
+        .site-logo {
+            width: 95px;
+            height: 95px;
+            object-fit: contain;
+            margin-bottom: 15px;
+            border-radius: 50%;
+            background-color: white;
+            padding: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.20);
         }
 
         header h1 {
@@ -138,6 +155,7 @@
             border: 1px solid #ddd;
             padding: 12px;
             text-align: left;
+            vertical-align: top;
         }
 
         th {
@@ -167,14 +185,36 @@
             padding: 25px;
             margin-top: 40px;
         }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 28px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 6px;
+                font-size: 14px;
+            }
+
+            .pdf-viewer {
+                height: 520px;
+            }
+
+            .container {
+                padding: 30px 15px;
+            }
+        }
     </style>
 </head>
 
 <body>
 
     <header>
+        <img src="logo.png" alt="Logo Physique-Chimie Collège" class="site-logo" onerror="this.style.display='none'">
+
         <h1>L’eau dans notre environnement</h1>
-        <p>1ère année collège - Semestre 1 | Cours, PDF, résumé et exercices</p>
+        <p>1ère année collège - Semestre 1 | Cours, PDF, résumé, exercices et corrigés</p>
     </header>
 
     <nav>
@@ -185,6 +225,7 @@
         <a href="#lecon">Leçon</a>
         <a href="#resume">Résumé</a>
         <a href="#exercices">Exercices</a>
+        <a href="#corrige">Corrigés</a>
     </nav>
 
     <div class="container">
@@ -196,14 +237,14 @@
                 <p>
                     Ce cours présente l’importance de l’eau dans notre environnement,
                     sa répartition sur la Terre, ses différents états physiques,
-                    son cycle naturel ainsi que le test permettant de reconnaître
-                    la présence d’eau dans une substance.
+                    son cycle naturel et le test permettant de reconnaître la présence
+                    d’eau dans une substance.
                 </p>
 
                 <div class="definition">
                     <strong>Objectif du cours :</strong>
-                    comprendre le rôle de l’eau dans la nature et savoir identifier
-                    sa présence à l’aide du sulfate de cuivre anhydre.
+                    comprendre le rôle de l’eau dans la nature, connaître ses états physiques
+                    et savoir identifier sa présence à l’aide du sulfate de cuivre anhydre.
                 </div>
             </div>
         </section>
@@ -213,7 +254,7 @@
 
             <div class="pdf-box">
                 <p>
-                    Vous pouvez consulter le PDF directement sur cette page,
+                    Vous pouvez consulter le document PDF directement sur cette page,
                     l’ouvrir dans un nouvel onglet ou le télécharger.
                 </p>
 
@@ -229,35 +270,32 @@
 
             <div class="box">
                 <p>
-                    L’eau est une substance essentielle dans notre environnement.
-                    Elle existe dans les mers, les océans, les rivières, les lacs,
-                    les glaciers, l’atmosphère, les êtres vivants et les aliments.
-                    Elle est indispensable à la vie des êtres humains, des animaux
-                    et des plantes.
+                    L’eau est indispensable à la vie. Les êtres vivants ont besoin d’eau
+                    pour survivre. Dans notre environnement, on trouve l’eau dans les mers,
+                    les océans, les rivières, les lacs, les glaciers, les eaux souterraines
+                    et l’atmosphère.
                 </p>
 
                 <div class="definition">
                     <strong>Définition :</strong>
-                    L’hydrosphère désigne l’ensemble de l’eau présente sur la Terre :
-                    océans, mers, glaciers, eaux souterraines, rivières, lacs
-                    et vapeur d’eau dans l’atmosphère.
+                    l’hydrosphère est l’ensemble des réserves d’eau présentes sur la Terre :
+                    océans, mers, glaciers, rivières, lacs, eaux souterraines et vapeur d’eau
+                    dans l’atmosphère.
                 </div>
 
                 <div class="important">
                     <strong>À retenir :</strong>
-                    L’eau est indispensable à la vie. Sans eau, les êtres vivants
-                    ne peuvent pas survivre.
+                    l’eau est une ressource naturelle essentielle. Il faut l’utiliser
+                    de manière responsable et éviter le gaspillage.
                 </div>
             </div>
 
-            <h2>2. Répartition de l’eau sur Terre</h2>
+            <h2>2. Répartition de l’eau sur la Terre</h2>
 
             <div class="box">
                 <p>
-                    L’eau n’est pas répartie de la même manière sur la Terre.
-                    La plus grande partie se trouve dans les mers et les océans.
-                    Une très petite quantité seulement se trouve dans les rivières,
-                    les lacs et l’atmosphère.
+                    La plus grande partie de l’eau présente sur la Terre est de l’eau salée.
+                    L’eau douce disponible pour l’être humain est très limitée.
                 </p>
 
                 <table>
@@ -286,6 +324,12 @@
                         <td>0,001 %</td>
                     </tr>
                 </table>
+
+                <div class="important">
+                    <strong>Remarque :</strong>
+                    la quantité d’eau douce directement utilisable est très faible.
+                    Cela montre l’importance de préserver cette ressource.
+                </div>
             </div>
 
             <h2>3. Les états physiques de l’eau</h2>
@@ -299,26 +343,26 @@
                 <table>
                     <tr>
                         <th>État physique</th>
-                        <th>Exemples</th>
+                        <th>Exemples dans la nature</th>
                     </tr>
                     <tr>
                         <td>Solide</td>
-                        <td>Glace, neige, givre, grêle</td>
+                        <td>Glace, neige, grêle, givre</td>
                     </tr>
                     <tr>
                         <td>Liquide</td>
-                        <td>Pluie, eau des rivières, eau des mers, rosée</td>
+                        <td>Pluie, mer, rivière, lac, rosée</td>
                     </tr>
                     <tr>
                         <td>Gazeux</td>
-                        <td>Vapeur d’eau invisible dans l’air</td>
+                        <td>Vapeur d’eau dans l’air</td>
                     </tr>
                 </table>
 
                 <div class="important">
-                    <strong>Remarque :</strong>
-                    La vapeur d’eau est invisible. Les nuages, le brouillard et la buée
-                    sont formés de petites gouttelettes d’eau liquide.
+                    <strong>Attention :</strong>
+                    la vapeur d’eau est invisible. Les nuages, la buée et le brouillard
+                    sont formés de très petites gouttelettes d’eau liquide.
                 </div>
             </div>
 
@@ -326,24 +370,41 @@
 
             <div class="box">
                 <p>
-                    Le cycle de l’eau est un ensemble de transformations et de déplacements
-                    de l’eau entre la Terre et l’atmosphère. Pendant ce cycle, l’eau peut
-                    changer d’état physique, mais elle ne disparaît pas.
+                    Le cycle de l’eau est la circulation continue de l’eau entre la Terre
+                    et l’atmosphère. Pendant ce cycle, l’eau change d’état physique,
+                    mais elle ne disparaît pas.
                 </p>
 
-                <h3>Les principales étapes du cycle de l’eau</h3>
-
-                <ul>
-                    <li><strong>Évaporation :</strong> l’eau liquide se transforme en vapeur d’eau sous l’effet de la chaleur du Soleil.</li>
-                    <li><strong>Condensation :</strong> la vapeur d’eau se refroidit et forme des nuages.</li>
-                    <li><strong>Précipitations :</strong> l’eau retombe sur Terre sous forme de pluie, neige ou grêle.</li>
-                    <li><strong>Ruissellement :</strong> une partie de l’eau coule à la surface de la Terre vers les rivières et les mers.</li>
-                    <li><strong>Infiltration :</strong> une partie de l’eau pénètre dans le sol et forme des eaux souterraines.</li>
-                </ul>
+                <table>
+                    <tr>
+                        <th>Étape</th>
+                        <th>Explication</th>
+                    </tr>
+                    <tr>
+                        <td>Évaporation</td>
+                        <td>L’eau liquide se transforme en vapeur d’eau sous l’effet de la chaleur du Soleil.</td>
+                    </tr>
+                    <tr>
+                        <td>Condensation</td>
+                        <td>La vapeur d’eau se refroidit et forme les nuages.</td>
+                    </tr>
+                    <tr>
+                        <td>Précipitations</td>
+                        <td>L’eau retombe sur la Terre sous forme de pluie, neige ou grêle.</td>
+                    </tr>
+                    <tr>
+                        <td>Ruissellement</td>
+                        <td>Une partie de l’eau coule à la surface vers les rivières, les lacs et les mers.</td>
+                    </tr>
+                    <tr>
+                        <td>Infiltration</td>
+                        <td>Une partie de l’eau pénètre dans le sol et forme les eaux souterraines.</td>
+                    </tr>
+                </table>
 
                 <div class="definition">
                     <strong>Conclusion :</strong>
-                    Le cycle de l’eau est un échange continu entre les océans,
+                    le cycle de l’eau assure un échange permanent entre les océans,
                     l’atmosphère, le sol et les êtres vivants.
                 </div>
             </div>
@@ -353,88 +414,35 @@
             <div class="box">
                 <p>
                     Pour détecter la présence d’eau dans une substance, on utilise
-                    du <strong>sulfate de cuivre anhydre</strong>.
+                    le sulfate de cuivre anhydre.
                 </p>
 
                 <div class="definition">
                     <strong>Définition :</strong>
-                    Le sulfate de cuivre anhydre est une poudre blanche qui devient bleue
+                    le sulfate de cuivre anhydre est une poudre blanche qui devient bleue
                     en présence d’eau.
                 </div>
 
-                <h3>Expérience</h3>
-
                 <ol>
-                    <li>On prend une petite quantité de sulfate de cuivre anhydre.</li>
+                    <li>On place une petite quantité de sulfate de cuivre anhydre.</li>
                     <li>On ajoute quelques gouttes de la substance à tester.</li>
                     <li>On observe le changement de couleur.</li>
                 </ol>
 
-                <h3>Résultat</h3>
-
-                <ul>
-                    <li>Si le sulfate de cuivre anhydre devient bleu, la substance contient de l’eau.</li>
-                    <li>S’il reste blanc, la substance ne contient pas d’eau ou en contient très peu.</li>
-                </ul>
-
                 <table>
                     <tr>
-                        <th>Substance testée</th>
-                        <th>Couleur du sulfate de cuivre</th>
-                        <th>Présence d’eau</th>
+                        <th>Observation</th>
+                        <th>Conclusion</th>
                     </tr>
                     <tr>
-                        <td>Pomme de terre</td>
-                        <td>Bleu</td>
-                        <td>Oui</td>
+                        <td>Le sulfate de cuivre devient bleu.</td>
+                        <td>La substance contient de l’eau.</td>
                     </tr>
                     <tr>
-                        <td>Eau minérale</td>
-                        <td>Bleu</td>
-                        <td>Oui</td>
-                    </tr>
-                    <tr>
-                        <td>Alcool à brûler</td>
-                        <td>Blanc</td>
-                        <td>Non</td>
-                    </tr>
-                    <tr>
-                        <td>Vinaigre</td>
-                        <td>Bleu</td>
-                        <td>Oui</td>
-                    </tr>
-                    <tr>
-                        <td>Pétrole</td>
-                        <td>Blanc</td>
-                        <td>Non</td>
-                    </tr>
-                    <tr>
-                        <td>Huile</td>
-                        <td>Blanc</td>
-                        <td>Non</td>
-                    </tr>
-                    <tr>
-                        <td>Lait</td>
-                        <td>Bleu</td>
-                        <td>Oui</td>
-                    </tr>
-                    <tr>
-                        <td>Jus de fruit</td>
-                        <td>Bleu</td>
-                        <td>Oui</td>
-                    </tr>
-                    <tr>
-                        <td>Céréales</td>
-                        <td>Blanc</td>
-                        <td>Non</td>
+                        <td>Le sulfate de cuivre reste blanc.</td>
+                        <td>La substance ne contient pas d’eau ou en contient très peu.</td>
                     </tr>
                 </table>
-
-                <div class="important">
-                    <strong>Conclusion :</strong>
-                    La plupart des aliments et toutes les boissons contiennent de l’eau.
-                    Le corps humain contient aussi une grande quantité d’eau.
-                </div>
             </div>
         </section>
 
@@ -447,7 +455,7 @@
                     <li>L’ensemble des réserves d’eau sur la Terre s’appelle l’hydrosphère.</li>
                     <li>La majorité de l’eau terrestre se trouve dans les mers et les océans.</li>
                     <li>L’eau existe sous trois états physiques : solide, liquide et gazeux.</li>
-                    <li>Le cycle de l’eau permet la circulation continue de l’eau entre la Terre et l’atmosphère.</li>
+                    <li>Le cycle de l’eau permet la circulation continue de l’eau dans la nature.</li>
                     <li>Le sulfate de cuivre anhydre permet de détecter la présence d’eau.</li>
                     <li>En présence d’eau, le sulfate de cuivre anhydre passe du blanc au bleu.</li>
                 </ul>
@@ -459,20 +467,18 @@
 
             <div class="box">
                 <h3>Exercice 1 : Vrai ou faux</h3>
-
                 <ol>
                     <li>L’eau est indispensable à la vie.</li>
-                    <li>L’ensemble des réserves d’eau sur la Terre s’appelle l’atmosphère.</li>
-                    <li>L’eau existe dans la nature sous trois états physiques.</li>
+                    <li>L’hydrosphère désigne l’ensemble des réserves d’eau sur la Terre.</li>
+                    <li>L’eau existe uniquement à l’état liquide.</li>
                     <li>La vapeur d’eau est visible à l’œil nu.</li>
                     <li>Le sulfate de cuivre anhydre devient bleu en présence d’eau.</li>
-                    <li>Le passage de l’état solide à l’état liquide s’appelle la fusion.</li>
+                    <li>L’eau douce disponible est très abondante sur Terre.</li>
                 </ol>
             </div>
 
             <div class="box">
                 <h3>Exercice 2 : Compléter les phrases</h3>
-
                 <p>
                     Complète avec les mots suivants :
                     <strong>hydrosphère - solide - liquide - gazeux - bleu - anhydre - eau - indispensable</strong>.
@@ -486,20 +492,6 @@
                     <li>L’eau est __________ à la vie.</li>
                 </ol>
             </div>
-
-            <div class="box">
-                <h3>Exercice 3 : Test de reconnaissance de l’eau</h3>
-
-                <p>
-                    On veut vérifier si une pomme, du pain, du lait et de l’huile contiennent de l’eau.
-                </p>
-
-                <ol>
-                    <li>Quelle substance utilise-t-on pour détecter la présence d’eau ?</li>
-                    <li>Quelle couleur prend cette substance en présence d’eau ?</li>
-                    <li>Quels aliments ou liquides contiennent probablement de l’eau ?</li>
-                </ol>
-            </div>
         </section>
 
         <section id="corrige">
@@ -507,20 +499,18 @@
 
             <div class="box">
                 <h3>Correction de l’exercice 1</h3>
-
                 <ol>
                     <li>Vrai</li>
-                    <li>Faux : c’est l’hydrosphère.</li>
                     <li>Vrai</li>
+                    <li>Faux : l’eau existe sous trois états physiques.</li>
                     <li>Faux : la vapeur d’eau est invisible.</li>
                     <li>Vrai</li>
-                    <li>Vrai</li>
+                    <li>Faux : l’eau douce disponible est limitée.</li>
                 </ol>
             </div>
 
             <div class="box">
                 <h3>Correction de l’exercice 2</h3>
-
                 <ol>
                     <li>hydrosphère</li>
                     <li>solide, liquide et gazeux</li>
