@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quelques matériaux au quotidien</title>
+    <title>Quelques matériaux au quotidien - 3AC</title>
+
+    <link rel="icon" type="image/png" href="logo.png">
 
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -24,6 +30,17 @@
             color: white;
             padding: 45px 20px;
             text-align: center;
+        }
+
+        .site-logo {
+            width: 95px;
+            height: 95px;
+            object-fit: contain;
+            margin-bottom: 15px;
+            border-radius: 50%;
+            background-color: white;
+            padding: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.20);
         }
 
         header h1 {
@@ -168,14 +185,36 @@
             padding: 25px;
             margin-top: 40px;
         }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 28px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 6px;
+                font-size: 14px;
+            }
+
+            .pdf-viewer {
+                height: 520px;
+            }
+
+            .container {
+                padding: 30px 15px;
+            }
+        }
     </style>
 </head>
 
 <body>
 
     <header>
+        <img src="logo.png" alt="Logo Physique-Chimie Collège" class="site-logo" onerror="this.style.display='none'">
+
         <h1>Quelques matériaux au quotidien</h1>
-        <p>3ème année collège - Semestre 1 | Cours, PDF, résumé et exercices</p>
+        <p>3ème année collège - Semestre 1 | Cours, PDF, résumé, exercices et corrigés</p>
     </header>
 
     <nav>
@@ -186,6 +225,7 @@
         <a href="#lecon">Leçon</a>
         <a href="#resume">Résumé</a>
         <a href="#exercices">Exercices</a>
+        <a href="#corrige">Corrigés</a>
     </nav>
 
     <div class="container">
@@ -195,17 +235,17 @@
 
             <div class="box">
                 <p>
-                    Ce cours présente la différence entre objets et matériaux,
-                    les grandes familles de matériaux, ainsi que des tests simples
-                    permettant de reconnaître certaines propriétés des métaux,
-                    des verres, des plastiques et des matériaux organiques.
+                    Ce cours présente les matériaux utilisés dans la vie quotidienne.
+                    Il permet de distinguer un objet d’un matériau, de classer les matériaux
+                    selon leur nature et de reconnaître quelques métaux et matières plastiques
+                    à partir de tests simples.
                 </p>
 
                 <div class="definition">
                     <strong>Objectif du cours :</strong>
-                    savoir distinguer un objet d’un matériau, classer les matériaux,
-                    identifier quelques propriétés physiques et reconnaître certains métaux
-                    et plastiques par des tests simples.
+                    savoir identifier les matériaux qui constituent les objets,
+                    classer les matériaux en grandes familles et reconnaître quelques métaux
+                    et plastiques utilisés dans la vie quotidienne.
                 </div>
             </div>
         </section>
@@ -215,7 +255,7 @@
 
             <div class="pdf-box">
                 <p>
-                    Vous pouvez consulter le PDF directement sur cette page,
+                    Vous pouvez consulter le document PDF directement sur cette page,
                     l’ouvrir dans un nouvel onglet ou le télécharger.
                 </p>
 
@@ -227,277 +267,311 @@
         </section>
 
         <section id="lecon">
-            <h2>1. Distinction entre objets et matériaux</h2>
+            <h2>1. Objet et matériau</h2>
 
             <div class="box">
                 <p>
-                    Dans la vie quotidienne, les objets sont fabriqués pour remplir
-                    une fonction précise. Ils peuvent être constitués d’un ou plusieurs matériaux.
+                    Dans la vie quotidienne, nous utilisons plusieurs objets : chaise, table,
+                    bouteille, règle, casserole, clé, téléphone, etc. Chaque objet est fabriqué
+                    à partir d’un ou plusieurs matériaux.
                 </p>
 
                 <div class="definition">
-                    <strong>Définition :</strong>
-                    un objet est un corps fabriqué pour une fonction précise, comme une chaise,
-                    une bouteille ou une fenêtre. Un matériau est une matière utilisée pour
-                    fabriquer des objets.
+                    <strong>Objet :</strong>
+                    c’est une chose fabriquée ou utilisée par l’être humain pour répondre
+                    à un besoin précis.
+                </div>
+
+                <div class="definition">
+                    <strong>Matériau :</strong>
+                    c’est la matière utilisée pour fabriquer un objet.
                 </div>
 
                 <table>
                     <tr>
                         <th>Objet</th>
-                        <th>Matériaux possibles</th>
-                    </tr>
-                    <tr>
-                        <td>Chaise</td>
-                        <td>Bois, fer, plastique</td>
-                    </tr>
-                    <tr>
-                        <td>Fenêtre</td>
-                        <td>Verre, aluminium, bois</td>
+                        <th>Matériau utilisé</th>
                     </tr>
                     <tr>
                         <td>Bouteille</td>
                         <td>Verre ou plastique</td>
                     </tr>
                     <tr>
-                        <td>Fils de connexion</td>
-                        <td>Cuivre et plastique</td>
+                        <td>Chaise</td>
+                        <td>Bois, plastique ou métal</td>
+                    </tr>
+                    <tr>
+                        <td>Casserole</td>
+                        <td>Métal</td>
+                    </tr>
+                    <tr>
+                        <td>Cahier</td>
+                        <td>Papier</td>
                     </tr>
                 </table>
 
                 <div class="important">
                     <strong>À retenir :</strong>
-                    un même objet peut être fabriqué avec plusieurs matériaux,
-                    et un même matériau peut servir à fabriquer plusieurs objets différents.
+                    un même objet peut être fabriqué avec des matériaux différents.
                 </div>
             </div>
 
-            <h2>2. Classification des matériaux</h2>
+            <h2>2. Les grandes familles de matériaux</h2>
 
             <div class="box">
                 <p>
-                    Une famille de matériaux regroupe des matériaux qui possèdent
-                    des propriétés semblables.
+                    Les matériaux utilisés dans la vie quotidienne peuvent être classés
+                    en plusieurs familles selon leur origine et leurs propriétés.
                 </p>
 
                 <table>
                     <tr>
-                        <th>Famille</th>
+                        <th>Famille de matériaux</th>
                         <th>Exemples</th>
-                        <th>Propriétés principales</th>
-                    </tr>
-                    <tr>
-                        <td>Matériaux organiques</td>
-                        <td>Bois, papier, laine, cuir</td>
-                        <td>Ils peuvent être d’origine végétale ou animale.</td>
+                        <th>Utilisations</th>
                     </tr>
                     <tr>
                         <td>Métaux</td>
-                        <td>Fer, cuivre, aluminium, zinc</td>
-                        <td>Bons conducteurs de l’électricité et de la chaleur, résistants et recyclables.</td>
+                        <td>Fer, aluminium, cuivre, zinc</td>
+                        <td>Casseroles, fils électriques, voitures, outils</td>
                     </tr>
                     <tr>
                         <td>Verres</td>
-                        <td>Verre, céramique</td>
-                        <td>Isolants électriques, mauvais conducteurs thermiques, fragiles et imperméables.</td>
+                        <td>Verre ordinaire</td>
+                        <td>Bouteilles, vitres, verres de table</td>
                     </tr>
                     <tr>
-                        <td>Plastiques</td>
-                        <td>PE, PP, PS, PVC, PET</td>
-                        <td>Légers, imperméables, isolants électriques et thermiques.</td>
-                    </tr>
-                </table>
-            </div>
-
-            <h2>3. Caractériser les matériaux selon leurs propriétés</h2>
-
-            <div class="box">
-                <h3>3.1. Test de conductivité électrique</h3>
-
-                <p>
-                    Pour savoir si un matériau est conducteur d’électricité,
-                    on l’insère dans un circuit électrique simple avec une pile et une lampe.
-                </p>
-
-                <ul>
-                    <li>Si la lampe brille, le courant circule : le matériau est conducteur.</li>
-                    <li>Si la lampe reste éteinte, le courant ne circule pas : le matériau est isolant.</li>
-                </ul>
-
-                <table>
-                    <tr>
-                        <th>Matériaux testés</th>
-                        <th>Résultat</th>
+                        <td>Matières plastiques</td>
+                        <td>PE, PVC, PET, PS</td>
+                        <td>Bouteilles, sacs, tuyaux, emballages</td>
                     </tr>
                     <tr>
-                        <td>Fer, zinc, aluminium, cuivre</td>
-                        <td>Conducteurs électriques</td>
+                        <td>Matériaux organiques naturels</td>
+                        <td>Bois, coton, cuir, papier</td>
+                        <td>Meubles, vêtements, cahiers</td>
                     </tr>
                     <tr>
-                        <td>Sulfate de cuivre en poudre, sel en poudre, bois, plastique</td>
-                        <td>Isolants électriques</td>
+                        <td>Céramiques</td>
+                        <td>Porcelaine, terre cuite</td>
+                        <td>Assiettes, tuiles, carreaux</td>
                     </tr>
                 </table>
             </div>
 
-            <div class="box">
-                <h3>3.2. Test de conductivité thermique</h3>
+            <h2>3. Propriétés des matériaux</h2>
 
+            <div class="box">
                 <p>
-                    Pour tester la conductivité thermique, on chauffe l’extrémité
-                    d’une tige en fer, en bois ou en verre et on observe si la cire
-                    placée à l’autre extrémité fond.
+                    Le choix d’un matériau dépend de ses propriétés. Certaines propriétés
+                    sont mécaniques, électriques, thermiques ou chimiques.
                 </p>
 
                 <table>
                     <tr>
-                        <th>Matériau</th>
-                        <th>Observation</th>
-                        <th>Conclusion</th>
+                        <th>Propriété</th>
+                        <th>Signification</th>
+                        <th>Exemple</th>
                     </tr>
                     <tr>
-                        <td>Fer</td>
-                        <td>La cire fond après quelques secondes.</td>
-                        <td>Bon conducteur thermique</td>
+                        <td>Dureté</td>
+                        <td>Résistance aux rayures et aux déformations.</td>
+                        <td>Le métal est généralement plus dur que le plastique.</td>
                     </tr>
                     <tr>
-                        <td>Bois</td>
-                        <td>La cire ne fond pas rapidement.</td>
-                        <td>Mauvais conducteur thermique</td>
+                        <td>Conductivité électrique</td>
+                        <td>Capacité à laisser passer le courant électrique.</td>
+                        <td>Le cuivre est un bon conducteur électrique.</td>
                     </tr>
                     <tr>
-                        <td>Verre</td>
-                        <td>La cire ne fond pas rapidement.</td>
-                        <td>Mauvais conducteur thermique</td>
+                        <td>Conductivité thermique</td>
+                        <td>Capacité à transmettre la chaleur.</td>
+                        <td>Les métaux conduisent bien la chaleur.</td>
+                    </tr>
+                    <tr>
+                        <td>Résistance à la corrosion</td>
+                        <td>Capacité à résister à l’oxydation.</td>
+                        <td>L’aluminium résiste mieux à la corrosion que le fer.</td>
                     </tr>
                 </table>
 
                 <div class="important">
-                    <strong>À retenir :</strong>
-                    les métaux sont généralement de bons conducteurs de la chaleur
-                    et de l’électricité, contrairement au bois, au verre et aux plastiques.
+                    <strong>Exemple :</strong>
+                    on utilise le cuivre dans les fils électriques car il conduit bien
+                    le courant électrique.
                 </div>
             </div>
 
-            <h2>4. Test de reconnaissance des métaux</h2>
+            <h2>4. Reconnaissance de quelques métaux</h2>
 
             <div class="box">
                 <p>
-                    Les métaux les plus utilisés dans la vie quotidienne sont le fer,
-                    l’aluminium, le cuivre et le zinc. On peut les reconnaître par des tests simples.
+                    Les métaux possèdent des propriétés communes : ils sont généralement
+                    solides à température ambiante, brillants, conducteurs de l’électricité
+                    et de la chaleur.
                 </p>
 
                 <table>
                     <tr>
-                        <th>Test</th>
-                        <th>Principe</th>
-                        <th>Exemple</th>
+                        <th>Métal</th>
+                        <th>Couleur / aspect</th>
+                        <th>Propriété caractéristique</th>
                     </tr>
                     <tr>
-                        <td>Couleur</td>
-                        <td>Observer la couleur du métal.</td>
-                        <td>Le cuivre est rouge-brique ; l’or est jaune.</td>
+                        <td>Fer</td>
+                        <td>Gris métallique</td>
+                        <td>Attiré par un aimant, peut rouiller.</td>
                     </tr>
                     <tr>
-                        <td>Aimant</td>
-                        <td>Approcher un aimant du métal.</td>
-                        <td>Le fer est attiré par un aimant.</td>
+                        <td>Cuivre</td>
+                        <td>Rouge orangé</td>
+                        <td>Très bon conducteur électrique.</td>
                     </tr>
                     <tr>
-                        <td>Masse volumique</td>
-                        <td>Comparer la masse volumique.</td>
-                        <td>Chaque métal possède une masse volumique caractéristique.</td>
+                        <td>Aluminium</td>
+                        <td>Gris argenté</td>
+                        <td>Léger et résistant à la corrosion.</td>
+                    </tr>
+                    <tr>
+                        <td>Zinc</td>
+                        <td>Gris bleuâtre</td>
+                        <td>Utilisé pour protéger le fer contre la corrosion.</td>
                     </tr>
                 </table>
 
                 <div class="definition">
-                    <strong>Masse volumique :</strong>
-                    grandeur qui relie la masse d’un corps à son volume.
-                    Elle permet de caractériser un matériau.
+                    <strong>Test de l’aimant :</strong>
+                    le fer est attiré par un aimant. Ce test permet de reconnaître
+                    la présence du fer dans certains objets.
                 </div>
             </div>
 
-            <h2>5. Test de reconnaissance des plastiques</h2>
+            <h2>5. Conducteurs et isolants</h2>
 
             <div class="box">
                 <p>
-                    Les plastiques les plus courants sont le polyéthylène (PE),
-                    le polystyrène (PS), le polypropylène (PP), le polychlorure de vinyle (PVC)
-                    et le polyéthylène téréphtalate (PET).
+                    Les matériaux n’ont pas tous le même comportement vis-à-vis du courant
+                    électrique. Certains laissent passer le courant, d’autres l’empêchent.
+                </p>
+
+                <div class="definition">
+                    <strong>Conducteur électrique :</strong>
+                    matériau qui laisse passer le courant électrique.
+                </div>
+
+                <div class="definition">
+                    <strong>Isolant électrique :</strong>
+                    matériau qui ne laisse pas passer le courant électrique.
+                </div>
+
+                <table>
+                    <tr>
+                        <th>Conducteurs</th>
+                        <th>Isolants</th>
+                    </tr>
+                    <tr>
+                        <td>Cuivre, fer, aluminium, zinc</td>
+                        <td>Plastique, verre, bois sec, caoutchouc</td>
+                    </tr>
+                </table>
+
+                <div class="important">
+                    <strong>À retenir :</strong>
+                    les métaux sont généralement de bons conducteurs électriques.
+                    Les plastiques sont généralement des isolants.
+                </div>
+            </div>
+
+            <h2>6. Reconnaissance de quelques matières plastiques</h2>
+
+            <div class="box">
+                <p>
+                    Les matières plastiques sont très utilisées dans les emballages,
+                    les bouteilles, les tuyaux, les sacs et plusieurs objets du quotidien.
+                    On peut parfois les identifier grâce au symbole inscrit sur l’objet.
                 </p>
 
                 <table>
                     <tr>
                         <th>Plastique</th>
-                        <th>Abréviation</th>
-                        <th>Code courant</th>
+                        <th>Symbole</th>
+                        <th>Utilisation</th>
                     </tr>
                     <tr>
-                        <td>Polyéthylène</td>
-                        <td>PE</td>
-                        <td>PE-HD</td>
-                    </tr>
-                    <tr>
-                        <td>Polystyrène</td>
-                        <td>PS</td>
-                        <td>PS</td>
-                    </tr>
-                    <tr>
-                        <td>Polychlorure de vinyle</td>
-                        <td>PVC</td>
-                        <td>PVC</td>
-                    </tr>
-                    <tr>
-                        <td>Polypropylène</td>
-                        <td>PP</td>
-                        <td>PP</td>
-                    </tr>
-                    <tr>
-                        <td>Polyéthylène téréphtalate</td>
                         <td>PET</td>
-                        <td>PET</td>
+                        <td>PET ou 1</td>
+                        <td>Bouteilles d’eau et de boissons.</td>
+                    </tr>
+                    <tr>
+                        <td>PEHD</td>
+                        <td>HDPE ou 2</td>
+                        <td>Bidons, flacons, bouteilles de lait.</td>
+                    </tr>
+                    <tr>
+                        <td>PVC</td>
+                        <td>PVC ou 3</td>
+                        <td>Tuyaux, gaines électriques.</td>
+                    </tr>
+                    <tr>
+                        <td>PEBD</td>
+                        <td>LDPE ou 4</td>
+                        <td>Sacs plastiques, films d’emballage.</td>
+                    </tr>
+                    <tr>
+                        <td>PP</td>
+                        <td>PP ou 5</td>
+                        <td>Bouchons, boîtes alimentaires.</td>
+                    </tr>
+                    <tr>
+                        <td>PS</td>
+                        <td>PS ou 6</td>
+                        <td>Polystyrène, emballages légers.</td>
                     </tr>
                 </table>
 
-                <h3>5.1. Test de flottabilité</h3>
+                <div class="important">
+                    <strong>Remarque :</strong>
+                    les symboles des plastiques facilitent leur identification
+                    et leur recyclage.
+                </div>
+            </div>
+
+            <h2>7. Choix d’un matériau</h2>
+
+            <div class="box">
+                <p>
+                    Pour fabriquer un objet, on choisit le matériau selon l’usage attendu.
+                    Il faut tenir compte de la solidité, de la masse, du prix, de la sécurité,
+                    de la résistance à la chaleur, de la conductivité et de l’impact
+                    sur l’environnement.
+                </p>
 
                 <table>
                     <tr>
-                        <th>Milieu</th>
-                        <th>Plastiques qui flottent</th>
-                        <th>Plastiques qui coulent</th>
+                        <th>Objet</th>
+                        <th>Matériau adapté</th>
+                        <th>Raison du choix</th>
                     </tr>
                     <tr>
-                        <td>Eau douce</td>
-                        <td>PE, PP</td>
-                        <td>PS, PVC</td>
+                        <td>Fil électrique</td>
+                        <td>Cuivre</td>
+                        <td>Très bon conducteur électrique.</td>
                     </tr>
                     <tr>
-                        <td>Eau salée</td>
-                        <td>PS</td>
-                        <td>PVC</td>
+                        <td>Gaine de fil électrique</td>
+                        <td>Plastique</td>
+                        <td>Isolant électrique.</td>
+                    </tr>
+                    <tr>
+                        <td>Casserole</td>
+                        <td>Métal</td>
+                        <td>Bon conducteur thermique.</td>
+                    </tr>
+                    <tr>
+                        <td>Fenêtre</td>
+                        <td>Verre</td>
+                        <td>Transparent et rigide.</td>
                     </tr>
                 </table>
-
-                <h3>5.2. Test de la couleur de la flamme</h3>
-
-                <p>
-                    Le PVC donne une flamme verte. Le PS, le PE et le PET donnent
-                    une flamme de couleur normale jaune.
-                </p>
-
-                <h3>5.3. Test de dissolution dans l’acétone</h3>
-
-                <p>
-                    Le polystyrène (PS) se dissout dans l’acétone,
-                    ce qui permet de le reconnaître.
-                </p>
-
-                <div class="important">
-                    <strong>Attention :</strong>
-                    les tests de flamme et d’acétone doivent être réalisés uniquement
-                    dans un cadre sécurisé, sous la surveillance d’un enseignant.
-                </div>
             </div>
         </section>
 
@@ -506,14 +580,16 @@
 
             <div class="resume">
                 <ul>
-                    <li>Un objet est fabriqué pour une fonction précise.</li>
-                    <li>Un matériau est une matière utilisée pour fabriquer des objets.</li>
-                    <li>Les principales familles de matériaux sont : organiques, métaux, verres et plastiques.</li>
-                    <li>Les métaux sont généralement de bons conducteurs de l’électricité et de la chaleur.</li>
-                    <li>Le verre, le bois et les plastiques sont souvent des isolants électriques.</li>
-                    <li>Le fer est attiré par un aimant et le cuivre a une couleur rouge-brique.</li>
-                    <li>Les plastiques peuvent être reconnus par la flottabilité, la couleur de la flamme ou la dissolution dans l’acétone.</li>
-                    <li>Les matériaux doivent être choisis selon leurs propriétés et leur impact sur la santé et l’environnement.</li>
+                    <li>Un objet est fabriqué pour répondre à un besoin.</li>
+                    <li>Un matériau est la matière utilisée pour fabriquer un objet.</li>
+                    <li>Les grandes familles de matériaux sont : métaux, verres, plastiques, matériaux organiques et céramiques.</li>
+                    <li>Les métaux sont généralement conducteurs de l’électricité et de la chaleur.</li>
+                    <li>Le fer est attiré par un aimant et peut rouiller.</li>
+                    <li>Le cuivre est rouge orangé et très bon conducteur électrique.</li>
+                    <li>L’aluminium est léger et résiste mieux à la corrosion.</li>
+                    <li>Un conducteur laisse passer le courant électrique.</li>
+                    <li>Un isolant ne laisse pas passer le courant électrique.</li>
+                    <li>Les symboles des plastiques permettent de les identifier et de faciliter leur recyclage.</li>
                 </ul>
             </div>
         </section>
@@ -524,46 +600,51 @@
             <div class="box">
                 <h3>Exercice 1 : Vrai ou faux</h3>
                 <ol>
-                    <li>Les matériaux interviennent dans la composition des objets.</li>
-                    <li>L’ordinateur est constitué de matériaux différents.</li>
-                    <li>Les métaux sont des matériaux recyclables.</li>
-                    <li>La matière plastique est toujours non recyclable.</li>
-                    <li>Les objets interviennent dans la composition des matériaux.</li>
-                    <li>L’aluminium est attiré par l’aimant.</li>
-                    <li>Le PVC change la couleur de la flamme.</li>
-                    <li>Le PP flotte sur l’eau douce.</li>
+                    <li>Un matériau est une matière utilisée pour fabriquer un objet.</li>
+                    <li>Le cuivre est un isolant électrique.</li>
+                    <li>Le fer est attiré par un aimant.</li>
+                    <li>Les plastiques sont généralement conducteurs électriques.</li>
+                    <li>L’aluminium est un métal léger.</li>
+                    <li>Les symboles des plastiques aident au recyclage.</li>
                 </ol>
             </div>
 
             <div class="box">
-                <h3>Exercice 2 : Compléter</h3>
-                <p>Complète avec les mots suivants : <strong>objet(s) - matériau(x)</strong>.</p>
+                <h3>Exercice 2 : Compléter les phrases</h3>
+                <p>
+                    Complète avec les mots suivants :
+                    <strong>matériau - objet - conducteur - isolant - fer - cuivre - plastique</strong>.
+                </p>
+
                 <ol>
-                    <li>Un __________ peut être fabriqué à partir de différents __________.</li>
-                    <li>Les trois classes principales des __________ utilisés au quotidien sont les verres, les plastiques et les métaux.</li>
-                    <li>Une bouteille est un __________ qui peut être fabriqué à partir d’un __________ tel que le verre.</li>
-                    <li>Une boîte d’emballage est un __________ qui peut être fabriqué à partir de plusieurs __________.</li>
+                    <li>Un __________ est fabriqué pour répondre à un besoin.</li>
+                    <li>Un __________ est la matière utilisée pour fabriquer un objet.</li>
+                    <li>Un matériau qui laisse passer le courant électrique est un __________.</li>
+                    <li>Un matériau qui ne laisse pas passer le courant électrique est un __________.</li>
+                    <li>Le __________ est attiré par un aimant.</li>
+                    <li>Le __________ est utilisé dans les fils électriques.</li>
+                    <li>Le __________ est souvent utilisé comme isolant.</li>
                 </ol>
             </div>
 
             <div class="box">
-                <h3>Exercice 3 : Objets ou matériaux</h3>
+                <h3>Exercice 3 : Classification</h3>
                 <p>
-                    Classer les éléments suivants : un verre - règle - le verre - robinet - laine - polyéthylène - voiture - fourchette - fenêtre - PVC - cuivre - plastique.
+                    Classer les matériaux suivants dans leurs familles :
+                    cuivre, verre, bois, PVC, aluminium, papier, porcelaine, fer.
                 </p>
             </div>
 
             <div class="box">
-                <h3>Exercice 4 : Reconnaissance des plastiques</h3>
+                <h3>Exercice 4 : Choix du matériau</h3>
                 <p>
-                    On met trois plastiques PVC, PS et PE dans deux béchers :
-                    le premier contient de l’eau douce et le deuxième contient de l’eau salée.
+                    Pour fabriquer un fil électrique, on utilise du cuivre entouré
+                    d’une gaine en plastique.
                 </p>
+
                 <ol>
-                    <li>Quel plastique flotte dans l’eau douce ?</li>
-                    <li>Quel plastique coule dans l’eau douce mais flotte dans l’eau salée ?</li>
-                    <li>Quel plastique donne une flamme verte ?</li>
-                    <li>Citer deux propriétés communes des plastiques.</li>
+                    <li>Pourquoi utilise-t-on le cuivre à l’intérieur du fil ?</li>
+                    <li>Pourquoi utilise-t-on le plastique à l’extérieur ?</li>
                 </ol>
             </div>
         </section>
@@ -575,11 +656,9 @@
                 <h3>Correction de l’exercice 1</h3>
                 <ol>
                     <li>Vrai</li>
+                    <li>Faux : le cuivre est un conducteur électrique.</li>
                     <li>Vrai</li>
-                    <li>Vrai</li>
-                    <li>Faux</li>
-                    <li>Faux</li>
-                    <li>Faux</li>
+                    <li>Faux : les plastiques sont généralement isolants.</li>
                     <li>Vrai</li>
                     <li>Vrai</li>
                 </ol>
@@ -588,26 +667,33 @@
             <div class="box">
                 <h3>Correction de l’exercice 2</h3>
                 <ol>
-                    <li>objet - matériaux</li>
-                    <li>matériaux</li>
-                    <li>objet - matériau</li>
-                    <li>objet - matériaux</li>
+                    <li>objet</li>
+                    <li>matériau</li>
+                    <li>conducteur</li>
+                    <li>isolant</li>
+                    <li>fer</li>
+                    <li>cuivre</li>
+                    <li>plastique</li>
                 </ol>
             </div>
 
             <div class="box">
                 <h3>Correction de l’exercice 3</h3>
                 <p>
-                    <strong>Objets :</strong> un verre, règle, robinet, voiture, fourchette, fenêtre.<br>
-                    <strong>Matériaux :</strong> le verre, laine, polyéthylène, PVC, cuivre, plastique.
+                    <strong>Métaux :</strong> cuivre, aluminium, fer.<br>
+                    <strong>Verres :</strong> verre.<br>
+                    <strong>Matériaux organiques :</strong> bois, papier.<br>
+                    <strong>Matières plastiques :</strong> PVC.<br>
+                    <strong>Céramiques :</strong> porcelaine.
                 </p>
             </div>
 
             <div class="box">
                 <h3>Correction de l’exercice 4</h3>
                 <p>
-                    PE flotte dans l’eau douce. PS coule dans l’eau douce mais flotte dans l’eau salée.
-                    PVC donne une flamme verte. Les plastiques sont souvent isolants et imperméables.
+                    On utilise le cuivre à l’intérieur du fil car c’est un bon conducteur
+                    électrique. On utilise le plastique à l’extérieur car c’est un isolant
+                    électrique qui protège l’utilisateur contre le courant.
                 </p>
             </div>
         </section>
