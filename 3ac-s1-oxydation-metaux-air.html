@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oxydation des métaux dans l'air</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #222;
+            line-height: 1.7;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0f4c81, #1abc9c);
+            color: white;
+            padding: 45px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 17px;
+        }
+
+        nav {
+            background-color: #083b66;
+            padding: 12px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #1abc9c;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        h2 {
+            color: #0f4c81;
+            margin: 30px 0 15px;
+            border-left: 5px solid #1abc9c;
+            padding-left: 10px;
+            font-size: 26px;
+        }
+
+        h3 {
+            color: #0f4c81;
+            margin-bottom: 10px;
+        }
+
+        .box {
+            background-color: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+        }
+
+        .definition {
+            background-color: #e8f6f3;
+            border-left: 5px solid #1abc9c;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .important {
+            background-color: #fff7e6;
+            border-left: 5px solid #f39c12;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .resume {
+            background-color: #eef4ff;
+            border-left: 5px solid #0f4c81;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .pdf-box {
+            background-color: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+        }
+
+        .pdf-viewer {
+            width: 100%;
+            height: 750px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        ul, ol {
+            margin-left: 25px;
+            margin-top: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background-color: white;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #0f4c81;
+            color: white;
+        }
+
+        .formula {
+            text-align: center;
+            font-size: 22px;
+            color: #083b66;
+            font-weight: bold;
+            margin: 20px 0;
+            background-color: #eef4ff;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 10px 10px 0 0;
+            background-color: #1abc9c;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #14977d;
+        }
+
+        footer {
+            background-color: #083b66;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Oxydation des métaux dans l'air</h1>
+        <p>3ème année collège - Semestre 1 | Cours, PDF, résumé et exercices</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="3ac.html">Cours 3AC</a>
+        <a href="#presentation">Présentation</a>
+        <a href="#pdf">PDF du cours</a>
+        <a href="#lecon">Leçon</a>
+        <a href="#resume">Résumé</a>
+        <a href="#exercices">Exercices</a>
+    </nav>
+
+    <div class="container">
+
+        <section id="presentation">
+            <h2>Présentation du cours</h2>
+
+            <div class="box">
+                <p>
+                    Ce cours présente l’oxydation du fer et de l’aluminium dans l’air.
+                    Il explique les conditions nécessaires à la formation de la rouille,
+                    le rôle de l’eau, du dioxygène et du sel, ainsi que les méthodes de
+                    protection du fer contre la corrosion. Il montre aussi pourquoi
+                    l’aluminium résiste mieux à l’oxydation en profondeur.
+                </p>
+
+                <div class="definition">
+                    <strong>Objectif du cours :</strong>
+                    comprendre la formation de la rouille, identifier les facteurs qui favorisent
+                    la corrosion du fer, comparer l’oxydation du fer et celle de l’aluminium,
+                    et connaître des moyens de protection contre la corrosion.
+                </div>
+            </div>
+        </section>
+
+        <section id="pdf">
+            <h2>Document PDF du cours</h2>
+
+            <div class="pdf-box">
+                <p>
+                    Vous pouvez consulter le PDF directement sur cette page,
+                    l’ouvrir dans un nouvel onglet ou le télécharger.
+                </p>
+
+                <a href="./3ac-s1-oxydation-metaux-air.pdf" target="_blank" class="btn">Ouvrir le PDF</a>
+                <a href="./3ac-s1-oxydation-metaux-air.pdf" download class="btn">Télécharger le PDF</a>
+
+                <iframe src="./3ac-s1-oxydation-metaux-air.pdf" class="pdf-viewer"></iframe>
+            </div>
+        </section>
+
+        <section id="lecon">
+            <h2>1. Introduction</h2>
+
+            <div class="box">
+                <p>
+                    Les objets en fer, comme les portes, les carrosseries et certaines pièces
+                    métalliques, peuvent se couvrir de rouille lorsqu’ils restent longtemps
+                    dans l’air humide. Ce phénomène est plus rapide dans les zones côtières
+                    à cause de la présence de sel.
+                </p>
+
+                <div class="important">
+                    <strong>Questions de départ :</strong>
+                    Que se passe-t-il lorsque le fer est abandonné dans l’air humide ?
+                    Quels facteurs favorisent la corrosion ? Comment protéger le fer ?
+                </div>
+            </div>
+
+            <h2>2. Oxydation du fer dans l’air</h2>
+
+            <div class="box">
+                <h3>2.1. Expérience avec des clous en fer</h3>
+
+                <p>
+                    On place des clous en fer dans quatre tubes à essai contenant des milieux
+                    différents : eau salée, eau distillée, eau bouillie et air sec avec chlorure
+                    de calcium.
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Tube</th>
+                        <th>Milieu</th>
+                        <th>Observation après quelques jours</th>
+                    </tr>
+                    <tr>
+                        <td>A</td>
+                        <td>Air + eau salée</td>
+                        <td>Rouille abondante.</td>
+                    </tr>
+                    <tr>
+                        <td>B</td>
+                        <td>Air + eau distillée</td>
+                        <td>Apparition de rouille, mais moins que dans l’eau salée.</td>
+                    </tr>
+                    <tr>
+                        <td>C</td>
+                        <td>Eau bouillie</td>
+                        <td>Pas de rouille.</td>
+                    </tr>
+                    <tr>
+                        <td>D</td>
+                        <td>Air sec avec chlorure de calcium</td>
+                        <td>Pas de rouille.</td>
+                    </tr>
+                </table>
+
+                <div class="definition">
+                    <strong>Conclusion :</strong>
+                    la formation de rouille nécessite la présence simultanée de fer,
+                    d’eau et de dioxygène. Le sel accélère la corrosion.
+                </div>
+            </div>
+
+            <div class="box">
+                <h3>2.2. Expérience avec la paille de fer</h3>
+
+                <p>
+                    On introduit de la paille de fer dans une éprouvette humidifiée retournée
+                    sur une cuve à eau. Après quelques jours, la paille de fer rouille et
+                    l’eau monte dans l’éprouvette.
+                </p>
+
+                <ul>
+                    <li>La paille de fer devient rouillée.</li>
+                    <li>L’eau monte dans l’éprouvette.</li>
+                    <li>Le dioxygène de l’air est consommé pendant la formation de la rouille.</li>
+                </ul>
+
+                <div class="important">
+                    <strong>À retenir :</strong>
+                    le dioxygène intervient dans la formation de la rouille.
+                    L’eau occupe le volume laissé par le dioxygène consommé.
+                </div>
+            </div>
+
+            <h2>3. La rouille et la corrosion du fer</h2>
+
+            <div class="box">
+                <p>
+                    La rouille est le produit de l’oxydation du fer dans l’air humide.
+                    C’est une oxydation à froid, lente, appelée corrosion.
+                </p>
+
+                <div class="definition">
+                    <strong>Définition :</strong>
+                    la corrosion est une transformation chimique lente qui attaque un métal
+                    sous l’action de facteurs extérieurs comme l’eau et le dioxygène.
+                </div>
+
+                <p>
+                    La rouille est essentiellement constituée d’oxyde de fer III,
+                    de formule <strong>Fe<sub>2</sub>O<sub>3</sub></strong>.
+                </p>
+
+                <div class="formula">
+                    4 Fe + 3 O<sub>2</sub> → 2 Fe<sub>2</sub>O<sub>3</sub>
+                </div>
+
+                <div class="important">
+                    <strong>Important :</strong>
+                    la rouille est une couche poreuse. Elle laisse passer l’air et l’eau,
+                    donc la corrosion peut continuer en profondeur jusqu’à la destruction
+                    progressive du fer.
+                </div>
+            </div>
+
+            <h2>4. Protection du fer contre la corrosion</h2>
+
+            <div class="box">
+                <p>
+                    Pour protéger le fer, on doit empêcher le contact direct entre le fer,
+                    l’eau et le dioxygène. On peut le recouvrir d’une couche imperméable
+                    et non poreuse.
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Méthode de protection</th>
+                        <th>Exemple d’utilisation</th>
+                    </tr>
+                    <tr>
+                        <td>Peinture</td>
+                        <td>Carrosseries, portes métalliques</td>
+                    </tr>
+                    <tr>
+                        <td>Vernis, huile ou graisse</td>
+                        <td>Outils, machines, pièces métalliques</td>
+                    </tr>
+                    <tr>
+                        <td>Revêtement par le zinc</td>
+                        <td>Galvanisation</td>
+                    </tr>
+                    <tr>
+                        <td>Revêtement par l’étain, le nickel ou le chrome</td>
+                        <td>Objets métalliques protégés</td>
+                    </tr>
+                    <tr>
+                        <td>Matière plastique</td>
+                        <td>Protection de certains objets en fer</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h2>5. Oxydation de l’aluminium dans l’air</h2>
+
+            <div class="box">
+                <h3>5.1. Oxydation à froid</h3>
+
+                <p>
+                    Lorsqu’une plaque d’aluminium est exposée à l’air humide,
+                    elle se recouvre d’une couche gris foncé. Cette couche est appelée
+                    oxyde d’aluminium ou alumine.
+                </p>
+
+                <h3>5.2. Oxydation à chaud</h3>
+
+                <p>
+                    Lorsqu’un fil d’aluminium est chauffé, il fond mais ne coule pas,
+                    car il reste retenu dans une pellicule d’alumine.
+                </p>
+
+                <div class="definition">
+                    <strong>Conclusion :</strong>
+                    l’aluminium réagit avec le dioxygène de l’air pour former l’alumine,
+                    de formule chimique <strong>Al<sub>2</sub>O<sub>3</sub></strong>.
+                </div>
+
+                <div class="formula">
+                    4 Al + 3 O<sub>2</sub> → 2 Al<sub>2</sub>O<sub>3</sub>
+                </div>
+
+                <div class="important">
+                    <strong>À retenir :</strong>
+                    contrairement à la rouille, l’alumine est une couche imperméable
+                    qui protège l’aluminium contre l’oxydation en profondeur.
+                </div>
+            </div>
+
+            <h2>6. Comparaison entre le fer et l’aluminium</h2>
+
+            <div class="box">
+                <table>
+                    <tr>
+                        <th>Métal</th>
+                        <th>Produit formé</th>
+                        <th>Formule</th>
+                        <th>Nature de la couche</th>
+                        <th>Effet</th>
+                    </tr>
+                    <tr>
+                        <td>Fer</td>
+                        <td>Rouille</td>
+                        <td>Fe<sub>2</sub>O<sub>3</sub></td>
+                        <td>Poreuse</td>
+                        <td>Ne protège pas le fer.</td>
+                    </tr>
+                    <tr>
+                        <td>Aluminium</td>
+                        <td>Alumine</td>
+                        <td>Al<sub>2</sub>O<sub>3</sub></td>
+                        <td>Imperméable</td>
+                        <td>Protège l’aluminium.</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <section id="resume">
+            <h2>Résumé du cours</h2>
+
+            <div class="resume">
+                <ul>
+                    <li>Le fer rouille en présence d’eau et de dioxygène.</li>
+                    <li>Le sel accélère la formation de la rouille.</li>
+                    <li>La rouille est principalement constituée d’oxyde de fer III : Fe<sub>2</sub>O<sub>3</sub>.</li>
+                    <li>La rouille est poreuse et ne protège pas le fer.</li>
+                    <li>Pour protéger le fer, on peut utiliser la peinture, le zinc, le vernis, l’huile ou un revêtement plastique.</li>
+                    <li>L’aluminium réagit avec le dioxygène pour former l’alumine : Al<sub>2</sub>O<sub>3</sub>.</li>
+                    <li>L’alumine est une couche imperméable qui protège l’aluminium.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="exercices">
+            <h2>Exercices d’application</h2>
+
+            <div class="box">
+                <h3>Exercice 1 : Vrai ou faux</h3>
+                <ol>
+                    <li>Le fer rouille plus rapidement dans l’eau de mer que dans l’eau douce.</li>
+                    <li>L’alumine est le produit d’oxydation du fer.</li>
+                    <li>L’eau est nécessaire pour former la rouille.</li>
+                    <li>La formation de la rouille se fait facilement dans l’air sec.</li>
+                    <li>L’aluminium s’oxyde jusqu’à sa destruction dans l’air humide.</li>
+                    <li>L’alumine protège l’aluminium contre l’oxydation en profondeur.</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 2 : Compléter</h3>
+                <p>
+                    Complète avec les mots suivants :
+                    <strong>humide - rouille - fer - eau - protection - peinture - zinc - alumine - aluminium - corrosion</strong>.
+                </p>
+
+                <ol>
+                    <li>Le fer s’oxyde lentement à l’air __________ pour donner de la __________.</li>
+                    <li>Cette transformation nécessite le __________, le dioxygène et de l’__________.</li>
+                    <li>La __________ du fer contre la corrosion peut se faire par la __________ ou le __________.</li>
+                    <li>L’__________ protège l’__________ contre la __________.</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 3 : Situation</h3>
+                <p>
+                    Dans les villes côtières, le fer est plus vite attaqué que dans les villes
+                    éloignées de la mer.
+                </p>
+
+                <ol>
+                    <li>Donner une explication à cette constatation.</li>
+                    <li>Citer deux méthodes pour protéger le fer contre la corrosion.</li>
+                    <li>Pourquoi faut-il peindre une carrosserie en fer ?</li>
+                    <li>Donner deux avantages de l’aluminium dans la fabrication des carrosseries.</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 4 : Dioxygène et rouille</h3>
+                <p>
+                    On réalise une expérience avec de la laine de fer humidifiée dans une éprouvette retournée sur l’eau.
+                    Après quelques jours, la laine de fer rouille et l’eau monte dans l’éprouvette.
+                </p>
+
+                <ol>
+                    <li>Quel gaz de l’air intervient dans la formation de la rouille ?</li>
+                    <li>Pourquoi l’eau monte-t-elle dans l’éprouvette ?</li>
+                    <li>Quelle est la proportion du dioxygène dans l’air ?</li>
+                    <li>Écrire l’équation chimique équilibrée de la formation de l’oxyde de fer III.</li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="corrige">
+            <h2>Corrigé indicatif</h2>
+
+            <div class="box">
+                <h3>Correction de l’exercice 1</h3>
+                <ol>
+                    <li>Vrai</li>
+                    <li>Faux</li>
+                    <li>Vrai</li>
+                    <li>Faux</li>
+                    <li>Faux</li>
+                    <li>Vrai</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Correction de l’exercice 2</h3>
+                <ol>
+                    <li>humide - rouille</li>
+                    <li>fer - eau</li>
+                    <li>protection - peinture - zinc</li>
+                    <li>alumine - aluminium - corrosion</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Correction de l’exercice 3</h3>
+                <p>
+                    Le fer rouille plus vite dans les villes côtières car l’air y est humide
+                    et contient du sel, ce qui accélère la corrosion. Pour le protéger,
+                    on peut utiliser la peinture, le zinc, le vernis, l’huile ou la graisse.
+                    On peint une carrosserie en fer pour empêcher le contact entre le fer,
+                    l’eau et le dioxygène. L’aluminium est plus léger et forme une couche
+                    d’alumine protectrice.
+                </p>
+            </div>
+
+            <div class="box">
+                <h3>Correction de l’exercice 4</h3>
+                <p>
+                    Le gaz responsable de la formation de la rouille est le dioxygène.
+                    L’eau monte dans l’éprouvette parce que le dioxygène est consommé.
+                    Le dioxygène représente environ 21 % du volume de l’air.
+                </p>
+
+                <div class="formula">
+                    4 Fe + 3 O<sub>2</sub> → 2 Fe<sub>2</sub>O<sub>3</sub>
+                </div>
+            </div>
+        </section>
+
+        <section id="navigation">
+            <h2>Navigation</h2>
+
+            <div class="box">
+                <a href="3ac-s1-atomes-ions.html" class="btn">Cours précédent</a>
+                <a href="3ac.html" class="btn">Retour aux cours de 3ème année</a>
+                <a href="index.html" class="btn">Retour à l’accueil</a>
+                <a href="3ac-s1-combustion-materiaux-organiques.html" class="btn">Cours suivant</a>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>© 2026 - Physique-Chimie Collège | Oxydation des métaux dans l'air</p>
+    </footer>
+
+</body>
+</html>
