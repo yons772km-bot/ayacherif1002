@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le corps pur et ses caractéristiques - 1AC</title>
+
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #222;
+            line-height: 1.7;
+        }
+
+        header.hero {
+            position: relative;
+            color: white;
+            padding: 70px 20px;
+            text-align: center;
+            overflow: hidden;
+            min-height: 430px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-bg-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                135deg,
+                rgba(15, 76, 129, 0.80),
+                rgba(26, 188, 156, 0.68)
+            );
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .site-logo {
+            width: 95px;
+            height: 95px;
+            object-fit: contain;
+            margin-bottom: 15px;
+            border-radius: 50%;
+            background-color: white;
+            padding: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+        }
+
+        header h1 {
+            font-size: 34px;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+        }
+
+        header p {
+            font-size: 17px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+        }
+
+        nav {
+            background-color: #083b66;
+            padding: 12px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #1abc9c;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        h2 {
+            color: #0f4c81;
+            margin: 30px 0 15px;
+            border-left: 5px solid #1abc9c;
+            padding-left: 10px;
+            font-size: 26px;
+        }
+
+        h3 {
+            color: #0f4c81;
+            margin: 20px 0 10px;
+        }
+
+        .box {
+            background-color: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+        }
+
+        .definition {
+            background-color: #e8f6f3;
+            border-left: 5px solid #1abc9c;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .important {
+            background-color: #fff7e6;
+            border-left: 5px solid #f39c12;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .resume {
+            background-color: #eef4ff;
+            border-left: 5px solid #0f4c81;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .pdf-box {
+            background-color: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+        }
+
+        .pdf-viewer {
+            width: 100%;
+            height: 750px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        ul, ol {
+            margin-left: 25px;
+            margin-top: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background-color: white;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #0f4c81;
+            color: white;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #eef4ff;
+            color: #083b66;
+            padding: 6px 10px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin: 5px 5px 5px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 10px 10px 0 0;
+            background-color: #1abc9c;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #14977d;
+        }
+
+        footer {
+            background-color: #083b66;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            header.hero {
+                min-height: 360px;
+                padding: 55px 15px;
+            }
+
+            .hero-bg-video {
+                width: auto;
+                height: 100%;
+            }
+
+            header h1 {
+                font-size: 28px;
+            }
+
+            header p {
+                font-size: 15px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 6px;
+                font-size: 14px;
+            }
+
+            .pdf-viewer {
+                height: 520px;
+            }
+
+            .container {
+                padding: 30px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="hero">
+
+        <video class="hero-bg-video" autoplay muted loop playsinline>
+            <source src="background.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo.
+        </video>
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <img src="logo.png" alt="Logo Physique-Chimie Collège" class="site-logo" onerror="this.style.display='none'">
+
+            <h1>Le corps pur et ses caractéristiques</h1>
+            <p>1ère année collège - Semestre 1 | Cours, PDF, résumé, exercices et corrigés</p>
+        </div>
+
+    </header>
+
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="1ac.html">Cours 1AC</a>
+        <a href="#presentation">Présentation</a>
+        <a href="#pdf">PDF du cours</a>
+        <a href="#lecon">Leçon</a>
+        <a href="#resume">Résumé</a>
+        <a href="#exercices">Exercices</a>
+        <a href="#corrige">Corrigés</a>
+    </nav>
+
+    <div class="container">
+
+        <section id="presentation">
+            <h2>Présentation du cours</h2>
+
+            <div class="box">
+                <p>
+                    Ce cours présente la notion de corps pur et ses caractéristiques.
+                    Il permet de comprendre la différence entre un corps pur et un mélange,
+                    en étudiant la température lors des changements d’état physique.
+                </p>
+
+                <p>
+                    On compare le comportement de l’eau pure avec celui de l’eau salée
+                    pendant l’ébullition et la fusion, afin de montrer qu’un corps pur
+                    possède des températures de changement d’état fixes.
+                </p>
+
+                <div class="definition">
+                    <strong>Objectif du cours :</strong>
+                    reconnaître un corps pur, distinguer un corps pur d’un mélange,
+                    comprendre le rôle de la température pendant un changement d’état
+                    et utiliser les températures de fusion et d’ébullition comme
+                    caractéristiques d’identification.
+                </div>
+            </div>
+        </section>
+
+        <section id="pdf">
+            <h2>Document PDF du cours</h2>
+
+            <div class="pdf-box">
+                <p>
+                    Vous pouvez consulter le document PDF directement sur cette page,
+                    l’ouvrir dans un nouvel onglet ou le télécharger.
+                </p>
+
+                <a href="./1ac-s1-corps-pur.pdf" target="_blank" class="btn">Ouvrir le PDF</a>
+                <a href="./1ac-s1-corps-pur.pdf" download class="btn">Télécharger le PDF</a>
+
+                <iframe src="./1ac-s1-corps-pur.pdf" class="pdf-viewer"></iframe>
+            </div>
+        </section>
+
+        <section id="lecon">
+
+            <h2>1. Notion de corps pur</h2>
+
+            <div class="box">
+                <p>
+                    Un corps pur est une matière constituée d’une seule substance.
+                    À l’inverse, un mélange est constitué de plusieurs substances.
+                </p>
+
+                <div class="definition">
+                    <strong>Définition :</strong>
+                    un corps pur est un corps qui contient une seule substance.
+                </div>
+
+                <table>
+                    <tr>
+                        <th>Type de corps</th>
+                        <th>Définition</th>
+                        <th>Exemples</th>
+                    </tr>
+                    <tr>
+                        <td>Corps pur</td>
+                        <td>Contient une seule substance.</td>
+                        <td>Eau distillée, dioxygène, fer pur.</td>
+                    </tr>
+                    <tr>
+                        <td>Mélange</td>
+                        <td>Contient plusieurs substances.</td>
+                        <td>Eau salée, air, eau minérale.</td>
+                    </tr>
+                </table>
+
+                <div class="important">
+                    <strong>À retenir :</strong>
+                    tous les corps purs sont homogènes, mais tous les corps homogènes
+                    ne sont pas forcément des corps purs.
+                </div>
+            </div>
+
+            <h2>2. Ébullition d’un mélange : eau salée</h2>
+
+            <div class="box">
+                <p>
+                    On chauffe une quantité d’eau salée et on relève la température
+                    du mélange à différents instants, tout en observant l’état physique.
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Temps (min)</th>
+                        <th>0</th>
+                        <th>2</th>
+                        <th>4</th>
+                        <th>5</th>
+                        <th>6</th>
+                        <th>9</th>
+                        <th>12</th>
+                        <th>15</th>
+                        <th>18</th>
+                        <th>21</th>
+                    </tr>
+                    <tr>
+                        <td>Température (°C)</td>
+                        <td>41</td>
+                        <td>54</td>
+                        <td>88</td>
+                        <td>100</td>
+                        <td>103</td>
+                        <td>103,5</td>
+                        <td>104</td>
+                        <td>104,5</td>
+                        <td>105</td>
+                        <td>105,5</td>
+                    </tr>
+                </table>
+
+                <div class="important">
+                    <strong>Observation :</strong>
+                    la température de l’eau salée augmente pendant le chauffage.
+                    Au moment de la vaporisation, elle continue à augmenter mais plus lentement.
+                </div>
+
+                <div class="definition">
+                    <strong>Conclusion :</strong>
+                    un mélange comme l’eau salée ne possède pas une température
+                    d’ébullition fixe.
+                </div>
+            </div>
+
+            <h2>3. Fusion d’un mélange : glace salée</h2>
+
+            <div class="box">
+                <p>
+                    On chauffe une glace salée et on enregistre la température au bout
+                    de chaque minute.
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Temps (min)</th>
+                        <th>0</th>
+                        <th>1</th>
+                        <th>2</th>
+                        <th>3</th>
+                        <th>4</th>
+                        <th>5</th>
+                        <th>6</th>
+                        <th>7</th>
+                        <th>8</th>
+                        <th>10</th>
+                        <th>11</th>
+                    </tr>
+                    <tr>
+                        <td>Température (°C)</td>
+                        <td>-6</td>
+                        <td>-4</td>
+                        <td>-2</td>
+                        <td>-1</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>8</td>
+                    </tr>
+                </table>
+
+                <div class="important">
+                    <strong>Observation :</strong>
+                    la température du mélange augmente pendant la fusion.
+                    Elle ne reste pas constante.
+                </div>
+
+                <div class="definition">
+                    <strong>Conclusion :</strong>
+                    la température d’un mélange varie pendant le changement d’état physique.
+                </div>
+            </div>
+
+            <h2>4. Ébullition d’un corps pur : eau pure</h2>
+
+            <div class="box">
+                <p>
+                    On chauffe une quantité d’eau pure et on relève la température
+                    au cours du temps.
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Temps (min)</th>
+                        <th>0</th>
+                        <th>2</th>
+                        <th>4</th>
+                        <th>6</th>
+                        <th>8</th>
+                        <th>10</th>
+                        <th>12</th>
+                        <th>14</th>
+                        <th>16</th>
+                        <th>18</th>
+                        <th>20</th>
+                    </tr>
+                    <tr>
+                        <td>Température (°C)</td>
+                        <td>20</td>
+                        <td>45</td>
+                        <td>60</td>
+                        <td>75</td>
+                        <td>88</td>
+                        <td>96</td>
+                        <td>100</td>
+                        <td>100</td>
+                        <td>100</td>
+                        <td>100</td>
+                        <td>100</td>
+                    </tr>
+                </table>
+
+                <div class="important">
+                    <strong>Observation :</strong>
+                    la température de l’eau pure augmente jusqu’à 100 °C.
+                    Ensuite, elle reste constante pendant la vaporisation.
+                </div>
+
+                <div class="definition">
+                    <strong>Conclusion :</strong>
+                    l’eau pure bout à température constante. Sa température
+                    d’ébullition est de 100 °C sous la pression atmosphérique normale.
+                </div>
+            </div>
+
+            <h2>5. Fusion d’un corps pur : eau pure solide</h2>
+
+            <div class="box">
+                <p>
+                    On chauffe de la glace d’eau distillée et on enregistre
+                    la température au cours du temps.
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Temps (min)</th>
+                        <th>0</th>
+                        <th>1</th>
+                        <th>2</th>
+                        <th>3</th>
+                        <th>4</th>
+                        <th>5</th>
+                        <th>6</th>
+                        <th>7</th>
+                        <th>8</th>
+                        <th>10</th>
+                        <th>11</th>
+                    </tr>
+                    <tr>
+                        <td>Température (°C)</td>
+                        <td>-6</td>
+                        <td>-4</td>
+                        <td>-2</td>
+                        <td>-1</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>8</td>
+                    </tr>
+                </table>
+
+                <div class="important">
+                    <strong>Observation :</strong>
+                    lorsque la température atteint 0 °C, elle reste constante
+                    pendant la fusion.
+                </div>
+
+                <div class="definition">
+                    <strong>Conclusion :</strong>
+                    la température de fusion de l’eau pure est de 0 °C.
+                    La fusion et la solidification de l’eau pure se font à température constante.
+                </div>
+            </div>
+
+            <h2>6. Caractéristiques d’un corps pur</h2>
+
+            <div class="box">
+                <p>
+                    Les températures de fusion, de solidification, d’ébullition
+                    et de liquéfaction sont des caractéristiques d’un corps pur.
+                    Elles permettent d’identifier une substance.
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Corps pur</th>
+                        <th>Température de fusion et solidification (°C)</th>
+                        <th>Température d’ébullition et liquéfaction (°C)</th>
+                    </tr>
+                    <tr>
+                        <td>Eau</td>
+                        <td>0</td>
+                        <td>100</td>
+                    </tr>
+                    <tr>
+                        <td>Alcool</td>
+                        <td>-110</td>
+                        <td>79</td>
+                    </tr>
+                    <tr>
+                        <td>Mercure</td>
+                        <td>-39</td>
+                        <td>357</td>
+                    </tr>
+                    <tr>
+                        <td>Fer</td>
+                        <td>1538</td>
+                        <td>2861</td>
+                    </tr>
+                    <tr>
+                        <td>Cuivre</td>
+                        <td>1083</td>
+                        <td>2927</td>
+                    </tr>
+                    <tr>
+                        <td>Aluminium</td>
+                        <td>660</td>
+                        <td>2467</td>
+                    </tr>
+                    <tr>
+                        <td>Dioxygène</td>
+                        <td>-218</td>
+                        <td>-183</td>
+                    </tr>
+                    <tr>
+                        <td>Diazote</td>
+                        <td>-209</td>
+                        <td>-195</td>
+                    </tr>
+                </table>
+
+                <div class="important">
+                    <strong>À retenir :</strong>
+                    pendant le changement d’état d’un corps pur, la température reste constante.
+                </div>
+            </div>
+
+            <h2>7. Différence entre corps pur et mélange</h2>
+
+            <div class="box">
+                <table>
+                    <tr>
+                        <th>Critère</th>
+                        <th>Corps pur</th>
+                        <th>Mélange</th>
+                    </tr>
+                    <tr>
+                        <td>Composition</td>
+                        <td>Une seule substance.</td>
+                        <td>Plusieurs substances.</td>
+                    </tr>
+                    <tr>
+                        <td>Aspect</td>
+                        <td>Homogène.</td>
+                        <td>Peut être homogène ou hétérogène.</td>
+                    </tr>
+                    <tr>
+                        <td>Changement d’état</td>
+                        <td>Température constante.</td>
+                        <td>Température variable.</td>
+                    </tr>
+                    <tr>
+                        <td>Exemple</td>
+                        <td>Eau distillée.</td>
+                        <td>Eau salée.</td>
+                    </tr>
+                </table>
+            </div>
+
+        </section>
+
+        <section id="resume">
+            <h2>Résumé du cours</h2>
+
+            <div class="resume">
+                <ul>
+                    <li>Un corps pur est constitué d’une seule substance.</li>
+                    <li>Un mélange est constitué de plusieurs substances.</li>
+                    <li>Un corps pur peut être solide, liquide ou gazeux.</li>
+                    <li>Pendant le changement d’état d’un corps pur, la température reste constante.</li>
+                    <li>Pendant le changement d’état d’un mélange, la température varie généralement.</li>
+                    <li>L’eau pure bout à 100 °C sous la pression atmosphérique normale.</li>
+                    <li>L’eau pure fond et se solidifie à 0 °C.</li>
+                    <li>Les températures de fusion et d’ébullition sont des caractéristiques d’un corps pur.</li>
+                    <li>Une substance homogène n’est pas toujours un corps pur.</li>
+                    <li>Une eau claire peut contenir des substances dissoutes : elle n’est donc pas forcément pure.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="exercices">
+            <h2>Exercices d’application</h2>
+
+            <div class="box">
+                <h3>Exercice 1 : Compléter les phrases</h3>
+
+                <p>
+                    Complète avec les mots suivants :
+                    <strong>solide - substance - température - liquide - gaz</strong>.
+                </p>
+
+                <ol>
+                    <li>Un corps est appelé corps pur lorsqu’il ne contient qu’une seule __________.</li>
+                    <li>Un corps pur peut être un __________, un __________ ou un __________.</li>
+                    <li>Pour un corps pur, la __________ ne change pas pendant le changement d’état.</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 2 : Étude de deux liquides</h3>
+
+                <p>
+                    On chauffe deux liquides A et B séparément. Lors de l’ébullition,
+                    on repère la température de chaque liquide au bout d’une minute.
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Durée (min)</th>
+                        <th>0</th>
+                        <th>1</th>
+                        <th>2</th>
+                        <th>3</th>
+                        <th>4</th>
+                        <th>5</th>
+                    </tr>
+                    <tr>
+                        <td>Température du liquide A (°C)</td>
+                        <td>76</td>
+                        <td>77</td>
+                        <td>78</td>
+                        <td>78</td>
+                        <td>78</td>
+                        <td>78</td>
+                    </tr>
+                    <tr>
+                        <td>Température du liquide B (°C)</td>
+                        <td>74</td>
+                        <td>76</td>
+                        <td>78</td>
+                        <td>80</td>
+                        <td>81</td>
+                        <td>82</td>
+                    </tr>
+                </table>
+
+                <ol>
+                    <li>Quel liquide représente un corps pur ? Justifie ta réponse.</li>
+                    <li>Quel liquide représente un mélange ? Justifie ta réponse.</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 3 : Vrai ou faux</h3>
+
+                <ol>
+                    <li>Tous les corps purs sont homogènes.</li>
+                    <li>Une substance qui n’est pas un mélange est un corps pur.</li>
+                    <li>Toutes les substances homogènes sont des corps purs.</li>
+                    <li>Une eau claire est forcément un corps pur.</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 4 : Questions de cours</h3>
+
+                <ol>
+                    <li>Donner la définition d’un corps pur.</li>
+                    <li>Donner ses principales caractéristiques.</li>
+                    <li>Pourquoi la température reste-t-elle constante lors du changement d’état d’un corps pur ?</li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="corrige">
+            <h2>Corrigé indicatif</h2>
+
+            <div class="box">
+                <h3>Correction de l’exercice 1</h3>
+
+                <ol>
+                    <li>Un corps est appelé corps pur lorsqu’il ne contient qu’une seule <strong>substance</strong>.</li>
+                    <li>Un corps pur peut être un <strong>solide</strong>, un <strong>liquide</strong> ou un <strong>gaz</strong>.</li>
+                    <li>Pour un corps pur, la <strong>température</strong> ne change pas pendant le changement d’état.</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Correction de l’exercice 2</h3>
+
+                <ol>
+                    <li>
+                        Le liquide A représente un corps pur, car sa température reste constante
+                        à <strong>78 °C</strong> pendant l’ébullition.
+                    </li>
+                    <li>
+                        Le liquide B représente un mélange, car sa température continue
+                        à augmenter pendant l’ébullition.
+                    </li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Correction de l’exercice 3</h3>
+
+                <ol>
+                    <li>Vrai</li>
+                    <li>Vrai</li>
+                    <li>Faux : une solution peut être homogène sans être un corps pur.</li>
+                    <li>Faux : une eau claire peut contenir des substances dissoutes.</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Correction de l’exercice 4</h3>
+
+                <ol>
+                    <li>
+                        Un corps pur est un corps constitué d’une seule substance.
+                    </li>
+                    <li>
+                        Ses principales caractéristiques sont ses températures fixes
+                        de changement d’état : température de fusion, de solidification,
+                        d’ébullition et de liquéfaction.
+                    </li>
+                    <li>
+                        Lors du changement d’état d’un corps pur, l’énergie reçue sert
+                        à changer l’état physique de la matière, donc la température reste
+                        constante jusqu’à la fin du changement d’état.
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="navigation">
+            <h2>Navigation</h2>
+
+            <div class="box">
+                <a href="1ac-s1-separation-melange.html" class="btn">Cours précédent</a>
+                <a href="1ac.html" class="btn">Retour aux cours de 1ère année</a>
+                <a href="index.html" class="btn">Retour à l’accueil</a>
+                <a href="1ac-s2-electricite-entoure.html" class="btn">Cours suivant</a>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>© 2026 - Physique-Chimie Collège | Le corps pur et ses caractéristiques</p>
+    </footer>
+
+</body>
+</html>
