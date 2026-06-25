@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La dissolution dans l’eau - 1AC</title>
+
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #222;
+            line-height: 1.7;
+        }
+
+        header.hero {
+            position: relative;
+            color: white;
+            padding: 70px 20px;
+            text-align: center;
+            overflow: hidden;
+            min-height: 430px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-bg-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                135deg,
+                rgba(15, 76, 129, 0.80),
+                rgba(26, 188, 156, 0.68)
+            );
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .site-logo {
+            width: 95px;
+            height: 95px;
+            object-fit: contain;
+            margin-bottom: 15px;
+            border-radius: 50%;
+            background-color: white;
+            padding: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+        }
+
+        header h1 {
+            font-size: 34px;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+        }
+
+        header p {
+            font-size: 17px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+        }
+
+        nav {
+            background-color: #083b66;
+            padding: 12px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #1abc9c;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        h2 {
+            color: #0f4c81;
+            margin: 30px 0 15px;
+            border-left: 5px solid #1abc9c;
+            padding-left: 10px;
+            font-size: 26px;
+        }
+
+        h3 {
+            color: #0f4c81;
+            margin: 20px 0 10px;
+        }
+
+        .box {
+            background-color: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+        }
+
+        .definition {
+            background-color: #e8f6f3;
+            border-left: 5px solid #1abc9c;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .important {
+            background-color: #fff7e6;
+            border-left: 5px solid #f39c12;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .resume {
+            background-color: #eef4ff;
+            border-left: 5px solid #0f4c81;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .pdf-box {
+            background-color: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+        }
+
+        .pdf-viewer {
+            width: 100%;
+            height: 750px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        ul, ol {
+            margin-left: 25px;
+            margin-top: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background-color: white;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #0f4c81;
+            color: white;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #eef4ff;
+            color: #083b66;
+            padding: 6px 10px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin: 5px 5px 5px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 10px 10px 0 0;
+            background-color: #1abc9c;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #14977d;
+        }
+
+        footer {
+            background-color: #083b66;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            header.hero {
+                min-height: 360px;
+                padding: 55px 15px;
+            }
+
+            .hero-bg-video {
+                width: auto;
+                height: 100%;
+            }
+
+            header h1 {
+                font-size: 28px;
+            }
+
+            header p {
+                font-size: 15px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 6px;
+                font-size: 14px;
+            }
+
+            .pdf-viewer {
+                height: 520px;
+            }
+
+            .container {
+                padding: 30px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="hero">
+
+        <video class="hero-bg-video" autoplay muted loop playsinline>
+            <source src="background.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo.
+        </video>
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <img src="logo.png" alt="Logo Physique-Chimie Collège" class="site-logo" onerror="this.style.display='none'">
+
+            <h1>La dissolution dans l’eau</h1>
+            <p>1ère année collège - Semestre 1 | Cours, PDF, résumé, exercices et corrigés</p>
+        </div>
+
+    </header>
+
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="1ac.html">Cours 1AC</a>
+        <a href="#presentation">Présentation</a>
+        <a href="#pdf">PDF du cours</a>
+        <a href="#lecon">Leçon</a>
+        <a href="#resume">Résumé</a>
+        <a href="#exercices">Exercices</a>
+        <a href="#corrige">Corrigés</a>
+    </nav>
+
+    <div class="container">
+
+        <section id="presentation">
+            <h2>Présentation du cours</h2>
+
+            <div class="box">
+                <p>
+                    Ce cours présente la dissolution dans l’eau. Il permet de comprendre
+                    la notion de solution, de soluté et de solvant, ainsi que la différence
+                    entre un solide soluble et un solide insoluble.
+                </p>
+
+                <p>
+                    Le cours explique aussi la saturation d’une solution aqueuse
+                    et la conservation de la masse lors d’une dissolution.
+                </p>
+
+                <div class="definition">
+                    <strong>Objectif du cours :</strong>
+                    comprendre ce qu’est une solution, identifier le soluté et le solvant,
+                    distinguer les corps solubles et insolubles, expliquer la saturation
+                    et montrer que la masse se conserve lors d’une dissolution.
+                </div>
+            </div>
+        </section>
+
+        <section id="pdf">
+            <h2>Document PDF du cours</h2>
+
+            <div class="pdf-box">
+                <p>
+                    Vous pouvez consulter le document PDF directement sur cette page,
+                    l’ouvrir dans un nouvel onglet ou le télécharger.
+                </p>
+
+                <a href="./1ac-s1-dissolution-eau.pdf" target="_blank" class="btn">Ouvrir le PDF</a>
+                <a href="./1ac-s1-dissolution-eau.pdf" download class="btn">Télécharger le PDF</a>
+
+                <iframe src="./1ac-s1-dissolution-eau.pdf" class="pdf-viewer"></iframe>
+            </div>
+        </section>
+
+        <section id="lecon">
+
+            <h2>1. La solution</h2>
+
+            <div class="box">
+                <p>
+                    Une solution est un mélange homogène obtenu par dissolution
+                    d’une espèce chimique dans un liquide.
+                </p>
+
+                <div class="definition">
+                    <strong>Définition :</strong>
+                    une solution est un mélange homogène obtenu lorsqu’un soluté
+                    se dissout dans un solvant.
+                </div>
+
+                <table>
+                    <tr>
+                        <th>Notion</th>
+                        <th>Définition</th>
+                        <th>Exemple</th>
+                    </tr>
+                    <tr>
+                        <td>Soluté</td>
+                        <td>Espèce chimique destinée à se dissoudre dans un solvant.</td>
+                        <td>Sel, sucre, sulfate de cuivre anhydre.</td>
+                    </tr>
+                    <tr>
+                        <td>Solvant</td>
+                        <td>Liquide dans lequel le soluté se dissout.</td>
+                        <td>Eau.</td>
+                    </tr>
+                    <tr>
+                        <td>Solution aqueuse</td>
+                        <td>Solution dont le solvant est l’eau.</td>
+                        <td>Eau salée, eau sucrée.</td>
+                    </tr>
+                </table>
+
+                <div class="important">
+                    <strong>À retenir :</strong>
+                    si le solvant est l’eau, la solution obtenue est appelée
+                    solution aqueuse.
+                </div>
+            </div>
+
+            <h2>2. Dissolution d’un solide dans l’eau</h2>
+
+            <div class="box">
+                <p>
+                    On ajoute dans différents béchers contenant de l’eau :
+                    du sel, du sucre, du sulfate de cuivre anhydre, du sable et de la terre.
+                    Après agitation, on observe que certains solides se dissolvent,
+                    tandis que d’autres restent visibles.
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Solide ajouté à l’eau</th>
+                        <th>Observation</th>
+                        <th>Conclusion</th>
+                    </tr>
+                    <tr>
+                        <td>Sel</td>
+                        <td>Les cristaux de sel ne sont plus visibles.</td>
+                        <td>Le sel se dissout dans l’eau.</td>
+                    </tr>
+                    <tr>
+                        <td>Sucre</td>
+                        <td>Les cristaux de sucre ne sont plus visibles.</td>
+                        <td>Le sucre se dissout dans l’eau.</td>
+                    </tr>
+                    <tr>
+                        <td>Sulfate de cuivre anhydre</td>
+                        <td>Les cristaux disparaissent et le mélange devient bleu.</td>
+                        <td>Il se dissout dans l’eau.</td>
+                    </tr>
+                    <tr>
+                        <td>Sable</td>
+                        <td>Les grains se déposent rapidement au fond du récipient.</td>
+                        <td>Le sable ne se dissout pas.</td>
+                    </tr>
+                    <tr>
+                        <td>Terre</td>
+                        <td>Les particules restent visibles dans l’eau.</td>
+                        <td>La terre ne se dissout pas.</td>
+                    </tr>
+                </table>
+
+                <div class="definition">
+                    <strong>Conclusion :</strong>
+                    la dissolution d’un solide dans l’eau n’est pas toujours possible.
+                    Certains solides sont solubles, d’autres sont insolubles.
+                </div>
+            </div>
+
+            <h2>3. Soluble et insoluble</h2>
+
+            <div class="box">
+                <table>
+                    <tr>
+                        <th>Mot</th>
+                        <th>Signification</th>
+                        <th>Exemple</th>
+                    </tr>
+                    <tr>
+                        <td>Soluble</td>
+                        <td>Se dit d’un corps qui peut se dissoudre dans un solvant.</td>
+                        <td>Le sel est soluble dans l’eau.</td>
+                    </tr>
+                    <tr>
+                        <td>Insoluble</td>
+                        <td>Se dit d’un corps qui ne peut pas se dissoudre dans un solvant.</td>
+                        <td>Le sable est insoluble dans l’eau.</td>
+                    </tr>
+                </table>
+
+                <div class="important">
+                    <strong>À retenir :</strong>
+                    lorsqu’un solide est soluble, il n’est plus visible à l’œil nu
+                    après agitation, mais il est toujours présent dans la solution.
+                </div>
+            </div>
+
+            <h2>4. Le solide dissous ne disparaît pas</h2>
+
+            <div class="box">
+                <p>
+                    Lorsqu’on porte de l’eau salée à ébullition, l’eau se vaporise.
+                    Après la vaporisation de l’eau, des cristaux de sel réapparaissent.
+                </p>
+
+                <div class="definition">
+                    <strong>Conclusion :</strong>
+                    lors d’une dissolution, le solide ne disparaît pas réellement.
+                    Il n’est simplement plus visible à l’œil nu.
+                </div>
+
+                <p>
+                    Sous l’effet de l’eau, les particules du solide se divisent
+                    en particules très petites, de taille microscopique, puis se dispersent
+                    dans l’eau.
+                </p>
+            </div>
+
+            <h2>5. Saturation d’une solution aqueuse</h2>
+
+            <div class="box">
+                <p>
+                    Si l’on ajoute une grande quantité de sel dans l’eau, une partie du sel
+                    se dissout, mais une autre partie reste sous forme de cristaux.
+                    Cela signifie que l’eau ne peut pas dissoudre une quantité illimitée
+                    de sel.
+                </p>
+
+                <div class="definition">
+                    <strong>Définition :</strong>
+                    une solution est saturée lorsqu’elle ne peut plus dissoudre
+                    une quantité supplémentaire de soluté.
+                </div>
+
+                <ul>
+                    <li>Tout composé soluble ne peut se dissoudre dans l’eau qu’en quantité limitée.</li>
+                    <li>Lorsque cette limite est atteinte, la solution devient saturée.</li>
+                    <li>Si on ajoute encore du soluté, il ne se dissout plus.</li>
+                    <li>La limite de saturation dépend du composé à dissoudre.</li>
+                    <li>La limite de saturation peut être repoussée en chauffant le mélange.</li>
+                </ul>
+
+                <div class="important">
+                    <strong>Exemple :</strong>
+                    dans l’eau, la limite de saturation n’est pas la même pour le sel
+                    et pour le sucre.
+                </div>
+            </div>
+
+            <h2>6. Conservation de la masse lors d’une dissolution</h2>
+
+            <div class="box">
+                <p>
+                    Pour vérifier la conservation de la masse, on place sur une balance
+                    électronique un bécher contenant de l’eau et une quantité de sel.
+                    On mesure la masse totale avant la dissolution, puis après avoir mélangé
+                    le sel avec l’eau.
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Étape</th>
+                        <th>Observation</th>
+                    </tr>
+                    <tr>
+                        <td>Avant dissolution</td>
+                        <td>On mesure la masse totale du sel et de l’eau.</td>
+                    </tr>
+                    <tr>
+                        <td>Après dissolution</td>
+                        <td>La masse totale reste la même.</td>
+                    </tr>
+                </table>
+
+                <div class="definition">
+                    <strong>Conclusion :</strong>
+                    la masse totale du solvant et du soluté reste inchangée
+                    au cours de la dissolution.
+                </div>
+
+                <div class="important">
+                    <strong>À retenir :</strong>
+                    lors d’une dissolution, la masse se conserve.
+                </div>
+            </div>
+
+        </section>
+
+        <section id="resume">
+            <h2>Résumé du cours</h2>
+
+            <div class="resume">
+                <ul>
+                    <li>Une solution est un mélange homogène obtenu par dissolution.</li>
+                    <li>Le soluté est l’espèce chimique qui se dissout.</li>
+                    <li>Le solvant est le liquide dans lequel le soluté se dissout.</li>
+                    <li>Si le solvant est l’eau, on parle de solution aqueuse.</li>
+                    <li>Un corps soluble peut se dissoudre dans l’eau.</li>
+                    <li>Un corps insoluble ne se dissout pas dans l’eau.</li>
+                    <li>Lors d’une dissolution, le solide ne disparaît pas réellement.</li>
+                    <li>Les particules du solide dissous se dispersent dans l’eau.</li>
+                    <li>Une solution saturée ne peut plus dissoudre de soluté supplémentaire.</li>
+                    <li>La limite de saturation peut augmenter avec la température.</li>
+                    <li>La masse totale se conserve lors d’une dissolution.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="exercices">
+            <h2>Exercices d’application</h2>
+
+            <div class="box">
+                <h3>Exercice 1 : Solution sucrée</h3>
+
+                <p>
+                    On dissout 20 g de sucre dans l’eau. On obtient une solution S1
+                    de volume 400 mL.
+                </p>
+
+                <ol>
+                    <li>Définir les mots suivants : solvant, soluté, solution.</li>
+                    <li>Préciser le solvant et le soluté.</li>
+                    <li>Quel est le nom de la solution obtenue ?</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 2 : Dissolution du sucre</h3>
+
+                <p>
+                    On verse de l’eau dans un bécher, puis on ajoute du sucre.
+                    Après agitation, on obtient une solution homogène.
+                </p>
+
+                <ol>
+                    <li>Préciser le solvant et le soluté.</li>
+                    <li>Est-ce que le sucre a réellement disparu du bécher ?</li>
+                    <li>Pourquoi dit-on que la masse se conserve lors de la dissolution ?</li>
+                    <li>Que se passe-t-il si on ajoute une très grande quantité de sucre ?</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 3 : Saturation d’une solution</h3>
+
+                <p>
+                    On dissout une quantité de sel dans un volume d’eau.
+                    La solution obtenue n’est pas saturée.
+                </p>
+
+                <ol>
+                    <li>Expliquer pourquoi la solution n’est pas saturée.</li>
+                    <li>Que peut-on faire pour obtenir une solution saturée ?</li>
+                    <li>Que se passe-t-il si on chauffe le mélange ?</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 4 : Dissolution ou changement d’état</h3>
+
+                <p>
+                    On dépose un glaçon dans un verre vide et un morceau de sucre
+                    dans un verre d’eau.
+                </p>
+
+                <ol>
+                    <li>Que se passe-t-il pour le glaçon ?</li>
+                    <li>Que se passe-t-il pour le sucre ?</li>
+                    <li>Dans quel cas observe-t-on un changement d’état ?</li>
+                    <li>Dans quel cas observe-t-on une dissolution ?</li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="corrige">
+            <h2>Corrigé indicatif</h2>
+
+            <div class="box">
+                <h3>Correction de l’exercice 1</h3>
+
+                <ol>
+                    <li>
+                        Le solvant est le liquide dans lequel le soluté se dissout.
+                        Le soluté est l’espèce chimique qui se dissout.
+                        Une solution est un mélange homogène obtenu par dissolution.
+                    </li>
+                    <li>Le solvant est l’eau et le soluté est le sucre.</li>
+                    <li>La solution obtenue est une solution aqueuse sucrée.</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Correction de l’exercice 2</h3>
+
+                <ol>
+                    <li>Le solvant est l’eau et le soluté est le sucre.</li>
+                    <li>
+                        Non, le sucre n’a pas réellement disparu. Ses particules sont dispersées
+                        dans l’eau et ne sont plus visibles à l’œil nu.
+                    </li>
+                    <li>
+                        La masse se conserve car la masse totale du solvant et du soluté
+                        reste la même avant et après la dissolution.
+                    </li>
+                    <li>
+                        Si on ajoute trop de sucre, la solution devient saturée
+                        et une partie du sucre ne se dissout plus.
+                    </li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Correction de l’exercice 3</h3>
+
+                <ol>
+                    <li>
+                        La solution n’est pas saturée car elle peut encore dissoudre
+                        une quantité supplémentaire de sel.
+                    </li>
+                    <li>
+                        Pour obtenir une solution saturée, on ajoute du sel jusqu’à ce
+                        qu’une partie reste sous forme de cristaux.
+                    </li>
+                    <li>
+                        En chauffant le mélange, on peut augmenter la quantité de soluté
+                        qui se dissout.
+                    </li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Correction de l’exercice 4</h3>
+
+                <ol>
+                    <li>
+                        Le glaçon fond : il passe de l’état solide à l’état liquide.
+                        C’est une fusion.
+                    </li>
+                    <li>
+                        Le sucre se dissout dans l’eau : il forme une solution sucrée.
+                    </li>
+                    <li>
+                        Le changement d’état concerne le glaçon.
+                    </li>
+                    <li>
+                        La dissolution concerne le sucre dans l’eau.
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="navigation">
+            <h2>Navigation</h2>
+
+            <div class="box">
+                <a href="1ac-s1-melanges.html" class="btn">Cours précédent</a>
+                <a href="1ac.html" class="btn">Retour aux cours de 1ère année</a>
+                <a href="index.html" class="btn">Retour à l’accueil</a>
+                <a href="1ac-s1-separation-melange.html" class="btn">Cours suivant</a>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>© 2026 - Physique-Chimie Collège | La dissolution dans l’eau</p>
+    </footer>
+
+</body>
+</html>
