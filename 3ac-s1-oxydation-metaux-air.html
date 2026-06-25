@@ -25,11 +25,50 @@
             line-height: 1.7;
         }
 
-        header {
-            background: linear-gradient(135deg, #0f4c81, #1abc9c);
+        header.hero {
+            position: relative;
             color: white;
-            padding: 45px 20px;
+            padding: 70px 20px;
             text-align: center;
+            overflow: hidden;
+            min-height: 430px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-bg-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                135deg,
+                rgba(15, 76, 129, 0.80),
+                rgba(26, 188, 156, 0.68)
+            );
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+            margin: auto;
         }
 
         .site-logo {
@@ -40,16 +79,18 @@
             border-radius: 50%;
             background-color: white;
             padding: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.20);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.25);
         }
 
         header h1 {
             font-size: 34px;
             margin-bottom: 10px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.35);
         }
 
         header p {
             font-size: 17px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.35);
         }
 
         nav {
@@ -198,8 +239,22 @@
         }
 
         @media (max-width: 768px) {
+            header.hero {
+                min-height: 360px;
+                padding: 55px 15px;
+            }
+
+            .hero-bg-video {
+                width: auto;
+                height: 100%;
+            }
+
             header h1 {
                 font-size: 28px;
+            }
+
+            header p {
+                font-size: 15px;
             }
 
             nav a {
@@ -221,11 +276,22 @@
 
 <body>
 
-    <header>
-        <img src="logo.png" alt="Logo Physique-Chimie Collège" class="site-logo" onerror="this.style.display='none'">
+    <header class="hero">
 
-        <h1>Oxydation des métaux dans l’air</h1>
-        <p>3ème année collège - Semestre 1 | Cours, PDF, résumé, exercices et corrigés</p>
+        <video class="hero-bg-video" autoplay muted loop playsinline>
+            <source src="background.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo.
+        </video>
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <img src="logo.png" alt="Logo Physique-Chimie Collège" class="site-logo" onerror="this.style.display='none'">
+
+            <h1>Oxydation des métaux dans l’air</h1>
+            <p>3ème année collège - Semestre 1 | Cours, PDF, résumé, exercices et corrigés</p>
+        </div>
+
     </header>
 
     <nav>
@@ -246,18 +312,17 @@
 
             <div class="box">
                 <p>
-                    Ce cours étudie l’oxydation de quelques métaux dans l’air,
-                    en particulier le fer et l’aluminium. Il permet de comprendre
-                    les conditions de formation de la rouille, les moyens de protection
-                    du fer contre la corrosion et la différence entre l’oxydation du fer
-                    et celle de l’aluminium.
+                    Ce cours présente le phénomène d’oxydation des métaux dans l’air.
+                    Il permet de comprendre pourquoi certains métaux changent d’aspect
+                    lorsqu’ils sont exposés à l’air humide, et comment on peut protéger
+                    les métaux contre la corrosion.
                 </p>
 
                 <div class="definition">
                     <strong>Objectif du cours :</strong>
-                    comprendre le phénomène d’oxydation des métaux dans l’air,
-                    identifier les conditions nécessaires à la formation de la rouille
-                    et connaître quelques méthodes de protection contre la corrosion.
+                    reconnaître l’oxydation de quelques métaux, expliquer la formation
+                    de la rouille, distinguer oxydation et corrosion, et connaître
+                    quelques méthodes de protection des métaux.
                 </div>
             </div>
         </section>
@@ -279,24 +344,24 @@
         </section>
 
         <section id="lecon">
-            <h2>1. Oxydation des métaux</h2>
+            <h2>1. Notion d’oxydation</h2>
 
             <div class="box">
                 <p>
-                    Dans la vie quotidienne, certains métaux changent d’aspect lorsqu’ils
-                    restent longtemps exposés à l’air. Par exemple, le fer peut se couvrir
-                    d’une couche rouge-brun appelée rouille.
+                    Lorsqu’un métal est exposé à l’air, il peut réagir avec le dioxygène.
+                    Cette transformation chimique s’appelle l’oxydation. Le produit formé
+                    est appelé oxyde métallique.
                 </p>
 
                 <div class="definition">
                     <strong>Définition :</strong>
-                    l’oxydation est une réaction chimique entre un métal et le dioxygène
-                    de l’air. Elle peut produire un oxyde métallique.
+                    l’oxydation est une transformation chimique au cours de laquelle
+                    un corps réagit avec le dioxygène.
                 </div>
 
                 <div class="important">
                     <strong>À retenir :</strong>
-                    l’oxydation des métaux est une transformation chimique.
+                    métal + dioxygène → oxyde métallique.
                 </div>
             </div>
 
@@ -304,14 +369,15 @@
 
             <div class="box">
                 <p>
-                    Le fer s’oxyde lentement lorsqu’il est en contact avec l’air humide.
-                    Cette oxydation produit une substance appelée rouille.
+                    Le fer exposé à l’air humide se recouvre progressivement d’une couche
+                    rouge-brun appelée rouille. Cette transformation se produit en présence
+                    de dioxygène et d’eau.
                 </p>
 
                 <div class="definition">
                     <strong>Définition :</strong>
-                    la rouille est le produit de l’oxydation du fer en présence
-                    de dioxygène et d’eau.
+                    la rouille est le produit de la corrosion du fer en présence d’air
+                    et d’humidité.
                 </div>
 
                 <table>
@@ -322,12 +388,12 @@
                     </tr>
                     <tr>
                         <td>Fer + air sec</td>
-                        <td>Pas de rouille ou très peu.</td>
-                        <td>L’humidité est nécessaire.</td>
+                        <td>La rouille se forme très lentement ou presque pas.</td>
+                        <td>L’eau favorise la rouille.</td>
                     </tr>
                     <tr>
-                        <td>Fer + eau sans dioxygène</td>
-                        <td>Pas de rouille ou très peu.</td>
+                        <td>Fer + eau sans air</td>
+                        <td>La rouille se forme difficilement.</td>
                         <td>Le dioxygène est nécessaire.</td>
                     </tr>
                     <tr>
@@ -340,70 +406,117 @@
                 <div class="important">
                     <strong>Conclusion :</strong>
                     la formation de la rouille nécessite la présence du fer,
-                    de l’eau et du dioxygène de l’air.
+                    du dioxygène et de l’eau.
                 </div>
             </div>
 
-            <h2>3. La rouille</h2>
+            <h2>3. La corrosion du fer</h2>
 
             <div class="box">
                 <p>
-                    La rouille est une couche rouge-brun qui apparaît à la surface du fer
-                    lorsqu’il s’oxyde. Cette couche est poreuse et fragile.
+                    La corrosion est une dégradation progressive d’un métal sous l’action
+                    de son environnement. Dans le cas du fer, la corrosion donne la rouille.
+                    La rouille est poreuse : elle ne protège pas le fer et laisse continuer
+                    l’attaque du métal.
                 </p>
 
-                <ul>
-                    <li>La rouille n’adhère pas fortement au fer.</li>
-                    <li>Elle laisse passer l’air et l’eau.</li>
-                    <li>Elle ne protège pas le fer.</li>
-                    <li>Elle favorise la continuation de la corrosion.</li>
-                </ul>
-
                 <div class="definition">
-                    <strong>Corrosion :</strong>
-                    destruction progressive d’un métal sous l’action de l’air,
-                    de l’eau ou d’autres substances chimiques.
+                    <strong>Définition :</strong>
+                    la corrosion est la dégradation d’un métal par réaction chimique
+                    avec des substances de son environnement.
                 </div>
 
                 <div class="important">
                     <strong>À retenir :</strong>
-                    la rouille ne protège pas le fer. Au contraire, elle permet
-                    à l’oxydation de continuer.
+                    la rouille ne protège pas le fer. Elle favorise au contraire
+                    la poursuite de la corrosion.
                 </div>
             </div>
 
-            <h2>4. Équation simplifiée de l’oxydation du fer</h2>
+            <h2>4. Oxydation de l’aluminium</h2>
 
             <div class="box">
                 <p>
-                    Lors de l’oxydation du fer, le fer réagit avec le dioxygène
-                    pour former de l’oxyde de fer. En présence d’eau, on obtient la rouille.
+                    L’aluminium réagit aussi avec le dioxygène de l’air. Il se forme alors
+                    une fine couche d’oxyde d’aluminium à la surface du métal.
+                    Cette couche est compacte et protège l’aluminium contre une oxydation
+                    plus profonde.
                 </p>
 
                 <div class="formula">
-                    Fer + dioxygène + eau → rouille
-                </div>
-
-                <p>
-                    On peut aussi représenter simplement la formation de l’oxyde de fer par :
-                </p>
-
-                <div class="formula">
-                    Fer + dioxygène → oxyde de fer
+                    Aluminium + dioxygène → oxyde d’aluminium
                 </div>
 
                 <div class="important">
-                    <strong>Remarque :</strong>
-                    la rouille est un oxyde de fer hydraté.
+                    <strong>À retenir :</strong>
+                    contrairement à la rouille du fer, la couche d’oxyde d’aluminium
+                    protège le métal.
                 </div>
             </div>
 
-            <h2>5. Protection du fer contre la corrosion</h2>
+            <h2>5. Oxydation du cuivre</h2>
 
             <div class="box">
                 <p>
-                    Pour protéger le fer contre la rouille, il faut empêcher le contact
-                    entre le fer, l’eau et le dioxygène de l’air.
+                    Le cuivre peut aussi s’oxyder au contact de l’air humide.
+                    Avec le temps, il peut se couvrir d’une couche verte appelée
+                    vert-de-gris.
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Métal</th>
+                        <th>Observation après oxydation</th>
+                        <th>Produit formé</th>
+                    </tr>
+                    <tr>
+                        <td>Fer</td>
+                        <td>Couche rouge-brun</td>
+                        <td>Rouille</td>
+                    </tr>
+                    <tr>
+                        <td>Aluminium</td>
+                        <td>Fine couche grisâtre protectrice</td>
+                        <td>Oxyde d’aluminium</td>
+                    </tr>
+                    <tr>
+                        <td>Cuivre</td>
+                        <td>Couche verdâtre</td>
+                        <td>Vert-de-gris</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h2>6. Facteurs qui favorisent l’oxydation</h2>
+
+            <div class="box">
+                <p>
+                    L’oxydation des métaux peut être favorisée par plusieurs facteurs.
+                    Ces facteurs accélèrent la corrosion et rendent la dégradation
+                    plus rapide.
+                </p>
+
+                <ul>
+                    <li>La présence de dioxygène.</li>
+                    <li>La présence d’eau ou d’humidité.</li>
+                    <li>La présence de sels, par exemple dans l’eau de mer.</li>
+                    <li>La pollution de l’air.</li>
+                    <li>Une longue exposition à l’extérieur.</li>
+                </ul>
+
+                <div class="important">
+                    <strong>Exemple :</strong>
+                    les objets en fer rouillent plus rapidement près de la mer,
+                    car l’air y est humide et salé.
+                </div>
+            </div>
+
+            <h2>7. Protection des métaux contre la corrosion</h2>
+
+            <div class="box">
+                <p>
+                    Pour protéger les métaux, on cherche à empêcher leur contact direct
+                    avec l’air et l’humidité. Plusieurs méthodes peuvent être utilisées.
                 </p>
 
                 <table>
@@ -414,131 +527,48 @@
                     </tr>
                     <tr>
                         <td>Peinture</td>
-                        <td>Empêche le contact du fer avec l’air et l’humidité.</td>
-                        <td>Portails, ponts, voitures.</td>
+                        <td>Isoler le métal de l’air et de l’eau.</td>
+                        <td>Portes métalliques peintes.</td>
                     </tr>
                     <tr>
                         <td>Graissage</td>
-                        <td>Forme une couche protectrice contre l’eau et l’air.</td>
-                        <td>Machines, outils.</td>
+                        <td>Former une couche protectrice.</td>
+                        <td>Outils métalliques graissés.</td>
                     </tr>
                     <tr>
                         <td>Revêtement plastique</td>
-                        <td>Isole le fer de l’air humide.</td>
-                        <td>Objets métalliques protégés.</td>
+                        <td>Empêcher le contact avec l’air humide.</td>
+                        <td>Objets métalliques recouverts.</td>
                     </tr>
                     <tr>
                         <td>Galvanisation</td>
                         <td>Recouvrir le fer par une couche de zinc.</td>
-                        <td>Tôles galvanisées, clous galvanisés.</td>
-                    </tr>
-                    <tr>
-                        <td>Chromage ou nickelage</td>
-                        <td>Recouvrir le fer par un autre métal protecteur.</td>
-                        <td>Objets décoratifs ou pièces métalliques.</td>
+                        <td>Tôles galvanisées.</td>
                     </tr>
                 </table>
 
                 <div class="important">
                     <strong>À retenir :</strong>
-                    protéger le fer revient à empêcher son contact direct avec
-                    l’air humide.
+                    protéger un métal consiste souvent à l’isoler de l’eau
+                    et du dioxygène de l’air.
                 </div>
             </div>
 
-            <h2>6. Oxydation de l’aluminium</h2>
+            <h2>8. Importance de la protection contre la corrosion</h2>
 
             <div class="box">
                 <p>
-                    L’aluminium s’oxyde aussi dans l’air, mais son comportement est différent
-                    de celui du fer. Lorsqu’il est exposé à l’air, il se couvre d’une fine
-                    couche d’oxyde d’aluminium appelée alumine.
+                    La corrosion peut provoquer la dégradation des objets métalliques,
+                    diminuer leur résistance et réduire leur durée d’utilisation.
+                    C’est pourquoi il est important de protéger les métaux dans les bâtiments,
+                    les ponts, les voitures, les outils et les installations industrielles.
                 </p>
 
                 <div class="definition">
-                    <strong>Définition :</strong>
-                    l’alumine est une fine couche d’oxyde d’aluminium qui se forme
-                    à la surface de l’aluminium.
-                </div>
-
-                <p>
-                    Contrairement à la rouille, l’alumine est une couche compacte,
-                    adhérente et protectrice.
-                </p>
-
-                <div class="important">
-                    <strong>À retenir :</strong>
-                    l’alumine protège l’aluminium contre une oxydation profonde.
-                </div>
-            </div>
-
-            <h2>7. Comparaison entre le fer et l’aluminium</h2>
-
-            <div class="box">
-                <table>
-                    <tr>
-                        <th>Métal</th>
-                        <th>Produit formé</th>
-                        <th>Nature de la couche</th>
-                        <th>Effet sur le métal</th>
-                    </tr>
-                    <tr>
-                        <td>Fer</td>
-                        <td>Rouille</td>
-                        <td>Poreuse, fragile, non adhérente</td>
-                        <td>Ne protège pas le fer. La corrosion continue.</td>
-                    </tr>
-                    <tr>
-                        <td>Aluminium</td>
-                        <td>Alumine</td>
-                        <td>Compacte, adhérente, protectrice</td>
-                        <td>Protège l’aluminium contre l’oxydation profonde.</td>
-                    </tr>
-                </table>
-
-                <div class="important">
                     <strong>Conclusion :</strong>
-                    le fer est progressivement détruit par la corrosion,
-                    tandis que l’aluminium est protégé par la couche d’alumine.
+                    la protection contre la corrosion permet de prolonger la durée de vie
+                    des objets métalliques et de préserver la sécurité.
                 </div>
-            </div>
-
-            <h2>8. Exemples dans la vie quotidienne</h2>
-
-            <div class="box">
-                <p>
-                    L’oxydation des métaux est un phénomène très courant dans la vie quotidienne.
-                    Elle peut être utile dans certains cas, mais elle peut aussi causer
-                    des dégâts importants.
-                </p>
-
-                <table>
-                    <tr>
-                        <th>Situation</th>
-                        <th>Métal concerné</th>
-                        <th>Phénomène observé</th>
-                    </tr>
-                    <tr>
-                        <td>Clou laissé dehors</td>
-                        <td>Fer</td>
-                        <td>Formation de rouille.</td>
-                    </tr>
-                    <tr>
-                        <td>Portail métallique non peint</td>
-                        <td>Fer</td>
-                        <td>Corrosion progressive.</td>
-                    </tr>
-                    <tr>
-                        <td>Fenêtre en aluminium</td>
-                        <td>Aluminium</td>
-                        <td>Formation d’une couche protectrice d’alumine.</td>
-                    </tr>
-                    <tr>
-                        <td>Tôle galvanisée</td>
-                        <td>Fer recouvert de zinc</td>
-                        <td>Protection contre la rouille.</td>
-                    </tr>
-                </table>
             </div>
         </section>
 
@@ -547,16 +577,15 @@
 
             <div class="resume">
                 <ul>
-                    <li>L’oxydation est une réaction chimique entre un métal et le dioxygène de l’air.</li>
-                    <li>Le fer s’oxyde dans l’air humide et forme la rouille.</li>
-                    <li>La formation de la rouille nécessite le fer, l’eau et le dioxygène.</li>
-                    <li>La rouille est poreuse, fragile et ne protège pas le fer.</li>
-                    <li>La corrosion est la destruction progressive d’un métal.</li>
-                    <li>Pour protéger le fer, il faut empêcher son contact avec l’air humide.</li>
-                    <li>On peut protéger le fer par peinture, graissage, galvanisation ou revêtement.</li>
-                    <li>L’aluminium s’oxyde et forme une fine couche d’alumine.</li>
-                    <li>L’alumine est compacte, adhérente et protectrice.</li>
-                    <li>Le fer rouille profondément, alors que l’aluminium est protégé par l’alumine.</li>
+                    <li>L’oxydation est une réaction avec le dioxygène.</li>
+                    <li>Un métal peut réagir avec le dioxygène pour former un oxyde métallique.</li>
+                    <li>Le fer exposé à l’air humide forme de la rouille.</li>
+                    <li>La formation de la rouille nécessite le fer, le dioxygène et l’eau.</li>
+                    <li>La rouille ne protège pas le fer et favorise la corrosion.</li>
+                    <li>L’aluminium forme une couche d’oxyde protectrice.</li>
+                    <li>Le cuivre peut former une couche verdâtre appelée vert-de-gris.</li>
+                    <li>L’humidité, le dioxygène, les sels et la pollution favorisent la corrosion.</li>
+                    <li>Pour protéger les métaux, on peut utiliser la peinture, le graissage ou la galvanisation.</li>
                 </ul>
             </div>
         </section>
@@ -567,12 +596,12 @@
             <div class="box">
                 <h3>Exercice 1 : Vrai ou faux</h3>
                 <ol>
+                    <li>L’oxydation est une réaction avec le dioxygène.</li>
                     <li>La rouille se forme uniquement en présence d’air sec.</li>
-                    <li>La formation de la rouille nécessite de l’eau et du dioxygène.</li>
-                    <li>La rouille protège efficacement le fer.</li>
-                    <li>L’aluminium forme une couche d’alumine.</li>
-                    <li>L’alumine protège l’aluminium.</li>
-                    <li>La peinture peut protéger le fer contre la corrosion.</li>
+                    <li>L’eau favorise la formation de la rouille.</li>
+                    <li>La rouille protège le fer contre la corrosion.</li>
+                    <li>L’aluminium forme une couche protectrice d’oxyde.</li>
+                    <li>La peinture peut protéger un métal contre la corrosion.</li>
                 </ol>
             </div>
 
@@ -580,48 +609,32 @@
                 <h3>Exercice 2 : Compléter les phrases</h3>
                 <p>
                     Complète avec les mots suivants :
-                    <strong>rouille - dioxygène - eau - corrosion - alumine - protectrice - fer</strong>.
+                    <strong>oxydation - dioxygène - rouille - humidité - corrosion - galvanisation</strong>.
                 </p>
 
                 <ol>
-                    <li>Le __________ s’oxyde dans l’air humide.</li>
-                    <li>La __________ est le produit de l’oxydation du fer.</li>
-                    <li>La formation de la rouille nécessite du __________ et de l’__________.</li>
-                    <li>La destruction progressive d’un métal s’appelle la __________.</li>
-                    <li>L’aluminium forme une couche appelée __________.</li>
-                    <li>L’alumine est une couche __________.</li>
+                    <li>La réaction d’un métal avec le __________ s’appelle l’__________.</li>
+                    <li>Le fer exposé à l’air humide se couvre de __________.</li>
+                    <li>L’__________ favorise la formation de la rouille.</li>
+                    <li>La __________ est la dégradation progressive d’un métal.</li>
+                    <li>La __________ consiste à protéger le fer par une couche de zinc.</li>
                 </ol>
             </div>
 
             <div class="box">
                 <h3>Exercice 3 : Conditions de formation de la rouille</h3>
-                <p>
-                    On place trois clous en fer dans trois tubes différents :
-                </p>
-
                 <ol>
-                    <li>Tube 1 : clou dans l’air sec.</li>
-                    <li>Tube 2 : clou dans l’eau privée de dioxygène.</li>
-                    <li>Tube 3 : clou dans l’eau et l’air.</li>
+                    <li>Citer les trois éléments nécessaires à la formation de la rouille.</li>
+                    <li>Pourquoi le fer rouille-t-il plus vite près de la mer ?</li>
+                    <li>La rouille protège-t-elle le fer ? Justifier.</li>
                 </ol>
-
-                <p>
-                    Dans quel tube la rouille se forme-t-elle le plus facilement ?
-                    Justifie ta réponse.
-                </p>
             </div>
 
             <div class="box">
-                <h3>Exercice 4 : Protection du fer</h3>
+                <h3>Exercice 4 : Protection des métaux</h3>
                 <p>
-                    Un portail en fer est exposé à la pluie et à l’air.
+                    Donner trois méthodes permettant de protéger un objet en fer contre la corrosion.
                 </p>
-
-                <ol>
-                    <li>Quel phénomène peut se produire avec le temps ?</li>
-                    <li>Propose deux méthodes pour protéger ce portail.</li>
-                    <li>Explique le rôle de la peinture dans la protection du fer.</li>
-                </ol>
             </div>
         </section>
 
@@ -631,10 +644,10 @@
             <div class="box">
                 <h3>Correction de l’exercice 1</h3>
                 <ol>
-                    <li>Faux : la rouille se forme en présence d’air humide.</li>
+                    <li>Vrai</li>
+                    <li>Faux : la rouille se forme surtout en présence d’air humide.</li>
                     <li>Vrai</li>
                     <li>Faux : la rouille ne protège pas le fer.</li>
-                    <li>Vrai</li>
                     <li>Vrai</li>
                     <li>Vrai</li>
                 </ol>
@@ -643,31 +656,29 @@
             <div class="box">
                 <h3>Correction de l’exercice 2</h3>
                 <ol>
-                    <li>fer</li>
+                    <li>dioxygène - oxydation</li>
                     <li>rouille</li>
-                    <li>dioxygène - eau</li>
+                    <li>humidité</li>
                     <li>corrosion</li>
-                    <li>alumine</li>
-                    <li>protectrice</li>
+                    <li>galvanisation</li>
                 </ol>
             </div>
 
             <div class="box">
                 <h3>Correction de l’exercice 3</h3>
                 <p>
-                    La rouille se forme le plus facilement dans le tube 3, car le clou
-                    est en contact avec l’eau et le dioxygène de l’air. Ces deux éléments
-                    sont nécessaires à l’oxydation du fer et à la formation de la rouille.
+                    La formation de la rouille nécessite le fer, le dioxygène et l’eau.
+                    Le fer rouille plus vite près de la mer car l’air est humide et salé.
+                    La rouille ne protège pas le fer, car elle est poreuse et laisse continuer
+                    la corrosion.
                 </p>
             </div>
 
             <div class="box">
                 <h3>Correction de l’exercice 4</h3>
                 <p>
-                    Le portail peut subir une corrosion et se couvrir de rouille.
-                    Pour le protéger, on peut le peindre, le graisser ou le recouvrir
-                    d’une couche protectrice comme le zinc. La peinture empêche le contact
-                    direct entre le fer, l’eau et le dioxygène de l’air.
+                    Pour protéger un objet en fer, on peut utiliser la peinture,
+                    le graissage, le revêtement plastique ou la galvanisation par le zinc.
                 </p>
             </div>
         </section>
