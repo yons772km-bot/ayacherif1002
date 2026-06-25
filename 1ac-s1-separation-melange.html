@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La séparation des constituants d’un mélange - 1AC</title>
+
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #222;
+            line-height: 1.7;
+        }
+
+        header.hero {
+            position: relative;
+            color: white;
+            padding: 70px 20px;
+            text-align: center;
+            overflow: hidden;
+            min-height: 430px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-bg-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                135deg,
+                rgba(15, 76, 129, 0.80),
+                rgba(26, 188, 156, 0.68)
+            );
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .site-logo {
+            width: 95px;
+            height: 95px;
+            object-fit: contain;
+            margin-bottom: 15px;
+            border-radius: 50%;
+            background-color: white;
+            padding: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+        }
+
+        header h1 {
+            font-size: 34px;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+        }
+
+        header p {
+            font-size: 17px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+        }
+
+        nav {
+            background-color: #083b66;
+            padding: 12px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #1abc9c;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        h2 {
+            color: #0f4c81;
+            margin: 30px 0 15px;
+            border-left: 5px solid #1abc9c;
+            padding-left: 10px;
+            font-size: 26px;
+        }
+
+        h3 {
+            color: #0f4c81;
+            margin: 20px 0 10px;
+        }
+
+        .box {
+            background-color: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+        }
+
+        .definition {
+            background-color: #e8f6f3;
+            border-left: 5px solid #1abc9c;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .important {
+            background-color: #fff7e6;
+            border-left: 5px solid #f39c12;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .resume {
+            background-color: #eef4ff;
+            border-left: 5px solid #0f4c81;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .pdf-box {
+            background-color: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+        }
+
+        .pdf-viewer {
+            width: 100%;
+            height: 750px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        ul, ol {
+            margin-left: 25px;
+            margin-top: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background-color: white;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #0f4c81;
+            color: white;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #eef4ff;
+            color: #083b66;
+            padding: 6px 10px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin: 5px 5px 5px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 10px 10px 0 0;
+            background-color: #1abc9c;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #14977d;
+        }
+
+        footer {
+            background-color: #083b66;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            header.hero {
+                min-height: 360px;
+                padding: 55px 15px;
+            }
+
+            .hero-bg-video {
+                width: auto;
+                height: 100%;
+            }
+
+            header h1 {
+                font-size: 28px;
+            }
+
+            header p {
+                font-size: 15px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 6px;
+                font-size: 14px;
+            }
+
+            .pdf-viewer {
+                height: 520px;
+            }
+
+            .container {
+                padding: 30px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="hero">
+
+        <video class="hero-bg-video" autoplay muted loop playsinline>
+            <source src="background.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo.
+        </video>
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <img src="logo.png" alt="Logo Physique-Chimie Collège" class="site-logo" onerror="this.style.display='none'">
+
+            <h1>La séparation des constituants d’un mélange</h1>
+            <p>1ère année collège - Semestre 1 | Cours, PDF, résumé, exercices et corrigés</p>
+        </div>
+
+    </header>
+
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="1ac.html">Cours 1AC</a>
+        <a href="#presentation">Présentation</a>
+        <a href="#pdf">PDF du cours</a>
+        <a href="#lecon">Leçon</a>
+        <a href="#resume">Résumé</a>
+        <a href="#exercices">Exercices</a>
+        <a href="#corrige">Corrigés</a>
+    </nav>
+
+    <div class="container">
+
+        <section id="presentation">
+            <h2>Présentation du cours</h2>
+
+            <div class="box">
+                <p>
+                    Ce cours présente les principales techniques utilisées pour séparer
+                    les constituants d’un mélange : la décantation, la filtration
+                    et la distillation.
+                </p>
+
+                <p>
+                    Il permet de comprendre quelle méthode choisir selon le type de mélange :
+                    mélange hétérogène ou mélange homogène.
+                </p>
+
+                <div class="definition">
+                    <strong>Objectif du cours :</strong>
+                    reconnaître les techniques de séparation, expliquer leur principe,
+                    identifier les appareils utilisés et distinguer le résidu, le filtrat
+                    et le distillat.
+                </div>
+            </div>
+        </section>
+
+        <section id="pdf">
+            <h2>Document PDF du cours</h2>
+
+            <div class="pdf-box">
+                <p>
+                    Vous pouvez consulter le document PDF directement sur cette page,
+                    l’ouvrir dans un nouvel onglet ou le télécharger.
+                </p>
+
+                <a href="./1ac-s1-separation-melange.pdf" target="_blank" class="btn">Ouvrir le PDF</a>
+                <a href="./1ac-s1-separation-melange.pdf" download class="btn">Télécharger le PDF</a>
+
+                <iframe src="./1ac-s1-separation-melange.pdf" class="pdf-viewer"></iframe>
+            </div>
+        </section>
+
+        <section id="lecon">
+
+            <h2>1. Introduction</h2>
+
+            <div class="box">
+                <p>
+                    Dans certains jus de fruits, on observe de la pulpe solide en suspension.
+                    Ces boissons sont des mélanges hétérogènes, car on distingue plusieurs
+                    constituants à l’œil nu.
+                </p>
+
+                <p>
+                    Dans certains sirops, dans le café, le lait ou le vin, on ne distingue pas
+                    les constituants : ce sont des mélanges homogènes.
+                </p>
+
+                <div class="important">
+                    <strong>Problème :</strong>
+                    comment peut-on séparer les constituants d’un mélange homogène
+                    ou hétérogène ?
+                </div>
+
+                <p>
+                    Dans ce cours, on étudie trois techniques de séparation :
+                </p>
+
+                <ul>
+                    <li>la décantation ;</li>
+                    <li>la filtration ;</li>
+                    <li>la distillation.</li>
+                </ul>
+            </div>
+
+            <h2>2. La décantation</h2>
+
+            <div class="box">
+                <div class="definition">
+                    <strong>Définition :</strong>
+                    la décantation est une technique de séparation, sous l’effet de la gravitation,
+                    de plusieurs phases non miscibles dont l’une au moins est liquide ou gazeuse.
+                </div>
+
+                <p>
+                    Elle permet de séparer des liquides non miscibles de densités différentes,
+                    ou des solides insolubles en suspension dans un liquide.
+                </p>
+
+                <div>
+                    <span class="tag">Mélange hétérogène</span>
+                    <span class="tag">Repos</span>
+                    <span class="tag">Gravitation</span>
+                    <span class="tag">Dépôt</span>
+                </div>
+            </div>
+
+            <h2>3. Décantation d’un mélange solide-liquide</h2>
+
+            <div class="box">
+                <p>
+                    Après agitation d’un mélange d’eau et de terre, les particules de terre
+                    se dispersent dans l’eau. Après un temps de repos, elles se déposent
+                    progressivement au fond du récipient sous l’effet de leur poids.
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Mélange</th>
+                        <th>Observation</th>
+                        <th>Résultat</th>
+                    </tr>
+                    <tr>
+                        <td>Eau + terre</td>
+                        <td>Les particules de terre tombent au fond après repos.</td>
+                        <td>Dépôt de terre + liquide plus clair.</td>
+                    </tr>
+                    <tr>
+                        <td>Eau + sable</td>
+                        <td>Les grains de sable se déposent au fond.</td>
+                        <td>Séparation par décantation.</td>
+                    </tr>
+                </table>
+
+                <div class="important">
+                    <strong>À retenir :</strong>
+                    dans un mélange solide-liquide hétérogène, les particules solides
+                    les plus lourdes se déposent au fond du récipient.
+                </div>
+            </div>
+
+            <h2>4. Décantation d’un mélange liquide-liquide</h2>
+
+            <div class="box">
+                <p>
+                    Pour séparer deux liquides non miscibles, comme l’eau et l’huile,
+                    on utilise une ampoule à décanter.
+                </p>
+
+                <ol>
+                    <li>On introduit le mélange dans l’ampoule à décanter.</li>
+                    <li>On laisse reposer le mélange.</li>
+                    <li>Les deux liquides se séparent en deux couches.</li>
+                    <li>Le liquide le plus dense se place en bas.</li>
+                    <li>On ouvre le robinet pour récupérer d’abord le liquide le plus dense.</li>
+                </ol>
+
+                <div class="definition">
+                    <strong>Conclusion :</strong>
+                    les liquides non miscibles d’un mélange hétérogène peuvent être séparés
+                    par décantation. Le liquide le plus dense est récupéré en premier.
+                </div>
+            </div>
+
+            <h2>5. La filtration</h2>
+
+            <div class="box">
+                <p>
+                    L’eau boueuse décantée n’est pas toujours parfaitement claire.
+                    Elle peut encore contenir des particules solides en suspension.
+                    Pour la rendre limpide, on utilise la filtration.
+                </p>
+
+                <div class="definition">
+                    <strong>Principe :</strong>
+                    la filtration consiste à faire passer un mélange hétérogène
+                    à travers un filtre qui retient les particules solides.
+                </div>
+
+                <p>
+                    On verse le mélange sur un papier filtre placé dans un entonnoir.
+                    Les particules solides restent dans le filtre, tandis que le liquide
+                    traverse le filtre.
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Élément</th>
+                        <th>Définition</th>
+                    </tr>
+                    <tr>
+                        <td>Résidu</td>
+                        <td>Particules solides retenues par le filtre.</td>
+                    </tr>
+                    <tr>
+                        <td>Filtrat</td>
+                        <td>Liquide homogène obtenu après passage à travers le filtre.</td>
+                    </tr>
+                    <tr>
+                        <td>Filtre</td>
+                        <td>Matériau qui laisse passer le liquide mais retient les particules solides.</td>
+                    </tr>
+                </table>
+
+                <div class="important">
+                    <strong>À retenir :</strong>
+                    lors d’une filtration, le résidu reste dans le filtre
+                    et le filtrat est recueilli dans le récipient.
+                </div>
+            </div>
+
+            <h2>6. La distillation</h2>
+
+            <div class="box">
+                <div class="definition">
+                    <strong>Définition :</strong>
+                    la distillation est un procédé de séparation des constituants
+                    d’un mélange homogène liquide, lorsque les températures d’ébullition
+                    des substances sont différentes.
+                </div>
+
+                <p>
+                    Sous l’effet de la chaleur, les substances se vaporisent.
+                    La vapeur obtenue passe ensuite dans un réfrigérant où elle se liquéfie.
+                    Le liquide recueilli s’appelle le distillat.
+                </p>
+
+                <div>
+                    <span class="tag">Chauffage</span>
+                    <span class="tag">Vaporisation</span>
+                    <span class="tag">Refroidissement</span>
+                    <span class="tag">Condensation</span>
+                    <span class="tag">Distillat</span>
+                </div>
+            </div>
+
+            <h2>7. Étapes de la distillation</h2>
+
+            <div class="box">
+                <table>
+                    <tr>
+                        <th>Étape</th>
+                        <th>Explication</th>
+                    </tr>
+                    <tr>
+                        <td>Chauffage</td>
+                        <td>Le mélange homogène est chauffé dans un ballon.</td>
+                    </tr>
+                    <tr>
+                        <td>Vaporisation</td>
+                        <td>Le constituant le plus volatil se transforme en vapeur.</td>
+                    </tr>
+                    <tr>
+                        <td>Refroidissement</td>
+                        <td>La vapeur passe dans un réfrigérant et se liquéfie.</td>
+                    </tr>
+                    <tr>
+                        <td>Récupération</td>
+                        <td>Le liquide recueilli à la sortie du réfrigérant est le distillat.</td>
+                    </tr>
+                </table>
+
+                <div class="definition">
+                    <strong>Conclusion :</strong>
+                    la distillation permet de séparer certains constituants
+                    d’un mélange homogène. Elle repose sur la vaporisation suivie
+                    d’une condensation.
+                </div>
+
+                <div class="important">
+                    <strong>À retenir :</strong>
+                    le liquide recueilli par distillation s’appelle le distillat.
+                    Il peut être un corps pur.
+                </div>
+            </div>
+
+            <h2>8. Comparaison des techniques de séparation</h2>
+
+            <div class="box">
+                <table>
+                    <tr>
+                        <th>Technique</th>
+                        <th>Type de mélange</th>
+                        <th>Principe</th>
+                        <th>Exemple</th>
+                    </tr>
+                    <tr>
+                        <td>Décantation</td>
+                        <td>Hétérogène solide-liquide ou liquide-liquide</td>
+                        <td>Séparation par repos et gravitation</td>
+                        <td>Eau + terre ; eau + huile</td>
+                    </tr>
+                    <tr>
+                        <td>Filtration</td>
+                        <td>Hétérogène solide-liquide</td>
+                        <td>Le filtre retient les solides</td>
+                        <td>Eau boueuse</td>
+                    </tr>
+                    <tr>
+                        <td>Distillation</td>
+                        <td>Homogène liquide</td>
+                        <td>Vaporisation puis condensation</td>
+                        <td>Eau salée ou eau minérale</td>
+                    </tr>
+                </table>
+            </div>
+
+        </section>
+
+        <section id="resume">
+            <h2>Résumé du cours</h2>
+
+            <div class="resume">
+                <ul>
+                    <li>La séparation des constituants d’un mélange dépend de la nature du mélange.</li>
+                    <li>La décantation permet de séparer les phases d’un mélange hétérogène par repos.</li>
+                    <li>Dans une décantation liquide-liquide, le liquide le plus dense est récupéré en premier.</li>
+                    <li>La filtration permet de séparer un solide insoluble d’un liquide.</li>
+                    <li>Le résidu est la partie solide retenue par le filtre.</li>
+                    <li>Le filtrat est le liquide obtenu après filtration.</li>
+                    <li>La distillation permet de séparer certains constituants d’un mélange homogène.</li>
+                    <li>La distillation repose sur la vaporisation puis la condensation.</li>
+                    <li>Le liquide obtenu par distillation s’appelle le distillat.</li>
+                    <li>Le distillat peut être un corps pur.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="exercices">
+            <h2>Exercices d’application</h2>
+
+            <div class="box">
+                <h3>Exercice 1 : Compléter les phrases</h3>
+
+                <p>
+                    Complète avec les mots suivants :
+                    <strong>filtration - décantation - filtrat - distillation</strong>.
+                </p>
+
+                <ol>
+                    <li>Lors de la ____________, les particules solides les plus lourdes tombent au fond du récipient.</li>
+                    <li>Lors de la ____________, les particules solides restent dans le filtre.</li>
+                    <li>Le liquide obtenu après filtration est appelé le ____________.</li>
+                    <li>La ____________ est utilisée pour passer d’un mélange homogène à un corps pur.</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 2 : Le thé</h3>
+
+                <p>
+                    Pour faire du thé, Sara ajoute des feuilles de thé dans de l’eau bouillante.
+                    Elle verse ensuite le mélange dans un filtre posé dans un entonnoir.
+                    Elle recueille enfin la boisson chaude dans une tasse placée sous l’entonnoir.
+                </p>
+
+                <ol>
+                    <li>Le mélange initial eau + feuilles de thé est-il homogène ou hétérogène ? Justifier.</li>
+                    <li>Quel est le rôle du filtre ?</li>
+                    <li>La boisson obtenue est-elle un corps pur, un mélange homogène ou un mélange hétérogène ?</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 3 : Eau boueuse et salée</h3>
+
+                <p>
+                    François possède un bocal contenant de l’eau boueuse et salée.
+                    Il veut séparer les constituants de ce mélange.
+                </p>
+
+                <ol>
+                    <li>Quelles sont les différentes expériences qu’il doit réaliser ?</li>
+                    <li>Quels appareils doit-il utiliser ?</li>
+                    <li>Quel résultat obtient-il après chaque expérience ?</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 4 : Distillation</h3>
+
+                <p>
+                    Une expérience permet de séparer un mélange homogène liquide
+                    par chauffage puis refroidissement de la vapeur.
+                </p>
+
+                <ol>
+                    <li>Comment s’appelle cette expérience ?</li>
+                    <li>Quel est le rôle du ballon ?</li>
+                    <li>Quel est le rôle du thermomètre ?</li>
+                    <li>Quel est le rôle du réfrigérant ?</li>
+                    <li>Comment s’appelle le liquide recueilli ?</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 5 : Filtration</h3>
+
+                <p>
+                    Un schéma présente une technique de séparation des constituants
+                    d’un mélange hétérogène.
+                </p>
+
+                <ol>
+                    <li>Comment se nomme cette technique ?</li>
+                    <li>Identifier le filtre, l’entonnoir, le mélange hétérogène et le filtrat.</li>
+                    <li>Où se trouve le mélange homogène obtenu ?</li>
+                    <li>Où se trouve le mélange hétérogène au début ?</li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="corrige">
+            <h2>Corrigé indicatif</h2>
+
+            <div class="box">
+                <h3>Correction de l’exercice 1</h3>
+
+                <ol>
+                    <li>Lors de la <strong>décantation</strong>, les particules solides les plus lourdes tombent au fond du récipient.</li>
+                    <li>Lors de la <strong>filtration</strong>, les particules solides restent dans le filtre.</li>
+                    <li>Le liquide obtenu après filtration est appelé le <strong>filtrat</strong>.</li>
+                    <li>La <strong>distillation</strong> est utilisée pour passer d’un mélange homogène à un corps pur.</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Correction de l’exercice 2</h3>
+
+                <ol>
+                    <li>
+                        Le mélange initial est <strong>hétérogène</strong>, car les feuilles de thé
+                        sont visibles dans l’eau.
+                    </li>
+                    <li>
+                        Le filtre retient les feuilles de thé et laisse passer le liquide.
+                    </li>
+                    <li>
+                        La boisson obtenue est un <strong>mélange homogène</strong>.
+                    </li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Correction de l’exercice 3</h3>
+
+                <ol>
+                    <li>
+                        Il doit d’abord réaliser une décantation ou une filtration pour éliminer
+                        la boue, puis une distillation pour séparer l’eau du sel dissous.
+                    </li>
+                    <li>
+                        Il utilise un filtre, un entonnoir, un récipient, puis un dispositif
+                        de distillation.
+                    </li>
+                    <li>
+                        Après filtration, il obtient un filtrat salé. Après distillation,
+                        il obtient de l’eau pure appelée distillat, et le sel reste dans le ballon.
+                    </li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Correction de l’exercice 4</h3>
+
+                <ol>
+                    <li>L’expérience s’appelle la <strong>distillation</strong>.</li>
+                    <li>Le ballon contient le mélange à chauffer.</li>
+                    <li>Le thermomètre permet de contrôler la température.</li>
+                    <li>Le réfrigérant refroidit la vapeur pour la liquéfier.</li>
+                    <li>Le liquide recueilli s’appelle le <strong>distillat</strong>.</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Correction de l’exercice 5</h3>
+
+                <ol>
+                    <li>La technique est la <strong>filtration</strong>.</li>
+                    <li>Le filtre retient les particules solides, l’entonnoir supporte le filtre, le mélange hétérogène est versé au départ, et le filtrat est le liquide recueilli.</li>
+                    <li>Le mélange homogène obtenu se trouve dans le récipient sous l’entonnoir.</li>
+                    <li>Le mélange hétérogène se trouve au-dessus du filtre avant le passage.</li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="navigation">
+            <h2>Navigation</h2>
+
+            <div class="box">
+                <a href="1ac-s1-dissolution-eau.html" class="btn">Cours précédent</a>
+                <a href="1ac.html" class="btn">Retour aux cours de 1ère année</a>
+                <a href="index.html" class="btn">Retour à l’accueil</a>
+                <a href="1ac-s1-corps-pur.html" class="btn">Cours suivant</a>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>© 2026 - Physique-Chimie Collège | La séparation des constituants d’un mélange</p>
+    </footer>
+
+</body>
+</html>
