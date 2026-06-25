@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le circuit électrique simple - 1AC</title>
+
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #222;
+            line-height: 1.7;
+        }
+
+        header.hero {
+            position: relative;
+            color: white;
+            padding: 70px 20px;
+            text-align: center;
+            overflow: hidden;
+            min-height: 430px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-bg-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                135deg,
+                rgba(15, 76, 129, 0.80),
+                rgba(26, 188, 156, 0.68)
+            );
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .site-logo {
+            width: 95px;
+            height: 95px;
+            object-fit: contain;
+            margin-bottom: 15px;
+            border-radius: 50%;
+            background-color: white;
+            padding: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+        }
+
+        header h1 {
+            font-size: 34px;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+        }
+
+        header p {
+            font-size: 17px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+        }
+
+        nav {
+            background-color: #083b66;
+            padding: 12px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #1abc9c;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        h2 {
+            color: #0f4c81;
+            margin: 30px 0 15px;
+            border-left: 5px solid #1abc9c;
+            padding-left: 10px;
+            font-size: 26px;
+        }
+
+        h3 {
+            color: #0f4c81;
+            margin: 20px 0 10px;
+        }
+
+        .box {
+            background-color: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+        }
+
+        .definition {
+            background-color: #e8f6f3;
+            border-left: 5px solid #1abc9c;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .important {
+            background-color: #fff7e6;
+            border-left: 5px solid #f39c12;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .resume {
+            background-color: #eef4ff;
+            border-left: 5px solid #0f4c81;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .warning {
+            background-color: #fff1f1;
+            border-left: 5px solid #e74c3c;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .experience {
+            background-color: #f8fcff;
+            border: 1px solid #dceeff;
+            border-left: 5px solid #0f4c81;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .pdf-box {
+            background-color: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+        }
+
+        .pdf-viewer {
+            width: 100%;
+            height: 750px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        ul, ol {
+            margin-left: 25px;
+            margin-top: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background-color: white;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #0f4c81;
+            color: white;
+        }
+
+        .schema-box {
+            background-color: #ffffff;
+            border: 1px solid #dceeff;
+            border-radius: 12px;
+            padding: 15px;
+            margin: 18px 0;
+            text-align: center;
+        }
+
+        .schema-box svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .caption {
+            font-size: 14px;
+            color: #555;
+            margin-top: 8px;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #eef4ff;
+            color: #083b66;
+            padding: 6px 10px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin: 5px 5px 5px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 10px 10px 0 0;
+            background-color: #1abc9c;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #14977d;
+        }
+
+        footer {
+            background-color: #083b66;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            header.hero {
+                min-height: 360px;
+                padding: 55px 15px;
+            }
+
+            .hero-bg-video {
+                width: auto;
+                height: 100%;
+            }
+
+            header h1 {
+                font-size: 28px;
+            }
+
+            header p {
+                font-size: 15px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 6px;
+                font-size: 14px;
+            }
+
+            .pdf-viewer {
+                height: 520px;
+            }
+
+            .container {
+                padding: 30px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="hero">
+
+        <video class="hero-bg-video" autoplay muted loop playsinline>
+            <source src="background.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo.
+        </video>
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <img src="logo.png" alt="Logo Physique-Chimie Collège" class="site-logo" onerror="this.style.display='none'">
+
+            <h1>Le circuit électrique simple</h1>
+            <p>1ère année collège - Semestre 2 | Cours, PDF, illustrations, expériences, résumé, exercices et corrigés</p>
+        </div>
+
+    </header>
+
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="1ac.html">Cours 1AC</a>
+        <a href="#presentation">Présentation</a>
+        <a href="#pdf">PDF du cours</a>
+        <a href="#lecon">Leçon</a>
+        <a href="#experiences">Expériences</a>
+        <a href="#resume">Résumé</a>
+        <a href="#exercices">Exercices</a>
+        <a href="#corrige">Corrigés</a>
+    </nav>
+
+    <div class="container">
+
+        <section id="presentation">
+            <h2>Présentation du cours</h2>
+
+            <div class="box">
+                <p>
+                    Ce cours présente le circuit électrique simple. Il permet de comprendre
+                    les éléments nécessaires pour faire briller une lampe : un générateur,
+                    un récepteur, un interrupteur et des fils de connexion.
+                </p>
+
+                <p>
+                    La page contient aussi des illustrations différentes de celles du document PDF
+                    initial, ainsi que des expériences simples pour comprendre la différence entre
+                    un circuit fermé et un circuit ouvert.
+                </p>
+
+                <div class="definition">
+                    <strong>Objectif du cours :</strong>
+                    identifier les éléments d’un circuit électrique simple, connaître le rôle
+                    de chaque élément, réaliser un circuit avec une pile, une lampe et un interrupteur,
+                    puis représenter ce circuit par un schéma normalisé.
+                </div>
+
+                <div class="warning">
+                    <strong>Sécurité :</strong>
+                    les expériences doivent être réalisées uniquement avec une pile.
+                    Il ne faut jamais utiliser une prise domestique ni manipuler un appareil branché.
+                </div>
+            </div>
+        </section>
+
+        <section id="pdf">
+            <h2>Document PDF du cours avec illustrations</h2>
+
+            <div class="pdf-box">
+                <p>
+                    Vous pouvez consulter le document PDF directement sur cette page,
+                    l’ouvrir dans un nouvel onglet ou le télécharger.
+                </p>
+
+                <a href="./1ac-s2-circuit-electrique-simple.pdf" target="_blank" class="btn">Ouvrir le PDF</a>
+                <a href="./1ac-s2-circuit-electrique-simple.pdf" download class="btn">Télécharger le PDF</a>
+
+                <iframe src="./1ac-s2-circuit-electrique-simple.pdf" class="pdf-viewer"></iframe>
+            </div>
+        </section>
+
+        <section id="lecon">
+
+            <h2>1. Introduction</h2>
+
+            <div class="box">
+                <p>
+                    Un phare de vélo contient une lampe et une pile. Quand on appuie sur
+                    l’interrupteur, la lampe s’allume.
+                </p>
+
+                <p>
+                    Cette association <strong>pile - lampe - interrupteur</strong>,
+                    reliée par des fils, constitue un circuit électrique simple.
+                </p>
+
+                <div class="schema-box">
+                    <svg viewBox="0 0 600 230">
+                        <rect x="10" y="10" width="580" height="210" rx="18" fill="#edf7ff" stroke="#d6eaff"/>
+                        <line x1="70" y1="170" x2="530" y2="170" stroke="#888" stroke-width="3"/>
+
+                        <circle cx="155" cy="150" r="40" fill="none" stroke="#555" stroke-width="7"/>
+                        <circle cx="350" cy="150" r="40" fill="none" stroke="#555" stroke-width="7"/>
+                        <line x1="155" y1="150" x2="225" y2="90" stroke="#1f2d3d" stroke-width="7"/>
+                        <line x1="225" y1="90" x2="285" y2="150" stroke="#1f2d3d" stroke-width="7"/>
+                        <line x1="155" y1="150" x2="285" y2="150" stroke="#1f2d3d" stroke-width="7"/>
+                        <line x1="285" y1="150" x2="350" y2="150" stroke="#1f2d3d" stroke-width="7"/>
+                        <line x1="225" y1="90" x2="245" y2="40" stroke="#1f2d3d" stroke-width="5"/>
+
+                        <circle cx="130" cy="70" r="25" fill="#ff4a4a" stroke="#b80000" stroke-width="4"/>
+                        <circle cx="130" cy="70" r="45" fill="none" stroke="#ffdada" stroke-width="6"/>
+                        <circle cx="130" cy="70" r="70" fill="none" stroke="#ffecec" stroke-width="6"/>
+
+                        <text x="400" y="80" font-size="24" fill="#0f4c81" font-weight="bold">Phare de vélo</text>
+                        <text x="400" y="115" font-size="17" fill="#333">Pile + lampe + interrupteur</text>
+                        <text x="400" y="145" font-size="17" fill="#14977d" font-weight="bold">= circuit électrique simple</text>
+                    </svg>
+                    <p class="caption">Illustration originale : exemple d’un circuit simple dans un phare de vélo.</p>
+                </div>
+
+                <div class="important">
+                    <strong>Problème :</strong>
+                    quel circuit électrique peut-on réaliser pour faire briller une lampe ?
+                </div>
+            </div>
+
+            <h2>2. Éléments d’un circuit électrique</h2>
+
+            <div class="box">
+                <p>
+                    Un circuit électrique simple comporte essentiellement les éléments suivants :
+                </p>
+
+                <ul>
+                    <li>un générateur : pile ou batterie ;</li>
+                    <li>un récepteur : lampe, moteur ou DEL ;</li>
+                    <li>un interrupteur ;</li>
+                    <li>des fils de connexion.</li>
+                </ul>
+
+                <div class="schema-box">
+                    <svg viewBox="0 0 700 250">
+                        <rect x="10" y="10" width="680" height="230" rx="15" fill="#fff" stroke="#dceeff"/>
+
+                        <text x="40" y="45" font-size="22" fill="#0f4c81" font-weight="bold">Éléments d’un circuit électrique simple</text>
+
+                        <rect x="70" y="80" width="85" height="110" fill="#ffe082" stroke="#333" stroke-width="4"/>
+                        <line x1="90" y1="80" x2="90" y2="55" stroke="#333" stroke-width="5"/>
+                        <line x1="135" y1="80" x2="135" y2="55" stroke="#333" stroke-width="5"/>
+                        <text x="88" y="130" font-size="20" font-weight="bold">4,5 V</text>
+                        <text x="94" y="165" font-size="17">pile</text>
+                        <text x="72" y="220" font-size="15" fill="#0f4c81" font-weight="bold">Générateur</text>
+
+                        <circle cx="300" cy="135" r="45" fill="#fffde7" stroke="#333" stroke-width="4"/>
+                        <line x1="270" y1="105" x2="330" y2="165" stroke="#f39c12" stroke-width="5"/>
+                        <line x1="270" y1="165" x2="330" y2="105" stroke="#f39c12" stroke-width="5"/>
+                        <line x1="240" y1="135" x2="255" y2="135" stroke="#333" stroke-width="5"/>
+                        <line x1="345" y1="135" x2="360" y2="135" stroke="#333" stroke-width="5"/>
+                        <text x="263" y="220" font-size="15" fill="#0f4c81" font-weight="bold">Récepteur</text>
+
+                        <line x1="455" y1="135" x2="495" y2="135" stroke="#333" stroke-width="5"/>
+                        <circle cx="500" cy="135" r="6" fill="#333"/>
+                        <line x1="505" y1="135" x2="565" y2="105" stroke="#14977d" stroke-width="7"/>
+                        <circle cx="585" cy="135" r="6" fill="#333"/>
+                        <line x1="585" y1="135" x2="640" y2="135" stroke="#333" stroke-width="5"/>
+                        <text x="470" y="220" font-size="15" fill="#0f4c81" font-weight="bold">Interrupteur</text>
+                    </svg>
+                    <p class="caption">Illustration originale : pile, lampe, interrupteur et fils.</p>
+                </div>
+            </div>
+
+            <h2>3. Notion de dipôle électrique</h2>
+
+            <div class="box">
+                <p>
+                    Un dipôle électrique est un élément qui possède deux bornes.
+                    Ces deux bornes permettent de le relier aux autres éléments du circuit.
+                </p>
+
+                <div class="definition">
+                    <strong>Définition :</strong>
+                    un dipôle électrique est un élément électrique possédant deux bornes.
+                </div>
+
+                <p>
+                    Exemples de dipôles : pile, lampe, interrupteur, moteur, résistance, DEL.
+                </p>
+            </div>
+
+            <h2>4. Rôle de chaque élément</h2>
+
+            <div class="box">
+                <table>
+                    <tr>
+                        <th>Élément</th>
+                        <th>Rôle dans le circuit</th>
+                    </tr>
+                    <tr>
+                        <td>Générateur</td>
+                        <td>Il fournit l’énergie électrique au circuit. Exemple : la pile.</td>
+                    </tr>
+                    <tr>
+                        <td>Récepteur</td>
+                        <td>Il utilise l’énergie électrique pour fonctionner. Exemple : lampe ou moteur.</td>
+                    </tr>
+                    <tr>
+                        <td>Interrupteur</td>
+                        <td>Il permet d’ouvrir ou de fermer le circuit.</td>
+                    </tr>
+                    <tr>
+                        <td>Fils de connexion</td>
+                        <td>Ils relient les différents éléments du circuit.</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h2>5. Réalisation d’un circuit électrique simple</h2>
+
+            <div class="box">
+                <p>
+                    Pour réaliser un circuit électrique simple, on utilise une pile,
+                    une lampe, un interrupteur et des fils de connexion.
+                </p>
+
+                <div class="schema-box">
+                    <svg viewBox="0 0 700 280">
+                        <rect x="10" y="10" width="680" height="260" rx="15" fill="#fff" stroke="#dceeff"/>
+                        <text x="45" y="50" font-size="22" fill="#0f4c81" font-weight="bold">Circuit fermé : lampe allumée</text>
+
+                        <line x1="110" y1="105" x2="300" y2="105" stroke="#333" stroke-width="6"/>
+                        <circle cx="300" cy="105" r="6" fill="#333"/>
+                        <circle cx="400" cy="105" r="6" fill="#333"/>
+                        <line x1="300" y1="105" x2="400" y2="105" stroke="#14977d" stroke-width="6"/>
+                        <line x1="400" y1="105" x2="590" y2="105" stroke="#333" stroke-width="6"/>
+                        <line x1="590" y1="105" x2="590" y2="210" stroke="#333" stroke-width="6"/>
+                        <line x1="590" y1="210" x2="420" y2="210" stroke="#333" stroke-width="6"/>
+
+                        <circle cx="350" cy="210" r="35" fill="#fff59d" stroke="#333" stroke-width="4"/>
+                        <circle cx="350" cy="210" r="55" fill="none" stroke="#fff1a8" stroke-width="6"/>
+                        <line x1="330" y1="190" x2="370" y2="230" stroke="#333" stroke-width="4"/>
+                        <line x1="330" y1="230" x2="370" y2="190" stroke="#333" stroke-width="4"/>
+                        <line x1="285" y1="210" x2="315" y2="210" stroke="#333" stroke-width="6"/>
+                        <line x1="385" y1="210" x2="420" y2="210" stroke="#333" stroke-width="6"/>
+
+                        <line x1="110" y1="210" x2="285" y2="210" stroke="#333" stroke-width="6"/>
+                        <line x1="110" y1="210" x2="110" y2="155" stroke="#333" stroke-width="6"/>
+                        <line x1="110" y1="105" x2="110" y2="140" stroke="#333" stroke-width="6"/>
+                        <line x1="90" y1="140" x2="130" y2="140" stroke="#333" stroke-width="8"/>
+                        <line x1="98" y1="160" x2="122" y2="160" stroke="#333" stroke-width="5"/>
+                        <text x="70" y="125" font-size="22" fill="#0f4c81" font-weight="bold">+</text>
+                        <text x="75" y="180" font-size="22" fill="#0f4c81" font-weight="bold">-</text>
+
+                        <text x="170" y="255" font-size="17" fill="#083b66">Le courant circule dans une boucle complète.</text>
+                    </svg>
+                    <p class="caption">Circuit fermé : la lampe brille car la boucle est complète.</p>
+                </div>
+
+                <div class="schema-box">
+                    <svg viewBox="0 0 700 280">
+                        <rect x="10" y="10" width="680" height="260" rx="15" fill="#fff" stroke="#dceeff"/>
+                        <text x="45" y="50" font-size="22" fill="#0f4c81" font-weight="bold">Circuit ouvert : lampe éteinte</text>
+
+                        <line x1="110" y1="105" x2="300" y2="105" stroke="#333" stroke-width="6"/>
+                        <circle cx="300" cy="105" r="6" fill="#333"/>
+                        <circle cx="400" cy="105" r="6" fill="#333"/>
+                        <line x1="300" y1="105" x2="390" y2="65" stroke="#e74c3c" stroke-width="7"/>
+                        <line x1="400" y1="105" x2="590" y2="105" stroke="#333" stroke-width="6"/>
+                        <line x1="590" y1="105" x2="590" y2="210" stroke="#333" stroke-width="6"/>
+                        <line x1="590" y1="210" x2="420" y2="210" stroke="#333" stroke-width="6"/>
+
+                        <circle cx="350" cy="210" r="35" fill="#f1f1f1" stroke="#333" stroke-width="4"/>
+                        <line x1="330" y1="190" x2="370" y2="230" stroke="#333" stroke-width="4"/>
+                        <line x1="330" y1="230" x2="370" y2="190" stroke="#333" stroke-width="4"/>
+                        <line x1="285" y1="210" x2="315" y2="210" stroke="#333" stroke-width="6"/>
+                        <line x1="385" y1="210" x2="420" y2="210" stroke="#333" stroke-width="6"/>
+
+                        <line x1="110" y1="210" x2="285" y2="210" stroke="#333" stroke-width="6"/>
+                        <line x1="110" y1="210" x2="110" y2="155" stroke="#333" stroke-width="6"/>
+                        <line x1="110" y1="105" x2="110" y2="140" stroke="#333" stroke-width="6"/>
+                        <line x1="90" y1="140" x2="130" y2="140" stroke="#333" stroke-width="8"/>
+                        <line x1="98" y1="160" x2="122" y2="160" stroke="#333" stroke-width="5"/>
+                        <text x="70" y="125" font-size="22" fill="#0f4c81" font-weight="bold">+</text>
+                        <text x="75" y="180" font-size="22" fill="#0f4c81" font-weight="bold">-</text>
+
+                        <text x="170" y="255" font-size="17" fill="#083b66">La boucle est interrompue : le courant ne circule pas.</text>
+                    </svg>
+                    <p class="caption">Circuit ouvert : la lampe reste éteinte.</p>
+                </div>
+
+                <div class="definition">
+                    <strong>Conclusion :</strong>
+                    un circuit électrique simple est formé par une boucle qui comporte
+                    un générateur, un récepteur, un interrupteur et des fils de connexion.
+                </div>
+
+                <div class="important">
+                    <strong>À retenir :</strong>
+                    si la lampe brille, le circuit est fermé. Si la lampe reste éteinte,
+                    le circuit est ouvert.
+                </div>
+            </div>
+
+            <h2>6. Schématisation d’un circuit</h2>
+
+            <div class="box">
+                <p>
+                    Pour dessiner un circuit électrique de manière claire, on utilise
+                    des symboles normalisés.
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Dipôle</th>
+                        <th>Symbole simplifié</th>
+                        <th>Rôle</th>
+                    </tr>
+                    <tr>
+                        <td>Pile</td>
+                        <td>+ | | -</td>
+                        <td>Générateur</td>
+                    </tr>
+                    <tr>
+                        <td>Lampe</td>
+                        <td>Cercle avec une croix</td>
+                        <td>Récepteur lumineux</td>
+                    </tr>
+                    <tr>
+                        <td>Résistance</td>
+                        <td>Rectangle</td>
+                        <td>Récepteur</td>
+                    </tr>
+                    <tr>
+                        <td>Moteur</td>
+                        <td>Cercle avec la lettre M</td>
+                        <td>Récepteur mécanique</td>
+                    </tr>
+                    <tr>
+                        <td>Interrupteur ouvert</td>
+                        <td>Contact non relié</td>
+                        <td>Le courant ne circule pas</td>
+                    </tr>
+                    <tr>
+                        <td>Interrupteur fermé</td>
+                        <td>Contact relié</td>
+                        <td>Le courant circule</td>
+                    </tr>
+                </table>
+
+                <div class="important">
+                    <strong>Remarque :</strong>
+                    les fils de connexion sont toujours représentés par des traits
+                    horizontaux ou verticaux.
+                </div>
+            </div>
+
+        </section>
+
+        <section id="experiences">
+            <h2>Expériences simples ajoutées</h2>
+
+            <div class="experience">
+                <h3>Expérience 1 : faire briller une lampe</h3>
+
+                <p>
+                    <strong>Matériel :</strong>
+                    une pile, une lampe, un interrupteur et trois fils de connexion.
+                </p>
+
+                <ol>
+                    <li>Relier une borne de la pile à l’interrupteur.</li>
+                    <li>Relier l’interrupteur à la lampe.</li>
+                    <li>Relier l’autre borne de la lampe à l’autre borne de la pile.</li>
+                    <li>Fermer l’interrupteur et observer la lampe.</li>
+                </ol>
+
+                <p>
+                    <strong>Observation :</strong>
+                    la lampe s’allume lorsque le circuit est fermé.
+                </p>
+
+                <p>
+                    <strong>Conclusion :</strong>
+                    le courant circule seulement si le circuit forme une boucle complète.
+                </p>
+            </div>
+
+            <div class="experience">
+                <h3>Expérience 2 : circuit ouvert et circuit fermé</h3>
+
+                <ol>
+                    <li>Réaliser le même circuit.</li>
+                    <li>Ouvrir l’interrupteur.</li>
+                    <li>Observer l’état de la lampe.</li>
+                    <li>Fermer l’interrupteur.</li>
+                    <li>Observer à nouveau l’état de la lampe.</li>
+                </ol>
+
+                <p>
+                    <strong>Conclusion :</strong>
+                    l’interrupteur permet de commander le circuit : il ouvre ou ferme
+                    le passage du courant électrique.
+                </p>
+            </div>
+
+            <div class="experience">
+                <h3>Expérience 3 : rechercher une panne simple</h3>
+
+                <p>
+                    Si la lampe ne s’allume pas, on peut vérifier :
+                </p>
+
+                <ul>
+                    <li>si la pile est encore utilisable ;</li>
+                    <li>si la lampe n’est pas grillée ;</li>
+                    <li>si les fils sont bien connectés ;</li>
+                    <li>si l’interrupteur est fermé.</li>
+                </ul>
+
+                <p>
+                    <strong>Conclusion :</strong>
+                    un seul élément mal connecté peut empêcher le courant de circuler.
+                </p>
+            </div>
+        </section>
+
+        <section id="resume">
+            <h2>Résumé du cours</h2>
+
+            <div class="resume">
+                <ul>
+                    <li>Un circuit électrique simple est une boucle formée de plusieurs éléments.</li>
+                    <li>Un générateur fournit l’énergie électrique au circuit.</li>
+                    <li>Un récepteur utilise l’énergie électrique pour fonctionner.</li>
+                    <li>Un interrupteur permet d’ouvrir ou de fermer le circuit.</li>
+                    <li>Les fils de connexion relient les éléments du circuit.</li>
+                    <li>Un dipôle électrique possède deux bornes.</li>
+                    <li>Dans un circuit fermé, le courant circule et la lampe peut s’allumer.</li>
+                    <li>Dans un circuit ouvert, le courant ne circule pas et la lampe reste éteinte.</li>
+                    <li>Un circuit électrique se représente avec des symboles normalisés.</li>
+                    <li>Les fils sont représentés par des traits horizontaux ou verticaux.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="exercices">
+            <h2>Exercices d’application</h2>
+
+            <div class="box">
+                <h3>Exercice 1 : Compléter les phrases</h3>
+
+                <p>
+                    Complète avec les mots suivants :
+                    <strong>symboles - ouvrir - fermer - dipôles - bornes - générateur - récepteurs</strong>.
+                </p>
+
+                <ol>
+                    <li>Les éléments d’un circuit qui comportent deux __________ sont des __________.</li>
+                    <li>Un interrupteur permet d’__________ ou de __________ le circuit.</li>
+                    <li>On schématise un circuit par des __________ normalisés.</li>
+                    <li>Le dipôle qui produit le courant électrique est un __________.</li>
+                    <li>Les dipôles qui reçoivent le courant électrique sont des __________.</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 2 : Schéma normalisé</h3>
+
+                <p>
+                    Réaliser le schéma normalisé d’un circuit électrique simple comportant :
+                    une pile, une lampe et un interrupteur fermé.
+                </p>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 3 : Rôle des éléments</h3>
+
+                <table>
+                    <tr>
+                        <th>Élément électrique</th>
+                        <th>Nom</th>
+                        <th>Symbole</th>
+                        <th>Rôle</th>
+                    </tr>
+                    <tr>
+                        <td>Pile</td>
+                        <td>................</td>
+                        <td>................</td>
+                        <td>................</td>
+                    </tr>
+                    <tr>
+                        <td>Lampe</td>
+                        <td>................</td>
+                        <td>................</td>
+                        <td>................</td>
+                    </tr>
+                    <tr>
+                        <td>Interrupteur</td>
+                        <td>................</td>
+                        <td>................</td>
+                        <td>................</td>
+                    </tr>
+                    <tr>
+                        <td>Fil</td>
+                        <td>................</td>
+                        <td>................</td>
+                        <td>................</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 4 : Panne dans un circuit</h3>
+
+                <p>
+                    Dans un montage, la lampe ne brille pas. Citer trois causes possibles
+                    et proposer une vérification pour chaque cause.
+                </p>
+            </div>
+        </section>
+
+        <section id="corrige">
+            <h2>Corrigé indicatif</h2>
+
+            <div class="box">
+                <h3>Correction de l’exercice 1</h3>
+
+                <ol>
+                    <li>Les éléments d’un circuit qui comportent deux <strong>bornes</strong> sont des <strong>dipôles</strong>.</li>
+                    <li>Un interrupteur permet d’<strong>ouvrir</strong> ou de <strong>fermer</strong> le circuit.</li>
+                    <li>On schématise un circuit par des <strong>symboles</strong> normalisés.</li>
+                    <li>Le dipôle qui produit le courant électrique est un <strong>générateur</strong>.</li>
+                    <li>Les dipôles qui reçoivent le courant électrique sont des <strong>récepteurs</strong>.</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Correction de l’exercice 2</h3>
+
+                <p>
+                    Le schéma doit contenir une pile, une lampe, un interrupteur fermé
+                    et des fils de connexion formant une boucle fermée.
+                </p>
+            </div>
+
+            <div class="box">
+                <h3>Correction de l’exercice 3</h3>
+
+                <table>
+                    <tr>
+                        <th>Élément</th>
+                        <th>Nom</th>
+                        <th>Rôle</th>
+                    </tr>
+                    <tr>
+                        <td>Pile</td>
+                        <td>Générateur</td>
+                        <td>Fournit l’énergie électrique au circuit.</td>
+                    </tr>
+                    <tr>
+                        <td>Lampe</td>
+                        <td>Récepteur</td>
+                        <td>Transforme l’énergie électrique en lumière.</td>
+                    </tr>
+                    <tr>
+                        <td>Interrupteur</td>
+                        <td>Dipôle de commande</td>
+                        <td>Ouvre ou ferme le circuit.</td>
+                    </tr>
+                    <tr>
+                        <td>Fil</td>
+                        <td>Fil de connexion</td>
+                        <td>Relie les éléments du circuit.</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="box">
+                <h3>Correction de l’exercice 4</h3>
+
+                <ul>
+                    <li>La pile peut être usée : on la teste avec une autre lampe.</li>
+                    <li>La lampe peut être grillée : on la remplace par une lampe en bon état.</li>
+                    <li>Un fil peut être mal connecté : on vérifie toutes les bornes.</li>
+                    <li>L’interrupteur peut être ouvert : on le ferme et on observe la lampe.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="navigation">
+            <h2>Navigation</h2>
+
+            <div class="box">
+                <a href="1ac-s2-electricite-entoure.html" class="btn">Cours précédent</a>
+                <a href="1ac.html" class="btn">Retour aux cours de 1ère année</a>
+                <a href="index.html" class="btn">Retour à l’accueil</a>
+                <a href="1ac-s2-conducteurs-isolants.html" class="btn">Cours suivant</a>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>© 2026 - Physique-Chimie Collège | Le circuit électrique simple</p>
+    </footer>
+
+</body>
+</html>
