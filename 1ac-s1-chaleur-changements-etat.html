@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La chaleur et les changements d’état physique de la matière - 1AC</title>
+
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #222;
+            line-height: 1.7;
+        }
+
+        header.hero {
+            position: relative;
+            color: white;
+            padding: 70px 20px;
+            text-align: center;
+            overflow: hidden;
+            min-height: 430px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-bg-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                135deg,
+                rgba(15, 76, 129, 0.80),
+                rgba(26, 188, 156, 0.68)
+            );
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .site-logo {
+            width: 95px;
+            height: 95px;
+            object-fit: contain;
+            margin-bottom: 15px;
+            border-radius: 50%;
+            background-color: white;
+            padding: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+        }
+
+        header h1 {
+            font-size: 34px;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+        }
+
+        header p {
+            font-size: 17px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+        }
+
+        nav {
+            background-color: #083b66;
+            padding: 12px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #1abc9c;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        h2 {
+            color: #0f4c81;
+            margin: 30px 0 15px;
+            border-left: 5px solid #1abc9c;
+            padding-left: 10px;
+            font-size: 26px;
+        }
+
+        h3 {
+            color: #0f4c81;
+            margin: 20px 0 10px;
+        }
+
+        .box {
+            background-color: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+        }
+
+        .definition {
+            background-color: #e8f6f3;
+            border-left: 5px solid #1abc9c;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .important {
+            background-color: #fff7e6;
+            border-left: 5px solid #f39c12;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .resume {
+            background-color: #eef4ff;
+            border-left: 5px solid #0f4c81;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .pdf-box {
+            background-color: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+        }
+
+        .pdf-viewer {
+            width: 100%;
+            height: 750px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        ul, ol {
+            margin-left: 25px;
+            margin-top: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background-color: white;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #0f4c81;
+            color: white;
+        }
+
+        .formula {
+            text-align: center;
+            font-size: 22px;
+            color: #083b66;
+            font-weight: bold;
+            margin: 20px 0;
+            background-color: #eef4ff;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #eef4ff;
+            color: #083b66;
+            padding: 6px 10px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin: 5px 5px 5px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 10px 10px 0 0;
+            background-color: #1abc9c;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #14977d;
+        }
+
+        footer {
+            background-color: #083b66;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            header.hero {
+                min-height: 360px;
+                padding: 55px 15px;
+            }
+
+            .hero-bg-video {
+                width: auto;
+                height: 100%;
+            }
+
+            header h1 {
+                font-size: 28px;
+            }
+
+            header p {
+                font-size: 15px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 6px;
+                font-size: 14px;
+            }
+
+            .pdf-viewer {
+                height: 520px;
+            }
+
+            .container {
+                padding: 30px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="hero">
+
+        <video class="hero-bg-video" autoplay muted loop playsinline>
+            <source src="background.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo.
+        </video>
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <img src="logo.png" alt="Logo Physique-Chimie Collège" class="site-logo" onerror="this.style.display='none'">
+
+            <h1>La chaleur et les changements d’état physique de la matière</h1>
+            <p>1ère année collège - Semestre 1 | Cours, PDF, résumé, exercices et corrigés</p>
+        </div>
+
+    </header>
+
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="1ac.html">Cours 1AC</a>
+        <a href="#presentation">Présentation</a>
+        <a href="#pdf">PDF du cours</a>
+        <a href="#lecon">Leçon</a>
+        <a href="#resume">Résumé</a>
+        <a href="#exercices">Exercices</a>
+        <a href="#corrige">Corrigés</a>
+    </nav>
+
+    <div class="container">
+
+        <section id="presentation">
+            <h2>Présentation du cours</h2>
+
+            <div class="box">
+                <p>
+                    Ce cours présente la température, la chaleur et les changements d’état
+                    physique de la matière. Il permet de comprendre comment repérer
+                    une température, distinguer la chaleur de la température et identifier
+                    les différents changements d’état.
+                </p>
+
+                <p>
+                    Le cours explique aussi ce qui se passe au niveau des particules
+                    lorsqu’un corps change d’état, ainsi que la conservation de la masse
+                    pendant ces transformations.
+                </p>
+
+                <div class="definition">
+                    <strong>Objectif du cours :</strong>
+                    mesurer une température avec un thermomètre, distinguer chaleur
+                    et température, connaître les changements d’état et comprendre
+                    l’évolution de la masse et du volume lors d’un changement d’état.
+                </div>
+            </div>
+        </section>
+
+        <section id="pdf">
+            <h2>Document PDF du cours</h2>
+
+            <div class="pdf-box">
+                <p>
+                    Vous pouvez consulter le document PDF directement sur cette page,
+                    l’ouvrir dans un nouvel onglet ou le télécharger.
+                </p>
+
+                <a href="./1ac-s1-chaleur-changements-etat.pdf" target="_blank" class="btn">Ouvrir le PDF</a>
+                <a href="./1ac-s1-chaleur-changements-etat.pdf" download class="btn">Télécharger le PDF</a>
+
+                <iframe src="./1ac-s1-chaleur-changements-etat.pdf" class="pdf-viewer"></iframe>
+            </div>
+        </section>
+
+        <section id="lecon">
+
+            <h2>1. Repérage de la température</h2>
+
+            <div class="box">
+                <p>
+                    Notre sensation de toucher nous permet parfois de distinguer
+                    les corps chauds des corps froids. Cependant, cette sensation
+                    n’est pas toujours fiable.
+                </p>
+
+                <p>
+                    Par exemple, si on met une main dans l’eau chaude et l’autre main
+                    dans l’eau froide, puis les deux mains dans une eau tiède,
+                    les deux mains ne donnent pas la même sensation.
+                </p>
+
+                <div class="important">
+                    <strong>Conclusion :</strong>
+                    le toucher permet de sentir le chaud et le froid, mais il ne permet
+                    pas de déterminer précisément la température d’un corps.
+                </div>
+
+                <div class="definition">
+                    <strong>Instrument utilisé :</strong>
+                    pour mesurer ou repérer la température, on utilise un thermomètre.
+                </div>
+            </div>
+
+            <h2>2. Définition de la température</h2>
+
+            <div class="box">
+                <div class="definition">
+                    <strong>Définition :</strong>
+                    la température est une grandeur physique mesurée à l’aide
+                    d’un thermomètre. Elle est liée aux sensations de froid et de chaud.
+                </div>
+
+                <p>
+                    On note la température par le symbole <strong>θ</strong>
+                    ou par la lettre <strong>T</strong>. L’unité usuelle de la température
+                    est le degré Celsius, noté <strong>°C</strong>.
+                </p>
+
+                <div class="formula">
+                    Symbole : θ ou T &nbsp;&nbsp; | &nbsp;&nbsp; Unité usuelle : °C
+                </div>
+
+                <h3>Différents types de thermomètres</h3>
+
+                <ul>
+                    <li>Thermomètre à liquide.</li>
+                    <li>Thermomètre médical.</li>
+                    <li>Thermomètre électronique.</li>
+                    <li>Thermomètre infrarouge.</li>
+                </ul>
+            </div>
+
+            <h2>3. Chaleur et température</h2>
+
+            <div class="box">
+                <p>
+                    Lorsqu’on chauffe de l’eau, sa température augmente.
+                    On dit que l’eau reçoit de la chaleur.
+                </p>
+
+                <p>
+                    Lorsqu’on arrête le chauffage, la température de l’eau diminue
+                    progressivement. On dit que l’eau cède de la chaleur.
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Situation</th>
+                        <th>Observation</th>
+                        <th>Conclusion</th>
+                    </tr>
+                    <tr>
+                        <td>On chauffe un corps</td>
+                        <td>Sa température augmente</td>
+                        <td>Le corps reçoit de la chaleur</td>
+                    </tr>
+                    <tr>
+                        <td>On arrête le chauffage</td>
+                        <td>Sa température diminue</td>
+                        <td>Le corps cède de la chaleur</td>
+                    </tr>
+                </table>
+
+                <div class="important">
+                    <strong>À retenir :</strong>
+                    la température et la chaleur sont deux notions différentes.
+                    Lorsqu’un corps reçoit de la chaleur, sa température augmente.
+                    Lorsqu’un corps cède de la chaleur, sa température diminue.
+                </div>
+            </div>
+
+            <h2>4. Changements d’état physique de la matière</h2>
+
+            <div class="box">
+                <div class="definition">
+                    <strong>Définition :</strong>
+                    un changement d’état est le passage d’un état physique à un autre
+                    sous l’effet d’un changement de température ou de pression.
+                </div>
+
+                <p>
+                    La matière peut passer de l’état solide à l’état liquide,
+                    de l’état liquide à l’état gazeux, ou inversement.
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Passage</th>
+                        <th>Nom du changement d’état</th>
+                    </tr>
+                    <tr>
+                        <td>Solide → Liquide</td>
+                        <td>Fusion</td>
+                    </tr>
+                    <tr>
+                        <td>Liquide → Solide</td>
+                        <td>Solidification</td>
+                    </tr>
+                    <tr>
+                        <td>Liquide → Gaz</td>
+                        <td>Vaporisation</td>
+                    </tr>
+                    <tr>
+                        <td>Gaz → Liquide</td>
+                        <td>Liquéfaction</td>
+                    </tr>
+                    <tr>
+                        <td>Solide → Gaz</td>
+                        <td>Sublimation</td>
+                    </tr>
+                    <tr>
+                        <td>Gaz → Solide</td>
+                        <td>Condensation</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h2>5. Interprétation des changements d’état par le modèle particulaire</h2>
+
+            <div class="box">
+                <p>
+                    Les changements d’état peuvent être expliqués par le modèle particulaire.
+                    Lorsque la matière reçoit de la chaleur, l’agitation des particules
+                    augmente. Lorsqu’elle cède de la chaleur, l’agitation diminue.
+                </p>
+
+                <div>
+                    <span class="tag">Solide : particules rangées</span>
+                    <span class="tag">Liquide : particules désordonnées</span>
+                    <span class="tag">Gaz : particules dispersées</span>
+                </div>
+
+                <table>
+                    <tr>
+                        <th>État physique</th>
+                        <th>Organisation des particules</th>
+                        <th>Effet de la chaleur</th>
+                    </tr>
+                    <tr>
+                        <td>Solide</td>
+                        <td>Particules compactes et bien rangées</td>
+                        <td>Faible agitation</td>
+                    </tr>
+                    <tr>
+                        <td>Liquide</td>
+                        <td>Particules proches mais désordonnées</td>
+                        <td>Agitation plus grande</td>
+                    </tr>
+                    <tr>
+                        <td>Gaz</td>
+                        <td>Particules très éloignées et dispersées</td>
+                        <td>Très grande agitation</td>
+                    </tr>
+                </table>
+
+                <div class="important">
+                    <strong>À retenir :</strong>
+                    en gagnant de la chaleur, les particules bougent davantage
+                    et deviennent plus dispersées.
+                </div>
+            </div>
+
+            <h2>6. Masse et volume lors d’un changement d’état</h2>
+
+            <div class="box">
+                <p>
+                    Lors de la fusion de la glace, on observe que le volume de l’eau liquide
+                    obtenu est inférieur au volume de la glace. Cependant, la masse
+                    reste la même.
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Grandeur</th>
+                        <th>Lors d’un changement d’état</th>
+                    </tr>
+                    <tr>
+                        <td>Masse</td>
+                        <td>Elle ne change pas.</td>
+                    </tr>
+                    <tr>
+                        <td>Volume</td>
+                        <td>Il peut changer.</td>
+                    </tr>
+                    <tr>
+                        <td>Nature des particules</td>
+                        <td>Elle ne change pas.</td>
+                    </tr>
+                    <tr>
+                        <td>Nombre des particules</td>
+                        <td>Il ne change pas.</td>
+                    </tr>
+                </table>
+
+                <div class="definition">
+                    <strong>Conclusion :</strong>
+                    pendant un changement d’état, la masse se conserve,
+                    mais le volume peut varier.
+                </div>
+            </div>
+
+        </section>
+
+        <section id="resume">
+            <h2>Résumé du cours</h2>
+
+            <div class="resume">
+                <ul>
+                    <li>La température est une grandeur physique mesurée avec un thermomètre.</li>
+                    <li>L’unité usuelle de la température est le degré Celsius, noté °C.</li>
+                    <li>La sensation de toucher ne permet pas de mesurer précisément la température.</li>
+                    <li>Lorsqu’un corps reçoit de la chaleur, sa température augmente.</li>
+                    <li>Lorsqu’un corps cède de la chaleur, sa température diminue.</li>
+                    <li>Un changement d’état est le passage d’un état physique à un autre.</li>
+                    <li>La fusion est le passage de l’état solide à l’état liquide.</li>
+                    <li>La solidification est le passage de l’état liquide à l’état solide.</li>
+                    <li>La vaporisation est le passage de l’état liquide à l’état gazeux.</li>
+                    <li>La liquéfaction est le passage de l’état gazeux à l’état liquide.</li>
+                    <li>La sublimation est le passage de l’état solide à l’état gazeux.</li>
+                    <li>La condensation est le passage de l’état gazeux à l’état solide.</li>
+                    <li>Lors d’un changement d’état, la masse ne change pas, mais le volume peut changer.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="exercices">
+            <h2>Exercices d’application</h2>
+
+            <div class="box">
+                <h3>Exercice 1 : Compléter les phrases</h3>
+
+                <ol>
+                    <li>Quand un corps reçoit de la chaleur, sa température ____________.</li>
+                    <li>Quand un corps ____________ de la chaleur, sa température diminue.</li>
+                    <li>L’unité usuelle de la température est ____________.</li>
+                    <li>Lors de la fusion de la glace, le volume d’eau ____________.</li>
+                    <li>Lors de la fusion de la glace, sa masse ____________.</li>
+                    <li>La ____________ est le passage de l’état liquide à l’état gazeux.</li>
+                    <li>La ____________ est le passage de l’état liquide à l’état solide.</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 2 : Compléter les changements d’état</h3>
+
+                <p>
+                    Complète les passages suivants :
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Passage</th>
+                        <th>Nom du changement d’état</th>
+                    </tr>
+                    <tr>
+                        <td>Solide → Liquide</td>
+                        <td>............................</td>
+                    </tr>
+                    <tr>
+                        <td>Liquide → Solide</td>
+                        <td>............................</td>
+                    </tr>
+                    <tr>
+                        <td>Liquide → Gaz</td>
+                        <td>............................</td>
+                    </tr>
+                    <tr>
+                        <td>Gaz → Liquide</td>
+                        <td>............................</td>
+                    </tr>
+                    <tr>
+                        <td>Solide → Gaz</td>
+                        <td>............................</td>
+                    </tr>
+                    <tr>
+                        <td>Gaz → Solide</td>
+                        <td>............................</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 3 : Fusion d’un glaçon</h3>
+
+                <p>
+                    La solidification de l’eau s’accompagne d’une augmentation de 10 %
+                    de son volume. Cela signifie que 100 cm<sup>3</sup> d’eau donnent
+                    110 cm<sup>3</sup> de glace.
+                </p>
+
+                <p>
+                    Un glaçon a les dimensions suivantes :
+                    <strong>3 cm × 2 cm × 2 cm</strong>.
+                </p>
+
+                <ol>
+                    <li>Calculer le volume du glaçon.</li>
+                    <li>Si on fait fondre ce glaçon, quel volume d’eau liquide obtient-on ?</li>
+                    <li>Combien de glaçons identiques faut-il pour obtenir 1,08 L d’eau liquide ?</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 4 : Lecture de températures</h3>
+
+                <p>
+                    On utilise un thermomètre pour repérer les températures de cinq corps :
+                    A, B, C, D et E.
+                </p>
+
+                <ol>
+                    <li>Compléter un tableau avec les températures en °C, °F et K.</li>
+                    <li>Classer les corps du plus chaud au plus froid.</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 5 : Refroidissement du cyclohexane</h3>
+
+                <p>
+                    On refroidit du cyclohexane liquide contenu dans un tube à essai.
+                    On relève sa température toutes les deux minutes.
+                </p>
+
+                <table>
+                    <tr>
+                        <th>t (min)</th>
+                        <td>0</td>
+                        <td>2</td>
+                        <td>4</td>
+                        <td>6</td>
+                        <td>8</td>
+                        <td>10</td>
+                        <td>12</td>
+                        <td>14</td>
+                    </tr>
+                    <tr>
+                        <th>T (°C)</th>
+                        <td>18</td>
+                        <td>12</td>
+                        <td>5,8</td>
+                        <td>5,8</td>
+                        <td>5,8</td>
+                        <td>5,8</td>
+                        <td>0</td>
+                        <td>-6</td>
+                    </tr>
+                </table>
+
+                <ol>
+                    <li>Tracer la courbe qui représente l’évolution de la température au cours du temps.</li>
+                    <li>Quel changement d’état subit le cyclohexane ?</li>
+                    <li>Dans quel état physique se trouve le cyclohexane avant, pendant et après le palier à 5,8 °C ?</li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="corrige">
+            <h2>Corrigé indicatif</h2>
+
+            <div class="box">
+                <h3>Correction de l’exercice 1</h3>
+
+                <ol>
+                    <li>Quand un corps reçoit de la chaleur, sa température <strong>augmente</strong>.</li>
+                    <li>Quand un corps <strong>cède</strong> de la chaleur, sa température diminue.</li>
+                    <li>L’unité usuelle de la température est <strong>le degré Celsius °C</strong>.</li>
+                    <li>Lors de la fusion de la glace, le volume d’eau <strong>diminue</strong>.</li>
+                    <li>Lors de la fusion de la glace, sa masse <strong>ne change pas</strong>.</li>
+                    <li>La <strong>vaporisation</strong> est le passage de l’état liquide à l’état gazeux.</li>
+                    <li>La <strong>solidification</strong> est le passage de l’état liquide à l’état solide.</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Correction de l’exercice 2</h3>
+
+                <table>
+                    <tr>
+                        <th>Passage</th>
+                        <th>Nom</th>
+                    </tr>
+                    <tr>
+                        <td>Solide → Liquide</td>
+                        <td>Fusion</td>
+                    </tr>
+                    <tr>
+                        <td>Liquide → Solide</td>
+                        <td>Solidification</td>
+                    </tr>
+                    <tr>
+                        <td>Liquide → Gaz</td>
+                        <td>Vaporisation</td>
+                    </tr>
+                    <tr>
+                        <td>Gaz → Liquide</td>
+                        <td>Liquéfaction</td>
+                    </tr>
+                    <tr>
+                        <td>Solide → Gaz</td>
+                        <td>Sublimation</td>
+                    </tr>
+                    <tr>
+                        <td>Gaz → Solide</td>
+                        <td>Condensation</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="box">
+                <h3>Correction de l’exercice 3</h3>
+
+                <p>
+                    Le volume du glaçon est :
+                </p>
+
+                <div class="formula">
+                    V = 3 × 2 × 2 = 12 cm<sup>3</sup>
+                </div>
+
+                <p>
+                    Comme 110 cm<sup>3</sup> de glace donnent 100 cm<sup>3</sup> d’eau,
+                    alors 12 cm<sup>3</sup> de glace donnent environ :
+                </p>
+
+                <div class="formula">
+                    V<sub>eau</sub> = 12 × 100 / 110 ≈ 10,9 cm<sup>3</sup>
+                </div>
+
+                <p>
+                    1,08 L = 1080 cm<sup>3</sup>. Le nombre de glaçons nécessaires est :
+                </p>
+
+                <div class="formula">
+                    N = 1080 / 10,9 ≈ 99 glaçons
+                </div>
+            </div>
+
+            <div class="box">
+                <h3>Correction de l’exercice 5</h3>
+
+                <p>
+                    Le cyclohexane subit une <strong>solidification</strong>.
+                    Le palier à <strong>5,8 °C</strong> correspond au changement d’état.
+                </p>
+
+                <ul>
+                    <li>Entre 18 °C et 5,8 °C : le cyclohexane est à l’état liquide.</li>
+                    <li>À 5,8 °C : il y a un mélange liquide + solide.</li>
+                    <li>Entre 5,8 °C et -6 °C : le cyclohexane est à l’état solide.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="navigation">
+            <h2>Navigation</h2>
+
+            <div class="box">
+                <a href="1ac-s1-modele-particulaire.html" class="btn">Cours précédent</a>
+                <a href="1ac.html" class="btn">Retour aux cours de 1ère année</a>
+                <a href="index.html" class="btn">Retour à l’accueil</a>
+                <a href="1ac-s1-melanges.html" class="btn">Cours suivant</a>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>© 2026 - Physique-Chimie Collège | La chaleur et les changements d’état physique de la matière</p>
+    </footer>
+
+</body>
+</html>
