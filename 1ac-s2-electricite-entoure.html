@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L’électricité qui nous entoure - 1AC</title>
+
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #222;
+            line-height: 1.7;
+        }
+
+        header.hero {
+            position: relative;
+            color: white;
+            padding: 70px 20px;
+            text-align: center;
+            overflow: hidden;
+            min-height: 430px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-bg-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                135deg,
+                rgba(15, 76, 129, 0.80),
+                rgba(26, 188, 156, 0.68)
+            );
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .site-logo {
+            width: 95px;
+            height: 95px;
+            object-fit: contain;
+            margin-bottom: 15px;
+            border-radius: 50%;
+            background-color: white;
+            padding: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+        }
+
+        header h1 {
+            font-size: 34px;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+        }
+
+        header p {
+            font-size: 17px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+        }
+
+        nav {
+            background-color: #083b66;
+            padding: 12px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #1abc9c;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        h2 {
+            color: #0f4c81;
+            margin: 30px 0 15px;
+            border-left: 5px solid #1abc9c;
+            padding-left: 10px;
+            font-size: 26px;
+        }
+
+        h3 {
+            color: #0f4c81;
+            margin: 20px 0 10px;
+        }
+
+        .box {
+            background-color: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+        }
+
+        .definition {
+            background-color: #e8f6f3;
+            border-left: 5px solid #1abc9c;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .important {
+            background-color: #fff7e6;
+            border-left: 5px solid #f39c12;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .resume {
+            background-color: #eef4ff;
+            border-left: 5px solid #0f4c81;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .pdf-box {
+            background-color: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+        }
+
+        .pdf-viewer {
+            width: 100%;
+            height: 750px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        ul, ol {
+            margin-left: 25px;
+            margin-top: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background-color: white;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #0f4c81;
+            color: white;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #eef4ff;
+            color: #083b66;
+            padding: 6px 10px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin: 5px 5px 5px 0;
+        }
+
+        .experience {
+            background-color: #f8fcff;
+            border: 1px solid #dceeff;
+            border-left: 5px solid #0f4c81;
+            padding: 18px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        .warning {
+            background-color: #fff1f1;
+            border-left: 5px solid #e74c3c;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 10px 10px 0 0;
+            background-color: #1abc9c;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #14977d;
+        }
+
+        footer {
+            background-color: #083b66;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            header.hero {
+                min-height: 360px;
+                padding: 55px 15px;
+            }
+
+            .hero-bg-video {
+                width: auto;
+                height: 100%;
+            }
+
+            header h1 {
+                font-size: 28px;
+            }
+
+            header p {
+                font-size: 15px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 6px;
+                font-size: 14px;
+            }
+
+            .pdf-viewer {
+                height: 520px;
+            }
+
+            .container {
+                padding: 30px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="hero">
+
+        <video class="hero-bg-video" autoplay muted loop playsinline>
+            <source src="background.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo.
+        </video>
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <img src="logo.png" alt="Logo Physique-Chimie Collège" class="site-logo" onerror="this.style.display='none'">
+
+            <h1>L’électricité qui nous entoure</h1>
+            <p>1ère année collège - Semestre 2 | Cours, PDF, photos, expériences, résumé, exercices et corrigés</p>
+        </div>
+
+    </header>
+
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="1ac.html">Cours 1AC</a>
+        <a href="#presentation">Présentation</a>
+        <a href="#pdf">PDF du cours</a>
+        <a href="#lecon">Leçon</a>
+        <a href="#experiences">Expériences</a>
+        <a href="#resume">Résumé</a>
+        <a href="#exercices">Exercices</a>
+        <a href="#corrige">Corrigés</a>
+    </nav>
+
+    <div class="container">
+
+        <section id="presentation">
+            <h2>Présentation du cours</h2>
+
+            <div class="box">
+                <p>
+                    Ce cours présente l’électricité comme une forme d’énergie présente
+                    dans notre vie quotidienne. Il permet de découvrir les formes
+                    de l’électricité, ses sources de production et ses domaines d’utilisation.
+                </p>
+
+                <p>
+                    Le cours contient aussi des photos et des expériences simples
+                    pour aider les élèves à observer certains phénomènes électriques,
+                    comme l’électricité statique.
+                </p>
+
+                <div class="definition">
+                    <strong>Objectif du cours :</strong>
+                    comprendre que l’électricité est une forme d’énergie, distinguer
+                    l’électricité naturelle de l’électricité artificielle, reconnaître
+                    les principales sources de production de l’électricité et identifier
+                    ses utilisations dans la vie quotidienne.
+                </div>
+            </div>
+        </section>
+
+        <section id="pdf">
+            <h2>Document PDF du cours avec photos et expériences</h2>
+
+            <div class="pdf-box">
+                <p>
+                    Vous pouvez consulter le document PDF directement sur cette page.
+                    Il contient le contenu du cours avec des photos, des exemples,
+                    des expériences simples, des exercices et des corrigés.
+                </p>
+
+                <a href="./1ac-s2-electricite-entoure.pdf" target="_blank" class="btn">Ouvrir le PDF</a>
+                <a href="./1ac-s2-electricite-entoure.pdf" download class="btn">Télécharger le PDF</a>
+
+                <iframe src="./1ac-s2-electricite-entoure.pdf" class="pdf-viewer"></iframe>
+            </div>
+        </section>
+
+        <section id="lecon">
+
+            <h2>1. Définition de l’énergie</h2>
+
+            <div class="box">
+                <p>
+                    L’énergie est une grandeur physique nécessaire pour réaliser
+                    un travail ou provoquer une action. Elle existe sous plusieurs formes.
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Forme d’énergie</th>
+                        <th>Exemple</th>
+                    </tr>
+                    <tr>
+                        <td>Énergie thermique</td>
+                        <td>La chaleur produite par un feu ou un chauffage.</td>
+                    </tr>
+                    <tr>
+                        <td>Énergie électrique</td>
+                        <td>L’électricité qui fait fonctionner une lampe.</td>
+                    </tr>
+                    <tr>
+                        <td>Énergie mécanique</td>
+                        <td>Le mouvement de l’eau, du vent ou d’un objet.</td>
+                    </tr>
+                    <tr>
+                        <td>Énergie chimique</td>
+                        <td>L’énergie stockée dans les piles ou les combustibles.</td>
+                    </tr>
+                    <tr>
+                        <td>Énergie nucléaire</td>
+                        <td>L’énergie libérée par certains noyaux atomiques.</td>
+                    </tr>
+                </table>
+
+                <div class="important">
+                    <strong>À retenir :</strong>
+                    l’électricité est une forme d’énergie.
+                </div>
+            </div>
+
+            <h2>2. Définition de l’électricité</h2>
+
+            <div class="box">
+                <p>
+                    L’électricité est un phénomène énergétique lié à la présence
+                    ou au déplacement de particules chargées positivement ou négativement.
+                </p>
+
+                <div class="definition">
+                    <strong>Définition :</strong>
+                    l’électricité est une forme d’énergie qui peut faire fonctionner
+                    des appareils électriques.
+                </div>
+
+                <p>
+                    L’électricité peut exister naturellement, comme dans la foudre,
+                    ou être produite artificiellement dans des centrales électriques.
+                </p>
+            </div>
+
+            <h2>3. Les formes de l’électricité</h2>
+
+            <div class="box">
+                <h3>3.1 L’électricité naturelle</h3>
+
+                <p>
+                    L’électricité naturelle existe dans plusieurs phénomènes observables
+                    dans la nature.
+                </p>
+
+                <ul>
+                    <li>La foudre est une décharge électrique entre un nuage et la Terre ou entre deux nuages.</li>
+                    <li>L’électricité statique peut apparaître par frottement entre deux matériaux.</li>
+                    <li>Certains êtres vivants, comme l’anguille électrique, peuvent produire des décharges électriques.</li>
+                </ul>
+
+                <div>
+                    <span class="tag">Foudre</span>
+                    <span class="tag">Électricité statique</span>
+                    <span class="tag">Décharges naturelles</span>
+                </div>
+
+                <h3>3.2 L’électricité artificielle</h3>
+
+                <p>
+                    L’électricité artificielle est produite par l’être humain
+                    dans des centrales ou à l’aide de dispositifs techniques.
+                    Elle est obtenue par transformation d’autres formes d’énergie.
+                </p>
+
+                <ul>
+                    <li>Transformation d’énergie thermique en énergie électrique.</li>
+                    <li>Transformation d’énergie hydraulique en énergie électrique.</li>
+                    <li>Transformation d’énergie éolienne en énergie électrique.</li>
+                    <li>Transformation de l’énergie solaire en énergie électrique.</li>
+                </ul>
+            </div>
+
+            <h2>4. Les sources de production de l’électricité</h2>
+
+            <div class="box">
+                <p>
+                    L’électricité que nous utilisons quotidiennement peut être produite
+                    par différents types de centrales.
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Source</th>
+                        <th>Principe</th>
+                    </tr>
+                    <tr>
+                        <td>Centrale thermique</td>
+                        <td>Utilise un combustible comme le charbon, le gaz ou le pétrole pour produire de la chaleur.</td>
+                    </tr>
+                    <tr>
+                        <td>Centrale nucléaire</td>
+                        <td>Utilise l’énergie libérée par la fission nucléaire pour produire de la chaleur.</td>
+                    </tr>
+                    <tr>
+                        <td>Centrale hydraulique</td>
+                        <td>Utilise la force de l’eau pour faire tourner une turbine.</td>
+                    </tr>
+                    <tr>
+                        <td>Énergie éolienne</td>
+                        <td>Utilise le vent pour faire tourner les pales d’une éolienne.</td>
+                    </tr>
+                    <tr>
+                        <td>Énergie solaire photovoltaïque</td>
+                        <td>Utilise les rayons du soleil grâce à des panneaux photovoltaïques.</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h2>5. La centrale thermique</h2>
+
+            <div class="box">
+                <p>
+                    Une centrale thermique produit de l’électricité à partir d’une source
+                    de chaleur. Cette chaleur est généralement obtenue grâce à la combustion
+                    d’un combustible comme le charbon, le gaz naturel ou le pétrole.
+                </p>
+
+                <div class="important">
+                    <strong>Principe simplifié :</strong>
+                    combustible → chaleur → vapeur → turbine → alternateur → électricité.
+                </div>
+            </div>
+
+            <h2>6. La centrale nucléaire</h2>
+
+            <div class="box">
+                <p>
+                    Une centrale nucléaire produit de l’électricité grâce à l’énergie
+                    libérée par la fission de noyaux d’atomes lourds.
+                    La chaleur produite transforme l’eau en vapeur.
+                    Cette vapeur fait tourner une turbine reliée à un alternateur.
+                </p>
+
+                <div class="important">
+                    <strong>À retenir :</strong>
+                    dans une centrale nucléaire, l’électricité est obtenue grâce
+                    à une transformation d’énergie nucléaire en énergie électrique.
+                </div>
+            </div>
+
+            <h2>7. La centrale hydraulique</h2>
+
+            <div class="box">
+                <p>
+                    Une centrale hydraulique produit de l’électricité grâce à la force
+                    de l’eau. L’eau en mouvement fait tourner une turbine reliée
+                    à un alternateur.
+                </p>
+
+                <div class="important">
+                    <strong>Principe simplifié :</strong>
+                    eau en mouvement → turbine → alternateur → électricité.
+                </div>
+            </div>
+
+            <h2>8. L’énergie éolienne</h2>
+
+            <div class="box">
+                <p>
+                    L’énergie éolienne utilise la force du vent. Le vent fait tourner
+                    les pales d’une éolienne. Ce mouvement entraîne une génératrice
+                    qui produit de l’électricité.
+                </p>
+
+                <div class="definition">
+                    <strong>Conclusion :</strong>
+                    l’énergie éolienne est une énergie renouvelable.
+                </div>
+            </div>
+
+            <h2>9. L’énergie solaire photovoltaïque</h2>
+
+            <div class="box">
+                <p>
+                    L’énergie solaire photovoltaïque est produite à partir du rayonnement
+                    solaire grâce à des panneaux solaires photovoltaïques.
+                </p>
+
+                <div class="definition">
+                    <strong>Conclusion :</strong>
+                    l’énergie solaire est une énergie renouvelable car sa source,
+                    le Soleil, est considérée comme inépuisable à l’échelle humaine.
+                </div>
+            </div>
+
+            <h2>10. Domaines d’utilisation de l’électricité</h2>
+
+            <div class="box">
+                <p>
+                    L’électricité est essentielle dans notre vie quotidienne.
+                    Elle est utilisée dans plusieurs domaines.
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Domaine</th>
+                        <th>Exemples</th>
+                    </tr>
+                    <tr>
+                        <td>À la maison</td>
+                        <td>Éclairage, chauffage, réfrigérateur, lave-linge, télévision.</td>
+                    </tr>
+                    <tr>
+                        <td>Communication</td>
+                        <td>Téléphone, radio, ordinateur, télévision, Internet.</td>
+                    </tr>
+                    <tr>
+                        <td>Transport</td>
+                        <td>Train, tramway, voiture électrique.</td>
+                    </tr>
+                    <tr>
+                        <td>Éducation et travail</td>
+                        <td>Ordinateur, vidéoprojecteur, imprimante, laboratoire.</td>
+                    </tr>
+                </table>
+            </div>
+
+        </section>
+
+        <section id="experiences">
+            <h2>Photos et expériences simples</h2>
+
+            <div class="box">
+                <p>
+                    Le PDF intégré dans cette page contient des photos illustrant :
+                    la foudre, l’électricité statique, les centrales électriques,
+                    les éoliennes, les barrages, les panneaux solaires et les appareils
+                    utilisant l’électricité.
+                </p>
+
+                <div class="experience">
+                    <h3>Expérience 1 : électricité statique avec un ballon</h3>
+
+                    <p><strong>Matériel :</strong> un ballon gonflé, un morceau de laine ou des cheveux secs, de petits morceaux de papier.</p>
+
+                    <ol>
+                        <li>Frotter doucement le ballon avec la laine ou les cheveux.</li>
+                        <li>Approcher le ballon de petits morceaux de papier.</li>
+                        <li>Observer ce qui se passe.</li>
+                    </ol>
+
+                    <p>
+                        <strong>Observation :</strong>
+                        les petits morceaux de papier peuvent être attirés par le ballon.
+                    </p>
+
+                    <p>
+                        <strong>Conclusion :</strong>
+                        le frottement peut produire de l’électricité statique.
+                    </p>
+                </div>
+
+                <div class="experience">
+                    <h3>Expérience 2 : classer les objets électriques</h3>
+
+                    <p>
+                        Observer plusieurs objets de la vie quotidienne :
+                        lampe, téléphone, ordinateur, train, lave-linge, télévision.
+                    </p>
+
+                    <ol>
+                        <li>Indiquer les objets qui utilisent l’électricité.</li>
+                        <li>Les classer selon leur domaine : maison, communication ou transport.</li>
+                        <li>Donner d’autres exemples d’objets électriques.</li>
+                    </ol>
+                </div>
+
+                <div class="warning">
+                    <strong>Sécurité :</strong>
+                    les expériences doivent être réalisées uniquement avec des objets simples
+                    et non branchés au secteur. Il ne faut jamais toucher une prise,
+                    un câble électrique ou un appareil ouvert.
+                </div>
+            </div>
+        </section>
+
+        <section id="resume">
+            <h2>Résumé du cours</h2>
+
+            <div class="resume">
+                <ul>
+                    <li>L’électricité est une forme d’énergie.</li>
+                    <li>L’énergie peut être thermique, électrique, mécanique, chimique ou nucléaire.</li>
+                    <li>L’électricité naturelle existe dans la foudre, l’électricité statique et certains êtres vivants.</li>
+                    <li>L’électricité artificielle est produite par transformation d’autres formes d’énergie.</li>
+                    <li>Les centrales thermiques utilisent une source de chaleur.</li>
+                    <li>Les centrales nucléaires utilisent l’énergie libérée par la fission nucléaire.</li>
+                    <li>Les centrales hydrauliques utilisent la force de l’eau.</li>
+                    <li>Les éoliennes utilisent la force du vent.</li>
+                    <li>Les panneaux photovoltaïques utilisent l’énergie solaire.</li>
+                    <li>L’électricité est utilisée à la maison, dans la communication, dans le transport et dans le travail.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="exercices">
+            <h2>Exercices d’application</h2>
+
+            <div class="box">
+                <h3>Exercice 1 : Choisir la bonne réponse</h3>
+
+                <p>L’électricité est :</p>
+
+                <ol>
+                    <li>une lumière qui éclaire les objets ;</li>
+                    <li>une énergie qui fait fonctionner des appareils ;</li>
+                    <li>l’ensemble des fils électriques formant une installation domestique.</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 2 : Classer les objets</h3>
+
+                <p>
+                    Classe les objets suivants selon leur domaine d’utilisation :
+                    télévision, téléphone, train, ordinateur, lave-linge, aspirateur,
+                    lampe, voiture électrique.
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Usage domestique</th>
+                        <th>Communication</th>
+                        <th>Transport</th>
+                    </tr>
+                    <tr>
+                        <td>....................</td>
+                        <td>....................</td>
+                        <td>....................</td>
+                    </tr>
+                    <tr>
+                        <td>....................</td>
+                        <td>....................</td>
+                        <td>....................</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 3 : Compléter les phrases</h3>
+
+                <ol>
+                    <li>Une centrale hydraulique utilise la force de __________.</li>
+                    <li>Une éolienne utilise l’énergie du __________.</li>
+                    <li>Un panneau photovoltaïque transforme la lumière du __________ en électricité.</li>
+                    <li>Une centrale thermique utilise un combustible comme le charbon, le pétrole ou le __________.</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 4 : Électricité statique</h3>
+
+                <p>
+                    Explique ce qui se passe lorsqu’on frotte un ballon avec de la laine
+                    puis qu’on l’approche de petits morceaux de papier.
+                </p>
+            </div>
+        </section>
+
+        <section id="corrige">
+            <h2>Corrigé indicatif</h2>
+
+            <div class="box">
+                <h3>Correction de l’exercice 1</h3>
+
+                <p>
+                    La bonne réponse est :
+                    <strong>l’électricité est une énergie qui fait fonctionner des appareils.</strong>
+                </p>
+            </div>
+
+            <div class="box">
+                <h3>Correction de l’exercice 2</h3>
+
+                <table>
+                    <tr>
+                        <th>Usage domestique</th>
+                        <th>Communication</th>
+                        <th>Transport</th>
+                    </tr>
+                    <tr>
+                        <td>Lave-linge, aspirateur, lampe, télévision</td>
+                        <td>Téléphone, ordinateur, télévision</td>
+                        <td>Train, voiture électrique</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="box">
+                <h3>Correction de l’exercice 3</h3>
+
+                <ol>
+                    <li>Une centrale hydraulique utilise la force de <strong>l’eau</strong>.</li>
+                    <li>Une éolienne utilise l’énergie du <strong>vent</strong>.</li>
+                    <li>Un panneau photovoltaïque transforme la lumière du <strong>soleil</strong> en électricité.</li>
+                    <li>Une centrale thermique utilise un combustible comme le charbon, le pétrole ou le <strong>gaz</strong>.</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Correction de l’exercice 4</h3>
+
+                <p>
+                    Le frottement entre le ballon et la laine produit de l’électricité statique.
+                    Le ballon peut alors attirer de petits morceaux de papier.
+                    Cette expérience montre qu’un frottement peut provoquer un phénomène
+                    électrique simple.
+                </p>
+            </div>
+        </section>
+
+        <section id="navigation">
+            <h2>Navigation</h2>
+
+            <div class="box">
+                <a href="1ac-s1-corps-pur.html" class="btn">Cours précédent</a>
+                <a href="1ac.html" class="btn">Retour aux cours de 1ère année</a>
+                <a href="index.html" class="btn">Retour à l’accueil</a>
+                <a href="1ac-s2-circuit-electrique-simple.html" class="btn">Cours suivant</a>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>© 2026 - Physique-Chimie Collège | L’électricité qui nous entoure</p>
+    </footer>
+
+</body>
+</html>
