@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesure de la masse des solides et des liquides - 1AC</title>
+
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #222;
+            line-height: 1.7;
+        }
+
+        header.hero {
+            position: relative;
+            color: white;
+            padding: 70px 20px;
+            text-align: center;
+            overflow: hidden;
+            min-height: 430px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-bg-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                135deg,
+                rgba(15, 76, 129, 0.80),
+                rgba(26, 188, 156, 0.68)
+            );
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .site-logo {
+            width: 95px;
+            height: 95px;
+            object-fit: contain;
+            margin-bottom: 15px;
+            border-radius: 50%;
+            background-color: white;
+            padding: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+        }
+
+        header h1 {
+            font-size: 34px;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+        }
+
+        header p {
+            font-size: 17px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+        }
+
+        nav {
+            background-color: #083b66;
+            padding: 12px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #1abc9c;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        h2 {
+            color: #0f4c81;
+            margin: 30px 0 15px;
+            border-left: 5px solid #1abc9c;
+            padding-left: 10px;
+            font-size: 26px;
+        }
+
+        h3 {
+            color: #0f4c81;
+            margin: 20px 0 10px;
+        }
+
+        .box {
+            background-color: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+        }
+
+        .definition {
+            background-color: #e8f6f3;
+            border-left: 5px solid #1abc9c;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .important {
+            background-color: #fff7e6;
+            border-left: 5px solid #f39c12;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .resume {
+            background-color: #eef4ff;
+            border-left: 5px solid #0f4c81;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .pdf-box {
+            background-color: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+        }
+
+        .pdf-viewer {
+            width: 100%;
+            height: 750px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        ul, ol {
+            margin-left: 25px;
+            margin-top: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background-color: white;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #0f4c81;
+            color: white;
+        }
+
+        .formula {
+            text-align: center;
+            font-size: 22px;
+            color: #083b66;
+            font-weight: bold;
+            margin: 20px 0;
+            background-color: #eef4ff;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 10px 10px 0 0;
+            background-color: #1abc9c;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #14977d;
+        }
+
+        footer {
+            background-color: #083b66;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            header.hero {
+                min-height: 360px;
+                padding: 55px 15px;
+            }
+
+            .hero-bg-video {
+                width: auto;
+                height: 100%;
+            }
+
+            header h1 {
+                font-size: 28px;
+            }
+
+            header p {
+                font-size: 15px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 6px;
+                font-size: 14px;
+            }
+
+            .pdf-viewer {
+                height: 520px;
+            }
+
+            .container {
+                padding: 30px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="hero">
+
+        <video class="hero-bg-video" autoplay muted loop playsinline>
+            <source src="background.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo.
+        </video>
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <img src="logo.png" alt="Logo Physique-Chimie Collège" class="site-logo" onerror="this.style.display='none'">
+
+            <h1>Mesure de la masse des solides et des liquides</h1>
+            <p>1ère année collège - Semestre 1 | Cours, PDF, résumé, exercices et corrigés</p>
+        </div>
+
+    </header>
+
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="1ac.html">Cours 1AC</a>
+        <a href="#presentation">Présentation</a>
+        <a href="#pdf">PDF du cours</a>
+        <a href="#lecon">Leçon</a>
+        <a href="#resume">Résumé</a>
+        <a href="#exercices">Exercices</a>
+        <a href="#corrige">Corrigés</a>
+    </nav>
+
+    <div class="container">
+
+        <section id="presentation">
+            <h2>Présentation du cours</h2>
+
+            <div class="box">
+                <p>
+                    Ce cours présente la notion de masse et les méthodes utilisées pour mesurer
+                    la masse des solides et des liquides. Il explique aussi l’utilisation
+                    de la balance de Roberval, de la balance électronique et du bouton tare.
+                </p>
+
+                <div class="definition">
+                    <strong>Objectif du cours :</strong>
+                    comprendre la notion de masse, connaître ses unités de mesure,
+                    utiliser correctement une balance et mesurer la masse d’un solide
+                    ou d’un liquide.
+                </div>
+            </div>
+        </section>
+
+        <section id="pdf">
+            <h2>Document PDF du cours</h2>
+
+            <div class="pdf-box">
+                <p>
+                    Vous pouvez consulter le document PDF directement sur cette page,
+                    l’ouvrir dans un nouvel onglet ou le télécharger.
+                </p>
+
+                <a href="./1ac-s1-mesure-masse.pdf" target="_blank" class="btn">Ouvrir le PDF</a>
+                <a href="./1ac-s1-mesure-masse.pdf" download class="btn">Télécharger le PDF</a>
+
+                <iframe src="./1ac-s1-mesure-masse.pdf" class="pdf-viewer"></iframe>
+            </div>
+        </section>
+
+        <section id="lecon">
+
+            <h2>1. Notion de masse</h2>
+
+            <div class="box">
+                <p>
+                    La masse d’un corps est une grandeur physique liée à la quantité
+                    de matière qui forme ce corps. On la symbolise par la lettre
+                    <strong>m</strong>.
+                </p>
+
+                <div class="definition">
+                    <strong>Définition :</strong>
+                    la masse d’un corps représente la quantité de matière qu’il contient.
+                </div>
+
+                <div class="important">
+                    <strong>À retenir :</strong>
+                    plus un corps contient de matière, plus sa masse est grande.
+                </div>
+            </div>
+
+            <h2>2. Unités de mesure de la masse</h2>
+
+            <div class="box">
+                <p>
+                    Dans le système international, l’unité de la masse est le kilogramme,
+                    noté <strong>kg</strong>. L’unité usuelle utilisée au collège est souvent
+                    le gramme, noté <strong>g</strong>.
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Unité</th>
+                        <th>Symbole</th>
+                        <th>Relation importante</th>
+                    </tr>
+                    <tr>
+                        <td>Tonne</td>
+                        <td>t</td>
+                        <td>1 t = 1000 kg</td>
+                    </tr>
+                    <tr>
+                        <td>Quintal</td>
+                        <td>q</td>
+                        <td>1 q = 100 kg</td>
+                    </tr>
+                    <tr>
+                        <td>Kilogramme</td>
+                        <td>kg</td>
+                        <td>1 kg = 1000 g</td>
+                    </tr>
+                    <tr>
+                        <td>Hectogramme</td>
+                        <td>hg</td>
+                        <td>1 hg = 100 g</td>
+                    </tr>
+                    <tr>
+                        <td>Décagramme</td>
+                        <td>dag</td>
+                        <td>1 dag = 10 g</td>
+                    </tr>
+                    <tr>
+                        <td>Gramme</td>
+                        <td>g</td>
+                        <td>Unité usuelle</td>
+                    </tr>
+                    <tr>
+                        <td>Décigramme</td>
+                        <td>dg</td>
+                        <td>1 g = 10 dg</td>
+                    </tr>
+                    <tr>
+                        <td>Centigramme</td>
+                        <td>cg</td>
+                        <td>1 g = 100 cg</td>
+                    </tr>
+                    <tr>
+                        <td>Milligramme</td>
+                        <td>mg</td>
+                        <td>1 g = 1000 mg</td>
+                    </tr>
+                </table>
+
+                <div class="formula">
+                    1 kg = 1000 g &nbsp;&nbsp; | &nbsp;&nbsp; 1 g = 1000 mg
+                </div>
+            </div>
+
+            <h2>3. Instruments de mesure de la masse</h2>
+
+            <div class="box">
+                <p>
+                    Pour mesurer la masse d’un corps, on utilise une balance.
+                    On distingue principalement deux types de balances :
+                </p>
+
+                <ul>
+                    <li>la balance de Roberval, qui possède deux plateaux ;</li>
+                    <li>la balance électronique, qui affiche directement la masse mesurée.</li>
+                </ul>
+
+                <table>
+                    <tr>
+                        <th>Instrument</th>
+                        <th>Caractéristique</th>
+                        <th>Utilisation</th>
+                    </tr>
+                    <tr>
+                        <td>Balance de Roberval</td>
+                        <td>Deux plateaux et des masses marquées</td>
+                        <td>Comparer la masse d’un corps avec des masses connues</td>
+                    </tr>
+                    <tr>
+                        <td>Balance électronique</td>
+                        <td>Écran numérique</td>
+                        <td>Lire directement la masse d’un corps</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h2>4. Mesure de la masse d’un solide avec la balance de Roberval</h2>
+
+            <div class="box">
+                <p>
+                    La balance de Roberval permet de mesurer la masse d’un solide
+                    en comparant sa masse avec des masses marquées.
+                </p>
+
+                <h3>Étapes de l’expérience</h3>
+
+                <ol>
+                    <li>Réaliser l’équilibre des plateaux lorsqu’ils sont vides.</li>
+                    <li>Placer le corps solide sur l’un des plateaux.</li>
+                    <li>Placer les masses marquées sur l’autre plateau.</li>
+                    <li>Ajouter ou retirer des masses jusqu’à obtenir l’équilibre.</li>
+                    <li>Calculer la masse du solide en additionnant les masses marquées.</li>
+                </ol>
+
+                <div class="definition">
+                    <strong>Conclusion :</strong>
+                    la masse du solide est égale à la somme des masses marquées
+                    qui permettent d’obtenir l’équilibre.
+                </div>
+
+                <div class="formula">
+                    m = 100 g + 50 g + 20 g = 170 g
+                </div>
+            </div>
+
+            <h2>5. Mesure de la masse d’un solide avec la balance électronique</h2>
+
+            <div class="box">
+                <p>
+                    La balance électronique permet de mesurer directement la masse d’un solide.
+                    Elle est généralement plus rapide et plus précise que la balance de Roberval.
+                </p>
+
+                <h3>Étapes de l’expérience</h3>
+
+                <ol>
+                    <li>Appuyer sur le bouton <strong>ON/OFF</strong> pour allumer la balance.</li>
+                    <li>Appuyer sur le bouton <strong>Tare</strong> pour remettre l’affichage à zéro.</li>
+                    <li>Placer le solide sur la balance.</li>
+                    <li>Lire directement la masse affichée sur l’écran.</li>
+                </ol>
+
+                <div class="important">
+                    <strong>Rôle du bouton Tare :</strong>
+                    il permet de remettre l’indication de la balance à zéro avant la mesure.
+                </div>
+
+                <div class="definition">
+                    <strong>Conclusion :</strong>
+                    la balance électronique affiche directement la masse du corps mesuré.
+                </div>
+            </div>
+
+            <h2>6. Mesure de la masse d’un liquide</h2>
+
+            <div class="box">
+                <p>
+                    Pour mesurer la masse d’un liquide, on utilise une balance électronique
+                    et un récipient, par exemple une éprouvette graduée.
+                </p>
+
+                <h3>Étapes de l’expérience</h3>
+
+                <ol>
+                    <li>Placer l’éprouvette vide sur la balance électronique.</li>
+                    <li>Appuyer sur le bouton <strong>Tare</strong> pour remettre la balance à zéro.</li>
+                    <li>Verser doucement le liquide dans l’éprouvette.</li>
+                    <li>Lire la masse du liquide affichée sur la balance.</li>
+                </ol>
+
+                <div class="formula">
+                    Masse du liquide = 250 g
+                </div>
+
+                <div class="important">
+                    <strong>À retenir :</strong>
+                    grâce au bouton tare, on ne mesure que la masse du liquide,
+                    sans compter la masse du récipient.
+                </div>
+            </div>
+
+            <h2>7. Masse brute, masse nette et tare</h2>
+
+            <div class="box">
+                <p>
+                    Dans la vie quotidienne, on rencontre souvent les termes
+                    <strong>masse brute</strong>, <strong>masse nette</strong> et
+                    <strong>tare</strong>, surtout sur les emballages alimentaires.
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Terme</th>
+                        <th>Signification</th>
+                    </tr>
+                    <tr>
+                        <td>Masse nette</td>
+                        <td>Masse du contenu seulement.</td>
+                    </tr>
+                    <tr>
+                        <td>Tare</td>
+                        <td>Masse de l’emballage ou du récipient vide.</td>
+                    </tr>
+                    <tr>
+                        <td>Masse brute</td>
+                        <td>Masse totale : contenu + emballage.</td>
+                    </tr>
+                </table>
+
+                <div class="formula">
+                    Masse brute = masse nette + tare
+                </div>
+            </div>
+
+        </section>
+
+        <section id="resume">
+            <h2>Résumé du cours</h2>
+
+            <div class="resume">
+                <ul>
+                    <li>La masse d’un corps représente la quantité de matière qu’il contient.</li>
+                    <li>Le symbole de la masse est <strong>m</strong>.</li>
+                    <li>L’unité internationale de la masse est le kilogramme, noté <strong>kg</strong>.</li>
+                    <li>L’unité usuelle de la masse est le gramme, noté <strong>g</strong>.</li>
+                    <li>Pour mesurer une masse, on utilise une balance.</li>
+                    <li>La balance de Roberval utilise des masses marquées.</li>
+                    <li>La balance électronique affiche directement la masse mesurée.</li>
+                    <li>Le bouton <strong>Tare</strong> permet de remettre l’affichage à zéro.</li>
+                    <li>Pour mesurer la masse d’un liquide, on tare d’abord le récipient vide.</li>
+                    <li>La masse nette correspond à la masse du contenu seulement.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="exercices">
+            <h2>Exercices d’application</h2>
+
+            <div class="box">
+                <h3>Exercice 1 : Compléter le tableau</h3>
+
+                <table>
+                    <tr>
+                        <th>Grandeur physique</th>
+                        <th>Symbole</th>
+                        <th>Unité internationale</th>
+                        <th>Instrument de mesure</th>
+                    </tr>
+                    <tr>
+                        <td>La masse</td>
+                        <td>.............</td>
+                        <td>.............</td>
+                        <td>.............</td>
+                    </tr>
+                </table>
+
+                <h3>Conversions</h3>
+
+                <ol>
+                    <li>7 kg = ............. g</li>
+                    <li>356 g = ............. mg</li>
+                    <li>4,6 t = ............. kg</li>
+                    <li>13 kg = ............. q</li>
+                    <li>580 mg = ............. g</li>
+                    <li>750 g = ............. kg</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 2 : Balance de Roberval</h3>
+
+                <p>
+                    Avec une balance de Roberval, des masses marquées, une tare et un corps A,
+                    on réalise deux pesées. On donne :
+                </p>
+
+                <div class="formula">
+                    m<sub>1</sub> = 55 g &nbsp;&nbsp; et &nbsp;&nbsp; m<sub>2</sub> = 80 g
+                </div>
+
+                <ol>
+                    <li>Déterminer la masse de la tare.</li>
+                    <li>Déterminer la masse du corps A.</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 3 : Mesure de la masse d’un liquide</h3>
+
+                <p>
+                    Pour mesurer la masse d’un liquide, on utilise une balance électronique
+                    et une éprouvette. La masse de l’éprouvette vide est 36 g.
+                    La masse de l’ensemble éprouvette + liquide est 84 g.
+                </p>
+
+                <ol>
+                    <li>Déterminer la masse de l’éprouvette.</li>
+                    <li>Déterminer la masse de l’ensemble éprouvette + liquide.</li>
+                    <li>Déduire la masse du liquide.</li>
+                    <li>Pourquoi utilise-t-on le bouton tare ?</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 4 : Masse nette</h3>
+
+                <p>
+                    Sur un pot de confiture, Ahmed lit l’indication suivante :
+                    <strong>350 g net</strong>. Avant d’entamer le pot, il le pose
+                    sur une balance et trouve une masse de <strong>520 g</strong>.
+                </p>
+
+                <ol>
+                    <li>Comment expliquer la différence entre la masse indiquée et la masse lue sur la balance ?</li>
+                    <li>Que signifie le mot <strong>net</strong> sur l’étiquette ?</li>
+                    <li>Quelle est la masse de la confiture ?</li>
+                    <li>Quelle est la masse du pot vide ?</li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="corrige">
+            <h2>Corrigé indicatif</h2>
+
+            <div class="box">
+                <h3>Correction de l’exercice 1</h3>
+
+                <table>
+                    <tr>
+                        <th>Grandeur physique</th>
+                        <th>Symbole</th>
+                        <th>Unité internationale</th>
+                        <th>Instrument de mesure</th>
+                    </tr>
+                    <tr>
+                        <td>La masse</td>
+                        <td>m</td>
+                        <td>kilogramme kg</td>
+                        <td>balance</td>
+                    </tr>
+                </table>
+
+                <ol>
+                    <li>7 kg = 7000 g</li>
+                    <li>356 g = 356000 mg</li>
+                    <li>4,6 t = 4600 kg</li>
+                    <li>13 kg = 0,13 q</li>
+                    <li>580 mg = 0,58 g</li>
+                    <li>750 g = 0,75 kg</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Correction de l’exercice 2</h3>
+
+                <p>
+                    D’après les deux pesées :
+                </p>
+
+                <div class="formula">
+                    Masse de la tare = m<sub>2</sub> = 80 g
+                </div>
+
+                <div class="formula">
+                    Masse du corps A = m<sub>2</sub> - m<sub>1</sub> = 80 - 55 = 25 g
+                </div>
+
+                <p>
+                    Donc la masse du corps A est <strong>25 g</strong>.
+                </p>
+            </div>
+
+            <div class="box">
+                <h3>Correction de l’exercice 3</h3>
+
+                <ol>
+                    <li>La masse de l’éprouvette est <strong>36 g</strong>.</li>
+                    <li>La masse de l’ensemble éprouvette + liquide est <strong>84 g</strong>.</li>
+                    <li>La masse du liquide est : 84 - 36 = <strong>48 g</strong>.</li>
+                    <li>Le bouton tare permet de remettre la balance à zéro pour ne mesurer que la masse du contenu.</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Correction de l’exercice 4</h3>
+
+                <ol>
+                    <li>
+                        La différence s’explique par le fait que la balance mesure la masse totale :
+                        confiture + pot.
+                    </li>
+                    <li>
+                        Le mot <strong>net</strong> signifie la masse du contenu seulement,
+                        sans l’emballage.
+                    </li>
+                    <li>
+                        La masse de la confiture est <strong>350 g</strong>.
+                    </li>
+                    <li>
+                        La masse du pot vide est :
+                        <strong>520 g - 350 g = 170 g</strong>.
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="navigation">
+            <h2>Navigation</h2>
+
+            <div class="box">
+                <a href="1ac-s1-mesure-volume.html" class="btn">Cours précédent</a>
+                <a href="1ac.html" class="btn">Retour aux cours de 1ère année</a>
+                <a href="index.html" class="btn">Retour à l’accueil</a>
+                <a href="1ac-s1-masse-volumique.html" class="btn">Cours suivant</a>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>© 2026 - Physique-Chimie Collège | Mesure de la masse des solides et des liquides</p>
+    </footer>
+
+</body>
+</html>
