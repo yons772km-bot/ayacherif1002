@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le modèle particulaire de la matière - 1AC</title>
+
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #222;
+            line-height: 1.7;
+        }
+
+        header.hero {
+            position: relative;
+            color: white;
+            padding: 70px 20px;
+            text-align: center;
+            overflow: hidden;
+            min-height: 430px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-bg-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                135deg,
+                rgba(15, 76, 129, 0.80),
+                rgba(26, 188, 156, 0.68)
+            );
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .site-logo {
+            width: 95px;
+            height: 95px;
+            object-fit: contain;
+            margin-bottom: 15px;
+            border-radius: 50%;
+            background-color: white;
+            padding: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+        }
+
+        header h1 {
+            font-size: 34px;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+        }
+
+        header p {
+            font-size: 17px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+        }
+
+        nav {
+            background-color: #083b66;
+            padding: 12px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #1abc9c;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        h2 {
+            color: #0f4c81;
+            margin: 30px 0 15px;
+            border-left: 5px solid #1abc9c;
+            padding-left: 10px;
+            font-size: 26px;
+        }
+
+        h3 {
+            color: #0f4c81;
+            margin: 20px 0 10px;
+        }
+
+        .box {
+            background-color: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+        }
+
+        .definition {
+            background-color: #e8f6f3;
+            border-left: 5px solid #1abc9c;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .important {
+            background-color: #fff7e6;
+            border-left: 5px solid #f39c12;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .resume {
+            background-color: #eef4ff;
+            border-left: 5px solid #0f4c81;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .pdf-box {
+            background-color: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+        }
+
+        .pdf-viewer {
+            width: 100%;
+            height: 750px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        ul, ol {
+            margin-left: 25px;
+            margin-top: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background-color: white;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #0f4c81;
+            color: white;
+        }
+
+        .particle-table {
+            margin-top: 18px;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #eef4ff;
+            color: #083b66;
+            padding: 6px 10px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin: 5px 5px 5px 0;
+        }
+
+        .formula {
+            text-align: center;
+            font-size: 22px;
+            color: #083b66;
+            font-weight: bold;
+            margin: 20px 0;
+            background-color: #eef4ff;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 10px 10px 0 0;
+            background-color: #1abc9c;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #14977d;
+        }
+
+        footer {
+            background-color: #083b66;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            header.hero {
+                min-height: 360px;
+                padding: 55px 15px;
+            }
+
+            .hero-bg-video {
+                width: auto;
+                height: 100%;
+            }
+
+            header h1 {
+                font-size: 28px;
+            }
+
+            header p {
+                font-size: 15px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 6px;
+                font-size: 14px;
+            }
+
+            .pdf-viewer {
+                height: 520px;
+            }
+
+            .container {
+                padding: 30px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="hero">
+
+        <video class="hero-bg-video" autoplay muted loop playsinline>
+            <source src="background.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo.
+        </video>
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <img src="logo.png" alt="Logo Physique-Chimie Collège" class="site-logo" onerror="this.style.display='none'">
+
+            <h1>Le modèle particulaire de la matière</h1>
+            <p>1ère année collège - Semestre 1 | Cours, PDF, résumé, exercices et corrigés</p>
+        </div>
+
+    </header>
+
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="1ac.html">Cours 1AC</a>
+        <a href="#presentation">Présentation</a>
+        <a href="#pdf">PDF du cours</a>
+        <a href="#lecon">Leçon</a>
+        <a href="#resume">Résumé</a>
+        <a href="#exercices">Exercices</a>
+        <a href="#corrige">Corrigés</a>
+    </nav>
+
+    <div class="container">
+
+        <section id="presentation">
+            <h2>Présentation du cours</h2>
+
+            <div class="box">
+                <p>
+                    Ce cours présente le modèle particulaire de la matière.
+                    Il explique que la matière peut être représentée comme un ensemble
+                    de particules très petites, invisibles à l’œil nu.
+                </p>
+
+                <p>
+                    Ce modèle permet de comprendre les propriétés des trois états physiques
+                    de la matière : l’état solide, l’état liquide et l’état gazeux.
+                </p>
+
+                <div class="definition">
+                    <strong>Objectif du cours :</strong>
+                    comprendre le modèle particulaire, représenter les états physiques
+                    de la matière et expliquer les propriétés des solides, des liquides
+                    et des gaz à l’aide de l’organisation des particules.
+                </div>
+            </div>
+        </section>
+
+        <section id="pdf">
+            <h2>Document PDF du cours</h2>
+
+            <div class="pdf-box">
+                <p>
+                    Vous pouvez consulter le document PDF directement sur cette page,
+                    l’ouvrir dans un nouvel onglet ou le télécharger.
+                </p>
+
+                <a href="./1ac-s1-modele-particulaire.pdf" target="_blank" class="btn">Ouvrir le PDF</a>
+                <a href="./1ac-s1-modele-particulaire.pdf" download class="btn">Télécharger le PDF</a>
+
+                <iframe src="./1ac-s1-modele-particulaire.pdf" class="pdf-viewer"></iframe>
+            </div>
+        </section>
+
+        <section id="lecon">
+
+            <h2>1. Le modèle particulaire</h2>
+
+            <div class="box">
+                <p>
+                    On considère la matière comme un ensemble de particules trop petites
+                    pour être visibles à l’œil nu. Ces particules permettent de modéliser
+                    la structure de la matière.
+                </p>
+
+                <div class="definition">
+                    <strong>Définition :</strong>
+                    le modèle particulaire est une représentation simplifiée de la matière
+                    sous forme de particules très petites.
+                </div>
+
+                <p>
+                    Pour représenter les particules, on utilise souvent des formes simples :
+                    des sphères, des triangles ou des carrés. Ce ne sont pas les particules
+                    réelles, mais un modèle pour faciliter la compréhension.
+                </p>
+
+                <div class="important">
+                    <strong>À retenir :</strong>
+                    un modèle scientifique sert à expliquer une réalité difficile
+                    à observer directement.
+                </div>
+            </div>
+
+            <h2>2. Propriétés des particules</h2>
+
+            <div class="box">
+                <p>
+                    Dans le modèle particulaire, les particules possèdent plusieurs propriétés
+                    importantes.
+                </p>
+
+                <ul>
+                    <li>Les particules sont très petites et invisibles à l’œil nu.</li>
+                    <li>Elles gardent toujours la même masse.</li>
+                    <li>Elles ne se déforment pas.</li>
+                    <li>Elles ne se brisent pas.</li>
+                    <li>Il existe un espace plus ou moins grand entre elles.</li>
+                    <li>Elles sont plus ou moins agitées selon l’état physique de la matière.</li>
+                </ul>
+
+                <div class="important">
+                    <strong>À retenir :</strong>
+                    la distance entre les particules et leur agitation permettent
+                    d’expliquer les propriétés des solides, des liquides et des gaz.
+                </div>
+            </div>
+
+            <h2>3. Représentation de l’état solide</h2>
+
+            <div class="box">
+                <p>
+                    Dans un solide, les particules de matière sont très proches les unes
+                    des autres et pratiquement immobiles. Elles sont rangées d’une manière
+                    régulière.
+                </p>
+
+                <div>
+                    <span class="tag">Particules très proches</span>
+                    <span class="tag">Organisation ordonnée</span>
+                    <span class="tag">Agitation très faible</span>
+                </div>
+
+                <div class="definition">
+                    <strong>Conclusion :</strong>
+                    l’état solide est compact et ordonné.
+                </div>
+
+                <p>
+                    Cette organisation explique que les solides possèdent une forme propre
+                    et un volume propre. Un solide peut être saisi entre les doigts.
+                </p>
+            </div>
+
+            <h2>4. Représentation de l’état liquide</h2>
+
+            <div class="box">
+                <p>
+                    Dans un liquide, les particules sont proches les unes des autres,
+                    mais elles sont agitées. Elles peuvent se déplacer les unes par rapport
+                    aux autres.
+                </p>
+
+                <div>
+                    <span class="tag">Particules proches</span>
+                    <span class="tag">Organisation désordonnée</span>
+                    <span class="tag">Particules mobiles</span>
+                </div>
+
+                <div class="definition">
+                    <strong>Conclusion :</strong>
+                    l’état liquide est compact et désordonné.
+                </div>
+
+                <p>
+                    Cette organisation explique que les liquides possèdent un volume propre,
+                    mais n’ont pas de forme propre. Un liquide prend la forme du récipient
+                    qui le contient.
+                </p>
+            </div>
+
+            <h2>5. Représentation de l’état gazeux</h2>
+
+            <div class="box">
+                <p>
+                    Dans un gaz, les particules sont éloignées les unes des autres et très
+                    agitées. Elles se déplacent dans tous les sens et à grande vitesse.
+                </p>
+
+                <div>
+                    <span class="tag">Particules éloignées</span>
+                    <span class="tag">Organisation désordonnée</span>
+                    <span class="tag">Très grande agitation</span>
+                </div>
+
+                <div class="definition">
+                    <strong>Conclusion :</strong>
+                    l’état gazeux est dispersé et désordonné.
+                </div>
+
+                <p>
+                    Cette organisation explique que les gaz ne possèdent ni forme propre
+                    ni volume propre. Ils occupent tout l’espace disponible.
+                </p>
+            </div>
+
+            <h2>6. Comparaison des trois états physiques</h2>
+
+            <div class="box">
+                <table class="particle-table">
+                    <tr>
+                        <th>État physique</th>
+                        <th>Disposition des particules</th>
+                        <th>Mouvement des particules</th>
+                        <th>Conclusion</th>
+                    </tr>
+                    <tr>
+                        <td>Solide</td>
+                        <td>Très proches et ordonnées</td>
+                        <td>Très faible agitation</td>
+                        <td>Compact et ordonné</td>
+                    </tr>
+                    <tr>
+                        <td>Liquide</td>
+                        <td>Proches et désordonnées</td>
+                        <td>Agitées et mobiles</td>
+                        <td>Compact et désordonné</td>
+                    </tr>
+                    <tr>
+                        <td>Gaz</td>
+                        <td>Éloignées et désordonnées</td>
+                        <td>Très agitées, mouvement dans tous les sens</td>
+                        <td>Dispersé et désordonné</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h2>7. Lien entre modèle particulaire et propriétés de la matière</h2>
+
+            <div class="box">
+                <p>
+                    Le modèle particulaire permet d’expliquer les propriétés observées
+                    des trois états physiques.
+                </p>
+
+                <table>
+                    <tr>
+                        <th>État</th>
+                        <th>Forme propre</th>
+                        <th>Volume propre</th>
+                        <th>Explication particulaire</th>
+                    </tr>
+                    <tr>
+                        <td>Solide</td>
+                        <td>Oui</td>
+                        <td>Oui</td>
+                        <td>Les particules sont très proches et bien organisées.</td>
+                    </tr>
+                    <tr>
+                        <td>Liquide</td>
+                        <td>Non</td>
+                        <td>Oui</td>
+                        <td>Les particules sont proches mais peuvent se déplacer.</td>
+                    </tr>
+                    <tr>
+                        <td>Gaz</td>
+                        <td>Non</td>
+                        <td>Non</td>
+                        <td>Les particules sont éloignées et se déplacent dans tout l’espace.</td>
+                    </tr>
+                </table>
+
+                <div class="important">
+                    <strong>Conclusion générale :</strong>
+                    l’état solide est compact et ordonné, l’état liquide est compact
+                    et désordonné, et l’état gazeux est dispersé et désordonné.
+                </div>
+            </div>
+
+        </section>
+
+        <section id="resume">
+            <h2>Résumé du cours</h2>
+
+            <div class="resume">
+                <ul>
+                    <li>La matière peut être représentée par un ensemble de particules très petites.</li>
+                    <li>Les particules sont invisibles à l’œil nu.</li>
+                    <li>Les particules gardent toujours la même masse.</li>
+                    <li>Les particules ne se déforment pas et ne se brisent pas.</li>
+                    <li>Dans un solide, les particules sont très proches, ordonnées et presque immobiles.</li>
+                    <li>L’état solide est compact et ordonné.</li>
+                    <li>Dans un liquide, les particules sont proches, désordonnées et peuvent se déplacer.</li>
+                    <li>L’état liquide est compact et désordonné.</li>
+                    <li>Dans un gaz, les particules sont éloignées, désordonnées et très agitées.</li>
+                    <li>L’état gazeux est dispersé et désordonné.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="exercices">
+            <h2>Exercices d’application</h2>
+
+            <div class="box">
+                <h3>Exercice 1 : Compléter les phrases</h3>
+
+                <p>
+                    Complète avec les mots suivants :
+                    <strong>
+                        proches - ordonnées - se déplacer - forme propre - très proches -
+                        désordonnées - compressible - éloignées - agitées -
+                        se déplacent dans tous les sens - expansible
+                    </strong>.
+                </p>
+
+                <ol>
+                    <li>
+                        À l’état solide, les particules sont __________ les unes des autres
+                        et pratiquement __________. L’état solide est compact et __________.
+                        C’est pour cette raison que les solides ont une __________.
+                    </li>
+                    <li>
+                        À l’état liquide, les particules sont __________ les unes des autres
+                        et peuvent __________ les unes par rapport aux autres. L’état liquide
+                        est compact et __________. C’est pour cette raison que les liquides
+                        n’ont pas une __________.
+                    </li>
+                    <li>
+                        À l’état gazeux, les particules sont __________ les unes des autres,
+                        sont très __________ et peuvent __________. C’est pour cette raison
+                        que les gaz sont __________ et __________.
+                    </li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 2 : Vrai ou faux</h3>
+
+                <ol>
+                    <li>Les particules sont toutes identiques pour un corps pur.</li>
+                    <li>Une particule est infiniment petite : on ne peut mesurer ni sa taille ni sa masse.</li>
+                    <li>Le modèle particulaire de la matière permet de comprendre les propriétés des trois états de la matière.</li>
+                    <li>Les particules sont toujours représentées par un cercle.</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 3 : Les trois états de la matière</h3>
+
+                <ol>
+                    <li>Indiquer les trois états physiques de la matière.</li>
+                    <li>Représenter les modèles particulaires de chacun d’eux.</li>
+                    <li>Décrire l’organisation des particules dans chaque état.</li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="corrige">
+            <h2>Corrigé indicatif</h2>
+
+            <div class="box">
+                <h3>Correction de l’exercice 1</h3>
+
+                <ol>
+                    <li>
+                        À l’état solide, les particules sont <strong>très proches</strong>
+                        les unes des autres et pratiquement <strong>immobiles</strong>.
+                        L’état solide est compact et <strong>ordonné</strong>.
+                        C’est pour cette raison que les solides ont une
+                        <strong>forme propre</strong>.
+                    </li>
+                    <li>
+                        À l’état liquide, les particules sont <strong>proches</strong>
+                        les unes des autres et peuvent <strong>se déplacer</strong>
+                        les unes par rapport aux autres. L’état liquide est compact
+                        et <strong>désordonné</strong>. C’est pour cette raison que
+                        les liquides n’ont pas une <strong>forme propre</strong>.
+                    </li>
+                    <li>
+                        À l’état gazeux, les particules sont <strong>éloignées</strong>
+                        les unes des autres, sont très <strong>agitées</strong> et peuvent
+                        <strong>se déplacer dans tous les sens</strong>. C’est pour cette raison
+                        que les gaz sont <strong>compressibles</strong> et <strong>expansibles</strong>.
+                    </li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Correction de l’exercice 2</h3>
+
+                <ol>
+                    <li>Vrai</li>
+                    <li>Faux : une particule est très petite, mais elle possède une masse.</li>
+                    <li>Vrai</li>
+                    <li>Faux : on peut représenter les particules par des formes géométriques différentes.</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Correction de l’exercice 3</h3>
+
+                <p>
+                    Les trois états physiques de la matière sont :
+                    <strong>l’état solide</strong>, <strong>l’état liquide</strong>
+                    et <strong>l’état gazeux</strong>.
+                </p>
+
+                <table>
+                    <tr>
+                        <th>État</th>
+                        <th>Représentation particulaire</th>
+                    </tr>
+                    <tr>
+                        <td>Solide</td>
+                        <td>Particules très proches, ordonnées et presque immobiles.</td>
+                    </tr>
+                    <tr>
+                        <td>Liquide</td>
+                        <td>Particules proches, désordonnées et mobiles.</td>
+                    </tr>
+                    <tr>
+                        <td>Gaz</td>
+                        <td>Particules éloignées, désordonnées et très agitées.</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <section id="navigation">
+            <h2>Navigation</h2>
+
+            <div class="box">
+                <a href="1ac-s1-pression.html" class="btn">Cours précédent</a>
+                <a href="1ac.html" class="btn">Retour aux cours de 1ère année</a>
+                <a href="index.html" class="btn">Retour à l’accueil</a>
+                <a href="1ac-s1-chaleur-changements-etat.html" class="btn">Cours suivant</a>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>© 2026 - Physique-Chimie Collège | Le modèle particulaire de la matière</p>
+    </footer>
+
+</body>
+</html>
