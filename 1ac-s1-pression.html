@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La pression et la pression atmosphérique - 1AC</title>
+
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #222;
+            line-height: 1.7;
+        }
+
+        header.hero {
+            position: relative;
+            color: white;
+            padding: 70px 20px;
+            text-align: center;
+            overflow: hidden;
+            min-height: 430px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-bg-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                135deg,
+                rgba(15, 76, 129, 0.80),
+                rgba(26, 188, 156, 0.68)
+            );
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .site-logo {
+            width: 95px;
+            height: 95px;
+            object-fit: contain;
+            margin-bottom: 15px;
+            border-radius: 50%;
+            background-color: white;
+            padding: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+        }
+
+        header h1 {
+            font-size: 34px;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+        }
+
+        header p {
+            font-size: 17px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+        }
+
+        nav {
+            background-color: #083b66;
+            padding: 12px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #1abc9c;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        h2 {
+            color: #0f4c81;
+            margin: 30px 0 15px;
+            border-left: 5px solid #1abc9c;
+            padding-left: 10px;
+            font-size: 26px;
+        }
+
+        h3 {
+            color: #0f4c81;
+            margin: 20px 0 10px;
+        }
+
+        .box {
+            background-color: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+        }
+
+        .definition {
+            background-color: #e8f6f3;
+            border-left: 5px solid #1abc9c;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .important {
+            background-color: #fff7e6;
+            border-left: 5px solid #f39c12;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .resume {
+            background-color: #eef4ff;
+            border-left: 5px solid #0f4c81;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .pdf-box {
+            background-color: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+        }
+
+        .pdf-viewer {
+            width: 100%;
+            height: 750px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        ul, ol {
+            margin-left: 25px;
+            margin-top: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background-color: white;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #0f4c81;
+            color: white;
+        }
+
+        .formula {
+            text-align: center;
+            font-size: 22px;
+            color: #083b66;
+            font-weight: bold;
+            margin: 20px 0;
+            background-color: #eef4ff;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 10px 10px 0 0;
+            background-color: #1abc9c;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #14977d;
+        }
+
+        footer {
+            background-color: #083b66;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            header.hero {
+                min-height: 360px;
+                padding: 55px 15px;
+            }
+
+            .hero-bg-video {
+                width: auto;
+                height: 100%;
+            }
+
+            header h1 {
+                font-size: 28px;
+            }
+
+            header p {
+                font-size: 15px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 6px;
+                font-size: 14px;
+            }
+
+            .pdf-viewer {
+                height: 520px;
+            }
+
+            .container {
+                padding: 30px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="hero">
+
+        <video class="hero-bg-video" autoplay muted loop playsinline>
+            <source src="background.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo.
+        </video>
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <img src="logo.png" alt="Logo Physique-Chimie Collège" class="site-logo" onerror="this.style.display='none'">
+
+            <h1>La pression et la pression atmosphérique</h1>
+            <p>1ère année collège - Semestre 1 | Cours, PDF, résumé, exercices et corrigés</p>
+        </div>
+
+    </header>
+
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="1ac.html">Cours 1AC</a>
+        <a href="#presentation">Présentation</a>
+        <a href="#pdf">PDF du cours</a>
+        <a href="#lecon">Leçon</a>
+        <a href="#resume">Résumé</a>
+        <a href="#exercices">Exercices</a>
+        <a href="#corrige">Corrigés</a>
+    </nav>
+
+    <div class="container">
+
+        <section id="presentation">
+            <h2>Présentation du cours</h2>
+
+            <div class="box">
+                <p>
+                    Ce cours présente la notion de pression, la pression exercée par les gaz,
+                    la pression atmosphérique et les appareils utilisés pour mesurer la pression.
+                    Il permet aussi de comprendre l’effet de la compression et de l’expansion d’un gaz.
+                </p>
+
+                <div class="definition">
+                    <strong>Objectif du cours :</strong>
+                    comprendre qu’un gaz exerce une pression sur les corps avec lesquels
+                    il est en contact, connaître les unités de pression, distinguer compression
+                    et expansion, et identifier le baromètre et le manomètre.
+                </div>
+            </div>
+        </section>
+
+        <section id="pdf">
+            <h2>Document PDF du cours</h2>
+
+            <div class="pdf-box">
+                <p>
+                    Vous pouvez consulter le document PDF directement sur cette page,
+                    l’ouvrir dans un nouvel onglet ou le télécharger.
+                </p>
+
+                <a href="./1ac-s1-pression.pdf" target="_blank" class="btn">Ouvrir le PDF</a>
+                <a href="./1ac-s1-pression.pdf" download class="btn">Télécharger le PDF</a>
+
+                <iframe src="./1ac-s1-pression.pdf" class="pdf-viewer"></iframe>
+            </div>
+        </section>
+
+        <section id="lecon">
+
+            <h2>1. Notion de pression</h2>
+
+            <div class="box">
+                <p>
+                    Lorsqu’on enferme de l’air dans une seringue bouchée, on peut modifier
+                    son volume en déplaçant le piston.
+                </p>
+
+                <ul>
+                    <li>Si on pousse le piston, le volume de l’air diminue.</li>
+                    <li>Si on tire le piston, le volume de l’air augmente.</li>
+                </ul>
+
+                <div class="important">
+                    <strong>Observation :</strong>
+                    le volume de l’air diminue lorsqu’on pousse le piston,
+                    et il augmente lorsqu’on tire le piston.
+                </div>
+
+                <p>
+                    Dans une autre expérience, l’air comprimé dans une seringue peut pousser
+                    un liquide dans un tube. Cela montre que l’air exerce une action sur
+                    les corps avec lesquels il est en contact.
+                </p>
+
+                <div class="definition">
+                    <strong>Conclusion :</strong>
+                    tous les gaz, comme l’air, poussent sur les corps avec lesquels
+                    ils sont en contact. On dit qu’ils exercent une pression.
+                </div>
+            </div>
+
+            <h2>2. Compression et expansion d’un gaz</h2>
+
+            <div class="box">
+                <table>
+                    <tr>
+                        <th>Action sur le piston</th>
+                        <th>Variation du volume</th>
+                        <th>Nom du phénomène</th>
+                        <th>Variation de la pression</th>
+                    </tr>
+                    <tr>
+                        <td>On pousse le piston</td>
+                        <td>Le volume diminue</td>
+                        <td>Compression</td>
+                        <td>La pression augmente</td>
+                    </tr>
+                    <tr>
+                        <td>On tire le piston</td>
+                        <td>Le volume augmente</td>
+                        <td>Expansion / détente</td>
+                        <td>La pression diminue</td>
+                    </tr>
+                </table>
+
+                <div class="important">
+                    <strong>À retenir :</strong>
+                    lorsqu’on diminue le volume d’un gaz, on le comprime :
+                    sa pression augmente. Lorsqu’on augmente le volume d’un gaz,
+                    on le détend : sa pression diminue.
+                </div>
+            </div>
+
+            <h2>3. Définition de la pression</h2>
+
+            <div class="box">
+                <div class="definition">
+                    <strong>Définition :</strong>
+                    la pression est la force exercée par un gaz sur tous les corps
+                    avec lesquels il est en contact.
+                </div>
+
+                <p>
+                    La pression est une grandeur physique que l’on symbolise par
+                    la lettre <strong>P</strong>.
+                </p>
+            </div>
+
+            <h2>4. Unités de mesure de la pression</h2>
+
+            <div class="box">
+                <p>
+                    L’unité internationale de la pression est le pascal, de symbole
+                    <strong>Pa</strong>. On utilise aussi l’hectopascal, le bar,
+                    l’atmosphère et le centimètre de mercure.
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Unité</th>
+                        <th>Symbole</th>
+                        <th>Relation utile</th>
+                    </tr>
+                    <tr>
+                        <td>Pascal</td>
+                        <td>Pa</td>
+                        <td>Unité internationale</td>
+                    </tr>
+                    <tr>
+                        <td>Hectopascal</td>
+                        <td>hPa</td>
+                        <td>1 hPa = 100 Pa</td>
+                    </tr>
+                    <tr>
+                        <td>Millibar</td>
+                        <td>mbar</td>
+                        <td>1 mbar = 1 hPa</td>
+                    </tr>
+                    <tr>
+                        <td>Bar</td>
+                        <td>bar</td>
+                        <td>1 bar = 100000 Pa = 1000 hPa</td>
+                    </tr>
+                    <tr>
+                        <td>Atmosphère</td>
+                        <td>atm</td>
+                        <td>1 atm ≈ 1013 hPa</td>
+                    </tr>
+                    <tr>
+                        <td>Centimètre de mercure</td>
+                        <td>cm-Hg</td>
+                        <td>76 cm-Hg ≈ 1013 hPa</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h2>5. Pression atmosphérique</h2>
+
+            <div class="box">
+                <p>
+                    La Terre est entourée d’une couche d’air appelée atmosphère.
+                    L’air de l’atmosphère exerce une pression sur les corps :
+                    c’est la pression atmosphérique.
+                </p>
+
+                <div class="definition">
+                    <strong>Définition :</strong>
+                    la pression atmosphérique est la pression exercée par l’air
+                    de l’atmosphère.
+                </div>
+
+                <p>
+                    Pour mettre en évidence cette pression, on peut remplir un verre d’eau,
+                    couvrir son ouverture avec une feuille de papier puis retourner le verre.
+                    L’air exerce une pression sur la feuille et empêche l’eau de tomber
+                    immédiatement.
+                </p>
+
+                <div class="formula">
+                    P<sub>atm</sub> = 1013 hPa = 1 atm ≈ 76 cm-Hg
+                </div>
+
+                <div class="important">
+                    <strong>À retenir :</strong>
+                    la pression atmosphérique diminue avec l’altitude et varie selon
+                    les conditions atmosphériques.
+                </div>
+            </div>
+
+            <h2>6. Mesure de la pression</h2>
+
+            <div class="box">
+                <p>
+                    Pour mesurer une pression, on utilise des appareils adaptés selon
+                    le type de pression à mesurer.
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Appareil</th>
+                        <th>Rôle</th>
+                    </tr>
+                    <tr>
+                        <td>Baromètre</td>
+                        <td>Mesurer la pression atmosphérique.</td>
+                    </tr>
+                    <tr>
+                        <td>Manomètre</td>
+                        <td>Mesurer la pression d’un gaz enfermé dans un récipient.</td>
+                    </tr>
+                </table>
+
+                <div class="important">
+                    <strong>Exemple :</strong>
+                    pour mesurer la pression de l’air dans un pneu,
+                    on utilise un manomètre.
+                </div>
+            </div>
+
+            <h2>7. Expérience avec une seringue et un manomètre</h2>
+
+            <div class="box">
+                <p>
+                    On relie l’embouchure d’une seringue à un manomètre.
+                    Ensuite, on pousse puis on tire le piston et on observe
+                    la variation de la pression.
+                </p>
+
+                <ol>
+                    <li>Relier l’embouchure d’une seringue à mi-course à un manomètre.</li>
+                    <li>Lire la valeur de la pression indiquée par l’appareil.</li>
+                    <li>Pousser le piston et observer la variation de la pression.</li>
+                    <li>Tirer le piston et observer la variation de la pression.</li>
+                </ol>
+
+                <div class="definition">
+                    <strong>Observation :</strong>
+                    lorsque l’on pousse le piston, la pression augmente :
+                    c’est une compression. Lorsque l’on tire le piston,
+                    la pression diminue : c’est une expansion.
+                </div>
+            </div>
+
+        </section>
+
+        <section id="resume">
+            <h2>Résumé du cours</h2>
+
+            <div class="resume">
+                <ul>
+                    <li>Un gaz exerce une pression sur les corps avec lesquels il est en contact.</li>
+                    <li>La pression est symbolisée par la lettre <strong>P</strong>.</li>
+                    <li>L’unité internationale de la pression est le pascal, noté <strong>Pa</strong>.</li>
+                    <li>Quand on comprime un gaz, son volume diminue et sa pression augmente.</li>
+                    <li>Quand on détend un gaz, son volume augmente et sa pression diminue.</li>
+                    <li>La pression atmosphérique est la pression exercée par l’air de l’atmosphère.</li>
+                    <li>La pression atmosphérique diminue avec l’altitude.</li>
+                    <li>Le baromètre mesure la pression atmosphérique.</li>
+                    <li>Le manomètre mesure la pression d’un gaz enfermé.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="exercices">
+            <h2>Exercices d’application</h2>
+
+            <div class="box">
+                <h3>Exercice 1 : Compléter le texte</h3>
+
+                <ol>
+                    <li>L’unité internationale pour mesurer la pression est le __________ de symbole __________.</li>
+                    <li>La pression d’un gaz se mesure avec __________.</li>
+                    <li>Pour mesurer la pression atmosphérique, on utilise __________.</li>
+                    <li>La valeur de la pression atmosphérique au niveau de la mer est __________.</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 2 : Conversions</h3>
+
+                <ol>
+                    <li>15 bar = __________ hPa</li>
+                    <li>75000 Pa = __________ bar</li>
+                    <li>1,75 bar = __________ Pa</li>
+                    <li>180000 hPa = __________ bar</li>
+                    <li>10 hPa = __________ mbar</li>
+                    <li>6 Pa = __________ hPa</li>
+                    <li>1013 hPa = __________ cm-Hg</li>
+                    <li>180 mm-Hg = __________ hPa</li>
+                    <li>8000 Pa = __________ cm-Hg</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 3 : Seringue bouchée</h3>
+
+                <p>
+                    On enferme de l’air dans une seringue avec un doigt.
+                    Dans la situation A, on pousse le piston. Dans la situation B,
+                    on tire le piston.
+                </p>
+
+                <h3>Situation A</h3>
+                <ol>
+                    <li>L’air emprisonné subit une : compression / expansion.</li>
+                    <li>Le volume de l’air emprisonné : augmente / reste le même / diminue.</li>
+                    <li>La pression de l’air emprisonné : augmente / reste la même / diminue.</li>
+                    <li>La masse de l’air emprisonné : augmente / reste la même / diminue.</li>
+                </ol>
+
+                <h3>Situation B</h3>
+                <ol>
+                    <li>L’air emprisonné subit une : compression / expansion.</li>
+                    <li>Le volume de l’air emprisonné : augmente / reste le même / diminue.</li>
+                    <li>La pression de l’air emprisonné : augmente / reste la même / diminue.</li>
+                    <li>La masse de l’air emprisonné : augmente / reste la même / diminue.</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 4 : Pression d’un pneu</h3>
+
+                <ol>
+                    <li>Qu’introduit-on dans un pneu pour le gonfler ?</li>
+                    <li>Avec quel appareil mesure-t-on la pression de l’air dans le pneu ?</li>
+                    <li>
+                        Après gonflage, l’appareil indique 2,3 bar alors que la notice
+                        du véhicule impose 2 bar. Que faut-il faire pour avoir
+                        une bonne pression ?
+                    </li>
+                    <li>Un bar vaut 1000 hPa. Que vaut, en hPa, une pression de 2,3 bar ?</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Exercice 5 : Pression atmosphérique et altitude</h3>
+
+                <p>
+                    On mesure la pression atmosphérique en fonction de l’altitude.
+                    On remarque que la pression diminue lorsque l’altitude augmente.
+                </p>
+
+                <ol>
+                    <li>Déterminer la valeur de la pression atmosphérique à l’altitude h = 0 km.</li>
+                    <li>À quelle hauteur se trouve un avion lorsque l’affichage indique 800 hPa ?</li>
+                    <li>Quelle est la pression extérieure lorsque l’avion vole à une altitude de 8 km ?</li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="corrige">
+            <h2>Corrigé indicatif</h2>
+
+            <div class="box">
+                <h3>Correction de l’exercice 1</h3>
+
+                <ol>
+                    <li>L’unité internationale est le <strong>pascal</strong>, de symbole <strong>Pa</strong>.</li>
+                    <li>La pression d’un gaz se mesure avec un <strong>manomètre</strong>.</li>
+                    <li>La pression atmosphérique se mesure avec un <strong>baromètre</strong>.</li>
+                    <li>Au niveau de la mer, elle vaut environ <strong>1013 hPa</strong>.</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Correction de l’exercice 2</h3>
+
+                <ol>
+                    <li>15 bar = 15000 hPa</li>
+                    <li>75000 Pa = 0,75 bar</li>
+                    <li>1,75 bar = 175000 Pa</li>
+                    <li>180000 hPa = 180 bar</li>
+                    <li>10 hPa = 10 mbar</li>
+                    <li>6 Pa = 0,06 hPa</li>
+                    <li>1013 hPa ≈ 76 cm-Hg</li>
+                    <li>180 mm-Hg ≈ 240 hPa</li>
+                    <li>8000 Pa ≈ 6 cm-Hg</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Correction de l’exercice 3</h3>
+
+                <p>
+                    <strong>Situation A :</strong>
+                    l’air subit une compression ; le volume diminue ;
+                    la pression augmente ; la masse reste la même.
+                </p>
+
+                <p>
+                    <strong>Situation B :</strong>
+                    l’air subit une expansion ; le volume augmente ;
+                    la pression diminue ; la masse reste la même.
+                </p>
+            </div>
+
+            <div class="box">
+                <h3>Correction de l’exercice 4</h3>
+
+                <ol>
+                    <li>On introduit de l’air dans le pneu.</li>
+                    <li>On mesure la pression avec un manomètre.</li>
+                    <li>Il faut laisser sortir un peu d’air pour passer de 2,3 bar à 2 bar.</li>
+                    <li>2,3 bar = 2300 hPa.</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>Correction de l’exercice 5</h3>
+
+                <ol>
+                    <li>À h = 0 km, la pression est environ 1000 hPa.</li>
+                    <li>Lorsque la pression vaut 800 hPa, l’altitude est environ 2 km.</li>
+                    <li>À 8 km d’altitude, la pression extérieure est environ 350 à 360 hPa.</li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="navigation">
+            <h2>Navigation</h2>
+
+            <div class="box">
+                <a href="1ac-s1-masse-volumique.html" class="btn">Cours précédent</a>
+                <a href="1ac.html" class="btn">Retour aux cours de 1ère année</a>
+                <a href="index.html" class="btn">Retour à l’accueil</a>
+                <a href="1ac-s1-modele-particulaire.html" class="btn">Cours suivant</a>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>© 2026 - Physique-Chimie Collège | La pression et la pression atmosphérique</p>
+    </footer>
+
+</body>
+</html>
