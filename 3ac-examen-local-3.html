@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen local n°3 - Physique-Chimie 3AC</title>
+
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #222;
+            line-height: 1.7;
+        }
+
+        header.hero {
+            position: relative;
+            color: white;
+            padding: 70px 20px;
+            text-align: center;
+            overflow: hidden;
+            min-height: 430px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-bg-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                135deg,
+                rgba(15, 76, 129, 0.80),
+                rgba(26, 188, 156, 0.68)
+            );
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .site-logo {
+            width: 95px;
+            height: 95px;
+            object-fit: contain;
+            margin-bottom: 15px;
+            border-radius: 50%;
+            background-color: white;
+            padding: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+        }
+
+        header p {
+            font-size: 17px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+        }
+
+        nav {
+            background-color: #083b66;
+            padding: 12px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #1abc9c;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        h2 {
+            color: #0f4c81;
+            margin: 30px 0 15px;
+            border-left: 5px solid #1abc9c;
+            padding-left: 10px;
+            font-size: 26px;
+        }
+
+        h3 {
+            color: #0f4c81;
+            margin: 20px 0 10px;
+        }
+
+        .box {
+            background-color: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+        }
+
+        .definition {
+            background-color: #e8f6f3;
+            border-left: 5px solid #1abc9c;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .important {
+            background-color: #fff7e6;
+            border-left: 5px solid #f39c12;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .resume {
+            background-color: #eef4ff;
+            border-left: 5px solid #0f4c81;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .pdf-box {
+            background-color: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+        }
+
+        .pdf-viewer {
+            width: 100%;
+            height: 750px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        ul, ol {
+            margin-left: 25px;
+            margin-top: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background-color: white;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #0f4c81;
+            color: white;
+        }
+
+        .formula {
+            text-align: center;
+            font-size: 21px;
+            color: #083b66;
+            font-weight: bold;
+            margin: 20px 0;
+            background-color: #eef4ff;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .note {
+            background-color: #f8fcff;
+            border: 1px solid #dceeff;
+            border-left: 5px solid #0f4c81;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 10px 10px 0 0;
+            background-color: #1abc9c;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #14977d;
+        }
+
+        footer {
+            background-color: #083b66;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            header.hero {
+                min-height: 360px;
+                padding: 55px 15px;
+            }
+
+            .hero-bg-video {
+                width: auto;
+                height: 100%;
+            }
+
+            header h1 {
+                font-size: 28px;
+            }
+
+            header p {
+                font-size: 15px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 6px;
+                font-size: 14px;
+            }
+
+            .pdf-viewer {
+                height: 520px;
+            }
+
+            .container {
+                padding: 30px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="hero">
+
+        <video class="hero-bg-video" autoplay muted loop playsinline>
+            <source src="background.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo.
+        </video>
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <img src="logo.png" alt="Logo Physique-Chimie Collège" class="site-logo" onerror="this.style.display='none'">
+
+            <h1>Examen local n°3</h1>
+            <p>3ème année collège | Physique-Chimie | Sujet, PDF, corrigé indicatif et conseils</p>
+        </div>
+
+    </header>
+
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="3ac.html">Cours 3AC</a>
+        <a href="3ac-examens-locaux.html">Examens locaux</a>
+        <a href="#presentation">Présentation</a>
+        <a href="#pdf">PDF</a>
+        <a href="#sujet">Sujet</a>
+        <a href="#corrige">Corrigé</a>
+        <a href="#conseils">Conseils</a>
+    </nav>
+
+    <div class="container">
+
+        <section id="presentation">
+            <h2>Présentation de l’examen</h2>
+
+            <div class="box">
+                <p>
+                    Cette page présente l’examen local n°3 de physique-chimie pour la troisième année collège.
+                    L’examen porte sur les matériaux, les atomes et les ions, les solutions acides et basiques,
+                    la réaction du fer avec l’acide chlorhydrique et les tests d’identification des ions.
+                </p>
+
+                <div class="definition">
+                    <strong>Objectif :</strong>
+                    permettre à l’élève de s’entraîner sur un sujet complet, de comprendre la méthode
+                    de résolution et de vérifier ses réponses grâce au corrigé indicatif.
+                </div>
+            </div>
+        </section>
+
+        <section id="pdf">
+            <h2>Document PDF de l’examen</h2>
+
+            <div class="pdf-box">
+                <p>
+                    Vous pouvez consulter le PDF directement sur cette page,
+                    l’ouvrir dans un nouvel onglet ou le télécharger.
+                </p>
+
+                <a href="./3ac-examen-local-3.pdf" target="_blank" class="btn">Ouvrir le PDF</a>
+                <a href="./3ac-examen-local-3.pdf" download class="btn">Télécharger le PDF</a>
+
+                <iframe src="./3ac-examen-local-3.pdf" class="pdf-viewer"></iframe>
+            </div>
+        </section>
+
+        <section id="sujet">
+            <h2>Sujet de l’examen</h2>
+
+            <div class="box">
+                <h3>I- Exercice 1 : Matériaux, atomes et ions</h3>
+
+                <h3>1. Répondre par vrai ou faux et corriger les phrases incorrectes</h3>
+
+                <ol>
+                    <li>Le corps est ce qui fait la matière : ............</li>
+                    <li>L’atome se compose d’un noyau et d’un vide uniquement : ............</li>
+                    <li>Le plastique de type PS est soluble dans l’eau : ............</li>
+                    <li>Le métal qui ne réagit pas avec l’acide chlorhydrique ni avec la soude est le zinc : ............</li>
+                </ol>
+
+                <h3>2. Encadrer la bonne réponse</h3>
+
+                <table>
+                    <tr>
+                        <th>Question</th>
+                        <th>Choix proposés</th>
+                    </tr>
+                    <tr>
+                        <td>Le cuivre se caractérise par :</td>
+                        <td>Attiré par l’aimant / la couleur rouge brique</td>
+                    </tr>
+                    <tr>
+                        <td>La formule chimique de l’oxyde de fer III est :</td>
+                        <td>Fe<sub>3</sub>O<sub>4</sub> / Fe<sub>2</sub>O<sub>3</sub></td>
+                    </tr>
+                    <tr>
+                        <td>L’oxydation de l’aluminium dans l’air donne une couche :</td>
+                        <td>Imperméable / poreuse</td>
+                    </tr>
+                    <tr>
+                        <td>Lorsqu’on verse la solution de soude sur un morceau d’aluminium, cela donne :</td>
+                        <td>gaz dihydrogène / gaz dioxygène</td>
+                    </tr>
+                </table>
+
+                <h3>3. Relier chaque ion à sa catégorie</h3>
+
+                <table>
+                    <tr>
+                        <th>Ions</th>
+                        <th>Catégories</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            Cu<sup>2+</sup><br>
+                            O<sup>2-</sup><br>
+                            SO<sub>4</sub><sup>2-</sup><br>
+                            H<sub>3</sub>O<sup>+</sup>
+                        </td>
+                        <td>
+                            Anion polyatomique<br>
+                            Cation monoatomique<br>
+                            Anion monoatomique<br>
+                            Cation polyatomique
+                        </td>
+                    </tr>
+                </table>
+
+                <h3>4. Compléter la phrase suivante</h3>
+
+                <p>
+                    Le crayon est __________ se compose du plomb et de bois.
+                    Le plomb appartient au groupe de matériaux __________ car il est conducteur
+                    de la chaleur et d’électricité, contrairement au bois qui appartient au groupe
+                    des matériaux __________ du fait qu’il contient de __________ et d’hydrogène.
+                </p>
+
+                <h3>5. Définir la matière organique</h3>
+
+                <p>
+                    ....................................................................................................................
+                </p>
+            </div>
+
+            <div class="box">
+                <h3>II- Exercice 2 : Calcium, pH et réaction du fer</h3>
+
+                <h3>Partie 1 : Atome et ion calcium</h3>
+
+                <p>
+                    Le calcium Ca est un élément essentiel dans la construction des os.
+                    L’atome de calcium se transforme en ion en perdant deux électrons.
+                    Son numéro atomique est :
+                </p>
+
+                <div class="formula">
+                    Z(Ca) = 20
+                </div>
+
+                <ol>
+                    <li>Calculer la charge de l’atome.</li>
+                    <li>Calculer la charge du noyau.</li>
+                    <li>Écrire le symbole de l’ion.</li>
+                    <li>Déterminer la charge des électrons de l’ion.</li>
+                </ol>
+
+                <h3>Partie 2 : pH des solutions</h3>
+
+                <p>
+                    Un enseignant a préparé six solutions aqueuses et a mesuré le pH de chacune.
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Solution</th>
+                        <th>Vinaigre</th>
+                        <th>Acide chlorhydrique</th>
+                        <th>Eau pure</th>
+                        <th>Eau de chaux</th>
+                        <th>Soude</th>
+                        <th>Chlorure de sodium</th>
+                    </tr>
+                    <tr>
+                        <td>pH</td>
+                        <td>5,3</td>
+                        <td>1,8</td>
+                        <td>7</td>
+                        <td>10,4</td>
+                        <td>12,8</td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td>Nature</td>
+                        <td>........</td>
+                        <td>........</td>
+                        <td>........</td>
+                        <td>........</td>
+                        <td>........</td>
+                        <td>........</td>
+                    </tr>
+                </table>
+
+                <ol>
+                    <li>Nommer l’instrument utilisé pour mesurer le pH en justifiant.</li>
+                    <li>Remplir le tableau en identifiant la nature de chaque solution.</li>
+                    <li>Déterminer la solution la plus acide et la solution la plus basique.</li>
+                    <li>Le professeur ajoute une solution de soude à l’eau pure. Nommer cette technique.</li>
+                    <li>Le pH de la solution va-t-il augmenter ou diminuer après cette technique ?</li>
+                    <li>Nommer le gaz produit lors de la réaction entre le fer et l’acide chlorhydrique et donner sa formule.</li>
+                    <li>Donner le nom et la formule de l’ion produit. Comment le détecter ?</li>
+                    <li>Écrire l’équation simplifiée de la réaction réalisée par le professeur.</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>III- Exercice 3 : Tests d’identification des ions</h3>
+
+                <p>
+                    Salma a dissous un comprimé dans l’eau, puis elle a pris deux échantillons.
+                    Dans le premier échantillon, elle ajoute de la solution d’hydroxyde de sodium
+                    et obtient un précipité vert. Dans le deuxième échantillon, elle ajoute du nitrate
+                    d’argent et obtient un précipité blanc qui noircit à la lumière.
+                </p>
+
+                <ol>
+                    <li>Quels sont les ions détectés ?</li>
+                    <li>Écrire l’équation de précipitation dans chaque échantillon.</li>
+                    <li>Salma peut-elle prendre ces comprimés sans effets secondaires ? Justifier.</li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="corrige">
+            <h2>Corrigé indicatif</h2>
+
+            <div class="box">
+                <h3>I- Correction de l’exercice 1</h3>
+
+                <h3>1. Vrai ou faux avec correction</h3>
+
+                <table>
+                    <tr>
+                        <th>Proposition</th>
+                        <th>Réponse</th>
+                        <th>Correction</th>
+                    </tr>
+                    <tr>
+                        <td>Le corps est ce qui fait la matière.</td>
+                        <td>Faux</td>
+                        <td>La matière est ce qui constitue un corps.</td>
+                    </tr>
+                    <tr>
+                        <td>L’atome se compose d’un noyau et d’un vide uniquement.</td>
+                        <td>Faux</td>
+                        <td>L’atome se compose d’un noyau et d’électrons, avec beaucoup de vide.</td>
+                    </tr>
+                    <tr>
+                        <td>Le plastique de type PS est soluble dans l’eau.</td>
+                        <td>Faux</td>
+                        <td>Le plastique PS est insoluble dans l’eau.</td>
+                    </tr>
+                    <tr>
+                        <td>Le métal qui ne réagit pas avec l’acide chlorhydrique ni avec la soude est le zinc.</td>
+                        <td>Faux</td>
+                        <td>Le métal qui ne réagit pas est le cuivre.</td>
+                    </tr>
+                </table>
+
+                <h3>2. Bonnes réponses</h3>
+
+                <table>
+                    <tr>
+                        <th>Question</th>
+                        <th>Réponse correcte</th>
+                    </tr>
+                    <tr>
+                        <td>Le cuivre se caractérise par :</td>
+                        <td>la couleur rouge brique</td>
+                    </tr>
+                    <tr>
+                        <td>La formule chimique de l’oxyde de fer III est :</td>
+                        <td>Fe<sub>2</sub>O<sub>3</sub></td>
+                    </tr>
+                    <tr>
+                        <td>L’oxydation de l’aluminium dans l’air donne une couche :</td>
+                        <td>imperméable</td>
+                    </tr>
+                    <tr>
+                        <td>La solution de soude sur l’aluminium produit :</td>
+                        <td>gaz dihydrogène</td>
+                    </tr>
+                </table>
+
+                <h3>3. Correspondance des ions</h3>
+
+                <table>
+                    <tr>
+                        <th>Ion</th>
+                        <th>Catégorie</th>
+                    </tr>
+                    <tr>
+                        <td>Cu<sup>2+</sup></td>
+                        <td>Cation monoatomique</td>
+                    </tr>
+                    <tr>
+                        <td>O<sup>2-</sup></td>
+                        <td>Anion monoatomique</td>
+                    </tr>
+                    <tr>
+                        <td>SO<sub>4</sub><sup>2-</sup></td>
+                        <td>Anion polyatomique</td>
+                    </tr>
+                    <tr>
+                        <td>H<sub>3</sub>O<sup>+</sup></td>
+                        <td>Cation polyatomique</td>
+                    </tr>
+                </table>
+
+                <h3>4. Phrase complétée</h3>
+
+                <p>
+                    Le crayon est <strong>un objet</strong> qui se compose du plomb et de bois.
+                    Le plomb appartient au groupe de matériaux <strong>métalliques</strong>
+                    car il est conducteur de la chaleur et d’électricité, contrairement au bois
+                    qui appartient au groupe des matériaux <strong>organiques</strong> du fait
+                    qu’il contient du <strong>carbone</strong> et d’hydrogène.
+                </p>
+
+                <h3>5. Définition de la matière organique</h3>
+
+                <p>
+                    Une matière organique est une matière qui contient principalement les atomes
+                    de carbone et d’hydrogène. Sa combustion produit généralement du dioxyde
+                    de carbone et de la vapeur d’eau.
+                </p>
+            </div>
+
+            <div class="box">
+                <h3>II- Correction de l’exercice 2</h3>
+
+                <h3>Partie 1 : Calcium</h3>
+
+                <p>
+                    L’atome de calcium est électriquement neutre, donc sa charge totale est :
+                </p>
+
+                <div class="formula">
+                    Q<sub>atome</sub> = 0
+                </div>
+
+                <p>
+                    La charge du noyau est :
+                </p>
+
+                <div class="formula">
+                    Q<sub>noyau</sub> = +20e
+                </div>
+
+                <p>
+                    Comme l’atome de calcium perd deux électrons, il forme l’ion calcium :
+                </p>
+
+                <div class="formula">
+                    Ca<sup>2+</sup>
+                </div>
+
+                <p>
+                    L’ion calcium possède 18 électrons. La charge de ses électrons est donc :
+                </p>
+
+                <div class="formula">
+                    Q<sub>électrons</sub> = -18e
+                </div>
+
+                <h3>Partie 2 : pH des solutions</h3>
+
+                <p>
+                    L’instrument utilisé est le <strong>pH-mètre</strong>, car les valeurs du pH
+                    sont données avec précision.
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Solution</th>
+                        <th>Vinaigre</th>
+                        <th>Acide chlorhydrique</th>
+                        <th>Eau pure</th>
+                        <th>Eau de chaux</th>
+                        <th>Soude</th>
+                        <th>Chlorure de sodium</th>
+                    </tr>
+                    <tr>
+                        <td>pH</td>
+                        <td>5,3</td>
+                        <td>1,8</td>
+                        <td>7</td>
+                        <td>10,4</td>
+                        <td>12,8</td>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <td>Nature</td>
+                        <td>Acide</td>
+                        <td>Acide</td>
+                        <td>Neutre</td>
+                        <td>Basique</td>
+                        <td>Basique</td>
+                        <td>Neutre</td>
+                    </tr>
+                </table>
+
+                <p>
+                    La solution la plus acide est <strong>l’acide chlorhydrique</strong>,
+                    car son pH est le plus petit : <strong>1,8</strong>.
+                </p>
+
+                <p>
+                    La solution la plus basique est la <strong>soude</strong>,
+                    car son pH est le plus grand : <strong>12,8</strong>.
+                </p>
+
+                <p>
+                    Lorsque le professeur ajoute la soude à l’eau pure, on réalise une
+                    <strong>dilution</strong> de la solution basique.
+                </p>
+
+                <p>
+                    Lors d’une dilution d’une solution basique, le pH diminue et se rapproche de 7,
+                    tout en restant supérieur à 7.
+                </p>
+
+                <div class="formula">
+                    7 &lt; pH &lt; 12,8
+                </div>
+
+                <p>
+                    Le gaz produit par la réaction entre le fer et l’acide chlorhydrique est
+                    le <strong>dihydrogène</strong>.
+                </p>
+
+                <div class="formula">
+                    H<sub>2</sub>
+                </div>
+
+                <p>
+                    L’ion produit est l’ion fer II :
+                </p>
+
+                <div class="formula">
+                    Fe<sup>2+</sup>
+                </div>
+
+                <p>
+                    On détecte l’ion Fe<sup>2+</sup> en ajoutant une solution d’hydroxyde de sodium.
+                    On obtient un précipité vert d’hydroxyde de fer II.
+                </p>
+
+                <p>
+                    L’équation simplifiée de la réaction est :
+                </p>
+
+                <div class="formula">
+                    Fe + 2 H<sup>+</sup> → Fe<sup>2+</sup> + H<sub>2</sub>
+                </div>
+            </div>
+
+            <div class="box">
+                <h3>III- Correction de l’exercice 3</h3>
+
+                <p>
+                    Le précipité vert obtenu avec l’hydroxyde de sodium indique la présence
+                    des ions fer II :
+                </p>
+
+                <div class="formula">
+                    Fe<sup>2+</sup>
+                </div>
+
+                <p>
+                    Le précipité blanc qui noircit à la lumière obtenu avec le nitrate d’argent
+                    indique la présence des ions chlorure :
+                </p>
+
+                <div class="formula">
+                    Cl<sup>-</sup>
+                </div>
+
+                <p>
+                    Équation de précipitation du premier échantillon :
+                </p>
+
+                <div class="formula">
+                    Fe<sup>2+</sup> + 2 HO<sup>-</sup> → Fe(OH)<sub>2</sub>
+                </div>
+
+                <p>
+                    Équation de précipitation du deuxième échantillon :
+                </p>
+
+                <div class="formula">
+                    Ag<sup>+</sup> + Cl<sup>-</sup> → AgCl
+                </div>
+
+                <p>
+                    Salma ne doit pas prendre ces comprimés sans avis médical, car les tests montrent
+                    la présence des ions Fe<sup>2+</sup> et Cl<sup>-</sup>, alors qu’elle est allergique
+                    au fer et au chlore. Elle doit demander conseil à son médecin ou à un pharmacien.
+                </p>
+            </div>
+        </section>
+
+        <section id="conseils">
+            <h2>Conseils de révision</h2>
+
+            <div class="resume">
+                <ul>
+                    <li>Revoir la différence entre corps, objet, matière et matériau.</li>
+                    <li>Maîtriser les catégories d’ions : cation, anion, monoatomique et polyatomique.</li>
+                    <li>Retenir les formules importantes : Fe<sub>2</sub>O<sub>3</sub>, H<sub>2</sub>, Fe<sup>2+</sup>, Cl<sup>-</sup>.</li>
+                    <li>Savoir classer les solutions selon leur pH : acide, neutre ou basique.</li>
+                    <li>Connaître le test de l’ion Fe<sup>2+</sup> : précipité vert avec HO<sup>-</sup>.</li>
+                    <li>Connaître le test de l’ion Cl<sup>-</sup> : précipité blanc avec Ag<sup>+</sup>, qui noircit à la lumière.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="navigation">
+            <h2>Navigation</h2>
+
+            <div class="box">
+                <a href="3ac-examen-local-2.html" class="btn">Examen local précédent</a>
+                <a href="3ac-examens-locaux.html" class="btn">Retour aux examens locaux</a>
+                <a href="3ac.html" class="btn">Retour aux cours 3AC</a>
+                <a href="index.html" class="btn">Retour à l’accueil</a>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>© 2026 - Physique-Chimie Collège | Examen local n°3 - 3AC</p>
+    </footer>
+
+</body>
+</html>
