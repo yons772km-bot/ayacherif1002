@@ -31,11 +31,9 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.18);
         }
 
         .nav-left {
@@ -55,54 +53,63 @@
 
         .nav-left span {
             color: white;
-            font-size: 20px;
+            font-size: 22px;
             font-weight: bold;
         }
 
-        .nav-right {
-            display: flex;
-            gap: 14px;
-            flex-wrap: wrap;
-            align-items: center;
+        .menu-container {
+            position: relative;
         }
 
-        .nav-right a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 16px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            background-color: rgba(255,255,255,0.08);
-            padding: 9px 14px;
-            border-radius: 10px;
-            transition: 0.3s;
-        }
-
-        .nav-right a:hover {
-            color: #ffffff;
-            background-color: #1abc9c;
-            transform: translateY(-2px);
-        }
-
-        .menu-icon {
-            width: 24px;
-            height: 24px;
-            border: 2px solid rgba(255,255,255,0.85);
-            border-radius: 5px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 3px;
-        }
-
-        .menu-icon span {
-            width: 13px;
-            height: 2px;
+        .menu-toggle {
             background-color: white;
-            border-radius: 3px;
+            color: #083b66;
+            border: none;
+            font-size: 28px;
+            font-weight: bold;
+            padding: 8px 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .menu-toggle:hover {
+            background-color: #e8f6f3;
+        }
+
+        .menu-links {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 58px;
+            background-color: white;
+            min-width: 210px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+            overflow: hidden;
+            z-index: 2000;
+        }
+
+        .menu-links.active {
+            display: block;
+        }
+
+        .menu-links a {
+            display: block;
+            color: #083b66;
+            text-decoration: none;
+            padding: 14px 18px;
+            font-weight: bold;
+            border-bottom: 1px solid #eee;
+        }
+
+        .menu-links a:hover {
+            background-color: #e8f6f3;
+            color: #1abc9c;
+        }
+
+        .menu-links a:last-child {
+            border-bottom: none;
         }
 
         header.hero {
@@ -261,19 +268,26 @@
 
         @media (max-width: 768px) {
             nav {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 12px;
+                padding: 10px 15px;
             }
 
-            .nav-right {
-                width: 100%;
-                gap: 10px;
+            .nav-left span {
+                font-size: 18px;
             }
 
-            .nav-right a {
-                font-size: 15px;
-                padding: 8px 12px;
+            .nav-left img {
+                width: 44px;
+                height: 44px;
+            }
+
+            .menu-toggle {
+                font-size: 25px;
+                padding: 7px 12px;
+            }
+
+            .menu-links {
+                top: 52px;
+                min-width: 190px;
             }
 
             .hero-content h1 {
@@ -282,10 +296,6 @@
 
             .hero-content p {
                 font-size: 17px;
-            }
-
-            .nav-left span {
-                font-size: 18px;
             }
 
             .container {
@@ -303,33 +313,14 @@
             <span>Physique-Chimie</span>
         </div>
 
-        <div class="nav-right">
-            <a href="#accueil">
-                <span class="menu-icon">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </span>
-                Accueil
-            </a>
+        <div class="menu-container">
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
 
-            <a href="#cours">
-                <span class="menu-icon">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </span>
-                Cours
-            </a>
-
-            <a href="#ressources">
-                <span class="menu-icon">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </span>
-                Ressources
-            </a>
+            <div class="menu-links" id="menuLinks">
+                <a href="#accueil">Accueil</a>
+                <a href="#cours">Cours</a>
+                <a href="#ressources">Ressources</a>
+            </div>
         </div>
     </nav>
 
@@ -439,6 +430,22 @@
     <footer>
         <p>© 2026 - Physique-Chimie Collège | Plateforme pédagogique numérique</p>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById("menuLinks");
+            menu.classList.toggle("active");
+        }
+
+        document.addEventListener("click", function(event) {
+            const menu = document.getElementById("menuLinks");
+            const button = document.querySelector(".menu-toggle");
+
+            if (!menu.contains(event.target) && !button.contains(event.target)) {
+                menu.classList.remove("active");
+            }
+        });
+    </script>
 
 </body>
 </html>
