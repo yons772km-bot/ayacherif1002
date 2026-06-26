@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conseils de révision - 3AC Physique-Chimie</title>
+
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #222;
+            line-height: 1.7;
+        }
+
+        header.hero {
+            position: relative;
+            color: white;
+            padding: 70px 20px;
+            text-align: center;
+            overflow: hidden;
+            min-height: 430px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-bg-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                135deg,
+                rgba(15, 76, 129, 0.82),
+                rgba(26, 188, 156, 0.68)
+            );
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .site-logo {
+            width: 95px;
+            height: 95px;
+            object-fit: contain;
+            margin-bottom: 15px;
+            border-radius: 50%;
+            background-color: white;
+            padding: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+        }
+
+        header h1 {
+            font-size: 38px;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+        }
+
+        header p {
+            font-size: 18px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+        }
+
+        nav {
+            background-color: #083b66;
+            padding: 12px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #1abc9c;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        h2 {
+            color: #0f4c81;
+            margin: 30px 0 15px;
+            border-left: 5px solid #1abc9c;
+            padding-left: 10px;
+            font-size: 28px;
+        }
+
+        h3 {
+            color: #0f4c81;
+            margin: 20px 0 10px;
+        }
+
+        .box {
+            background-color: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+        }
+
+        .definition {
+            background-color: #e8f6f3;
+            border-left: 5px solid #1abc9c;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .important {
+            background-color: #fff7e6;
+            border-left: 5px solid #f39c12;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .resume {
+            background-color: #eef4ff;
+            border-left: 5px solid #0f4c81;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .warning {
+            background-color: #fff1f1;
+            border-left: 5px solid #e74c3c;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        ul, ol {
+            margin-left: 25px;
+            margin-top: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background-color: white;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #0f4c81;
+            color: white;
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 10px 10px 0 0;
+            background-color: #1abc9c;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #14977d;
+        }
+
+        .btn-secondary {
+            background-color: #0f4c81;
+        }
+
+        .btn-secondary:hover {
+            background-color: #083b66;
+        }
+
+        .douaa {
+            text-align: center;
+            font-size: 24px;
+            line-height: 2;
+            color: #083b66;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        footer {
+            background-color: #083b66;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            header.hero {
+                min-height: 360px;
+                padding: 55px 15px;
+            }
+
+            .hero-bg-video {
+                width: auto;
+                height: 100%;
+            }
+
+            header h1 {
+                font-size: 30px;
+            }
+
+            header p {
+                font-size: 15px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 6px;
+                font-size: 14px;
+            }
+
+            .container {
+                padding: 30px 15px;
+            }
+
+            .douaa {
+                font-size: 21px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="hero">
+
+        <video class="hero-bg-video" autoplay muted loop playsinline>
+            <source src="background.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo.
+        </video>
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <img src="logo.png" alt="Logo Physique-Chimie Collège" class="site-logo" onerror="this.style.display='none'">
+
+            <h1>Conseils de révision</h1>
+            <p>3ème année collège | Méthodes, organisation, erreurs à éviter et préparation aux examens</p>
+        </div>
+
+    </header>
+
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="3ac.html">Cours 3AC</a>
+        <a href="3ac-examens-locaux.html">Examens locaux</a>
+        <a href="3ac-examens-regionaux.html">Examens régionaux</a>
+        <a href="#methode">Méthode</a>
+        <a href="#examen">Pendant l’examen</a>
+        <a href="#douaa">Invocation</a>
+    </nav>
+
+    <div class="container">
+
+        <section id="presentation">
+            <h2>Présentation</h2>
+
+            <div class="box">
+                <p>
+                    Cette page propose des conseils simples et efficaces pour aider les élèves de la troisième année collège
+                    à bien préparer l’examen de physique-chimie. L’objectif est d’organiser la révision, de mieux gérer le temps
+                    et d’éviter les erreurs fréquentes pendant l’épreuve.
+                </p>
+
+                <div class="definition">
+                    <strong>Objectif :</strong>
+                    apprendre à réviser intelligemment, s’entraîner avec méthode et arriver à l’examen avec plus de confiance.
+                </div>
+            </div>
+        </section>
+
+        <section id="methode">
+            <h2>1. Méthode efficace de révision</h2>
+
+            <div class="box">
+                <h3>Avant de commencer la révision</h3>
+
+                <ul>
+                    <li>Prépare un planning simple et réaliste.</li>
+                    <li>Commence par les leçons les plus importantes.</li>
+                    <li>Classe les cours par thèmes : chimie, électricité, mécanique et transformations.</li>
+                    <li>Révise les définitions, les lois, les formules et les unités.</li>
+                    <li>Prépare un cahier spécial pour les erreurs fréquentes.</li>
+                </ul>
+            </div>
+
+            <div class="box">
+                <h3>Comment réviser une leçon ?</h3>
+
+                <ol>
+                    <li>Lire le cours attentivement.</li>
+                    <li>Souligner les mots-clés.</li>
+                    <li>Écrire un petit résumé avec les idées essentielles.</li>
+                    <li>Apprendre les formules importantes.</li>
+                    <li>Faire des exercices d’application.</li>
+                    <li>Corriger les erreurs et les noter.</li>
+                </ol>
+
+                <div class="important">
+                    <strong>Important :</strong>
+                    ne te contente pas de lire le cours. Il faut écrire, résoudre et s’entraîner.
+                </div>
+            </div>
+        </section>
+
+        <section id="priorites">
+            <h2>2. Notions importantes à maîtriser</h2>
+
+            <div class="box">
+                <table>
+                    <tr>
+                        <th>Domaine</th>
+                        <th>Notions à réviser</th>
+                    </tr>
+                    <tr>
+                        <td>Chimie</td>
+                        <td>Atomes, ions, pH, solutions acides et basiques, oxydation des métaux, matériaux organiques.</td>
+                    </tr>
+                    <tr>
+                        <td>Électricité</td>
+                        <td>Loi d’Ohm, résistance électrique, puissance électrique, énergie électrique, unités et formules.</td>
+                    </tr>
+                    <tr>
+                        <td>Mécanique</td>
+                        <td>Mouvement, repos, vitesse moyenne, actions mécaniques, forces, équilibre, poids et masse.</td>
+                    </tr>
+                    <tr>
+                        <td>Méthode scientifique</td>
+                        <td>Lire un tableau, exploiter un schéma, écrire une équation, justifier une réponse.</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <section id="entrainement">
+            <h2>3. S’entraîner avec les examens</h2>
+
+            <div class="box">
+                <p>
+                    Pour bien réussir, il faut travailler avec les anciens examens locaux et régionaux.
+                    Ces sujets permettent de comprendre le type de questions posées et de s’habituer à la méthode de réponse.
+                </p>
+
+                <ul>
+                    <li>Commence par résoudre un exercice sans regarder le corrigé.</li>
+                    <li>Respecte le temps de l’examen.</li>
+                    <li>Vérifie ensuite tes réponses avec le corrigé.</li>
+                    <li>Repère les questions où tu as fait des erreurs.</li>
+                    <li>Revois la leçon liée à chaque erreur.</li>
+                </ul>
+
+                <a href="3ac-examens-locaux.html" class="btn">Voir les examens locaux</a>
+                <a href="3ac-examens-regionaux.html" class="btn btn-secondary">Voir les examens régionaux</a>
+            </div>
+        </section>
+
+        <section id="examen">
+            <h2>4. Conseils pendant l’examen</h2>
+
+            <div class="box">
+                <ul>
+                    <li>Lis tout le sujet avant de commencer.</li>
+                    <li>Commence par les questions faciles.</li>
+                    <li>Écris clairement les formules utilisées.</li>
+                    <li>N’oublie pas les unités dans les calculs.</li>
+                    <li>Justifie tes réponses lorsque la question le demande.</li>
+                    <li>Présente ta copie proprement.</li>
+                    <li>Garde quelques minutes à la fin pour vérifier tes réponses.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="erreurs">
+            <h2>5. Erreurs fréquentes à éviter</h2>
+
+            <div class="warning">
+                <ul>
+                    <li>Confondre masse et poids.</li>
+                    <li>Oublier l’unité d’une grandeur physique.</li>
+                    <li>Confondre solution acide et solution basique.</li>
+                    <li>Confondre cation et anion.</li>
+                    <li>Écrire une formule sans expliquer son utilisation.</li>
+                    <li>Répondre rapidement sans lire toute la question.</li>
+                    <li>Ne pas vérifier les calculs à la fin.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="resume">
+            <h2>Résumé final</h2>
+
+            <div class="resume">
+                <p>
+                    Pour réussir l’examen de physique-chimie, il faut réviser régulièrement,
+                    comprendre les notions essentielles, refaire les exercices et s’entraîner avec les examens.
+                    La réussite ne dépend pas seulement de la mémorisation, mais aussi de la méthode,
+                    de l’organisation et de la confiance.
+                </p>
+            </div>
+        </section>
+
+        <section id="douaa">
+            <h2>Invocation avant l’examen</h2>
+
+            <div class="important">
+                <p dir="rtl" class="douaa">
+                    اللهم لا سهل إلا ما جعلته سهلاً، وأنت تجعل الحَزْنَ إذا شئت سهلاً.
+                </p>
+
+                <p style="text-align:center;">
+                    <strong>Sens :</strong>
+                    Ô Allah, rien n’est facile sauf ce que Tu rends facile,
+                    et Tu rends la difficulté facile si Tu le veux.
+                </p>
+            </div>
+
+            <div class="definition">
+                <p dir="rtl" class="douaa">
+                    رَبِّ زِدْنِي عِلْمًا
+                </p>
+
+                <p style="text-align:center;">
+                    <strong>Sens :</strong>
+                    Seigneur, augmente-moi en savoir.
+                </p>
+            </div>
+        </section>
+
+        <section id="navigation">
+            <h2>Navigation</h2>
+
+            <div class="box">
+                <a href="3ac.html" class="btn">Retour aux cours 3AC</a>
+                <a href="3ac-examens-locaux.html" class="btn">Examens locaux</a>
+                <a href="3ac-examens-regionaux.html" class="btn btn-secondary">Examens régionaux</a>
+                <a href="index.html" class="btn btn-secondary">Retour à l’accueil</a>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>© 2026 - Physique-Chimie Collège | Conseils de révision 3AC</p>
+    </footer>
+
+</body>
+</html>
