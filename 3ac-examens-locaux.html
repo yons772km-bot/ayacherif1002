@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3AC - Physique-Chimie Collège</title>
+    <title>Examens locaux - 3AC Physique-Chimie</title>
 
     <link rel="icon" type="image/png" href="logo.png">
 
@@ -121,10 +121,10 @@
 
         h2 {
             color: #0f4c81;
-            margin: 35px 0 20px;
+            margin: 30px 0 18px;
             border-left: 5px solid #1abc9c;
             padding-left: 10px;
-            font-size: 30px;
+            font-size: 28px;
         }
 
         .intro {
@@ -135,40 +135,56 @@
             margin-bottom: 25px;
         }
 
-        .courses-grid {
+        .info {
+            background-color: #eef4ff;
+            border-left: 5px solid #0f4c81;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            font-size: 15px;
+        }
+
+        .examens-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 22px;
             margin-top: 25px;
         }
 
-        .course-card {
+        .exam-card {
             background-color: white;
             padding: 24px;
             border-radius: 14px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            border-top: 5px solid #1abc9c;
+            border-top: 5px solid #f39c12;
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .course-card:hover {
+        .exam-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 18px rgba(0,0,0,0.15);
         }
 
-        .course-card h3 {
+        .exam-card h3 {
             color: #0f4c81;
-            font-size: 21px;
+            font-size: 22px;
             margin-bottom: 12px;
         }
 
-        .course-card p {
+        .exam-card p {
             margin-bottom: 15px;
             font-size: 15px;
         }
 
-        .exam-card {
-            border-top: 5px solid #f39c12;
+        .badge {
+            display: inline-block;
+            background-color: #eef4ff;
+            color: #0f4c81;
+            padding: 6px 10px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 12px;
         }
 
         .btn {
@@ -187,6 +203,14 @@
             background-color: #14977d;
         }
 
+        .btn-secondary {
+            background-color: #0f4c81;
+        }
+
+        .btn-secondary:hover {
+            background-color: #083b66;
+        }
+
         footer {
             background-color: #083b66;
             color: white;
@@ -196,7 +220,7 @@
         }
 
         @media (max-width: 900px) {
-            .courses-grid {
+            .examens-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
@@ -226,7 +250,7 @@
                 font-size: 14px;
             }
 
-            .courses-grid {
+            .examens-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -251,199 +275,76 @@
         <div class="hero-content">
             <img src="logo.png" alt="Logo Physique-Chimie Collège" class="site-logo" onerror="this.style.display='none'">
 
-            <h1>3ème année collège</h1>
-            <p>Physique-Chimie | Cours, exercices, corrigés, PDF et préparation aux examens</p>
+            <h1>Examens locaux</h1>
+            <p>3ème année collège | Physique-Chimie | Sujets, PDF et corrigés</p>
         </div>
 
     </header>
 
     <nav>
         <a href="index.html">Accueil</a>
-        <a href="#semestre1">Semestre 1</a>
-        <a href="#semestre2">Semestre 2</a>
-        <a href="#examens">Examens</a>
-        <a href="1ac.html">1AC</a>
-        <a href="2ac.html">2AC</a>
+        <a href="3ac.html">Cours 3AC</a>
+        <a href="3ac-examens-locaux.html">Examens locaux</a>
+        <a href="3ac-examens-regionaux.html">Examens régionaux</a>
+        <a href="3ac-corriges-examens.html">Corrigés</a>
+        <a href="3ac-conseils-examens.html">Conseils</a>
     </nav>
 
     <div class="container">
 
         <section class="intro">
-            <h2>Présentation du niveau 3AC</h2>
+            <h2>Liste des examens locaux</h2>
 
             <p>
-                Cette page regroupe les cours de physique-chimie de la troisième année collège.
-                Les leçons sont organisées par semestre afin de faciliter la révision,
-                l’apprentissage autonome et la préparation aux examens locaux et régionaux.
+                Cette page regroupe les examens locaux de physique-chimie destinés aux élèves
+                de la troisième année collège. Chaque document permet de s’entraîner,
+                de réviser les notions essentielles et de se préparer efficacement.
             </p>
+
+            <div class="info">
+                <strong>Conseil :</strong>
+                commence par résoudre le sujet seul sur une feuille, puis consulte le corrigé
+                ou le document complet pour vérifier tes réponses.
+            </div>
         </section>
 
-        <section id="semestre1">
-            <h2>Semestre 1</h2>
+        <section>
+            <h2>Examens disponibles</h2>
 
-            <div class="courses-grid">
+            <div class="examens-grid">
 
-                <div class="course-card">
-                    <h3>Quelques matériaux au quotidien</h3>
-                    <p>Identifier les matériaux utilisés dans la vie quotidienne et leurs propriétés.</p>
-                    <a href="3ac-s1-materiaux-quotidien.html" class="btn">Voir le cours</a>
-                </div>
+                <div class="exam-card">
+                    <span class="badge">Examen local</span>
 
-                <div class="course-card">
-                    <h3>Les atomes et les ions</h3>
-                    <p>Comprendre la structure de l’atome, les ions et leurs charges électriques.</p>
-                    <a href="3ac-s1-atomes-ions.html" class="btn">Voir le cours</a>
-                </div>
+                    <h3>Examen local n°1</h3>
 
-                <div class="course-card">
-                    <h3>Oxydation des métaux dans l’air</h3>
-                    <p>Étudier l’oxydation du fer, de l’aluminium et la formation des oxydes.</p>
-                    <a href="3ac-s1-oxydation-metaux-air.html" class="btn">Voir le cours</a>
-                </div>
+                    <p>
+                        Sujet d’examen local pour la 3ème année collège en physique-chimie :
+                        atomes et ions, pH des solutions, oxydation des métaux, rouille,
+                        alumine et combustion du PVC.
+                    </p>
 
-                <div class="course-card">
-                    <h3>Combustion des matériaux organiques</h3>
-                    <p>Comprendre la combustion des matières organiques et ses produits.</p>
-                    <a href="3ac-s1-combustion-materiaux-organiques.html" class="btn">Voir le cours</a>
-                </div>
-
-                <div class="course-card">
-                    <h3>Les solutions acides et basiques</h3>
-                    <p>Découvrir le pH et distinguer les solutions acides, basiques et neutres.</p>
-                    <a href="3ac-s1-solutions-acides-basiques.html" class="btn">Voir le cours</a>
-                </div>
-
-                <div class="course-card">
-                    <h3>Tests de reconnaissance de quelques ions</h3>
-                    <p>Identifier certains ions à l’aide de tests chimiques simples.</p>
-                    <a href="3ac-s1-tests-reconnaissance-ions.html" class="btn">Voir le cours</a>
-                </div>
-
-                <div class="course-card">
-                    <h3>Réactions de quelques métaux avec les solutions</h3>
-                    <p>Étudier les réactions des métaux avec les solutions acides et basiques.</p>
-                    <a href="3ac-s1-reactions-metaux-solutions.html" class="btn">Voir le cours</a>
-                </div>
-
-                <div class="course-card">
-                    <h3>Danger de quelques matériaux</h3>
-                    <p>Comprendre l’impact de certains matériaux sur la santé et l’environnement.</p>
-                    <a href="3ac-s1-danger-materiaux.html" class="btn">Voir le cours</a>
+                    <a href="3ac-examen-local-1.html" class="btn">Voir l’examen</a>
+                    <a href="3ac-examen-local-1.pdf" target="_blank" class="btn btn-secondary">Ouvrir le PDF</a>
+                    <a href="3ac-examen-local-1.pdf" download class="btn btn-secondary">Télécharger</a>
                 </div>
 
             </div>
         </section>
 
-        <section id="semestre2">
-            <h2>Semestre 2</h2>
+        <section>
+            <h2>Navigation</h2>
 
-            <div class="courses-grid">
-
-                <div class="course-card">
-                    <h3>Le mouvement et le repos</h3>
-                    <p>Comprendre le mouvement, le repos, le référentiel et la trajectoire.</p>
-                    <a href="3ac-s2-mouvement-repos.html" class="btn">Voir le cours</a>
-                </div>
-
-                <div class="course-card">
-                    <h3>La vitesse moyenne</h3>
-                    <p>Calculer une vitesse moyenne et convertir les unités de vitesse.</p>
-                    <a href="3ac-s2-vitesse-moyenne.html" class="btn">Voir le cours</a>
-                </div>
-
-                <div class="course-card">
-                    <h3>Les actions mécaniques</h3>
-                    <p>Identifier les actions mécaniques, leurs effets et leurs types.</p>
-                    <a href="3ac-s2-actions-mecaniques.html" class="btn">Voir le cours</a>
-                </div>
-
-                <div class="course-card">
-                    <h3>Les forces</h3>
-                    <p>Comprendre la notion de force et ses caractéristiques principales.</p>
-                    <a href="3ac-s2-forces.html" class="btn">Voir le cours</a>
-                </div>
-
-                <div class="course-card">
-                    <h3>Équilibre d’un solide soumis à deux forces</h3>
-                    <p>Étudier les conditions d’équilibre d’un corps soumis à deux forces.</p>
-                    <a href="3ac-s2-equilibre-deux-forces.html" class="btn">Voir le cours</a>
-                </div>
-
-                <div class="course-card">
-                    <h3>Le poids et la masse</h3>
-                    <p>Distinguer le poids et la masse et comprendre leur relation.</p>
-                    <a href="3ac-s2-poids-masse.html" class="btn">Voir le cours</a>
-                </div>
-
-                <div class="course-card">
-                    <h3>La loi d’Ohm</h3>
-                    <p>Étudier la relation entre la tension, l’intensité et la résistance.</p>
-                    <a href="3ac-s2-loi-ohm.html" class="btn">Voir le cours</a>
-                </div>
-
-                <div class="course-card">
-                    <h3>La puissance électrique</h3>
-                    <p>Comprendre la puissance électrique et son unité de mesure.</p>
-                    <a href="3ac-s2-puissance-electrique.html" class="btn">Voir le cours</a>
-                </div>
-
-                <div class="course-card">
-                    <h3>L’énergie électrique</h3>
-                    <p>Calculer l’énergie électrique consommée par un appareil.</p>
-                    <a href="3ac-s2-energie-electrique.html" class="btn">Voir le cours</a>
-                </div>
-
-            </div>
-        </section>
-
-        <section id="examens">
-            <h2>Préparation aux examens</h2>
-
-            <div class="courses-grid">
-
-                <div class="course-card exam-card">
-                    <h3>Examens locaux</h3>
-                    <p>
-                        Sujets d’examens locaux pour s’entraîner et réviser les notions essentielles
-                        de physique-chimie en 3AC.
-                    </p>
-                    <a href="3ac-examens-locaux.html" class="btn">Voir les examens</a>
-                </div>
-
-                <div class="course-card exam-card">
-                    <h3>Examens régionaux</h3>
-                    <p>
-                        Sujets d’examens régionaux pour préparer l’épreuve finale de 3AC
-                        avec des exercices variés.
-                    </p>
-                    <a href="3ac-examens-regionaux.html" class="btn">Voir les examens</a>
-                </div>
-
-                <div class="course-card exam-card">
-                    <h3>Corrigés des examens</h3>
-                    <p>
-                        Corrigés pour comprendre les réponses et améliorer la méthode
-                        de résolution.
-                    </p>
-                    <a href="3ac-corriges-examens.html" class="btn">Voir les corrigés</a>
-                </div>
-
-                <div class="course-card exam-card">
-                    <h3>Conseils de révision</h3>
-                    <p>
-                        Méthodes, conseils et étapes pour réussir la préparation
-                        de l’examen.
-                    </p>
-                    <a href="3ac-conseils-examens.html" class="btn">Voir les conseils</a>
-                </div>
-
+            <div class="intro">
+                <a href="3ac.html" class="btn">Retour aux cours 3AC</a>
+                <a href="index.html" class="btn">Retour à l’accueil</a>
             </div>
         </section>
 
     </div>
 
     <footer>
-        <p>© 2026 - Physique-Chimie Collège | 3ème année collège</p>
+        <p>© 2026 - Physique-Chimie Collège | Examens locaux 3AC</p>
     </footer>
 
 </body>
