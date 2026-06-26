@@ -146,7 +146,7 @@
 
         .examens-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 22px;
             margin-top: 25px;
         }
@@ -225,6 +225,12 @@
             text-align: center;
             padding: 25px;
             margin-top: 40px;
+        }
+
+        @media (max-width: 950px) {
+            .examens-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         @media (max-width: 768px) {
@@ -345,6 +351,22 @@
                     <a href="3ac-examen-local-2.html" class="btn">Voir l’examen</a>
                     <a href="3ac-examen-local-2.pdf" target="_blank" class="btn btn-secondary">Ouvrir le PDF</a>
                     <a href="3ac-examen-local-2.pdf" download class="btn btn-orange">Télécharger</a>
+                </div>
+
+                <div class="exam-card">
+                    <span class="badge">Examen local</span>
+
+                    <h3>Examen local n°3</h3>
+
+                    <p>
+                        Sujet d’examen local pour la 3ème année collège :
+                        matériaux, atomes et ions, pH des solutions, réaction du fer avec
+                        l’acide chlorhydrique et tests d’identification des ions.
+                    </p>
+
+                    <a href="3ac-examen-local-3.html" class="btn">Voir l’examen</a>
+                    <a href="3ac-examen-local-3.pdf" target="_blank" class="btn btn-secondary">Ouvrir le PDF</a>
+                    <a href="3ac-examen-local-3.pdf" download class="btn btn-orange">Télécharger</a>
                 </div>
 
             </div>
