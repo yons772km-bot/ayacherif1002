@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen régional n°2 - Béni Mellal-Khénifra - Physique-Chimie 3AC</title>
+
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #222;
+            line-height: 1.7;
+        }
+
+        header.hero {
+            position: relative;
+            color: white;
+            padding: 70px 20px;
+            text-align: center;
+            overflow: hidden;
+            min-height: 430px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-bg-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                135deg,
+                rgba(15, 76, 129, 0.82),
+                rgba(26, 188, 156, 0.68)
+            );
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .site-logo {
+            width: 95px;
+            height: 95px;
+            object-fit: contain;
+            margin-bottom: 15px;
+            border-radius: 50%;
+            background-color: white;
+            padding: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+        }
+
+        header p {
+            font-size: 17px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+        }
+
+        nav {
+            background-color: #083b66;
+            padding: 12px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #1abc9c;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        h2 {
+            color: #0f4c81;
+            margin: 30px 0 15px;
+            border-left: 5px solid #1abc9c;
+            padding-left: 10px;
+            font-size: 26px;
+        }
+
+        h3 {
+            color: #0f4c81;
+            margin: 20px 0 10px;
+        }
+
+        .box {
+            background-color: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+        }
+
+        .definition {
+            background-color: #e8f6f3;
+            border-left: 5px solid #1abc9c;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .important {
+            background-color: #fff7e6;
+            border-left: 5px solid #f39c12;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .resume {
+            background-color: #eef4ff;
+            border-left: 5px solid #0f4c81;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .pdf-box {
+            background-color: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+        }
+
+        .pdf-viewer {
+            width: 100%;
+            height: 750px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        ul, ol {
+            margin-left: 25px;
+            margin-top: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background-color: white;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #0f4c81;
+            color: white;
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 10px 10px 0 0;
+            background-color: #1abc9c;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #14977d;
+        }
+
+        .btn-secondary {
+            background-color: #0f4c81;
+        }
+
+        .btn-secondary:hover {
+            background-color: #083b66;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #eef4ff;
+            color: #083b66;
+            padding: 6px 10px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin: 5px 5px 5px 0;
+            font-size: 14px;
+        }
+
+        footer {
+            background-color: #083b66;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            header.hero {
+                min-height: 360px;
+                padding: 55px 15px;
+            }
+
+            .hero-bg-video {
+                width: auto;
+                height: 100%;
+            }
+
+            header h1 {
+                font-size: 28px;
+            }
+
+            header p {
+                font-size: 15px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 6px;
+                font-size: 14px;
+            }
+
+            .pdf-viewer {
+                height: 520px;
+            }
+
+            .container {
+                padding: 30px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="hero">
+
+        <video class="hero-bg-video" autoplay muted loop playsinline>
+            <source src="background.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo.
+        </video>
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <img src="logo.png" alt="Logo Physique-Chimie Collège" class="site-logo" onerror="this.style.display='none'">
+
+            <h1>Examen régional n°2</h1>
+            <p>Région Béni Mellal-Khénifra | 3ème année collège | Physique-Chimie</p>
+        </div>
+
+    </header>
+
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="3ac.html">Cours 3AC</a>
+        <a href="3ac-examens-regionaux.html">Examens régionaux</a>
+        <a href="#presentation">Présentation</a>
+        <a href="#pdf">PDF</a>
+        <a href="#preparation">Préparation</a>
+        <a href="#conseils">Conseils</a>
+    </nav>
+
+    <div class="container">
+
+        <section id="presentation">
+            <h2>Présentation de l’examen</h2>
+
+            <div class="box">
+                <p>
+                    Cette page est consacrée à l’<strong>examen régional n°2</strong> de physique-chimie
+                    pour la <strong>3ème année collège</strong>, région
+                    <strong>Béni Mellal-Khénifra</strong>.
+                </p>
+
+                <div class="definition">
+                    <strong>Objectif :</strong>
+                    permettre aux élèves de s’entraîner avec un sujet régional complet,
+                    de consolider les acquis du programme et d’améliorer leur méthode
+                    de résolution avant l’épreuve finale.
+                </div>
+
+                <div>
+                    <span class="tag">3AC</span>
+                    <span class="tag">Physique-Chimie</span>
+                    <span class="tag">Examen régional</span>
+                    <span class="tag">Béni Mellal-Khénifra</span>
+                    <span class="tag">Sujet n°2</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="pdf">
+            <h2>Document PDF de l’examen</h2>
+
+            <div class="pdf-box">
+                <p>
+                    Le sujet régional peut être consulté directement sur cette page.
+                    Vous pouvez aussi l’ouvrir dans un nouvel onglet ou le télécharger.
+                </p>
+
+                <a href="./3ac-examen-regional-2-beni-mellal-khenifra.pdf" target="_blank" class="btn">
+                    Ouvrir le PDF
+                </a>
+
+                <a href="./3ac-examen-regional-2-beni-mellal-khenifra.pdf" download class="btn btn-secondary">
+                    Télécharger le PDF
+                </a>
+
+                <iframe src="./3ac-examen-regional-2-beni-mellal-khenifra.pdf" class="pdf-viewer"></iframe>
+            </div>
+        </section>
+
+        <section id="preparation">
+            <h2>Comment travailler cet examen ?</h2>
+
+            <div class="box">
+                <h3>1. Méthode de travail</h3>
+
+                <ol>
+                    <li>Commence par lire tout le sujet attentivement.</li>
+                    <li>Repère les exercices faciles et commence par eux.</li>
+                    <li>Note les données importantes dans chaque exercice.</li>
+                    <li>Utilise les formules correctement avec les unités.</li>
+                    <li>Relis les réponses avant de terminer.</li>
+                </ol>
+
+                <div class="important">
+                    <strong>Important :</strong>
+                    dans un examen régional, il ne suffit pas de donner le résultat.
+                    Il faut présenter une démarche claire, écrire les calculs et justifier les réponses.
+                </div>
+            </div>
+
+            <div class="box">
+                <h3>2. Notions à réviser</h3>
+
+                <table>
+                    <tr>
+                        <th>Domaine</th>
+                        <th>Notions importantes</th>
+                    </tr>
+                    <tr>
+                        <td>Chimie</td>
+                        <td>
+                            Atomes, ions, solutions acides et basiques, pH, tests de reconnaissance,
+                            oxydation des métaux et réactions chimiques.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Électricité</td>
+                        <td>
+                            Loi d’Ohm, tension, intensité, résistance, puissance électrique,
+                            énergie électrique et unités de mesure.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Mécanique</td>
+                        <td>
+                            Mouvement, repos, vitesse moyenne, actions mécaniques, forces,
+                            équilibre, poids et masse.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Méthode</td>
+                        <td>
+                            Organisation des réponses, conversions, schémas, justification
+                            et vérification des résultats.
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <section id="conseils">
+            <h2>Conseils pour réussir</h2>
+
+            <div class="resume">
+                <ul>
+                    <li>Travaille le sujet comme une vraie épreuve.</li>
+                    <li>Utilise un brouillon pour préparer les calculs.</li>
+                    <li>Encadre les résultats finaux.</li>
+                    <li>Vérifie toujours les unités.</li>
+                    <li>Pour les équations chimiques, vérifie la conservation des atomes.</li>
+                    <li>Compare ensuite tes réponses avec le corrigé si tu en as un.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="navigation">
+            <h2>Navigation</h2>
+
+            <div class="box">
+                <a href="3ac-examen-regional-1-beni-mellal-khenifra.html" class="btn">Examen régional précédent</a>
+                <a href="3ac-examens-regionaux.html" class="btn">Retour aux examens régionaux</a>
+                <a href="3ac.html" class="btn">Retour aux cours 3AC</a>
+                <a href="index.html" class="btn">Retour à l’accueil</a>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>© 2026 - Physique-Chimie Collège | Examen régional n°2 - Béni Mellal-Khénifra</p>
+    </footer>
+
+</body>
+</html>
