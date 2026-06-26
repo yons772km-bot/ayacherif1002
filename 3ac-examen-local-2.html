@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen local n°2 - Physique-Chimie 3AC</title>
+
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #222;
+            line-height: 1.7;
+        }
+
+        header.hero {
+            position: relative;
+            color: white;
+            padding: 70px 20px;
+            text-align: center;
+            overflow: hidden;
+            min-height: 430px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-bg-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                135deg,
+                rgba(15, 76, 129, 0.80),
+                rgba(26, 188, 156, 0.68)
+            );
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .site-logo {
+            width: 95px;
+            height: 95px;
+            object-fit: contain;
+            margin-bottom: 15px;
+            border-radius: 50%;
+            background-color: white;
+            padding: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+        }
+
+        header p {
+            font-size: 17px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+        }
+
+        nav {
+            background-color: #083b66;
+            padding: 12px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #1abc9c;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        h2 {
+            color: #0f4c81;
+            margin: 30px 0 15px;
+            border-left: 5px solid #1abc9c;
+            padding-left: 10px;
+            font-size: 26px;
+        }
+
+        h3 {
+            color: #0f4c81;
+            margin: 20px 0 10px;
+        }
+
+        .box {
+            background-color: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+        }
+
+        .definition {
+            background-color: #e8f6f3;
+            border-left: 5px solid #1abc9c;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .important {
+            background-color: #fff7e6;
+            border-left: 5px solid #f39c12;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .resume {
+            background-color: #eef4ff;
+            border-left: 5px solid #0f4c81;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .pdf-box {
+            background-color: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+        }
+
+        .pdf-viewer {
+            width: 100%;
+            height: 750px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        ul, ol {
+            margin-left: 25px;
+            margin-top: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background-color: white;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #0f4c81;
+            color: white;
+        }
+
+        .formula {
+            text-align: center;
+            font-size: 21px;
+            color: #083b66;
+            font-weight: bold;
+            margin: 20px 0;
+            background-color: #eef4ff;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .note {
+            background-color: #f8fcff;
+            border: 1px solid #dceeff;
+            border-left: 5px solid #0f4c81;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 10px 10px 0 0;
+            background-color: #1abc9c;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #14977d;
+        }
+
+        footer {
+            background-color: #083b66;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            header.hero {
+                min-height: 360px;
+                padding: 55px 15px;
+            }
+
+            .hero-bg-video {
+                width: auto;
+                height: 100%;
+            }
+
+            header h1 {
+                font-size: 28px;
+            }
+
+            header p {
+                font-size: 15px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 6px;
+                font-size: 14px;
+            }
+
+            .pdf-viewer {
+                height: 520px;
+            }
+
+            .container {
+                padding: 30px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="hero">
+
+        <video class="hero-bg-video" autoplay muted loop playsinline>
+            <source src="background.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo.
+        </video>
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <img src="logo.png" alt="Logo Physique-Chimie Collège" class="site-logo" onerror="this.style.display='none'">
+
+            <h1>Examen local n°2</h1>
+            <p>3ème année collège | Physique-Chimie | Sujet, PDF, corrigé indicatif et conseils</p>
+        </div>
+
+    </header>
+
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="3ac.html">Cours 3AC</a>
+        <a href="3ac-examens-locaux.html">Examens locaux</a>
+        <a href="#presentation">Présentation</a>
+        <a href="#pdf">PDF</a>
+        <a href="#sujet">Sujet</a>
+        <a href="#corrige">Corrigé</a>
+        <a href="#conseils">Conseils</a>
+    </nav>
+
+    <div class="container">
+
+        <section id="presentation">
+            <h2>Présentation de l’examen</h2>
+
+            <div class="box">
+                <p>
+                    Cette page présente l’examen local n°2 de physique-chimie pour la troisième année collège.
+                    L’examen traite plusieurs notions importantes du programme : les objets et matériaux,
+                    les atomes et les ions, les solutions acides et basiques, l’oxydation de l’aluminium,
+                    la combustion du PVC et la réaction des métaux avec l’acide chlorhydrique.
+                </p>
+
+                <div class="definition">
+                    <strong>Objectif :</strong>
+                    aider l’élève à s’entraîner sur un sujet complet, à réviser les notions essentielles
+                    et à vérifier ses réponses grâce au corrigé indicatif.
+                </div>
+            </div>
+        </section>
+
+        <section id="pdf">
+            <h2>Document PDF de l’examen</h2>
+
+            <div class="pdf-box">
+                <p>
+                    Vous pouvez consulter le PDF directement sur cette page,
+                    l’ouvrir dans un nouvel onglet ou le télécharger.
+                </p>
+
+                <a href="./3ac-examen-local-2.pdf" target="_blank" class="btn">Ouvrir le PDF</a>
+                <a href="./3ac-examen-local-2.pdf" download class="btn">Télécharger le PDF</a>
+
+                <iframe src="./3ac-examen-local-2.pdf" class="pdf-viewer"></iframe>
+            </div>
+        </section>
+
+        <section id="sujet">
+            <h2>Sujet de l’examen</h2>
+
+            <div class="box">
+                <h3>I- Exercice 1 : Objets, matériaux, atomes et ions</h3>
+
+                <p><strong>1. Classer dans le tableau les mots suivants en objets et matériaux :</strong></p>
+
+                <p>
+                    bouteille - PVC - clé en métal - or - fenêtre - chaise - PET - fer
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Objets</th>
+                        <th>Matériaux</th>
+                    </tr>
+                    <tr>
+                        <td>....................................................</td>
+                        <td>....................................................</td>
+                    </tr>
+                    <tr>
+                        <td>....................................................</td>
+                        <td>....................................................</td>
+                    </tr>
+                </table>
+
+                <h3>2. Répondre par vrai ou faux</h3>
+
+                <ol>
+                    <li>Un anion est un atome ou un groupe d’atomes qui a perdu un ou plusieurs électrons : ............</li>
+                    <li>Le papier est un matériau organique : ............</li>
+                    <li>H<sup>+</sup> est l’ion responsable du caractère acide : ............</li>
+                    <li>Lorsqu’on dilue une solution acide, son pH augmente : ............</li>
+                    <li>L’aluminium est attiré par l’aimant : ............</li>
+                    <li>La rouille est un composé poreux : ............</li>
+                </ol>
+
+                <h3>3. Compléter les phrases</h3>
+
+                <p>
+                    Compléter en utilisant les mots suivants :
+                    <strong>Fe<sub>2</sub>O<sub>3</sub> - négative - électrons - noyau - fer - poreuse - la rouille - positive</strong>.
+                </p>
+
+                <p>
+                    L’atome se constitue d’un __________ portant une charge électrique __________,
+                    autour duquel tournent des __________ portant une charge électrique __________.
+                </p>
+
+                <p>
+                    L’air humide agit sur le métal de __________, ainsi se forme une couche
+                    appelée __________ de formule chimique __________.
+                </p>
+
+                <h3>4. Cocher la bonne réponse</h3>
+
+                <table>
+                    <tr>
+                        <th>Question</th>
+                        <th>Choix proposés</th>
+                    </tr>
+                    <tr>
+                        <td>L’ion HO<sup>-</sup> est un réactif qui permet d’identifier :</td>
+                        <td>
+                            Cu<sup>2+</sup><br>
+                            Fe<br>
+                            Cl<sup>-</sup>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>La combustion des matières organiques peut produire des gaz toxiques comme :</td>
+                        <td>
+                            Le chlorure d’hydrogène<br>
+                            Le carbone<br>
+                            Le dioxygène
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="box">
+                <h3>II- Exercice 2 : PVC, aluminium et pH</h3>
+
+                <h3>Partie 1 : Combustion du PVC</h3>
+
+                <p>
+                    La combustion du PVC dans le dioxygène de l’air produit de la vapeur d’eau,
+                    du dioxyde de carbone et du chlorure d’hydrogène HCl.
+                </p>
+
+                <ol>
+                    <li>Quels sont les atomes entrant dans la composition du PVC ?</li>
+                    <li>Le PVC est-il une matière organique ? Justifier la réponse.</li>
+                </ol>
+
+                <h3>Partie 2 : Atome et ion d’aluminium</h3>
+
+                <p>
+                    On utilise l’aluminium Al dans la vie quotidienne.
+                    Le numéro atomique de l’atome d’aluminium est :
+                </p>
+
+                <div class="formula">
+                    Z(Al) = 13
+                </div>
+
+                <ol>
+                    <li>Déterminer le nombre des électrons de l’atome d’aluminium.</li>
+                    <li>Déterminer la charge électrique des électrons de l’atome d’aluminium en Coulomb.</li>
+                </ol>
+
+                <p>On donne :</p>
+
+                <div class="formula">
+                    e = 1,6 × 10<sup>-19</sup> C
+                </div>
+
+                <ol start="3">
+                    <li>Déterminer la charge électrique du noyau de l’atome d’aluminium en Coulomb.</li>
+                    <li>Donner la formule chimique de l’ion aluminium lorsque l’atome perd 3 électrons.</li>
+                    <li>Déterminer la charge des électrons de l’ion en fonction de e.</li>
+                    <li>Calculer en fonction de e la charge de l’ion aluminium.</li>
+                    <li>Écrire l’équation d’oxydation de l’aluminium.</li>
+                </ol>
+
+                <h3>Partie 3 : Étude du pH</h3>
+
+                <p>
+                    On considère les solutions suivantes :
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Solution</th>
+                        <th>A</th>
+                        <th>B</th>
+                        <th>C</th>
+                        <th>D</th>
+                        <th>E</th>
+                        <th>F</th>
+                    </tr>
+                    <tr>
+                        <td>pH</td>
+                        <td>7,0</td>
+                        <td>1,1</td>
+                        <td>11,5</td>
+                        <td>13,3</td>
+                        <td>5,0</td>
+                        <td>9,6</td>
+                    </tr>
+                    <tr>
+                        <td>Type de la solution</td>
+                        <td>........</td>
+                        <td>........</td>
+                        <td>........</td>
+                        <td>........</td>
+                        <td>........</td>
+                        <td>........</td>
+                    </tr>
+                </table>
+
+                <ol>
+                    <li>Compléter le tableau ci-dessus.</li>
+                    <li>Quelle est la solution la plus acide et quelle est la solution la plus basique ?</li>
+                    <li>On ajoute un volume de solution B à de l’eau distillée. Donner le nom de ce processus.</li>
+                    <li>Encadrer la valeur du pH de la nouvelle solution après cette opération.</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>III- Exercice 3 : Réaction d’un métal avec l’acide chlorhydrique</h3>
+
+                <p>
+                    Karim a trouvé deux plaques métalliques A et B dans le laboratoire.
+                    Pour les distinguer, il a introduit chaque plaque dans un bécher contenant
+                    une solution d’acide chlorhydrique.
+                </p>
+
+                <p>
+                    Il observe un dégagement gazeux dans le bécher contenant la plaque A.
+                    Par contre, il ne se produit rien dans l’autre bécher.
+                </p>
+
+                <ol>
+                    <li>Donner le nom du gaz produit.</li>
+                    <li>
+                        Karim ajoute des gouttes de solution de soude dans le bécher contenant la plaque A.
+                        Il observe la formation d’un précipité vert. Donner le nom du précipité vert.
+                    </li>
+                    <li>En déduire le métal formant la plaque A.</li>
+                    <li>Écrire l’équation de formation du précipité vert.</li>
+                    <li>Écrire l’équation bilan de la réaction entre la plaque A et l’acide chlorhydrique.</li>
+                    <li>La plaque B est caractérisée par une couleur rouge brique. Quel est le métal qui constitue la plaque B ?</li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="corrige">
+            <h2>Corrigé indicatif</h2>
+
+            <div class="box">
+                <h3>I- Correction de l’exercice 1</h3>
+
+                <h3>1. Classement des objets et matériaux</h3>
+
+                <table>
+                    <tr>
+                        <th>Objets</th>
+                        <th>Matériaux</th>
+                    </tr>
+                    <tr>
+                        <td>Bouteille</td>
+                        <td>PVC</td>
+                    </tr>
+                    <tr>
+                        <td>Clé en métal</td>
+                        <td>Or</td>
+                    </tr>
+                    <tr>
+                        <td>Fenêtre</td>
+                        <td>PET</td>
+                    </tr>
+                    <tr>
+                        <td>Chaise</td>
+                        <td>Fer</td>
+                    </tr>
+                </table>
+
+                <h3>2. Vrai ou faux</h3>
+
+                <table>
+                    <tr>
+                        <th>Proposition</th>
+                        <th>Réponse</th>
+                        <th>Justification</th>
+                    </tr>
+                    <tr>
+                        <td>Un anion est un atome ou un groupe d’atomes qui a perdu un ou plusieurs électrons.</td>
+                        <td>Faux</td>
+                        <td>Un anion a gagné un ou plusieurs électrons.</td>
+                    </tr>
+                    <tr>
+                        <td>Le papier est un matériau organique.</td>
+                        <td>Vrai</td>
+                        <td>Le papier provient de la cellulose, une matière organique.</td>
+                    </tr>
+                    <tr>
+                        <td>H<sup>+</sup> est l’ion responsable du caractère acide.</td>
+                        <td>Vrai</td>
+                        <td>Les solutions acides contiennent des ions H<sup>+</sup>.</td>
+                    </tr>
+                    <tr>
+                        <td>Lorsqu’on dilue une solution acide, son pH augmente.</td>
+                        <td>Vrai</td>
+                        <td>Le pH d’une solution acide diluée se rapproche de 7.</td>
+                    </tr>
+                    <tr>
+                        <td>L’aluminium est attiré par l’aimant.</td>
+                        <td>Faux</td>
+                        <td>L’aluminium n’est pas attiré par l’aimant.</td>
+                    </tr>
+                    <tr>
+                        <td>La rouille est un composé poreux.</td>
+                        <td>Vrai</td>
+                        <td>La rouille ne protège pas le fer contre la corrosion.</td>
+                    </tr>
+                </table>
+
+                <h3>3. Phrases complétées</h3>
+
+                <p>
+                    L’atome se constitue d’un <strong>noyau</strong> portant une charge électrique
+                    <strong>positive</strong>, autour duquel tournent des <strong>électrons</strong>
+                    portant une charge électrique <strong>négative</strong>.
+                </p>
+
+                <p>
+                    L’air humide agit sur le métal de <strong>fer</strong>, ainsi se forme
+                    une couche <strong>poreuse</strong> appelée <strong>la rouille</strong>
+                    de formule chimique <strong>Fe<sub>2</sub>O<sub>3</sub></strong>.
+                </p>
+
+                <h3>4. Bonnes réponses</h3>
+
+                <table>
+                    <tr>
+                        <th>Question</th>
+                        <th>Réponse correcte</th>
+                    </tr>
+                    <tr>
+                        <td>L’ion HO<sup>-</sup> permet d’identifier :</td>
+                        <td>Cu<sup>2+</sup></td>
+                    </tr>
+                    <tr>
+                        <td>La combustion des matières organiques peut produire des gaz toxiques comme :</td>
+                        <td>Le chlorure d’hydrogène</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="box">
+                <h3>II- Correction de l’exercice 2</h3>
+
+                <h3>Partie 1 : PVC</h3>
+
+                <p>
+                    Le PVC contient les atomes suivants :
+                    <strong>carbone C</strong>, <strong>hydrogène H</strong> et
+                    <strong>chlore Cl</strong>.
+                </p>
+
+                <p>
+                    Le PVC est une matière organique car il contient du carbone et de l’hydrogène.
+                    Sa combustion produit aussi du dioxyde de carbone et de la vapeur d’eau.
+                </p>
+
+                <h3>Partie 2 : Aluminium</h3>
+
+                <p>
+                    L’atome d’aluminium possède un numéro atomique :
+                </p>
+
+                <div class="formula">
+                    Z(Al) = 13
+                </div>
+
+                <ol>
+                    <li>
+                        L’atome d’aluminium est électriquement neutre, donc il possède
+                        <strong>13 électrons</strong>.
+                    </li>
+                    <li>
+                        La charge électrique des électrons est :
+                    </li>
+                </ol>
+
+                <div class="formula">
+                    Q<sub>électrons</sub> = -13e = -13 × 1,6 × 10<sup>-19</sup> C
+                    = -2,08 × 10<sup>-18</sup> C
+                </div>
+
+                <p>
+                    La charge électrique du noyau est :
+                </p>
+
+                <div class="formula">
+                    Q<sub>noyau</sub> = +13e = +2,08 × 10<sup>-18</sup> C
+                </div>
+
+                <p>
+                    Lorsque l’atome d’aluminium perd 3 électrons, il devient l’ion :
+                </p>
+
+                <div class="formula">
+                    Al<sup>3+</sup>
+                </div>
+
+                <p>
+                    L’ion aluminium possède alors 10 électrons.
+                </p>
+
+                <div class="formula">
+                    Q<sub>électrons de l’ion</sub> = -10e
+                </div>
+
+                <p>
+                    La charge de l’ion aluminium est :
+                </p>
+
+                <div class="formula">
+                    Q<sub>ion</sub> = +13e - 10e = +3e
+                </div>
+
+                <p>
+                    L’équation d’oxydation de l’aluminium est :
+                </p>
+
+                <div class="formula">
+                    4 Al + 3 O<sub>2</sub> → 2 Al<sub>2</sub>O<sub>3</sub>
+                </div>
+
+                <h3>Partie 3 : pH des solutions</h3>
+
+                <table>
+                    <tr>
+                        <th>Solution</th>
+                        <th>A</th>
+                        <th>B</th>
+                        <th>C</th>
+                        <th>D</th>
+                        <th>E</th>
+                        <th>F</th>
+                    </tr>
+                    <tr>
+                        <td>pH</td>
+                        <td>7,0</td>
+                        <td>1,1</td>
+                        <td>11,5</td>
+                        <td>13,3</td>
+                        <td>5,0</td>
+                        <td>9,6</td>
+                    </tr>
+                    <tr>
+                        <td>Type</td>
+                        <td>Neutre</td>
+                        <td>Acide</td>
+                        <td>Basique</td>
+                        <td>Basique</td>
+                        <td>Acide</td>
+                        <td>Basique</td>
+                    </tr>
+                </table>
+
+                <p>
+                    La solution la plus acide est la solution <strong>B</strong>, car elle possède
+                    le plus petit pH : <strong>pH = 1,1</strong>.
+                </p>
+
+                <p>
+                    La solution la plus basique est la solution <strong>D</strong>, car elle possède
+                    le plus grand pH : <strong>pH = 13,3</strong>.
+                </p>
+
+                <p>
+                    Lorsqu’on ajoute la solution B à de l’eau distillée, on réalise une
+                    <strong>dilution</strong>.
+                </p>
+
+                <p>
+                    Comme la solution B est acide, son pH augmente après dilution mais reste inférieur à 7.
+                </p>
+
+                <div class="formula">
+                    1,1 &lt; pH &lt; 7
+                </div>
+            </div>
+
+            <div class="box">
+                <h3>III- Correction de l’exercice 3</h3>
+
+                <p>
+                    Le gaz produit lors de la réaction entre la plaque A et l’acide chlorhydrique
+                    est le <strong>dihydrogène H<sub>2</sub></strong>.
+                </p>
+
+                <p>
+                    Le précipité vert formé avec la solution de soude est :
+                </p>
+
+                <div class="formula">
+                    Hydroxyde de fer II : Fe(OH)<sub>2</sub>
+                </div>
+
+                <p>
+                    On en déduit que la plaque A est formée de <strong>fer Fe</strong>.
+                </p>
+
+                <p>
+                    L’équation de formation du précipité vert est :
+                </p>
+
+                <div class="formula">
+                    Fe<sup>2+</sup> + 2 HO<sup>-</sup> → Fe(OH)<sub>2</sub>
+                </div>
+
+                <p>
+                    L’équation bilan de la réaction entre le fer et l’acide chlorhydrique est :
+                </p>
+
+                <div class="formula">
+                    Fe + 2 HCl → FeCl<sub>2</sub> + H<sub>2</sub>
+                </div>
+
+                <p>
+                    La plaque B est caractérisée par une couleur rouge brique.
+                    Le métal qui constitue la plaque B est donc le <strong>cuivre Cu</strong>.
+                </p>
+            </div>
+        </section>
+
+        <section id="conseils">
+            <h2>Conseils de révision</h2>
+
+            <div class="resume">
+                <ul>
+                    <li>Réviser la différence entre un objet et un matériau.</li>
+                    <li>Maîtriser la différence entre cation et anion.</li>
+                    <li>Retenir que l’ion H<sup>+</sup> est responsable du caractère acide.</li>
+                    <li>Retenir que pH &lt; 7 signifie acide, pH = 7 signifie neutre et pH &gt; 7 signifie basique.</li>
+                    <li>Connaître l’oxydation de l’aluminium : formation de l’alumine Al<sub>2</sub>O<sub>3</sub>.</li>
+                    <li>Connaître la réaction du fer avec l’acide chlorhydrique.</li>
+                    <li>Retenir que le précipité vert Fe(OH)<sub>2</sub> indique la présence des ions Fe<sup>2+</sup>.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="navigation">
+            <h2>Navigation</h2>
+
+            <div class="box">
+                <a href="3ac-examen-local-1.html" class="btn">Examen local précédent</a>
+                <a href="3ac-examens-locaux.html" class="btn">Retour aux examens locaux</a>
+                <a href="3ac.html" class="btn">Retour aux cours 3AC</a>
+                <a href="index.html" class="btn">Retour à l’accueil</a>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>© 2026 - Physique-Chimie Collège | Examen local n°2 - 3AC</p>
+    </footer>
+
+</body>
+</html>
