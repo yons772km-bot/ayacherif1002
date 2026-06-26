@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen local n°1 - Physique-Chimie 3AC</title>
+
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #222;
+            line-height: 1.7;
+        }
+
+        header.hero {
+            position: relative;
+            color: white;
+            padding: 70px 20px;
+            text-align: center;
+            overflow: hidden;
+            min-height: 430px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-bg-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                135deg,
+                rgba(15, 76, 129, 0.80),
+                rgba(26, 188, 156, 0.68)
+            );
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .site-logo {
+            width: 95px;
+            height: 95px;
+            object-fit: contain;
+            margin-bottom: 15px;
+            border-radius: 50%;
+            background-color: white;
+            padding: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+        }
+
+        header p {
+            font-size: 17px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+        }
+
+        nav {
+            background-color: #083b66;
+            padding: 12px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #1abc9c;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        h2 {
+            color: #0f4c81;
+            margin: 30px 0 15px;
+            border-left: 5px solid #1abc9c;
+            padding-left: 10px;
+            font-size: 26px;
+        }
+
+        h3 {
+            color: #0f4c81;
+            margin: 20px 0 10px;
+        }
+
+        .box {
+            background-color: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+        }
+
+        .definition {
+            background-color: #e8f6f3;
+            border-left: 5px solid #1abc9c;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .important {
+            background-color: #fff7e6;
+            border-left: 5px solid #f39c12;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .resume {
+            background-color: #eef4ff;
+            border-left: 5px solid #0f4c81;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .pdf-box {
+            background-color: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+        }
+
+        .pdf-viewer {
+            width: 100%;
+            height: 750px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        ul, ol {
+            margin-left: 25px;
+            margin-top: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background-color: white;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #0f4c81;
+            color: white;
+        }
+
+        .formula {
+            text-align: center;
+            font-size: 21px;
+            color: #083b66;
+            font-weight: bold;
+            margin: 20px 0;
+            background-color: #eef4ff;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 10px 10px 0 0;
+            background-color: #1abc9c;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #14977d;
+        }
+
+        .note {
+            background-color: #f8fcff;
+            border: 1px solid #dceeff;
+            border-left: 5px solid #0f4c81;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        footer {
+            background-color: #083b66;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            header.hero {
+                min-height: 360px;
+                padding: 55px 15px;
+            }
+
+            .hero-bg-video {
+                width: auto;
+                height: 100%;
+            }
+
+            header h1 {
+                font-size: 28px;
+            }
+
+            header p {
+                font-size: 15px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 6px;
+                font-size: 14px;
+            }
+
+            .pdf-viewer {
+                height: 520px;
+            }
+
+            .container {
+                padding: 30px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="hero">
+
+        <video class="hero-bg-video" autoplay muted loop playsinline>
+            <source src="background.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo.
+        </video>
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <img src="logo.png" alt="Logo Physique-Chimie Collège" class="site-logo" onerror="this.style.display='none'">
+
+            <h1>Examen local n°1</h1>
+            <p>3ème année collège | Physique-Chimie | Sujet, PDF, corrigé indicatif et conseils de révision</p>
+        </div>
+
+    </header>
+
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="3ac.html">Cours 3AC</a>
+        <a href="3ac-examens-locaux.html">Examens locaux</a>
+        <a href="#presentation">Présentation</a>
+        <a href="#pdf">PDF</a>
+        <a href="#sujet">Sujet</a>
+        <a href="#corrige">Corrigé</a>
+        <a href="#conseils">Conseils</a>
+    </nav>
+
+    <div class="container">
+
+        <section id="presentation">
+            <h2>Présentation de l’examen</h2>
+
+            <div class="box">
+                <p>
+                    Cette page présente l’examen local n°1 de physique-chimie pour la troisième année collège.
+                    L’examen porte principalement sur les atomes et les ions, les solutions acides et basiques,
+                    l’oxydation des métaux et la combustion d’une matière organique comme le PVC.
+                </p>
+
+                <div class="definition">
+                    <strong>Objectif :</strong>
+                    permettre aux élèves de s’entraîner à répondre aux questions de l’examen,
+                    de vérifier leurs réponses à l’aide du corrigé indicatif et de réviser
+                    les notions essentielles du programme.
+                </div>
+            </div>
+        </section>
+
+        <section id="pdf">
+            <h2>Document PDF de l’examen avec corrigé</h2>
+
+            <div class="pdf-box">
+                <p>
+                    Vous pouvez consulter le PDF directement sur cette page,
+                    l’ouvrir dans un nouvel onglet ou le télécharger.
+                </p>
+
+                <a href="./3ac-examen-local-1.pdf" target="_blank" class="btn">Ouvrir le PDF</a>
+                <a href="./3ac-examen-local-1.pdf" download class="btn">Télécharger le PDF</a>
+
+                <iframe src="./3ac-examen-local-1.pdf" class="pdf-viewer"></iframe>
+            </div>
+        </section>
+
+        <section id="sujet">
+            <h2>Sujet de l’examen</h2>
+
+            <div class="box">
+                <h3>I- Exercice 1 : Atomes, ions et matériaux</h3>
+
+                <p><strong>1. Répondre par vrai ou faux :</strong></p>
+
+                <ol>
+                    <li>L’ion est électriquement neutre : ............</li>
+                    <li>Le verre est un conducteur électrique : ............</li>
+                    <li>L’objet est fabriqué par un ou plusieurs matériaux : ............</li>
+                    <li>Lorsqu’on dilue les solutions acides, le pH augmente : ............</li>
+                </ol>
+
+                <p><strong>2. Relier chaque élément de la colonne A avec l’élément convenable de la colonne B :</strong></p>
+
+                <table>
+                    <tr>
+                        <th>Colonne A</th>
+                        <th>Colonne B</th>
+                    </tr>
+                    <tr>
+                        <td>Charge d’un électron</td>
+                        <td>+Ze</td>
+                    </tr>
+                    <tr>
+                        <td>Symbole de l’électron</td>
+                        <td>-e</td>
+                    </tr>
+                    <tr>
+                        <td>Charge élémentaire</td>
+                        <td>e<sup>-</sup></td>
+                    </tr>
+                    <tr>
+                        <td>Charge du noyau</td>
+                        <td>e</td>
+                    </tr>
+                </table>
+
+                <p><strong>3. Compléter le tableau suivant :</strong></p>
+
+                <table>
+                    <tr>
+                        <th>Atome / Ion</th>
+                        <th>Symbole</th>
+                        <th>Numéro atomique</th>
+                        <th>Charge du noyau</th>
+                        <th>Charge des électrons</th>
+                        <th>Formule ion</th>
+                        <th>Charge d’ion</th>
+                    </tr>
+                    <tr>
+                        <td>Atome de zinc</td>
+                        <td>Zn</td>
+                        <td>30</td>
+                        <td>........</td>
+                        <td>........</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Ion zinc</td>
+                        <td></td>
+                        <td></td>
+                        <td>........</td>
+                        <td>-28e</td>
+                        <td>Zn<sup>2+</sup></td>
+                        <td>........</td>
+                    </tr>
+                    <tr>
+                        <td>Atome de chlore</td>
+                        <td>Cl</td>
+                        <td>........</td>
+                        <td>........</td>
+                        <td>-17e</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Ion chlorure</td>
+                        <td></td>
+                        <td></td>
+                        <td>........</td>
+                        <td>-18e</td>
+                        <td>........</td>
+                        <td>-e</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="box">
+                <h3>II- Exercice 2 : pH, solutions et oxydation</h3>
+
+                <p>
+                    Le tableau suivant donne les pH de différentes solutions :
+                </p>
+
+                <table>
+                    <tr>
+                        <th>Solution</th>
+                        <th>Eau de javel</th>
+                        <th>Chlorure de sodium</th>
+                        <th>Acide chlorhydrique</th>
+                        <th>Eau de chaux</th>
+                        <th>Hydroxyde de sodium</th>
+                    </tr>
+                    <tr>
+                        <td>Valeur de pH</td>
+                        <td>10</td>
+                        <td>7</td>
+                        <td>3</td>
+                        <td>8</td>
+                        <td>11</td>
+                    </tr>
+                    <tr>
+                        <td>Nature</td>
+                        <td>........</td>
+                        <td>........</td>
+                        <td>........</td>
+                        <td>........</td>
+                        <td>........</td>
+                    </tr>
+                </table>
+
+                <ol>
+                    <li>Quelle est la méthode utilisée pour mesurer le pH de ces solutions ? Justifier.</li>
+                    <li>Donner, dans le tableau, la nature de chaque solution : acide, basique ou neutre.</li>
+                    <li>Un élève ajoute une quantité de solution d’hydroxyde de sodium à une quantité d’eau pure. Quel est le nom de ce processus ?</li>
+                    <li>Parmi les valeurs suivantes, déterminer le pH de la solution obtenue : pH = 5 ; pH = 8 ; pH = 13.</li>
+                    <li>Donner le nom chimique et la formule du composant essentiel de la rouille.</li>
+                    <li>Donner le nom chimique et la formule de l’alumine.</li>
+                    <li>Expliquer pourquoi le fer est corrosif, c’est-à-dire pourquoi il se dégrade.</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>III- Exercice 3 : Combustion du PVC</h3>
+
+                <p>
+                    On brûle un morceau de plastique de type PVC dans un flacon contenant du dioxygène.
+                    On observe :
+                </p>
+
+                <ul>
+                    <li>dégagement du gaz chlorure d’hydrogène ;</li>
+                    <li>formation de vapeur d’eau ;</li>
+                    <li>dégagement de dioxyde de carbone.</li>
+                </ul>
+
+                <ol>
+                    <li>Donner le nom des réactifs et des produits.</li>
+                    <li>Écrire le bilan de cette réaction.</li>
+                    <li>Déterminer les types d’atomes qui composent le PVC.</li>
+                    <li>Déduire que le PVC est une matière organique.</li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="corrige">
+            <h2>Corrigé indicatif</h2>
+
+            <div class="box">
+                <h3>I- Correction de l’exercice 1</h3>
+
+                <h3>1. Vrai ou faux</h3>
+
+                <table>
+                    <tr>
+                        <th>Proposition</th>
+                        <th>Réponse</th>
+                        <th>Justification</th>
+                    </tr>
+                    <tr>
+                        <td>L’ion est électriquement neutre.</td>
+                        <td>Faux</td>
+                        <td>Un ion porte une charge électrique positive ou négative.</td>
+                    </tr>
+                    <tr>
+                        <td>Le verre est un conducteur électrique.</td>
+                        <td>Faux</td>
+                        <td>Le verre est un isolant électrique.</td>
+                    </tr>
+                    <tr>
+                        <td>L’objet est fabriqué par un ou plusieurs matériaux.</td>
+                        <td>Vrai</td>
+                        <td>Un objet peut être constitué d’un ou de plusieurs matériaux.</td>
+                    </tr>
+                    <tr>
+                        <td>Lorsqu’on dilue les solutions acides, le pH augmente.</td>
+                        <td>Vrai</td>
+                        <td>La dilution d’une solution acide fait augmenter son pH vers 7.</td>
+                    </tr>
+                </table>
+
+                <h3>2. Correspondances</h3>
+
+                <table>
+                    <tr>
+                        <th>Élément</th>
+                        <th>Correspondance</th>
+                    </tr>
+                    <tr>
+                        <td>Charge d’un électron</td>
+                        <td>-e</td>
+                    </tr>
+                    <tr>
+                        <td>Symbole de l’électron</td>
+                        <td>e<sup>-</sup></td>
+                    </tr>
+                    <tr>
+                        <td>Charge élémentaire</td>
+                        <td>e</td>
+                    </tr>
+                    <tr>
+                        <td>Charge du noyau</td>
+                        <td>+Ze</td>
+                    </tr>
+                </table>
+
+                <h3>3. Tableau complété</h3>
+
+                <table>
+                    <tr>
+                        <th>Atome / Ion</th>
+                        <th>Symbole</th>
+                        <th>Z</th>
+                        <th>Charge du noyau</th>
+                        <th>Charge des électrons</th>
+                        <th>Formule ion</th>
+                        <th>Charge d’ion</th>
+                    </tr>
+                    <tr>
+                        <td>Atome de zinc</td>
+                        <td>Zn</td>
+                        <td>30</td>
+                        <td>+30e</td>
+                        <td>-30e</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Ion zinc</td>
+                        <td></td>
+                        <td></td>
+                        <td>+30e</td>
+                        <td>-28e</td>
+                        <td>Zn<sup>2+</sup></td>
+                        <td>+2e</td>
+                    </tr>
+                    <tr>
+                        <td>Atome de chlore</td>
+                        <td>Cl</td>
+                        <td>17</td>
+                        <td>+17e</td>
+                        <td>-17e</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Ion chlorure</td>
+                        <td></td>
+                        <td></td>
+                        <td>+17e</td>
+                        <td>-18e</td>
+                        <td>Cl<sup>-</sup></td>
+                        <td>-e</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="box">
+                <h3>II- Correction de l’exercice 2</h3>
+
+                <p>
+                    <strong>1.</strong> La méthode la plus adaptée est l’utilisation du
+                    <strong>pH-mètre</strong>, car le tableau donne des valeurs numériques précises du pH.
+                </p>
+
+                <h3>2. Nature des solutions</h3>
+
+                <table>
+                    <tr>
+                        <th>Solution</th>
+                        <th>pH</th>
+                        <th>Nature</th>
+                    </tr>
+                    <tr>
+                        <td>Eau de javel</td>
+                        <td>10</td>
+                        <td>Basique</td>
+                    </tr>
+                    <tr>
+                        <td>Chlorure de sodium</td>
+                        <td>7</td>
+                        <td>Neutre</td>
+                    </tr>
+                    <tr>
+                        <td>Acide chlorhydrique</td>
+                        <td>3</td>
+                        <td>Acide</td>
+                    </tr>
+                    <tr>
+                        <td>Eau de chaux</td>
+                        <td>8</td>
+                        <td>Basique</td>
+                    </tr>
+                    <tr>
+                        <td>Hydroxyde de sodium</td>
+                        <td>11</td>
+                        <td>Basique</td>
+                    </tr>
+                </table>
+
+                <p>
+                    <strong>3.</strong> Le processus est une <strong>dilution</strong>.
+                </p>
+
+                <p>
+                    <strong>4.</strong> Après dilution, le pH de la solution basique diminue,
+                    mais reste supérieur à 7. Donc la valeur convenable est :
+                </p>
+
+                <div class="formula">
+                    pH = 8
+                </div>
+
+                <p>
+                    <strong>5.</strong> Le composant essentiel de la rouille est
+                    <strong>l’oxyde de fer III hydraté</strong>, de formule simplifiée :
+                    <strong>Fe<sub>2</sub>O<sub>3</sub>·nH<sub>2</sub>O</strong>.
+                </p>
+
+                <p>
+                    <strong>6.</strong> L’alumine est <strong>l’oxyde d’aluminium</strong>,
+                    de formule :
+                    <strong>Al<sub>2</sub>O<sub>3</sub></strong>.
+                </p>
+
+                <p>
+                    <strong>7.</strong> Le fer est corrosif parce que la couche de rouille
+                    formée est poreuse et ne protège pas le métal. L’eau et le dioxygène
+                    continuent à atteindre le fer, donc la corrosion se poursuit.
+                </p>
+            </div>
+
+            <div class="box">
+                <h3>III- Correction de l’exercice 3</h3>
+
+                <p>
+                    <strong>1. Les réactifs :</strong> le PVC et le dioxygène.
+                </p>
+
+                <p>
+                    <strong>Les produits :</strong> le dioxyde de carbone, la vapeur d’eau
+                    et le chlorure d’hydrogène.
+                </p>
+
+                <p>
+                    <strong>2. Bilan de la réaction :</strong>
+                </p>
+
+                <div class="formula">
+                    PVC + dioxygène → dioxyde de carbone + eau + chlorure d’hydrogène
+                </div>
+
+                <p>
+                    En utilisant l’unité répétitive du PVC, on peut écrire une équation
+                    équilibrée simplifiée :
+                </p>
+
+                <div class="formula">
+                    2 C<sub>2</sub>H<sub>3</sub>Cl + 5 O<sub>2</sub> → 4 CO<sub>2</sub> + 2 H<sub>2</sub>O + 2 HCl
+                </div>
+
+                <p>
+                    <strong>3.</strong> Le PVC contient les atomes de
+                    <strong>carbone C</strong>, <strong>hydrogène H</strong>
+                    et <strong>chlore Cl</strong>.
+                </p>
+
+                <p>
+                    <strong>4.</strong> Le PVC est une matière organique parce qu’il contient
+                    du carbone et de l’hydrogène. Sa combustion produit aussi du dioxyde
+                    de carbone et de l’eau.
+                </p>
+            </div>
+        </section>
+
+        <section id="conseils">
+            <h2>Conseils de révision</h2>
+
+            <div class="resume">
+                <ul>
+                    <li>Revoir la différence entre un atome et un ion.</li>
+                    <li>Maîtriser les charges : noyau positif, électrons négatifs.</li>
+                    <li>Retenir : pH &lt; 7 solution acide, pH = 7 solution neutre, pH &gt; 7 solution basique.</li>
+                    <li>Comprendre l’effet de la dilution sur le pH.</li>
+                    <li>Retenir les formules : rouille Fe<sub>2</sub>O<sub>3</sub>·nH<sub>2</sub>O et alumine Al<sub>2</sub>O<sub>3</sub>.</li>
+                    <li>Savoir reconnaître une matière organique par la présence du carbone et de l’hydrogène.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="navigation">
+            <h2>Navigation</h2>
+
+            <div class="box">
+                <a href="3ac-examens-locaux.html" class="btn">Retour aux examens locaux</a>
+                <a href="3ac.html" class="btn">Retour aux cours 3AC</a>
+                <a href="index.html" class="btn">Retour à l’accueil</a>
+                <a href="3ac-examen-local-2.html" class="btn">Examen local suivant</a>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>© 2026 - Physique-Chimie Collège | Examen local n°1 - 3AC</p>
+    </footer>
+
+</body>
+</html>
